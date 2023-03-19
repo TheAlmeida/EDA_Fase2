@@ -12,21 +12,21 @@
 //Global vars
 
 /// <summary>
-/// List of clients
+/// List of clients.
 /// </summary>
-ListElem listC = NULL;
+ListElem listC;
 /// <summary>
-/// List of admins
+/// List of admins.
 /// </summary>
-ListElem listA = NULL;
+ListElem listA;
 /// <summary>
 /// List of vehicles
 /// </summary>
-ListElem listV = NULL;
+ListElem listV;
 /// <summary>
 /// List of histories
 /// </summary>
-ListElem listH = NULL;
+ListElem listH;
 
 /// <summary>
 /// Current logged in client.
@@ -79,7 +79,7 @@ int simulateTrip(Client c, Vehicle v);
 void modeAdmin();
 
 /// <summary>
-/// Prints the percentage of vehicles in use off the linked list of vehicles
+/// Prints the percentage of vehicles in use off the linked list of vehicles.
 /// Prints the average autonomy of the field autonomy in all the elements of the linked list of vehicles.
 /// Prints the filtered linked list of vehicles where each vehicle must have the battery field below 50.
 /// Prints the sorted linked list of vehicles by decreasing order of total kms.
@@ -544,6 +544,11 @@ int login() {
 // Procedimento principal
 int main()
 {
+    listA = NULL;
+    listC = NULL;
+    listV = NULL;
+    listH = NULL;
+
     listA = loadDataAdmins(listA);
     listC = loadDataClients(listC);
     listV = loadDataVehicles(listV);

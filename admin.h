@@ -33,11 +33,11 @@ ListElem loadDataAdmins(ListElem listAdmins);
 /// <summary>
 /// Stores admin data from a linked list into a file.
 /// </summary>
-/// <param name="listA">A pointer to the linked list of admins.</param>
+/// <param name="listA">A pointer to the head of the linked list of admins.</param>
 void storeDataAdmins(ListElem listA);
 
 /// <summary>
-/// Compares two admin data pointers by their username.
+/// Compares lexically two admin data pointers by their username.
 /// </summary>
 /// <param name="data1">A pointer to the first admin data.</param>
 /// <param name="data2">A pointer to the first admin data.</param>
