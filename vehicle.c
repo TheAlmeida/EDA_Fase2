@@ -213,12 +213,8 @@ ListElem removeVehicle(ListElem listVehicle, int* modified)
             free(vehicle);
             *modified = 1;
         }
-        else
-            errornotvalid();
-    }
-    else
-        errornotvalid();
 
+    }
     return listVehicle;
 }
 
@@ -552,7 +548,11 @@ ListElem registerVehicle(ListElem listVehicle, int* modified) {
         if ((v->type[i] >= 'a' && v->type[i] <= 'z') || v->type[i] == ' ' || (v->type[i] >= 'A' && v->type[i] <= 'Z'))
             continue;
         else
+        {
+            free(v);
             return listVehicle;
+        }
+            
     }
 
     printf("\n Insira o codigo do veiculo: ");
@@ -562,18 +562,30 @@ ListElem registerVehicle(ListElem listVehicle, int* modified) {
     if (isInt(auxCode))
         v->code = stringToInt(auxCode);
     else
+    {
+        free(v);
         return listVehicle;
+    }
     if (v->code <= 0)
+    {
+        free(v);
         return listVehicle;
+    }
 
     if (vehicleExists(v->code, v->type, listVehicle))
+    {
+        free(v);
         return listVehicle;
+    }
 
     printf("\n Insira a localizacao: "); //NOME
     scanf(" %[^\n]%*c", v->geolocation);
 
     if (!validGeolocation(v->geolocation))
+    {
+        free(v);
         return listVehicle;
+    }
 
     printf("\n Insira a bateria do veiculo: ");
     char auxBattery[10];
@@ -582,10 +594,16 @@ ListElem registerVehicle(ListElem listVehicle, int* modified) {
     if (isInt(auxBattery) || isFloat(auxBattery))
         v->battery = stringToFloat(auxBattery);
     else
+    {
+        free(v);
         return listVehicle;
+    }
 
     if ((v->battery <= 0) || (v->battery > 100))
+    {
+        free(v);
         return listVehicle;
+    }
 
     printf("\n Insira a autonima do veiculo: ");
     char auxAutonomy[10];
@@ -594,9 +612,15 @@ ListElem registerVehicle(ListElem listVehicle, int* modified) {
     if (isInt(auxAutonomy) || isFloat(auxAutonomy))
         v->autonomy = stringToFloat(auxAutonomy);
     else
+    {
+        free(v);
         return listVehicle;
+    }
     if (v->autonomy <= 0)
+    {
+        free(v);
         return listVehicle;
+    }
 
     printf("\n Insira o custo por hora do veiculo: ");
     char auxCosthour[10];
@@ -605,9 +629,15 @@ ListElem registerVehicle(ListElem listVehicle, int* modified) {
     if (isInt(auxCosthour) || isFloat(auxCosthour))
         v->costhour = stringToFloat(auxCosthour);
     else
+    {
+        free(v);
         return listVehicle;
+    }
     if (v->costhour <= 0)
+    {
+        free(v);
         return listVehicle;
+    }
 
     printf("\n Insira o custo por km do veiculo: ");
     char auxCostkm[10];
@@ -616,9 +646,15 @@ ListElem registerVehicle(ListElem listVehicle, int* modified) {
     if (isInt(auxCostkm))
         v->costkm = stringToInt(auxCostkm);
     else
+    {
+        free(v);
         return listVehicle;
+    }
     if (v->costkm <= 0)
+    {
+        free(v);
         return listVehicle;
+    }
 
     v->inUse = 0;
     v->totalkms = 0;

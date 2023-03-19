@@ -137,12 +137,8 @@ ListElem removeAdmin(ListElem listAdmin, int* modified)
             free(admin);
             *modified = 1;
         }
-        else
-            errornotvalid();
 
     }
-    else
-        errornotvalid();
 
     return listAdmin;
 }

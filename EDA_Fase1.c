@@ -99,7 +99,6 @@ void modeAdmin()
             option = stringToInt(auxOption);
             switch (option) {
             case 1:
-                modified = 0;
                 listV = registerVehicle(listV,&modified);
                 if (modified)
                     storeDataVehicles(listV);
@@ -107,7 +106,6 @@ void modeAdmin()
                     errornotvalid();
                 break;
             case 2:
-                modified = 0;
                 listV = editVehicle(listV, &modified);
                 if (modified)
                     storeDataVehicles(listV);
@@ -115,7 +113,6 @@ void modeAdmin()
                     errornotvalid();
                 break;
             case 3:
-                modified = 0;
                 listV = removeVehicle(listV, &modified);
                 if (modified)
                     storeDataVehicles(listV);
@@ -123,7 +120,6 @@ void modeAdmin()
                     errornotvalid();
                 break;
             case 4:
-                modified = 0;
                 listC = registerClient(listC, listA, &modified);
                 if (modified)
                     storeDataClients(listC);
@@ -131,7 +127,6 @@ void modeAdmin()
                     errornotvalid();
                 break;
             case 5:
-                modified = 0;
                 listC = editClient(listC, &modified);
                 if (modified)
                     storeDataClients(listC);
@@ -139,7 +134,6 @@ void modeAdmin()
                     errornotvalid();
                 break;
             case 6:
-                modified = 0;
                 listC = removeClient(listC, &modified);
                 if (modified)
                     storeDataClients(listC);
@@ -147,7 +141,6 @@ void modeAdmin()
                     errornotvalid();
                 break;
             case 7:
-                modified = 0;
                 listA = registerAdmin(listA, listC, &modified);
                 if (modified)
                     storeDataAdmins(listA);
@@ -155,7 +148,6 @@ void modeAdmin()
                     errornotvalid();
                 break;
             case 8:
-                modified = 0;
                 listA = editAdmin(listA, &modified);
                 if (modified)
                     storeDataAdmins(listA);
@@ -163,7 +155,6 @@ void modeAdmin()
                     errornotvalid();
                 break;
             case 9:
-                modified = 0;
                 listA = removeAdmin(listA, &modified);
                 if (modified)
                     storeDataAdmins(listA);
@@ -301,18 +292,21 @@ int simulateTrip(Client c, Vehicle v) {
 int choosingVehicle(ListElem listAV)
 {
     int choice = 99;
+    int lenght = listLength(listAV);
     do {
         availablevehicles();
         showListIterative(listAV, &showVehicle);
-
+        
         printf(" Selecione o veiculo pretendido: ");
         char auxChoice[10];
         scanf(" %[^\n]", auxChoice);
         printf("\n");
 
         if (isInt(auxChoice))
-        {
             choice = stringToInt(auxChoice);
+         
+        if ((choice != 0) && (choice <= lenght))
+        {
             ListElem auxElem = obtainElementPosition(listAV, choice - 1);
             Vehicle auxVehicle = (Vehicle)auxElem->data;
 
@@ -323,7 +317,8 @@ int choosingVehicle(ListElem listAV)
             currentVehicle = inUseVehicle;
             return 1;
         }
-    } while (choice != 0);
+
+    } while ((choice > 0) && (choice <= lenght));
 
     return 0;
 }
@@ -401,6 +396,8 @@ void modeClient()
                 currentClient = addBalance(currentClient, &modified);
                 if (modified)
                     storeDataClients(listC);
+                else
+                    errornotvalidinfo();
                 break;
             case 5:
                 historyClientStats(listH, currentClient->username);

@@ -196,12 +196,8 @@ ListElem removeClient(ListElem listClient, int* modified)
             free(client);
             *modified = 1;
         }
-        else
-            errornotvalid();
 
     }
-    else
-        errornotvalid();
 
     return listClient;
 }
@@ -476,8 +472,9 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
     for (int i = 0; c->name[i] != '\0'; i++) {
         if ((c->name[i] >= 'a' && c->name[i] <= 'z') || c->name[i] == ' ' || (c->name[i] >= 'A' && c->name[i] <= 'Z'))
             continue;
-        else {
-            
+        else 
+        {
+            free(c);
             return listClient;
         }
     }
@@ -490,12 +487,14 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
     scanf(" %[^\n]%*c", auxAge);
 
     if (isInt(auxAge)) c->age = stringToInt(auxAge);
-    else {
-        
+    else 
+    {
+        free(c);
         return listClient;
     }
-    if (c->age <= 0) {
-        
+    if (c->age <= 0)
+    {
+        free(c);
         return listClient;
     }
 
@@ -505,8 +504,9 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
     int h;
     for (h = 0; c->email[h] != '\0'; h++) {
         if (c->email[h] == '@') break;
-        else if (h == strlen(c->email)) {
-            
+        else if (h == strlen(c->email)) 
+        {
+            free(c);
             return listClient;
         }
         else continue;
@@ -518,12 +518,14 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
 
     if (isInt(auxCellphone)) 
         c->cellphone = stringToInt(auxCellphone);
-    else {
-        
+    else 
+    {
+        free(c);
         return listClient;
     }
-    if (c->cellphone <= 0) {
-        
+    if (c->cellphone <= 0) 
+    {
+        free(c);
         return listClient;
     }
 
@@ -533,12 +535,14 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
 
     if (isInt(auxNif)) 
         c->nif = stringToInt(auxNif);
-    else {
-        
+    else 
+    {
+        free(c);
         return listClient;
     }
-    if (c->nif <= 0) {
-        
+    if (c->nif <= 0) 
+    {
+        free(c);
         return listClient;
     }
 
@@ -550,8 +554,9 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
     scanf(" %[^\n]", passcheck);
 
 
-    if (strcmp(c->password, passcheck) != 0) {
-        
+    if (strcmp(c->password, passcheck) != 0) 
+    {
+        free(c);
         return listClient;
     }
 
@@ -571,40 +576,55 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
 
 Client addBalance(Client c, int* modified)
 {
-    float amountToAdd = 0;
-    int paymentMethod;
+    float amountToAdd = -1;
+    int paymentMethod = -1;
     char cardNumber[20];
     char expirationDate[6];
-    char cvv[4];
+    char cvv[5];
     char paypalEmail[50];
     char cellphoneMBWway[10];
 
     printf(" Com quanto quer carregar a conta? ");
-    scanf("%f", &amountToAdd);
+    char auxAmountToAdd[10];
+    scanf(" %[^\n]%*c", auxAmountToAdd);
+
+    if (isInt(auxAmountToAdd) || isFloat(auxAmountToAdd))
+        amountToAdd = stringToFloat(auxAmountToAdd);
+
+    if (amountToAdd <= 0)
+        return c;
+
     printf("\n Selecionou %.2f euros para adicionar a conta. Confirma? (S/N) ", amountToAdd);
-    char confirmation;
-    scanf(" %c", &confirmation);
-    if (confirmation == 'S' || confirmation == 's') {
+
+    char confirmation[10];
+    scanf(" %[^\n]%*c", confirmation);
+    if (!strcmp(confirmation, "S") || !strcmp(confirmation, "s")) {
         printf("\n Otimo! Por favor indique o metodo de pagamento:");
         printf("\n 1. Cartao de credito\n 2. PayPal\n 3. MBway\n\n ");
-        scanf("%d", &paymentMethod);
+        char auxPaymentMethod[5];
+        scanf(" %[^\n]%*c", auxPaymentMethod);
+
+        if (isInt(auxPaymentMethod))
+            paymentMethod = stringToInt(auxPaymentMethod);
+        else
+            return c;
 
         switch (paymentMethod) {
         case 1:
             printf("\n Insira o numero do carta: ");
-            scanf(" %s", cardNumber);
+            scanf(" %[^\n]%*c", cardNumber);
             if (strlen(cardNumber) != 16) {
                 printf("\n Numero invalido.");
                 break;
             }
-            for (int i = 0; i < 16; i++) {
-                if (!isdigit(cardNumber[i])) {
-                    printf("\n Numero invalido.");
-                    break;
-                }
+
+            if (!isInt(cardNumber)) {
+                printf("\n Numero invalido.");
+                break;
+
             }
             printf("\n Por favor insira a data de expiracao do cartao (MM/AA): ");
-            scanf(" %s", expirationDate);
+            scanf(" %[^\n]%*c", expirationDate);
             if (strlen(expirationDate) != 5 || expirationDate[2] != '/') {
                 printf("\n Data num formato invalido.");
                 break;
@@ -616,16 +636,14 @@ Client addBalance(Client c, int* modified)
                 }
             }
             printf("\n Por favor insira o codigo CVV: ");
-            scanf(" %s", cvv);
+            scanf(" %[^\n]%*c", cvv);
             if (strlen(cvv) != 3) {
                 printf("\n Comprimento de CVV invalido.");
                 break;
             }
-            for (int i = 0; i < 3; i++) {
-                if (!isdigit(cvv[i])) {
-                    printf("\n CVV invalido.");
-                    break;
-                }
+            if (!isInt(cvv)) {
+                printf("\n CVV invalido.");
+                break;
             }
             c->balance += amountToAdd;
             *modified = 1;
@@ -635,10 +653,10 @@ Client addBalance(Client c, int* modified)
             break;
         case 2:
             printf("\n Gostaria de utilizar o email %s para pagamento paypal? (S/N) ", c->email);
-            scanf(" %c", &confirmation);
-            if (confirmation == 'N' || confirmation == 'n') {
+            scanf(" %[^\n]%*c", confirmation);
+            if (!strcmp(confirmation, "N") || !strcmp(confirmation, "n")) {
                 printf("\n Por favor insira o email para efetuar o pagamento: ");
-                scanf(" %s", paypalEmail);
+                scanf(" %[^\n]%*c", paypalEmail);
             }
             printf("\n Carregue em qualquer tecla quando tiver concluido o pagamento na janela popup.\n");
             getch();
@@ -651,10 +669,10 @@ Client addBalance(Client c, int* modified)
             break;
         case 3:
             printf("\n Gostaria de utilizar o numero de telemovel %d para pagamento MBway? (S/N) ", c->cellphone);
-            scanf(" %c", &confirmation);
-            if (confirmation == 'N' || confirmation == 'n') {
+            scanf(" %[^\n]%*c", confirmation);
+            if (!strcmp(confirmation, "N") || !strcmp(confirmation, "n")) {
                 printf("\n Por favor insira o numero de telemovel para efetuar o pagamento: ");
-                scanf(" %s", cellphoneMBWway);
+                scanf(" %[^\n]%*c", cellphoneMBWway);
             }
             printf("\n Carregue em qualquer tecla quando tiver concluido o pagamento no seu telemovel.\n");
             getch();
@@ -666,12 +684,8 @@ Client addBalance(Client c, int* modified)
             wait();
             break;
         default:
-            errornotvalid();
             break;
         }
-    }
-    else {
-        printf("Transacao cancelada.\n");
     }
 
     return c;
