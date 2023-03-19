@@ -198,6 +198,13 @@ ListElem editAdmin(ListElem listAdmin, int* modified)
         case 3:
             printf(" Insira um novo nome: ");
             scanf(" %[^\n]%*c", edit);
+            for (int i = 0; edit[i] != '\0'; i++)
+            {
+                if ((edit[i] >= 'a' && edit[i] <= 'z') || edit[i] == ' ' || (edit[i] >= 'A' && edit[i] <= 'Z'))
+                    continue;
+                else
+                    return listAdmin;
+            }
             changeAName(admin, edit);
             *modified = 1;
             break;
@@ -208,12 +215,11 @@ ListElem editAdmin(ListElem listAdmin, int* modified)
             *modified = 1;
             break;
         default:
-            errornotvalid();
             break;
         }
+        return listAdmin;
     }
     else
-        errornotvalid();
 
     return listAdmin;
 }
@@ -236,25 +242,20 @@ ListElem registerAdmin(ListElem listAdmin, ListElem listClient, int* modified) {
     if (usernameExists(a->username, listClient, listAdmin))
     {
         free(a);
-        errornotvalidinfo();
         return listAdmin;
     }
 
     printf("\nInsira o seu nome: "); //NOME
     scanf(" %[^\n]%*c", a->name);
 
-    int i;
-    for (i = 0; a->name[i] != '\0'; i++)
+    for (int i = 0; a->name[i] != '\0'; i++)
     {
         if ((a->name[i] >= 'a' && a->name[i] <= 'z') || a->name[i] == ' ' || (a->name[i] >= 'A' && a->name[i] <= 'Z'))
-        {
             continue;
-        }
         else
         {
             printf("%d", i);
             free(a);
-            errornotvalidinfo();
             return listAdmin;
         }
     }
@@ -269,7 +270,6 @@ ListElem registerAdmin(ListElem listAdmin, ListElem listClient, int* modified) {
         else if (h == strlen(a->email))
         {
             free(a);
-            errornotvalidinfo();
             return listAdmin;
         }
         else continue;

@@ -101,8 +101,10 @@ void modeAdmin()
             case 1:
                 modified = 0;
                 listV = registerVehicle(listV,&modified);
-                if(modified)
+                if (modified)
                     storeDataVehicles(listV);
+                else
+                    errornotvalid();
                 break;
             case 2:
                 modified = 0;
@@ -220,13 +222,6 @@ void modeAdmin()
 
 }
 
-/**
- * .
- * 
- * \param c
- * \param v
- * \return 
- */
 int simulateTrip(Client c, Vehicle v) {
 
     simulatemenu();
@@ -527,8 +522,11 @@ int main()
             switch (option)
             {
             case 1:
-                if(registerClient(listC,listA,&modified))
+                listC = registerClient(listC, listA, &modified);
+                if (modified)
                     storeDataClients(listC);
+                else
+                    errornotvalid();
                 break;
 
             case 2:

@@ -365,78 +365,139 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
         //printf("\n");
 
         char edit[50];
-        int editInt = 0;
-        float editFloat = 0;
+        int editInt = -1;
+        float editFloat = -1;
 
         switch (optionLine) {
         case 1:
             printf(" Insira o novo modelo: ");
             scanf(" %[^\n]%*c", edit);
-            changeVType(vehicle, edit);
-            *modified = 1;
+            for (int i = 0; edit[i] != '\0'; i++)
+            {
+                if ((edit[i] >= 'a' && edit[i] <= 'z') || edit[i] == ' ' || (edit[i] >= 'A' && edit[i] <= 'Z'))
+                    continue;
+                else
+                    return listVehicle;
+            }
+            if (!vehicleExists(vehicle->code, edit, listVehicle))
+            {
+                changeVType(vehicle, edit);
+                *modified = 1;
+            }
             break;
         case 2:
             printf(" Insira o novo identificador: ");
-            scanf("%d", &editInt);
-            changeVCode(vehicle, editInt);
-            *modified = 1;
+            char auxCode[10];
+            scanf(" %[^\n]%*c", auxCode);
+
+            if (isInt(auxCode))
+                editInt = stringToInt(auxCode);
+
+            if (editInt > 0 && !vehicleExists(editInt, vehicle->type, listVehicle))
+            {
+                changeVCode(vehicle, editInt);
+                *modified = 1;
+            }
             break;
         case 3:
             printf(" Insira a nova geolocalizacao: ");
             scanf(" %[^\n]%*c", edit);
-            changeVGeolocation(vehicle, edit);
-            *modified = 1;
+            if (validGeolocation(edit))
+            {
+                changeVGeolocation(vehicle, edit);
+                *modified = 1;
+            }
             break;
         case 4:
             printf(" Insira o novo nivel de bateria: ");
-            scanf("%f", &editFloat);
-            changeVBattery(vehicle, editFloat);
-            *modified = 1;
+            char auxBattery[10];
+            scanf(" %[^\n]%*c", auxBattery);
+
+            if (isInt(auxBattery) || isFloat(auxBattery))
+                editFloat = stringToFloat(auxBattery);
+
+            if ((editFloat >= 0) && (editFloat <= 100))
+            {
+                changeVBattery(vehicle, editFloat);
+                *modified = 1;
+            }            
             break;
         case 5:
             printf(" Insira o novo nivel de autonomia: ");
-            scanf("%f", &editFloat);
+            char auxAutonomy[10];
+            scanf(" %[^\n]%*c", auxAutonomy);
 
-            ListElem auxHead = removeElementByIndex(listVehicle, option - 1);
-            listVehicle = auxHead;
-            changeVAutonomy(vehicle, editFloat);
-            listVehicle = addItemOrderedIterative(listVehicle, (void*)vehicle, &compareAutonomy);
-            *modified = 1;
+            if (isInt(auxAutonomy) || isFloat(auxAutonomy))
+                editFloat = stringToFloat(auxAutonomy);
+
+            if (editFloat > 0)
+            {
+                ListElem auxHead = removeElementByIndex(listVehicle, option - 1);
+                listVehicle = auxHead;
+                changeVAutonomy(vehicle, editFloat);
+                listVehicle = addItemOrderedIterative(listVehicle, (void*)vehicle, &compareAutonomy);
+                *modified = 1;
+            }          
             break;
         case 6:
             printf(" Insira o novo custo por hora: ");
-            scanf("%f", &editFloat);
-            changeVCosthour(vehicle, editFloat);
-            *modified = 1;
+            char auxCosthour[10];
+            scanf(" %[^\n]%*c", auxCosthour);
+
+            if (isInt(auxCosthour) || isFloat(auxCosthour))
+                editFloat = stringToFloat(auxCosthour);
+            if (editFloat > 0)
+            {
+                changeVCosthour(vehicle, editFloat);
+                *modified = 1;
+            }
             break;
         case 7:
             printf(" Insira o novo custo por km: ");
-            scanf("%f", &editFloat);
-            changeVCostkm(vehicle, editFloat);
-            *modified = 1;
+            char auxCostkm[10];
+            scanf(" %[^\n]%*c", auxCostkm);
+
+            if (isInt(auxCostkm))
+                editFloat = stringToInt(auxCostkm);
+            if (editFloat > 0)
+            {
+                changeVCostkm(vehicle, editFloat);
+                *modified = 1;
+            }
             break;
         case 8:
             printf(" Insira o novo estado de aluger: ");
-            scanf("%d", &editInt);
-            changeVstate(vehicle, editInt);
-            *modified = 1;
+            char auxRentState[10];
+            scanf(" %[^\n]%*c", auxRentState);
+
+            if (isInt(auxRentState))
+                editInt = stringToInt(auxRentState);
+
+            if (editInt == 0 || editInt == 1)
+            {
+                changeVstate(vehicle, editInt);
+                *modified = 1;   
+            }
             break;
         case 9:
             printf(" Insira o novo total de kms: ");
-            scanf("%f", &editFloat);
-            changeVkms(vehicle, editFloat);
-            *modified = 1;
-            break;
-        case 0:
+            char auxTotalkm[10];
+            scanf(" %[^\n]%*c", auxTotalkm);
 
+            if (isInt(auxTotalkm))
+                editFloat = stringToInt(auxTotalkm);
+
+            if (editFloat > 0)
+            {
+                changeVkms(vehicle, editFloat);
+                *modified = 1;
+            }        
+            break;
         default:
-            errornotvalid();
             break;
         }
+        return listVehicle;
     }
-    else
-        errornotvalid();
-
     return listVehicle;
 }
 
@@ -449,6 +510,26 @@ int vehicleExists(int code, char* type, ListElem listVehicles) {
         listVehicles = listVehicles->next;
     }
     return 0;
+}
+
+int validGeolocation(char* geolocation)
+{
+    char geo_aux[50];
+    strcpy(geo_aux, geolocation);
+
+    int words = 0;
+    char* tokens = strtok(geo_aux, ".");
+    while (tokens != NULL) {
+        words++;
+        tokens = strtok(NULL, ".");
+    }
+
+    if (words == 3) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
 }
 
 ListElem registerVehicle(ListElem listVehicle, int* modified) {
@@ -466,19 +547,12 @@ ListElem registerVehicle(ListElem listVehicle, int* modified) {
     printf("\n Insira o modelo do veiculo: "); //NOME
     scanf(" %[^\n]%*c", v->type);
 
-    int i;
-    for (i = 0; v->type[i] != '\0'; i++)
+    for (int i = 0; v->type[i] != '\0'; i++)
     {
         if ((v->type[i] >= 'a' && v->type[i] <= 'z') || v->type[i] == ' ' || (v->type[i] >= 'A' && v->type[i] <= 'Z'))
-        {
             continue;
-        }
         else
-        {
-            printf("%d", i);
-            errornotvalidinfo();
             return listVehicle;
-        }
     }
 
     printf("\n Insira o codigo do veiculo: ");
@@ -486,127 +560,70 @@ ListElem registerVehicle(ListElem listVehicle, int* modified) {
     scanf(" %[^\n]%*c", auxCode);
 
     if (isInt(auxCode))
-    {
         v->code = stringToInt(auxCode);
-    }
     else
-    {
-        errornotvalidinfo();
         return listVehicle;
-    }
     if (v->code <= 0)
-    {
-        errornotvalidinfo();
         return listVehicle;
-    }
 
     if (vehicleExists(v->code, v->type, listVehicle))
-    {
-        errornotvalidinfo();
         return listVehicle;
-    }
 
     printf("\n Insira a localizacao: "); //NOME
     scanf(" %[^\n]%*c", v->geolocation);
 
-    char geo_aux[50];
-    strcpy(geo_aux, v->geolocation);
-
-    int words = 0;
-    char* tokens = strtok(geo_aux, ".");
-    while (tokens != NULL) {
-        words++;
-        tokens = strtok(NULL, ".");
-    }
-
-    if (words == 3) {
-        printf("geo ok.\n");
-    }
-    else {
-        printf("geo !ok.\n");
-    }
+    if (!validGeolocation(v->geolocation))
+        return listVehicle;
 
     printf("\n Insira a bateria do veiculo: ");
     char auxBattery[10];
     scanf(" %[^\n]%*c", auxBattery);
 
     if (isInt(auxBattery) || isFloat(auxBattery))
-    {
         v->battery = stringToFloat(auxBattery);
-    }
     else
-    {
-        errornotvalidinfo();
         return listVehicle;
-    }
-    if (v->battery <= 0)
-    {
-        errornotvalidinfo();
+
+    if ((v->battery <= 0) || (v->battery > 100))
         return listVehicle;
-    }
 
     printf("\n Insira a autonima do veiculo: ");
     char auxAutonomy[10];
     scanf(" %[^\n]%*c", auxAutonomy);
 
     if (isInt(auxAutonomy) || isFloat(auxAutonomy))
-    {
         v->autonomy = stringToFloat(auxAutonomy);
-    }
     else
-    {
-        errornotvalidinfo();
         return listVehicle;
-    }
     if (v->autonomy <= 0)
-    {
-        errornotvalidinfo();
         return listVehicle;
-    }
 
     printf("\n Insira o custo por hora do veiculo: ");
     char auxCosthour[10];
     scanf(" %[^\n]%*c", auxCosthour);
 
     if (isInt(auxCosthour) || isFloat(auxCosthour))
-    {
         v->costhour = stringToFloat(auxCosthour);
-    }
     else
-    {
-        errornotvalidinfo();
         return listVehicle;
-    }
     if (v->costhour <= 0)
-    {
-        errornotvalidinfo();
         return listVehicle;
-    }
 
     printf("\n Insira o custo por km do veiculo: ");
     char auxCostkm[10];
     scanf(" %[^\n]%*c", auxCostkm);
 
     if (isInt(auxCostkm))
-    {
         v->costkm = stringToInt(auxCostkm);
-    }
     else
-    {
-        errornotvalidinfo();
         return listVehicle;
-    }
     if (v->costkm <= 0)
-    {
-        errornotvalidinfo();
         return listVehicle;
-    }
 
     v->inUse = 0;
     v->totalkms = 0;
 
     listVehicle = addItemOrderedIterative(listVehicle, (void*)v, &compareAutonomy);
-    //showListIterative(listVehicle, &showVehicle);
 
     printf("\n");
     signupok();

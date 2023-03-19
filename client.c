@@ -291,8 +291,8 @@ ListElem editClient(ListElem listClient, int* modified)
             optionLine = stringToInt(auxLine);
 
         char edit[50];
-        int editInt = 0;
-        float editFloat = 0;
+        int editInt = -1;
+        float editFloat = -1;
 
         switch (optionLine) {
         case 1:
@@ -314,6 +314,14 @@ ListElem editClient(ListElem listClient, int* modified)
         case 3:
             printf(" Insira um novo nome: ");
             scanf(" %[^\n]%*c", edit);
+            for (int i = 0; edit[i] != '\0'; i++) {
+                if ((edit[i] >= 'a' && edit[i] <= 'z') || edit[i] == ' ' || (edit[i] >= 'A' && edit[i] <= 'Z'))
+                    continue;
+                else {
+
+                    return listClient;
+                }
+            }
             changeCName(client, edit);
             *modified = 1;
             break;
@@ -325,21 +333,45 @@ ListElem editClient(ListElem listClient, int* modified)
             break;
         case 5:
             printf(" Insira um novo numero de telemovel: ");
-            scanf("%d", &editInt);
-            changeCCellphone(client, editInt);
-            *modified = 1;
+            char auxCell[10];
+            scanf(" %[^\n]%*c", auxCell);
+
+            if (isInt(auxCell))
+                editInt = stringToInt(auxCell);
+
+            if (editInt > 0)
+            {
+                changeCCellphone(client, editInt);
+                *modified = 1;
+            }           
             break;
         case 6:
             printf(" Insira um novo NIF: ");
-            scanf("%d", &editInt);
-            changeCNif(client, editInt);
-            *modified = 1;
+            char auxNif[10];
+            scanf(" %[^\n]%*c", auxNif);
+
+            if (isInt(auxNif))
+                editInt = stringToInt(auxNif);
+
+            if (editInt > 0)
+            {
+                changeCNif(client, editInt);
+                *modified = 1;
+            }
             break;
         case 7:
             printf(" Insira uma nova idade: ");
-            scanf("%d", &editInt);
-            changeCAge(client, editInt);
-            *modified = 1;
+            char auxAge[10];
+            scanf(" %[^\n]%*c", auxAge);
+
+            if (isInt(auxAge))
+                editInt = stringToInt(auxAge);
+
+            if (editInt > 0)
+            {
+                changeCAge(client, editInt);
+                *modified = 1;
+            }            
             break;
         case 8:
             printf(" Insira uma nova morada: ");
@@ -349,30 +381,52 @@ ListElem editClient(ListElem listClient, int* modified)
             break;
         case 9:
             printf(" Insira um novo total de viagens: ");
-            scanf("%d", &editInt);
-            changeCTotalTrips(client, editInt);
-            *modified = 1;
+            char auxTrips[10];
+            scanf(" %[^\n]%*c", auxTrips);
+
+            if (isInt(auxTrips))
+                editInt = stringToInt(auxTrips);
+
+            if (editInt > 0)
+            {
+                changeCTotalTrips(client, editInt);
+                *modified = 1;
+            }           
             break;
         case 10:
             printf(" Insira um novo total de kms: ");
-            scanf("%f", &editFloat);
-            changeCTotalKms(client, editFloat);
-            *modified = 1;
+            char auxTotalKms[10];
+            scanf(" %[^\n]%*c", auxTotalKms);
+
+            if (isInt(auxTotalKms) || isFloat(auxTotalKms))
+                editFloat = stringToFloat(auxTotalKms);
+
+            if (editFloat > 0)
+            {
+                changeCTotalKms(client, editFloat);
+                *modified = 1;
+            }
             break;
         case 11:
             printf(" Insira um novo saldo: ");
-            scanf("%f", &editFloat);
-            changeCBalance(client, editFloat);
-            *modified = 1;
-            break;
-        case 0:
+            char auxBalance[10];
+            scanf(" %[^\n]%*c", auxBalance);
+
+            if (isInt(auxBalance) || isFloat(auxBalance))
+                editFloat = stringToFloat(auxBalance);
+
+            if (editFloat > 0)
+            {
+                changeCBalance(client, editFloat);
+                *modified = 1;
+            }            
             break;
         default:
-            ;
+            break;
         }
+        return listClient;
     }
     else
-        errornotvalid();
 
     return listClient;
 }
@@ -419,13 +473,11 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
     printf("\n Insira o seu nome: "); //NOME
     scanf(" %[^\n]%*c", c->name);
 
-    int i;
-    for (i = 0; c->name[i] != '\0'; i++) {
+    for (int i = 0; c->name[i] != '\0'; i++) {
         if ((c->name[i] >= 'a' && c->name[i] <= 'z') || c->name[i] == ' ' || (c->name[i] >= 'A' && c->name[i] <= 'Z'))
             continue;
         else {
-            printf("%d", i);
-            errornotvalidinfo();
+            
             return listClient;
         }
     }
@@ -439,11 +491,11 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
 
     if (isInt(auxAge)) c->age = stringToInt(auxAge);
     else {
-        errornotvalidinfo();
+        
         return listClient;
     }
     if (c->age <= 0) {
-        error();
+        
         return listClient;
     }
 
@@ -454,7 +506,7 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
     for (h = 0; c->email[h] != '\0'; h++) {
         if (c->email[h] == '@') break;
         else if (h == strlen(c->email)) {
-            errornotvalidinfo();
+            
             return listClient;
         }
         else continue;
@@ -464,13 +516,14 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
     char auxCellphone[20];
     scanf(" %[^\n]%*c", auxCellphone);
 
-    if (isInt(auxCellphone)) c->cellphone = stringToInt(auxCellphone);
+    if (isInt(auxCellphone)) 
+        c->cellphone = stringToInt(auxCellphone);
     else {
-        errornotvalidinfo();
+        
         return listClient;
     }
     if (c->cellphone <= 0) {
-        errornotvalidinfo();
+        
         return listClient;
     }
 
@@ -478,13 +531,14 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
     char auxNif[20];
     scanf(" %[^\n]%*c", auxNif);
 
-    if (isInt(auxNif)) c->nif = stringToInt(auxNif);
+    if (isInt(auxNif)) 
+        c->nif = stringToInt(auxNif);
     else {
-        errornotvalidinfo();
+        
         return listClient;
     }
     if (c->nif <= 0) {
-        errornotvalidinfo();
+        
         return listClient;
     }
 
@@ -497,13 +551,13 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
 
 
     if (strcmp(c->password, passcheck) != 0) {
-        errorpassword();
+        
         return listClient;
     }
 
-    c->totalkms = 0;
-    c->totaltrips = 0;
-    c->balance = 0;
+    c->totalkms = 0.0;
+    c->totaltrips = 0.0;
+    c->balance = 0.0;
 
     listClient = addItemOrderedIterative(listClient, (void*)c, &compareNamesClients);
     *modified = 1;
