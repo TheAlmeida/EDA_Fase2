@@ -18,8 +18,6 @@ void showClient(void* data)
             " Saldo: %.2f euros\n",
             c->username, c->password, c->name, c->email, c->cellphone,
             c->nif, c->age, c->address, c->totaltrips, c->totalkms, c->balance);
-        //for (int i = 0; i < 5; i++)
-            //printf("%s: %.2f euros\n", c->bankaccount[i].naccount, c->bankaccount[i].balance);
         printf("\n");
     }
 }
@@ -61,8 +59,7 @@ void storeDataClients(ListElem listC) {
     char cwd[500];
     if (getcwd(cwd, sizeof(cwd)) == NULL)
     {
-        error(); //Espera input do user
-        //registerClient(registerFromAdmin);
+        error();
     }
 
     char clients_bin[500];
@@ -457,7 +454,7 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
 
     Client c = (Client)malloc(sizeof(struct dataclient));
 
-    printf("\n Insira o seu nome de utilizador: "); //NOME DE UTILIZADOR
+    printf("\n Insira o seu nome de utilizador: "); 
     scanf(" %[^\n]", c->username);
 
     if (usernameExists(c->username, listClient, listAdmin)) {
@@ -466,7 +463,7 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
         return listClient;
     }
 
-    printf("\n Insira o seu nome: "); //NOME
+    printf("\n Insira o seu nome: "); 
     scanf(" %[^\n]%*c", c->name);
 
     for (int i = 0; c->name[i] != '\0'; i++) {
@@ -479,11 +476,11 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
         }
     }
 
-    printf("\n Insira a sua morada: ");//MORADA
+    printf("\n Insira a sua morada: ");
     scanf(" %[^\n]%*c", c->address);
 
     char auxAge[5];
-    printf("\n Insira a sua idade: "); //IDADE
+    printf("\n Insira a sua idade: "); 
     scanf(" %[^\n]%*c", auxAge);
 
     if (isInt(auxAge)) c->age = stringToInt(auxAge);
@@ -498,7 +495,7 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
         return listClient;
     }
 
-    printf("\n Insira o seu email: "); //EMAIL
+    printf("\n Insira o seu email: ");
     scanf(" %[^\n]%*c", c->email);
 
     int h;
@@ -512,7 +509,7 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
         else continue;
     }
 
-    printf("\n Insira o seu numero de contacto: "); //N?MERO
+    printf("\n Insira o seu numero de contacto: ");
     char auxCellphone[20];
     scanf(" %[^\n]%*c", auxCellphone);
 
@@ -529,7 +526,7 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
         return listClient;
     }
 
-    printf("\n Insira o seu NIF: "); //IDADE
+    printf("\n Insira o seu NIF: "); 
     char auxNif[20];
     scanf(" %[^\n]%*c", auxNif);
 
@@ -546,10 +543,10 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
         return listClient;
     }
 
-    printf("\n Insira a sua password: "); //PASSWORD
+    printf("\n Insira a sua password: "); 
     scanf(" %[^\n]", c->password);
 
-    printf("\n Confirme a sua password: "); //CONFIRMA??O DA PASSWORD
+    printf("\n Confirme a sua password: ");
     char passcheck[50];
     scanf(" %[^\n]", passcheck);
 
@@ -569,7 +566,7 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
     
     printf("\n");
     signupok();
-    wait(); //Espera input do user
+    wait(); 
 
     return listClient;
 }

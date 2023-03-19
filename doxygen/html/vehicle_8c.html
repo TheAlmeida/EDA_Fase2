@@ -183,25 +183,25 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The average autonomy of the vehicles.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00246">246</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  247</span>{</div>
-<div class="line"><span class="lineno">  248</span>    <span class="keywordtype">int</span> count = 0;</div>
-<div class="line"><span class="lineno">  249</span>    <span class="keywordtype">float</span> sum = 0;</div>
-<div class="line"><span class="lineno">  250</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v;</div>
-<div class="line"><span class="lineno">  251</span> </div>
-<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">while</span> (listVehicle != NULL) {</div>
-<div class="line"><span class="lineno">  253</span>        v = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
-<div class="line"><span class="lineno">  254</span>        sum += v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a>;</div>
-<div class="line"><span class="lineno">  255</span>        count++;</div>
-<div class="line"><span class="lineno">  256</span>        listVehicle = listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
-<div class="line"><span class="lineno">  257</span>    }</div>
-<div class="line"><span class="lineno">  258</span> </div>
-<div class="line"><span class="lineno">  259</span>    <span class="keywordflow">if</span> (count == 0) {</div>
-<div class="line"><span class="lineno">  260</span>        <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><span class="lineno">  261</span>    }</div>
-<div class="line"><span class="lineno">  262</span> </div>
-<div class="line"><span class="lineno">  263</span>    <span class="keywordflow">return</span> sum / count;</div>
-<div class="line"><span class="lineno">  264</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00245">245</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  246</span>{</div>
+<div class="line"><span class="lineno">  247</span>    <span class="keywordtype">int</span> count = 0;</div>
+<div class="line"><span class="lineno">  248</span>    <span class="keywordtype">float</span> sum = 0;</div>
+<div class="line"><span class="lineno">  249</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v;</div>
+<div class="line"><span class="lineno">  250</span> </div>
+<div class="line"><span class="lineno">  251</span>    <span class="keywordflow">while</span> (listVehicle != NULL) {</div>
+<div class="line"><span class="lineno">  252</span>        v = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
+<div class="line"><span class="lineno">  253</span>        sum += v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a>;</div>
+<div class="line"><span class="lineno">  254</span>        count++;</div>
+<div class="line"><span class="lineno">  255</span>        listVehicle = listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
+<div class="line"><span class="lineno">  256</span>    }</div>
+<div class="line"><span class="lineno">  257</span> </div>
+<div class="line"><span class="lineno">  258</span>    <span class="keywordflow">if</span> (count == 0) {</div>
+<div class="line"><span class="lineno">  259</span>        <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><span class="lineno">  260</span>    }</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>    <span class="keywordflow">return</span> sum / count;</div>
+<div class="line"><span class="lineno">  263</span>}</div>
 <div class="ttc" id="astructdatavehicle_html"><div class="ttname"><a href="structdatavehicle.html">datavehicle</a></div><div class="ttdoc">Struct for the vehicle data.</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8h_source.html#l00011">vehicle.h:12</a></div></div>
 <div class="ttc" id="astructdatavehicle_html_a83cda76233a2b02dcc2b3707fa58e4e8"><div class="ttname"><a href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">datavehicle::autonomy</a></div><div class="ttdeci">float autonomy</div><div class="ttdoc">Autonomy in kilometers of the vehicle.</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8h_source.html#l00017">vehicle.h:17</a></div></div>
 <div class="ttc" id="astructs_list_elem_html_a735984d41155bc1032e09bece8f8d66d"><div class="ttname"><a href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">sListElem::data</a></div><div class="ttdeci">void * data</div><div class="ttdoc">Pointer to the data stored in this node.</div><div class="ttdef"><b>Definition:</b> <a href="ll_8h_source.html#l00011">ll.h:11</a></div></div>
@@ -236,10 +236,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00147">147</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  148</span>{</div>
-<div class="line"><span class="lineno">  149</span>    vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a> = newAutonomy;</div>
-<div class="line"><span class="lineno">  150</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00146">146</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  147</span>{</div>
+<div class="line"><span class="lineno">  148</span>    vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a> = newAutonomy;</div>
+<div class="line"><span class="lineno">  149</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -269,10 +269,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00142">142</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  143</span>{</div>
-<div class="line"><span class="lineno">  144</span>    vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe893e21455b5e3ba30d98b78a5f4479">battery</a> = newBattery;</div>
-<div class="line"><span class="lineno">  145</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00141">141</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>{</div>
+<div class="line"><span class="lineno">  143</span>    vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe893e21455b5e3ba30d98b78a5f4479">battery</a> = newBattery;</div>
+<div class="line"><span class="lineno">  144</span>}</div>
 <div class="ttc" id="astructdatavehicle_html_abe893e21455b5e3ba30d98b78a5f4479"><div class="ttname"><a href="structdatavehicle.html#abe893e21455b5e3ba30d98b78a5f4479">datavehicle::battery</a></div><div class="ttdeci">float battery</div><div class="ttdoc">Battery percentage of the vehicle.</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8h_source.html#l00016">vehicle.h:16</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -303,10 +303,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00132">132</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  133</span>{</div>
-<div class="line"><span class="lineno">  134</span>    vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a> = code;</div>
-<div class="line"><span class="lineno">  135</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00131">131</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>{</div>
+<div class="line"><span class="lineno">  133</span>    vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a> = code;</div>
+<div class="line"><span class="lineno">  134</span>}</div>
 <div class="ttc" id="astructdatavehicle_html_a45a5b7c00a796a23f01673cef1dbe0a9"><div class="ttname"><a href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">datavehicle::code</a></div><div class="ttdeci">int code</div><div class="ttdoc">Code of the electric mobility transport.</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8h_source.html#l00013">vehicle.h:13</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -337,10 +337,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00152">152</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  153</span>{</div>
-<div class="line"><span class="lineno">  154</span>    vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#af098be7d698ae45ee6ef1f2fed01a25b">costhour</a> = newCosthour;</div>
-<div class="line"><span class="lineno">  155</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00151">151</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>{</div>
+<div class="line"><span class="lineno">  153</span>    vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#af098be7d698ae45ee6ef1f2fed01a25b">costhour</a> = newCosthour;</div>
+<div class="line"><span class="lineno">  154</span>}</div>
 <div class="ttc" id="astructdatavehicle_html_af098be7d698ae45ee6ef1f2fed01a25b"><div class="ttname"><a href="structdatavehicle.html#af098be7d698ae45ee6ef1f2fed01a25b">datavehicle::costhour</a></div><div class="ttdeci">float costhour</div><div class="ttdoc">Cost per hour of the vehicle.</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8h_source.html#l00018">vehicle.h:18</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -371,10 +371,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00157">157</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  158</span>{</div>
-<div class="line"><span class="lineno">  159</span>    vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a40c56f500e49fad57b2f7cae41462082">costkm</a> = newCostkm;</div>
-<div class="line"><span class="lineno">  160</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00156">156</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  157</span>{</div>
+<div class="line"><span class="lineno">  158</span>    vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a40c56f500e49fad57b2f7cae41462082">costkm</a> = newCostkm;</div>
+<div class="line"><span class="lineno">  159</span>}</div>
 <div class="ttc" id="astructdatavehicle_html_a40c56f500e49fad57b2f7cae41462082"><div class="ttname"><a href="structdatavehicle.html#a40c56f500e49fad57b2f7cae41462082">datavehicle::costkm</a></div><div class="ttdeci">float costkm</div><div class="ttdoc">Cost per kilometer of the vehicle.</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8h_source.html#l00019">vehicle.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -405,10 +405,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00137">137</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  138</span>{</div>
-<div class="line"><span class="lineno">  139</span>    strcpy(vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a8ec22531817bb25a7bfd6c4366de54b3">geolocation</a>, newGeolocation);</div>
-<div class="line"><span class="lineno">  140</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00136">136</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>{</div>
+<div class="line"><span class="lineno">  138</span>    strcpy(vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a8ec22531817bb25a7bfd6c4366de54b3">geolocation</a>, newGeolocation);</div>
+<div class="line"><span class="lineno">  139</span>}</div>
 <div class="ttc" id="astructdatavehicle_html_a8ec22531817bb25a7bfd6c4366de54b3"><div class="ttname"><a href="structdatavehicle.html#a8ec22531817bb25a7bfd6c4366de54b3">datavehicle::geolocation</a></div><div class="ttdeci">char geolocation[50]</div><div class="ttdoc">Location of the vehicle (e.g. just.like.this)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8h_source.html#l00015">vehicle.h:15</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -439,10 +439,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00167">167</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  168</span>{</div>
-<div class="line"><span class="lineno">  169</span>    vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1">totalkms</a> = newTotalkms;</div>
-<div class="line"><span class="lineno">  170</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00166">166</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  167</span>{</div>
+<div class="line"><span class="lineno">  168</span>    vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1">totalkms</a> = newTotalkms;</div>
+<div class="line"><span class="lineno">  169</span>}</div>
 <div class="ttc" id="astructdatavehicle_html_abe6c718ce5656ac06882b8032e6219b1"><div class="ttname"><a href="structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1">datavehicle::totalkms</a></div><div class="ttdeci">float totalkms</div><div class="ttdoc">Total kilometers driven by the vehicle.</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8h_source.html#l00021">vehicle.h:21</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -473,10 +473,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00162">162</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  163</span>{</div>
-<div class="line"><span class="lineno">  164</span>    vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#adc4747e59356ef81f6e5df973870970b">inUse</a> = inUse;</div>
-<div class="line"><span class="lineno">  165</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00161">161</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  162</span>{</div>
+<div class="line"><span class="lineno">  163</span>    vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#adc4747e59356ef81f6e5df973870970b">inUse</a> = inUse;</div>
+<div class="line"><span class="lineno">  164</span>}</div>
 <div class="ttc" id="astructdatavehicle_html_adc4747e59356ef81f6e5df973870970b"><div class="ttname"><a href="structdatavehicle.html#adc4747e59356ef81f6e5df973870970b">datavehicle::inUse</a></div><div class="ttdeci">int inUse</div><div class="ttdoc">1 if the vehicle is currently in use, 0 otherwise</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8h_source.html#l00020">vehicle.h:20</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -507,10 +507,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00127">127</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  128</span>{</div>
-<div class="line"><span class="lineno">  129</span>    strcpy(vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>, newType);</div>
-<div class="line"><span class="lineno">  130</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00126">126</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>{</div>
+<div class="line"><span class="lineno">  128</span>    strcpy(vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>, newType);</div>
+<div class="line"><span class="lineno">  129</span>}</div>
 <div class="ttc" id="astructdatavehicle_html_aab10593edc73627b19ef9de53fd331d2"><div class="ttname"><a href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">datavehicle::type</a></div><div class="ttdeci">char type[50]</div><div class="ttdoc">Type of the vehicle.</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8h_source.html#l00014">vehicle.h:14</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -551,17 +551,17 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An integer value indicating the result of the comparison (1 if data1 is smaller, 0 if they are equal, -1 if data1 is greater).</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00083">83</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>{</div>
-<div class="line"><span class="lineno">   85</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> d1 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data1;</div>
-<div class="line"><span class="lineno">   86</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> d2 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data2;</div>
-<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span> (d1-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a> &lt; d2-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a>)</div>
-<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">return</span> (1);</div>
-<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (d1-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a> &gt; d2-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a>)</div>
-<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">return</span> (-1);</div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">return</span> (0);</div>
-<div class="line"><span class="lineno">   93</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00082">82</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>{</div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> d1 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data1;</div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> d2 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data2;</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">if</span> (d1-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a> &lt; d2-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a>)</div>
+<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">return</span> (1);</div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (d1-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a> &gt; d2-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a>)</div>
+<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">return</span> (-1);</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">return</span> (0);</div>
+<div class="line"><span class="lineno">   92</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -601,17 +601,17 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An integer value indicating the result of the comparison (1 if data1 is greater, 0 if they are equal, -1 if data1 is smaller).</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00095">95</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>{</div>
-<div class="line"><span class="lineno">   97</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> d1 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data1;</div>
-<div class="line"><span class="lineno">   98</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> d2 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data2;</div>
-<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span> (d1-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a> &lt; d2-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a>)</div>
-<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">return</span> (1);</div>
-<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (d1-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a> &gt; d2-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a>)</div>
-<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">return</span> (-1);</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  104</span>        <span class="keywordflow">return</span> (0);</div>
-<div class="line"><span class="lineno">  105</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00094">94</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>{</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> d1 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data1;</div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> d2 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data2;</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span> (d1-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a> &lt; d2-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a>)</div>
+<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">return</span> (1);</div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (d1-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a> &gt; d2-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a>)</div>
+<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">return</span> (-1);</div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">return</span> (0);</div>
+<div class="line"><span class="lineno">  104</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -651,12 +651,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An integer value indicating the result of the comparison (-1 if data1 is lexically smaller, 0 if they are equal, 1 if data1 is lexically greater).</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00107">107</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  108</span>{</div>
-<div class="line"><span class="lineno">  109</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> d1 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data1;</div>
-<div class="line"><span class="lineno">  110</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> d2 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data2;</div>
-<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">return</span> (strcmp(d1-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>, d2-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>));</div>
-<div class="line"><span class="lineno">  112</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00106">106</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>{</div>
+<div class="line"><span class="lineno">  108</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> d1 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data1;</div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> d2 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data2;</div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">return</span> (strcmp(d1-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>, d2-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>));</div>
+<div class="line"><span class="lineno">  111</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -696,18 +696,18 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An integer value indicating the result of the comparison (1 if data1 is greater, 0 if they are equal, -1 if data1 is smaller).</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00114">114</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  115</span>{</div>
-<div class="line"><span class="lineno">  116</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v1 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data1;</div>
-<div class="line"><span class="lineno">  117</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v2 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data2;</div>
-<div class="line"><span class="lineno">  118</span> </div>
-<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">if</span> (v1-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1">totalkms</a> &gt; v2-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1">totalkms</a>)</div>
-<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (v1-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1">totalkms</a> &lt; v2-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1">totalkms</a>)</div>
-<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  125</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00113">113</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>{</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v1 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data1;</div>
+<div class="line"><span class="lineno">  116</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v2 = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)data2;</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">if</span> (v1-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1">totalkms</a> &gt; v2-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1">totalkms</a>)</div>
+<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (v1-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1">totalkms</a> &lt; v2-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1">totalkms</a>)</div>
+<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  124</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -747,171 +747,170 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The modified list of vehicles.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00324">324</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  325</span>{</div>
-<div class="line"><span class="lineno">  326</span>    <a class="code hl_function" href="ll_8c.html#a2e440cfa67ada211c9a895fb3929be4b">showListIterative</a>(listVehicle, &amp;<a class="code hl_function" href="vehicle_8c.html#a4af9ab728b6057dab0f8da96b4652c40">showVehicle</a>);</div>
-<div class="line"><span class="lineno">  327</span> </div>
-<div class="line"><span class="lineno">  328</span>    printf(<span class="stringliteral">&quot; Insira o indice do veiculo a alterar: &quot;</span>);</div>
-<div class="line"><span class="lineno">  329</span>    <span class="keywordtype">char</span> auxOption[10];</div>
-<div class="line"><span class="lineno">  330</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxOption);</div>
-<div class="line"><span class="lineno">  331</span> </div>
-<div class="line"><span class="lineno">  332</span>    <span class="keywordtype">int</span> option = 0;</div>
-<div class="line"><span class="lineno">  333</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxOption))</div>
-<div class="line"><span class="lineno">  334</span>        option = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxOption);</div>
-<div class="line"><span class="lineno">  335</span> </div>
-<div class="line"><span class="lineno">  336</span>    <span class="keywordflow">if</span> ((option != 0) &amp;&amp; (option &lt;= <a class="code hl_function" href="ll_8c.html#a1feda813b463cd2332420273d4bff451">listLength</a>(listVehicle)))</div>
-<div class="line"><span class="lineno">  337</span>    {</div>
-<div class="line"><span class="lineno">  338</span>        <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> auxElem = <a class="code hl_function" href="ll_8c.html#a2cd5efb9a09b91778822bc771079d921">obtainElementPosition</a>(listVehicle, option - 1);</div>
-<div class="line"><span class="lineno">  339</span>        <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> vehicle = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)auxElem-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
-<div class="line"><span class="lineno">  340</span> </div>
-<div class="line"><span class="lineno">  341</span>        <a class="code hl_function" href="menu_8c.html#af3eac3ad203ab091baad010ef3f7ab0a">clrscr</a>();</div>
-<div class="line"><span class="lineno">  342</span>        <a class="code hl_function" href="vehicle_8c.html#a4af9ab728b6057dab0f8da96b4652c40">showVehicle</a>(vehicle);</div>
-<div class="line"><span class="lineno">  343</span> </div>
-<div class="line"><span class="lineno">  344</span>        printf(<span class="stringliteral">&quot; Insira o indice do parametro a alterar: &quot;</span>);</div>
-<div class="line"><span class="lineno">  345</span>        <span class="keywordtype">char</span> auxLine[10];</div>
-<div class="line"><span class="lineno">  346</span>        scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxLine);</div>
-<div class="line"><span class="lineno">  347</span> </div>
-<div class="line"><span class="lineno">  348</span>        <span class="keywordtype">int</span> optionLine = 0;</div>
-<div class="line"><span class="lineno">  349</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxLine))</div>
-<div class="line"><span class="lineno">  350</span>            optionLine = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxLine);</div>
-<div class="line"><span class="lineno">  351</span>        <span class="comment">//printf(&quot;\n&quot;);</span></div>
-<div class="line"><span class="lineno">  352</span> </div>
-<div class="line"><span class="lineno">  353</span>        <span class="keywordtype">char</span> edit[50];</div>
-<div class="line"><span class="lineno">  354</span>        <span class="keywordtype">int</span> editInt = -1;</div>
-<div class="line"><span class="lineno">  355</span>        <span class="keywordtype">float</span> editFloat = -1;</div>
-<div class="line"><span class="lineno">  356</span> </div>
-<div class="line"><span class="lineno">  357</span>        <span class="keywordflow">switch</span> (optionLine) {</div>
-<div class="line"><span class="lineno">  358</span>        <span class="keywordflow">case</span> 1:</div>
-<div class="line"><span class="lineno">  359</span>            printf(<span class="stringliteral">&quot; Insira o novo modelo: &quot;</span>);</div>
-<div class="line"><span class="lineno">  360</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, edit);</div>
-<div class="line"><span class="lineno">  361</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; edit[i] != <span class="charliteral">&#39;\0&#39;</span>; i++)</div>
-<div class="line"><span class="lineno">  362</span>            {</div>
-<div class="line"><span class="lineno">  363</span>                <span class="keywordflow">if</span> ((edit[i] &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; edit[i] &lt;= <span class="charliteral">&#39;z&#39;</span>) || edit[i] == <span class="charliteral">&#39; &#39;</span> || (edit[i] &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; edit[i] &lt;= <span class="charliteral">&#39;Z&#39;</span>))</div>
-<div class="line"><span class="lineno">  364</span>                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  365</span>                <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  366</span>                    <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  367</span>            }</div>
-<div class="line"><span class="lineno">  368</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="vehicle_8c.html#aa10e6b92f11d52cbce445b7231abb6fa">vehicleExists</a>(vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a>, edit, listVehicle))</div>
-<div class="line"><span class="lineno">  369</span>            {</div>
-<div class="line"><span class="lineno">  370</span>                <a class="code hl_function" href="vehicle_8c.html#ae575c2adeeb42fc8685dd06e576e1737">changeVType</a>(vehicle, edit);</div>
-<div class="line"><span class="lineno">  371</span>                *modified = 1;</div>
-<div class="line"><span class="lineno">  372</span>            }</div>
-<div class="line"><span class="lineno">  373</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  374</span>        <span class="keywordflow">case</span> 2:</div>
-<div class="line"><span class="lineno">  375</span>            printf(<span class="stringliteral">&quot; Insira o novo identificador: &quot;</span>);</div>
-<div class="line"><span class="lineno">  376</span>            <span class="keywordtype">char</span> auxCode[10];</div>
-<div class="line"><span class="lineno">  377</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxCode);</div>
-<div class="line"><span class="lineno">  378</span> </div>
-<div class="line"><span class="lineno">  379</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxCode))</div>
-<div class="line"><span class="lineno">  380</span>                editInt = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxCode);</div>
-<div class="line"><span class="lineno">  381</span> </div>
-<div class="line"><span class="lineno">  382</span>            <span class="keywordflow">if</span> (editInt &gt; 0 &amp;&amp; !<a class="code hl_function" href="vehicle_8c.html#aa10e6b92f11d52cbce445b7231abb6fa">vehicleExists</a>(editInt, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>, listVehicle))</div>
-<div class="line"><span class="lineno">  383</span>            {</div>
-<div class="line"><span class="lineno">  384</span>                <a class="code hl_function" href="vehicle_8c.html#a89b6f6c38de5f1bda6aaa72c49520c65">changeVCode</a>(vehicle, editInt);</div>
-<div class="line"><span class="lineno">  385</span>                *modified = 1;</div>
-<div class="line"><span class="lineno">  386</span>            }</div>
-<div class="line"><span class="lineno">  387</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  388</span>        <span class="keywordflow">case</span> 3:</div>
-<div class="line"><span class="lineno">  389</span>            printf(<span class="stringliteral">&quot; Insira a nova geolocalizacao: &quot;</span>);</div>
-<div class="line"><span class="lineno">  390</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, edit);</div>
-<div class="line"><span class="lineno">  391</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="vehicle_8c.html#a561022cfa65d0ac963a1ddadf3c0b261">validGeolocation</a>(edit))</div>
-<div class="line"><span class="lineno">  392</span>            {</div>
-<div class="line"><span class="lineno">  393</span>                <a class="code hl_function" href="vehicle_8c.html#a27918ac2f8788a9f7b74dd4fce4e0838">changeVGeolocation</a>(vehicle, edit);</div>
-<div class="line"><span class="lineno">  394</span>                *modified = 1;</div>
-<div class="line"><span class="lineno">  395</span>            }</div>
-<div class="line"><span class="lineno">  396</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  397</span>        <span class="keywordflow">case</span> 4:</div>
-<div class="line"><span class="lineno">  398</span>            printf(<span class="stringliteral">&quot; Insira o novo nivel de bateria: &quot;</span>);</div>
-<div class="line"><span class="lineno">  399</span>            <span class="keywordtype">char</span> auxBattery[10];</div>
-<div class="line"><span class="lineno">  400</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxBattery);</div>
-<div class="line"><span class="lineno">  401</span> </div>
-<div class="line"><span class="lineno">  402</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxBattery) || <a class="code hl_function" href="menu_8c.html#ab96924be11a25dc748563360c39becb0">isFloat</a>(auxBattery))</div>
-<div class="line"><span class="lineno">  403</span>                editFloat = <a class="code hl_function" href="menu_8c.html#a37e0276c190ac96aed8122851fd3275b">stringToFloat</a>(auxBattery);</div>
-<div class="line"><span class="lineno">  404</span> </div>
-<div class="line"><span class="lineno">  405</span>            <span class="keywordflow">if</span> ((editFloat &gt;= 0) &amp;&amp; (editFloat &lt;= 100))</div>
-<div class="line"><span class="lineno">  406</span>            {</div>
-<div class="line"><span class="lineno">  407</span>                <a class="code hl_function" href="vehicle_8c.html#a932af4ba8876299bb7b6a53fbdf1bb0e">changeVBattery</a>(vehicle, editFloat);</div>
-<div class="line"><span class="lineno">  408</span>                *modified = 1;</div>
-<div class="line"><span class="lineno">  409</span>            }            </div>
-<div class="line"><span class="lineno">  410</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  411</span>        <span class="keywordflow">case</span> 5:</div>
-<div class="line"><span class="lineno">  412</span>            printf(<span class="stringliteral">&quot; Insira o novo nivel de autonomia: &quot;</span>);</div>
-<div class="line"><span class="lineno">  413</span>            <span class="keywordtype">char</span> auxAutonomy[10];</div>
-<div class="line"><span class="lineno">  414</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxAutonomy);</div>
-<div class="line"><span class="lineno">  415</span> </div>
-<div class="line"><span class="lineno">  416</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxAutonomy) || <a class="code hl_function" href="menu_8c.html#ab96924be11a25dc748563360c39becb0">isFloat</a>(auxAutonomy))</div>
-<div class="line"><span class="lineno">  417</span>                editFloat = <a class="code hl_function" href="menu_8c.html#a37e0276c190ac96aed8122851fd3275b">stringToFloat</a>(auxAutonomy);</div>
-<div class="line"><span class="lineno">  418</span> </div>
-<div class="line"><span class="lineno">  419</span>            <span class="keywordflow">if</span> (editFloat &gt; 0)</div>
-<div class="line"><span class="lineno">  420</span>            {</div>
-<div class="line"><span class="lineno">  421</span>                <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> auxHead = <a class="code hl_function" href="ll_8c.html#a52fca54354585c1f5f31326f2863d822">removeElementByIndex</a>(listVehicle, option - 1);</div>
-<div class="line"><span class="lineno">  422</span>                listVehicle = auxHead;</div>
-<div class="line"><span class="lineno">  423</span>                <a class="code hl_function" href="vehicle_8c.html#a6211a8837c2ff75e17489889dcb7bdc5">changeVAutonomy</a>(vehicle, editFloat);</div>
-<div class="line"><span class="lineno">  424</span>                listVehicle = <a class="code hl_function" href="ll_8c.html#ab40afed773ca2c01c5c21d1705e45883">addItemOrderedIterative</a>(listVehicle, (<span class="keywordtype">void</span>*)vehicle, &amp;<a class="code hl_function" href="vehicle_8c.html#ae6ff76cb6a61d7fe6e44603562fd0812">compareAutonomy</a>);</div>
-<div class="line"><span class="lineno">  425</span>                *modified = 1;</div>
-<div class="line"><span class="lineno">  426</span>            }          </div>
-<div class="line"><span class="lineno">  427</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  428</span>        <span class="keywordflow">case</span> 6:</div>
-<div class="line"><span class="lineno">  429</span>            printf(<span class="stringliteral">&quot; Insira o novo custo por hora: &quot;</span>);</div>
-<div class="line"><span class="lineno">  430</span>            <span class="keywordtype">char</span> auxCosthour[10];</div>
-<div class="line"><span class="lineno">  431</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxCosthour);</div>
-<div class="line"><span class="lineno">  432</span> </div>
-<div class="line"><span class="lineno">  433</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxCosthour) || <a class="code hl_function" href="menu_8c.html#ab96924be11a25dc748563360c39becb0">isFloat</a>(auxCosthour))</div>
-<div class="line"><span class="lineno">  434</span>                editFloat = <a class="code hl_function" href="menu_8c.html#a37e0276c190ac96aed8122851fd3275b">stringToFloat</a>(auxCosthour);</div>
-<div class="line"><span class="lineno">  435</span>            <span class="keywordflow">if</span> (editFloat &gt; 0)</div>
-<div class="line"><span class="lineno">  436</span>            {</div>
-<div class="line"><span class="lineno">  437</span>                <a class="code hl_function" href="vehicle_8c.html#ac64e7c9ec4a9eba2c6c025a33db790aa">changeVCosthour</a>(vehicle, editFloat);</div>
-<div class="line"><span class="lineno">  438</span>                *modified = 1;</div>
-<div class="line"><span class="lineno">  439</span>            }</div>
-<div class="line"><span class="lineno">  440</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  441</span>        <span class="keywordflow">case</span> 7:</div>
-<div class="line"><span class="lineno">  442</span>            printf(<span class="stringliteral">&quot; Insira o novo custo por km: &quot;</span>);</div>
-<div class="line"><span class="lineno">  443</span>            <span class="keywordtype">char</span> auxCostkm[10];</div>
-<div class="line"><span class="lineno">  444</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxCostkm);</div>
-<div class="line"><span class="lineno">  445</span> </div>
-<div class="line"><span class="lineno">  446</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxCostkm))</div>
-<div class="line"><span class="lineno">  447</span>                editFloat = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxCostkm);</div>
-<div class="line"><span class="lineno">  448</span>            <span class="keywordflow">if</span> (editFloat &gt; 0)</div>
-<div class="line"><span class="lineno">  449</span>            {</div>
-<div class="line"><span class="lineno">  450</span>                <a class="code hl_function" href="vehicle_8c.html#a808d6375edd83fb76653c2dcc6a8635c">changeVCostkm</a>(vehicle, editFloat);</div>
-<div class="line"><span class="lineno">  451</span>                *modified = 1;</div>
-<div class="line"><span class="lineno">  452</span>            }</div>
-<div class="line"><span class="lineno">  453</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  454</span>        <span class="keywordflow">case</span> 8:</div>
-<div class="line"><span class="lineno">  455</span>            printf(<span class="stringliteral">&quot; Insira o novo estado de aluger: &quot;</span>);</div>
-<div class="line"><span class="lineno">  456</span>            <span class="keywordtype">char</span> auxRentState[10];</div>
-<div class="line"><span class="lineno">  457</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxRentState);</div>
-<div class="line"><span class="lineno">  458</span> </div>
-<div class="line"><span class="lineno">  459</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxRentState))</div>
-<div class="line"><span class="lineno">  460</span>                editInt = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxRentState);</div>
-<div class="line"><span class="lineno">  461</span> </div>
-<div class="line"><span class="lineno">  462</span>            <span class="keywordflow">if</span> (editInt == 0 || editInt == 1)</div>
-<div class="line"><span class="lineno">  463</span>            {</div>
-<div class="line"><span class="lineno">  464</span>                <a class="code hl_function" href="vehicle_8c.html#a17d585631d761572439949d9b8fb2fc6">changeVstate</a>(vehicle, editInt);</div>
-<div class="line"><span class="lineno">  465</span>                *modified = 1;   </div>
-<div class="line"><span class="lineno">  466</span>            }</div>
-<div class="line"><span class="lineno">  467</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  468</span>        <span class="keywordflow">case</span> 9:</div>
-<div class="line"><span class="lineno">  469</span>            printf(<span class="stringliteral">&quot; Insira o novo total de kms: &quot;</span>);</div>
-<div class="line"><span class="lineno">  470</span>            <span class="keywordtype">char</span> auxTotalkm[10];</div>
-<div class="line"><span class="lineno">  471</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxTotalkm);</div>
-<div class="line"><span class="lineno">  472</span> </div>
-<div class="line"><span class="lineno">  473</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxTotalkm))</div>
-<div class="line"><span class="lineno">  474</span>                editFloat = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxTotalkm);</div>
-<div class="line"><span class="lineno">  475</span> </div>
-<div class="line"><span class="lineno">  476</span>            <span class="keywordflow">if</span> (editFloat &gt; 0)</div>
-<div class="line"><span class="lineno">  477</span>            {</div>
-<div class="line"><span class="lineno">  478</span>                <a class="code hl_function" href="vehicle_8c.html#a2156847197b05c63566f8acf9444ea98">changeVkms</a>(vehicle, editFloat);</div>
-<div class="line"><span class="lineno">  479</span>                *modified = 1;</div>
-<div class="line"><span class="lineno">  480</span>            }        </div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00323">323</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  324</span>{</div>
+<div class="line"><span class="lineno">  325</span>    <a class="code hl_function" href="ll_8c.html#a2e440cfa67ada211c9a895fb3929be4b">showListIterative</a>(listVehicle, &amp;<a class="code hl_function" href="vehicle_8c.html#a4af9ab728b6057dab0f8da96b4652c40">showVehicle</a>);</div>
+<div class="line"><span class="lineno">  326</span> </div>
+<div class="line"><span class="lineno">  327</span>    printf(<span class="stringliteral">&quot; Insira o indice do veiculo a alterar: &quot;</span>);</div>
+<div class="line"><span class="lineno">  328</span>    <span class="keywordtype">char</span> auxOption[10];</div>
+<div class="line"><span class="lineno">  329</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxOption);</div>
+<div class="line"><span class="lineno">  330</span> </div>
+<div class="line"><span class="lineno">  331</span>    <span class="keywordtype">int</span> option = 0;</div>
+<div class="line"><span class="lineno">  332</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxOption))</div>
+<div class="line"><span class="lineno">  333</span>        option = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxOption);</div>
+<div class="line"><span class="lineno">  334</span> </div>
+<div class="line"><span class="lineno">  335</span>    <span class="keywordflow">if</span> ((option != 0) &amp;&amp; (option &lt;= <a class="code hl_function" href="ll_8c.html#a1feda813b463cd2332420273d4bff451">listLength</a>(listVehicle)))</div>
+<div class="line"><span class="lineno">  336</span>    {</div>
+<div class="line"><span class="lineno">  337</span>        <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> auxElem = <a class="code hl_function" href="ll_8c.html#a2cd5efb9a09b91778822bc771079d921">obtainElementPosition</a>(listVehicle, option - 1);</div>
+<div class="line"><span class="lineno">  338</span>        <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> vehicle = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)auxElem-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
+<div class="line"><span class="lineno">  339</span> </div>
+<div class="line"><span class="lineno">  340</span>        <a class="code hl_function" href="menu_8c.html#af3eac3ad203ab091baad010ef3f7ab0a">clrscr</a>();</div>
+<div class="line"><span class="lineno">  341</span>        <a class="code hl_function" href="vehicle_8c.html#a4af9ab728b6057dab0f8da96b4652c40">showVehicle</a>(vehicle);</div>
+<div class="line"><span class="lineno">  342</span> </div>
+<div class="line"><span class="lineno">  343</span>        printf(<span class="stringliteral">&quot; Insira o indice do parametro a alterar: &quot;</span>);</div>
+<div class="line"><span class="lineno">  344</span>        <span class="keywordtype">char</span> auxLine[10];</div>
+<div class="line"><span class="lineno">  345</span>        scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxLine);</div>
+<div class="line"><span class="lineno">  346</span> </div>
+<div class="line"><span class="lineno">  347</span>        <span class="keywordtype">int</span> optionLine = 0;</div>
+<div class="line"><span class="lineno">  348</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxLine))</div>
+<div class="line"><span class="lineno">  349</span>            optionLine = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxLine);</div>
+<div class="line"><span class="lineno">  350</span> </div>
+<div class="line"><span class="lineno">  351</span>        <span class="keywordtype">char</span> edit[50];</div>
+<div class="line"><span class="lineno">  352</span>        <span class="keywordtype">int</span> editInt = -1;</div>
+<div class="line"><span class="lineno">  353</span>        <span class="keywordtype">float</span> editFloat = -1;</div>
+<div class="line"><span class="lineno">  354</span> </div>
+<div class="line"><span class="lineno">  355</span>        <span class="keywordflow">switch</span> (optionLine) {</div>
+<div class="line"><span class="lineno">  356</span>        <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">  357</span>            printf(<span class="stringliteral">&quot; Insira o novo modelo: &quot;</span>);</div>
+<div class="line"><span class="lineno">  358</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, edit);</div>
+<div class="line"><span class="lineno">  359</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; edit[i] != <span class="charliteral">&#39;\0&#39;</span>; i++)</div>
+<div class="line"><span class="lineno">  360</span>            {</div>
+<div class="line"><span class="lineno">  361</span>                <span class="keywordflow">if</span> ((edit[i] &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; edit[i] &lt;= <span class="charliteral">&#39;z&#39;</span>) || edit[i] == <span class="charliteral">&#39; &#39;</span> || (edit[i] &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; edit[i] &lt;= <span class="charliteral">&#39;Z&#39;</span>))</div>
+<div class="line"><span class="lineno">  362</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  363</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  364</span>                    <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  365</span>            }</div>
+<div class="line"><span class="lineno">  366</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="vehicle_8c.html#aa10e6b92f11d52cbce445b7231abb6fa">vehicleExists</a>(vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a>, edit, listVehicle))</div>
+<div class="line"><span class="lineno">  367</span>            {</div>
+<div class="line"><span class="lineno">  368</span>                <a class="code hl_function" href="vehicle_8c.html#ae575c2adeeb42fc8685dd06e576e1737">changeVType</a>(vehicle, edit);</div>
+<div class="line"><span class="lineno">  369</span>                *modified = 1;</div>
+<div class="line"><span class="lineno">  370</span>            }</div>
+<div class="line"><span class="lineno">  371</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  372</span>        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">  373</span>            printf(<span class="stringliteral">&quot; Insira o novo identificador: &quot;</span>);</div>
+<div class="line"><span class="lineno">  374</span>            <span class="keywordtype">char</span> auxCode[10];</div>
+<div class="line"><span class="lineno">  375</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxCode);</div>
+<div class="line"><span class="lineno">  376</span> </div>
+<div class="line"><span class="lineno">  377</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxCode))</div>
+<div class="line"><span class="lineno">  378</span>                editInt = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxCode);</div>
+<div class="line"><span class="lineno">  379</span> </div>
+<div class="line"><span class="lineno">  380</span>            <span class="keywordflow">if</span> (editInt &gt; 0 &amp;&amp; !<a class="code hl_function" href="vehicle_8c.html#aa10e6b92f11d52cbce445b7231abb6fa">vehicleExists</a>(editInt, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>, listVehicle))</div>
+<div class="line"><span class="lineno">  381</span>            {</div>
+<div class="line"><span class="lineno">  382</span>                <a class="code hl_function" href="vehicle_8c.html#a89b6f6c38de5f1bda6aaa72c49520c65">changeVCode</a>(vehicle, editInt);</div>
+<div class="line"><span class="lineno">  383</span>                *modified = 1;</div>
+<div class="line"><span class="lineno">  384</span>            }</div>
+<div class="line"><span class="lineno">  385</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  386</span>        <span class="keywordflow">case</span> 3:</div>
+<div class="line"><span class="lineno">  387</span>            printf(<span class="stringliteral">&quot; Insira a nova geolocalizacao: &quot;</span>);</div>
+<div class="line"><span class="lineno">  388</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, edit);</div>
+<div class="line"><span class="lineno">  389</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="vehicle_8c.html#a561022cfa65d0ac963a1ddadf3c0b261">validGeolocation</a>(edit))</div>
+<div class="line"><span class="lineno">  390</span>            {</div>
+<div class="line"><span class="lineno">  391</span>                <a class="code hl_function" href="vehicle_8c.html#a27918ac2f8788a9f7b74dd4fce4e0838">changeVGeolocation</a>(vehicle, edit);</div>
+<div class="line"><span class="lineno">  392</span>                *modified = 1;</div>
+<div class="line"><span class="lineno">  393</span>            }</div>
+<div class="line"><span class="lineno">  394</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  395</span>        <span class="keywordflow">case</span> 4:</div>
+<div class="line"><span class="lineno">  396</span>            printf(<span class="stringliteral">&quot; Insira o novo nivel de bateria: &quot;</span>);</div>
+<div class="line"><span class="lineno">  397</span>            <span class="keywordtype">char</span> auxBattery[10];</div>
+<div class="line"><span class="lineno">  398</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxBattery);</div>
+<div class="line"><span class="lineno">  399</span> </div>
+<div class="line"><span class="lineno">  400</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxBattery) || <a class="code hl_function" href="menu_8c.html#ab96924be11a25dc748563360c39becb0">isFloat</a>(auxBattery))</div>
+<div class="line"><span class="lineno">  401</span>                editFloat = <a class="code hl_function" href="menu_8c.html#a37e0276c190ac96aed8122851fd3275b">stringToFloat</a>(auxBattery);</div>
+<div class="line"><span class="lineno">  402</span> </div>
+<div class="line"><span class="lineno">  403</span>            <span class="keywordflow">if</span> ((editFloat &gt;= 0) &amp;&amp; (editFloat &lt;= 100))</div>
+<div class="line"><span class="lineno">  404</span>            {</div>
+<div class="line"><span class="lineno">  405</span>                <a class="code hl_function" href="vehicle_8c.html#a932af4ba8876299bb7b6a53fbdf1bb0e">changeVBattery</a>(vehicle, editFloat);</div>
+<div class="line"><span class="lineno">  406</span>                *modified = 1;</div>
+<div class="line"><span class="lineno">  407</span>            }            </div>
+<div class="line"><span class="lineno">  408</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  409</span>        <span class="keywordflow">case</span> 5:</div>
+<div class="line"><span class="lineno">  410</span>            printf(<span class="stringliteral">&quot; Insira o novo nivel de autonomia: &quot;</span>);</div>
+<div class="line"><span class="lineno">  411</span>            <span class="keywordtype">char</span> auxAutonomy[10];</div>
+<div class="line"><span class="lineno">  412</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxAutonomy);</div>
+<div class="line"><span class="lineno">  413</span> </div>
+<div class="line"><span class="lineno">  414</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxAutonomy) || <a class="code hl_function" href="menu_8c.html#ab96924be11a25dc748563360c39becb0">isFloat</a>(auxAutonomy))</div>
+<div class="line"><span class="lineno">  415</span>                editFloat = <a class="code hl_function" href="menu_8c.html#a37e0276c190ac96aed8122851fd3275b">stringToFloat</a>(auxAutonomy);</div>
+<div class="line"><span class="lineno">  416</span> </div>
+<div class="line"><span class="lineno">  417</span>            <span class="keywordflow">if</span> (editFloat &gt; 0)</div>
+<div class="line"><span class="lineno">  418</span>            {</div>
+<div class="line"><span class="lineno">  419</span>                <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> auxHead = <a class="code hl_function" href="ll_8c.html#a52fca54354585c1f5f31326f2863d822">removeElementByIndex</a>(listVehicle, option - 1);</div>
+<div class="line"><span class="lineno">  420</span>                listVehicle = auxHead;</div>
+<div class="line"><span class="lineno">  421</span>                <a class="code hl_function" href="vehicle_8c.html#a6211a8837c2ff75e17489889dcb7bdc5">changeVAutonomy</a>(vehicle, editFloat);</div>
+<div class="line"><span class="lineno">  422</span>                listVehicle = <a class="code hl_function" href="ll_8c.html#ab40afed773ca2c01c5c21d1705e45883">addItemOrderedIterative</a>(listVehicle, (<span class="keywordtype">void</span>*)vehicle, &amp;<a class="code hl_function" href="vehicle_8c.html#ae6ff76cb6a61d7fe6e44603562fd0812">compareAutonomy</a>);</div>
+<div class="line"><span class="lineno">  423</span>                *modified = 1;</div>
+<div class="line"><span class="lineno">  424</span>            }          </div>
+<div class="line"><span class="lineno">  425</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  426</span>        <span class="keywordflow">case</span> 6:</div>
+<div class="line"><span class="lineno">  427</span>            printf(<span class="stringliteral">&quot; Insira o novo custo por hora: &quot;</span>);</div>
+<div class="line"><span class="lineno">  428</span>            <span class="keywordtype">char</span> auxCosthour[10];</div>
+<div class="line"><span class="lineno">  429</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxCosthour);</div>
+<div class="line"><span class="lineno">  430</span> </div>
+<div class="line"><span class="lineno">  431</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxCosthour) || <a class="code hl_function" href="menu_8c.html#ab96924be11a25dc748563360c39becb0">isFloat</a>(auxCosthour))</div>
+<div class="line"><span class="lineno">  432</span>                editFloat = <a class="code hl_function" href="menu_8c.html#a37e0276c190ac96aed8122851fd3275b">stringToFloat</a>(auxCosthour);</div>
+<div class="line"><span class="lineno">  433</span>            <span class="keywordflow">if</span> (editFloat &gt; 0)</div>
+<div class="line"><span class="lineno">  434</span>            {</div>
+<div class="line"><span class="lineno">  435</span>                <a class="code hl_function" href="vehicle_8c.html#ac64e7c9ec4a9eba2c6c025a33db790aa">changeVCosthour</a>(vehicle, editFloat);</div>
+<div class="line"><span class="lineno">  436</span>                *modified = 1;</div>
+<div class="line"><span class="lineno">  437</span>            }</div>
+<div class="line"><span class="lineno">  438</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  439</span>        <span class="keywordflow">case</span> 7:</div>
+<div class="line"><span class="lineno">  440</span>            printf(<span class="stringliteral">&quot; Insira o novo custo por km: &quot;</span>);</div>
+<div class="line"><span class="lineno">  441</span>            <span class="keywordtype">char</span> auxCostkm[10];</div>
+<div class="line"><span class="lineno">  442</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxCostkm);</div>
+<div class="line"><span class="lineno">  443</span> </div>
+<div class="line"><span class="lineno">  444</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxCostkm))</div>
+<div class="line"><span class="lineno">  445</span>                editFloat = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxCostkm);</div>
+<div class="line"><span class="lineno">  446</span>            <span class="keywordflow">if</span> (editFloat &gt; 0)</div>
+<div class="line"><span class="lineno">  447</span>            {</div>
+<div class="line"><span class="lineno">  448</span>                <a class="code hl_function" href="vehicle_8c.html#a808d6375edd83fb76653c2dcc6a8635c">changeVCostkm</a>(vehicle, editFloat);</div>
+<div class="line"><span class="lineno">  449</span>                *modified = 1;</div>
+<div class="line"><span class="lineno">  450</span>            }</div>
+<div class="line"><span class="lineno">  451</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  452</span>        <span class="keywordflow">case</span> 8:</div>
+<div class="line"><span class="lineno">  453</span>            printf(<span class="stringliteral">&quot; Insira o novo estado de aluger: &quot;</span>);</div>
+<div class="line"><span class="lineno">  454</span>            <span class="keywordtype">char</span> auxRentState[10];</div>
+<div class="line"><span class="lineno">  455</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxRentState);</div>
+<div class="line"><span class="lineno">  456</span> </div>
+<div class="line"><span class="lineno">  457</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxRentState))</div>
+<div class="line"><span class="lineno">  458</span>                editInt = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxRentState);</div>
+<div class="line"><span class="lineno">  459</span> </div>
+<div class="line"><span class="lineno">  460</span>            <span class="keywordflow">if</span> (editInt == 0 || editInt == 1)</div>
+<div class="line"><span class="lineno">  461</span>            {</div>
+<div class="line"><span class="lineno">  462</span>                <a class="code hl_function" href="vehicle_8c.html#a17d585631d761572439949d9b8fb2fc6">changeVstate</a>(vehicle, editInt);</div>
+<div class="line"><span class="lineno">  463</span>                *modified = 1;   </div>
+<div class="line"><span class="lineno">  464</span>            }</div>
+<div class="line"><span class="lineno">  465</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  466</span>        <span class="keywordflow">case</span> 9:</div>
+<div class="line"><span class="lineno">  467</span>            printf(<span class="stringliteral">&quot; Insira o novo total de kms: &quot;</span>);</div>
+<div class="line"><span class="lineno">  468</span>            <span class="keywordtype">char</span> auxTotalkm[10];</div>
+<div class="line"><span class="lineno">  469</span>            scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxTotalkm);</div>
+<div class="line"><span class="lineno">  470</span> </div>
+<div class="line"><span class="lineno">  471</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxTotalkm))</div>
+<div class="line"><span class="lineno">  472</span>                editFloat = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxTotalkm);</div>
+<div class="line"><span class="lineno">  473</span> </div>
+<div class="line"><span class="lineno">  474</span>            <span class="keywordflow">if</span> (editFloat &gt; 0)</div>
+<div class="line"><span class="lineno">  475</span>            {</div>
+<div class="line"><span class="lineno">  476</span>                <a class="code hl_function" href="vehicle_8c.html#a2156847197b05c63566f8acf9444ea98">changeVkms</a>(vehicle, editFloat);</div>
+<div class="line"><span class="lineno">  477</span>                *modified = 1;</div>
+<div class="line"><span class="lineno">  478</span>            }        </div>
+<div class="line"><span class="lineno">  479</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  480</span>        <span class="keywordflow">default</span>:</div>
 <div class="line"><span class="lineno">  481</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  482</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  483</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  484</span>        }</div>
-<div class="line"><span class="lineno">  485</span>        <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  486</span>    }</div>
-<div class="line"><span class="lineno">  487</span>    <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  488</span>}</div>
+<div class="line"><span class="lineno">  482</span>        }</div>
+<div class="line"><span class="lineno">  483</span>        <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  484</span>    }</div>
+<div class="line"><span class="lineno">  485</span>    <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  486</span>}</div>
 <div class="ttc" id="all_8c_html_a1feda813b463cd2332420273d4bff451"><div class="ttname"><a href="ll_8c.html#a1feda813b463cd2332420273d4bff451">listLength</a></div><div class="ttdeci">int listLength(ListElem head)</div><div class="ttdoc">Returns the length of the linked list.</div><div class="ttdef"><b>Definition:</b> <a href="ll_8c_source.html#l00003">ll.c:3</a></div></div>
 <div class="ttc" id="all_8c_html_a2cd5efb9a09b91778822bc771079d921"><div class="ttname"><a href="ll_8c.html#a2cd5efb9a09b91778822bc771079d921">obtainElementPosition</a></div><div class="ttdeci">ListElem obtainElementPosition(ListElem head, int pos)</div><div class="ttdoc">Obtains the element at the given position in a linked list.</div><div class="ttdef"><b>Definition:</b> <a href="ll_8c_source.html#l00152">ll.c:152</a></div></div>
 <div class="ttc" id="all_8c_html_a2e440cfa67ada211c9a895fb3929be4b"><div class="ttname"><a href="ll_8c.html#a2e440cfa67ada211c9a895fb3929be4b">showListIterative</a></div><div class="ttdeci">void showListIterative(ListElem head, void(*show)(void *data))</div><div class="ttdoc">Iteratively shows the contents of a linked list.</div><div class="ttdef"><b>Definition:</b> <a href="ll_8c_source.html#l00049">ll.c:49</a></div></div>
@@ -923,19 +922,19 @@ Functions</h2></td></tr>
 <div class="ttc" id="amenu_8c_html_ae504c7ad54270101004e65ebd78620ba"><div class="ttname"><a href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a></div><div class="ttdeci">int stringToInt(char *str)</div><div class="ttdoc">Converts input string into an int.</div><div class="ttdef"><b>Definition:</b> <a href="menu_8c_source.html#l00095">menu.c:95</a></div></div>
 <div class="ttc" id="amenu_8c_html_af3eac3ad203ab091baad010ef3f7ab0a"><div class="ttname"><a href="menu_8c.html#af3eac3ad203ab091baad010ef3f7ab0a">clrscr</a></div><div class="ttdeci">void clrscr()</div><div class="ttdoc">Clearscreen command.</div><div class="ttdef"><b>Definition:</b> <a href="menu_8c_source.html#l00003">menu.c:3</a></div></div>
 <div class="ttc" id="astructs_list_elem_html"><div class="ttname"><a href="structs_list_elem.html">sListElem</a></div><div class="ttdoc">Struct for a node of a linked list.</div><div class="ttdef"><b>Definition:</b> <a href="ll_8h_source.html#l00009">ll.h:10</a></div></div>
-<div class="ttc" id="avehicle_8c_html_a17d585631d761572439949d9b8fb2fc6"><div class="ttname"><a href="vehicle_8c.html#a17d585631d761572439949d9b8fb2fc6">changeVstate</a></div><div class="ttdeci">void changeVstate(Vehicle vehicle, int inUse)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00162">vehicle.c:162</a></div></div>
-<div class="ttc" id="avehicle_8c_html_a2156847197b05c63566f8acf9444ea98"><div class="ttname"><a href="vehicle_8c.html#a2156847197b05c63566f8acf9444ea98">changeVkms</a></div><div class="ttdeci">void changeVkms(Vehicle vehicle, float newTotalkms)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00167">vehicle.c:167</a></div></div>
-<div class="ttc" id="avehicle_8c_html_a27918ac2f8788a9f7b74dd4fce4e0838"><div class="ttname"><a href="vehicle_8c.html#a27918ac2f8788a9f7b74dd4fce4e0838">changeVGeolocation</a></div><div class="ttdeci">void changeVGeolocation(Vehicle vehicle, const char *newGeolocation)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00137">vehicle.c:137</a></div></div>
+<div class="ttc" id="avehicle_8c_html_a17d585631d761572439949d9b8fb2fc6"><div class="ttname"><a href="vehicle_8c.html#a17d585631d761572439949d9b8fb2fc6">changeVstate</a></div><div class="ttdeci">void changeVstate(Vehicle vehicle, int inUse)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00161">vehicle.c:161</a></div></div>
+<div class="ttc" id="avehicle_8c_html_a2156847197b05c63566f8acf9444ea98"><div class="ttname"><a href="vehicle_8c.html#a2156847197b05c63566f8acf9444ea98">changeVkms</a></div><div class="ttdeci">void changeVkms(Vehicle vehicle, float newTotalkms)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00166">vehicle.c:166</a></div></div>
+<div class="ttc" id="avehicle_8c_html_a27918ac2f8788a9f7b74dd4fce4e0838"><div class="ttname"><a href="vehicle_8c.html#a27918ac2f8788a9f7b74dd4fce4e0838">changeVGeolocation</a></div><div class="ttdeci">void changeVGeolocation(Vehicle vehicle, const char *newGeolocation)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00136">vehicle.c:136</a></div></div>
 <div class="ttc" id="avehicle_8c_html_a4af9ab728b6057dab0f8da96b4652c40"><div class="ttname"><a href="vehicle_8c.html#a4af9ab728b6057dab0f8da96b4652c40">showVehicle</a></div><div class="ttdeci">void showVehicle(void *data)</div><div class="ttdoc">Shows vehicle data on the console.</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00003">vehicle.c:3</a></div></div>
-<div class="ttc" id="avehicle_8c_html_a561022cfa65d0ac963a1ddadf3c0b261"><div class="ttname"><a href="vehicle_8c.html#a561022cfa65d0ac963a1ddadf3c0b261">validGeolocation</a></div><div class="ttdeci">int validGeolocation(char *geolocation)</div><div class="ttdoc">Checks if the given geolocation is valid (three words separated by two dots, e.g. just....</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00501">vehicle.c:501</a></div></div>
-<div class="ttc" id="avehicle_8c_html_a6211a8837c2ff75e17489889dcb7bdc5"><div class="ttname"><a href="vehicle_8c.html#a6211a8837c2ff75e17489889dcb7bdc5">changeVAutonomy</a></div><div class="ttdeci">void changeVAutonomy(Vehicle vehicle, float newAutonomy)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00147">vehicle.c:147</a></div></div>
-<div class="ttc" id="avehicle_8c_html_a808d6375edd83fb76653c2dcc6a8635c"><div class="ttname"><a href="vehicle_8c.html#a808d6375edd83fb76653c2dcc6a8635c">changeVCostkm</a></div><div class="ttdeci">void changeVCostkm(Vehicle vehicle, float newCostkm)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00157">vehicle.c:157</a></div></div>
-<div class="ttc" id="avehicle_8c_html_a89b6f6c38de5f1bda6aaa72c49520c65"><div class="ttname"><a href="vehicle_8c.html#a89b6f6c38de5f1bda6aaa72c49520c65">changeVCode</a></div><div class="ttdeci">void changeVCode(Vehicle vehicle, int code)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00132">vehicle.c:132</a></div></div>
-<div class="ttc" id="avehicle_8c_html_a932af4ba8876299bb7b6a53fbdf1bb0e"><div class="ttname"><a href="vehicle_8c.html#a932af4ba8876299bb7b6a53fbdf1bb0e">changeVBattery</a></div><div class="ttdeci">void changeVBattery(Vehicle vehicle, float newBattery)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00142">vehicle.c:142</a></div></div>
-<div class="ttc" id="avehicle_8c_html_aa10e6b92f11d52cbce445b7231abb6fa"><div class="ttname"><a href="vehicle_8c.html#aa10e6b92f11d52cbce445b7231abb6fa">vehicleExists</a></div><div class="ttdeci">int vehicleExists(int code, char *type, ListElem listVehicles)</div><div class="ttdoc">Checks if a vehicle with the given code and type already exists in the list of vehicles.</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00490">vehicle.c:490</a></div></div>
-<div class="ttc" id="avehicle_8c_html_ac64e7c9ec4a9eba2c6c025a33db790aa"><div class="ttname"><a href="vehicle_8c.html#ac64e7c9ec4a9eba2c6c025a33db790aa">changeVCosthour</a></div><div class="ttdeci">void changeVCosthour(Vehicle vehicle, float newCosthour)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00152">vehicle.c:152</a></div></div>
-<div class="ttc" id="avehicle_8c_html_ae575c2adeeb42fc8685dd06e576e1737"><div class="ttname"><a href="vehicle_8c.html#ae575c2adeeb42fc8685dd06e576e1737">changeVType</a></div><div class="ttdeci">void changeVType(Vehicle vehicle, const char *newType)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00127">vehicle.c:127</a></div></div>
-<div class="ttc" id="avehicle_8c_html_ae6ff76cb6a61d7fe6e44603562fd0812"><div class="ttname"><a href="vehicle_8c.html#ae6ff76cb6a61d7fe6e44603562fd0812">compareAutonomy</a></div><div class="ttdeci">int compareAutonomy(void *data1, void *data2)</div><div class="ttdoc">Compares two vehicle data pointers by their autonomy in descending order.</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00095">vehicle.c:95</a></div></div>
+<div class="ttc" id="avehicle_8c_html_a561022cfa65d0ac963a1ddadf3c0b261"><div class="ttname"><a href="vehicle_8c.html#a561022cfa65d0ac963a1ddadf3c0b261">validGeolocation</a></div><div class="ttdeci">int validGeolocation(char *geolocation)</div><div class="ttdoc">Checks if the given geolocation is valid (three words separated by two dots, e.g. just....</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00499">vehicle.c:499</a></div></div>
+<div class="ttc" id="avehicle_8c_html_a6211a8837c2ff75e17489889dcb7bdc5"><div class="ttname"><a href="vehicle_8c.html#a6211a8837c2ff75e17489889dcb7bdc5">changeVAutonomy</a></div><div class="ttdeci">void changeVAutonomy(Vehicle vehicle, float newAutonomy)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00146">vehicle.c:146</a></div></div>
+<div class="ttc" id="avehicle_8c_html_a808d6375edd83fb76653c2dcc6a8635c"><div class="ttname"><a href="vehicle_8c.html#a808d6375edd83fb76653c2dcc6a8635c">changeVCostkm</a></div><div class="ttdeci">void changeVCostkm(Vehicle vehicle, float newCostkm)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00156">vehicle.c:156</a></div></div>
+<div class="ttc" id="avehicle_8c_html_a89b6f6c38de5f1bda6aaa72c49520c65"><div class="ttname"><a href="vehicle_8c.html#a89b6f6c38de5f1bda6aaa72c49520c65">changeVCode</a></div><div class="ttdeci">void changeVCode(Vehicle vehicle, int code)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00131">vehicle.c:131</a></div></div>
+<div class="ttc" id="avehicle_8c_html_a932af4ba8876299bb7b6a53fbdf1bb0e"><div class="ttname"><a href="vehicle_8c.html#a932af4ba8876299bb7b6a53fbdf1bb0e">changeVBattery</a></div><div class="ttdeci">void changeVBattery(Vehicle vehicle, float newBattery)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00141">vehicle.c:141</a></div></div>
+<div class="ttc" id="avehicle_8c_html_aa10e6b92f11d52cbce445b7231abb6fa"><div class="ttname"><a href="vehicle_8c.html#aa10e6b92f11d52cbce445b7231abb6fa">vehicleExists</a></div><div class="ttdeci">int vehicleExists(int code, char *type, ListElem listVehicles)</div><div class="ttdoc">Checks if a vehicle with the given code and type already exists in the list of vehicles.</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00488">vehicle.c:488</a></div></div>
+<div class="ttc" id="avehicle_8c_html_ac64e7c9ec4a9eba2c6c025a33db790aa"><div class="ttname"><a href="vehicle_8c.html#ac64e7c9ec4a9eba2c6c025a33db790aa">changeVCosthour</a></div><div class="ttdeci">void changeVCosthour(Vehicle vehicle, float newCosthour)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00151">vehicle.c:151</a></div></div>
+<div class="ttc" id="avehicle_8c_html_ae575c2adeeb42fc8685dd06e576e1737"><div class="ttname"><a href="vehicle_8c.html#ae575c2adeeb42fc8685dd06e576e1737">changeVType</a></div><div class="ttdeci">void changeVType(Vehicle vehicle, const char *newType)</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00126">vehicle.c:126</a></div></div>
+<div class="ttc" id="avehicle_8c_html_ae6ff76cb6a61d7fe6e44603562fd0812"><div class="ttname"><a href="vehicle_8c.html#ae6ff76cb6a61d7fe6e44603562fd0812">compareAutonomy</a></div><div class="ttdeci">int compareAutonomy(void *data1, void *data2)</div><div class="ttdoc">Compares two vehicle data pointers by their autonomy in descending order.</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00094">vehicle.c:94</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -964,21 +963,21 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The new list of vehicles.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00266">266</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  267</span>{</div>
-<div class="line"><span class="lineno">  268</span>    <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> filteredList = NULL;</div>
-<div class="line"><span class="lineno">  269</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v;</div>
-<div class="line"><span class="lineno">  270</span> </div>
-<div class="line"><span class="lineno">  271</span>    <span class="keywordflow">while</span> (listVehicle != NULL) {</div>
-<div class="line"><span class="lineno">  272</span>        v = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
-<div class="line"><span class="lineno">  273</span>        if (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe893e21455b5e3ba30d98b78a5f4479">battery</a> &lt; 50) {</div>
-<div class="line"><span class="lineno">  274</span>            filteredList = <a class="code hl_function" href="ll_8c.html#a1fa6dd9a03210aa0112ec79d6086ef05">addItemLastIterative</a>(filteredList, v);</div>
-<div class="line"><span class="lineno">  275</span>        }</div>
-<div class="line"><span class="lineno">  276</span>        listVehicle = listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
-<div class="line"><span class="lineno">  277</span>    }</div>
-<div class="line"><span class="lineno">  278</span> </div>
-<div class="line"><span class="lineno">  279</span>    <span class="keywordflow">return</span> filteredList;</div>
-<div class="line"><span class="lineno">  280</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00265">265</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  266</span>{</div>
+<div class="line"><span class="lineno">  267</span>    <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> filteredList = NULL;</div>
+<div class="line"><span class="lineno">  268</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v;</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>    <span class="keywordflow">while</span> (listVehicle != NULL) {</div>
+<div class="line"><span class="lineno">  271</span>        v = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
+<div class="line"><span class="lineno">  272</span>        if (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe893e21455b5e3ba30d98b78a5f4479">battery</a> &lt; 50) {</div>
+<div class="line"><span class="lineno">  273</span>            filteredList = <a class="code hl_function" href="ll_8c.html#a1fa6dd9a03210aa0112ec79d6086ef05">addItemLastIterative</a>(filteredList, v);</div>
+<div class="line"><span class="lineno">  274</span>        }</div>
+<div class="line"><span class="lineno">  275</span>        listVehicle = listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
+<div class="line"><span class="lineno">  276</span>    }</div>
+<div class="line"><span class="lineno">  277</span> </div>
+<div class="line"><span class="lineno">  278</span>    <span class="keywordflow">return</span> filteredList;</div>
+<div class="line"><span class="lineno">  279</span>}</div>
 <div class="ttc" id="all_8c_html_a1fa6dd9a03210aa0112ec79d6086ef05"><div class="ttname"><a href="ll_8c.html#a1fa6dd9a03210aa0112ec79d6086ef05">addItemLastIterative</a></div><div class="ttdeci">ListElem addItemLastIterative(ListElem head, void *data)</div><div class="ttdoc">Iteratively adds an element to the end of the list.</div><div class="ttdef"><b>Definition:</b> <a href="ll_8c_source.html#l00074">ll.c:74</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1019,21 +1018,21 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The new list of vehicles.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00282">282</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  282</span>                                                                     {</div>
-<div class="line"><span class="lineno">  283</span>    <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> filteredList = NULL;</div>
-<div class="line"><span class="lineno">  284</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v;</div>
-<div class="line"><span class="lineno">  285</span> </div>
-<div class="line"><span class="lineno">  286</span>    <span class="keywordflow">while</span> (listVehicle != NULL) {</div>
-<div class="line"><span class="lineno">  287</span>        v = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
-<div class="line"><span class="lineno">  288</span>        if (strcmp(v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a8ec22531817bb25a7bfd6c4366de54b3">geolocation</a>, geolocation) == 0) {</div>
-<div class="line"><span class="lineno">  289</span>            filteredList = <a class="code hl_function" href="ll_8c.html#a1fa6dd9a03210aa0112ec79d6086ef05">addItemLastIterative</a>(filteredList, v);</div>
-<div class="line"><span class="lineno">  290</span>        }</div>
-<div class="line"><span class="lineno">  291</span>        listVehicle = listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
-<div class="line"><span class="lineno">  292</span>    }</div>
-<div class="line"><span class="lineno">  293</span> </div>
-<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">return</span> filteredList;</div>
-<div class="line"><span class="lineno">  295</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00281">281</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  281</span>                                                                     {</div>
+<div class="line"><span class="lineno">  282</span>    <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> filteredList = NULL;</div>
+<div class="line"><span class="lineno">  283</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v;</div>
+<div class="line"><span class="lineno">  284</span> </div>
+<div class="line"><span class="lineno">  285</span>    <span class="keywordflow">while</span> (listVehicle != NULL) {</div>
+<div class="line"><span class="lineno">  286</span>        v = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
+<div class="line"><span class="lineno">  287</span>        if (strcmp(v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a8ec22531817bb25a7bfd6c4366de54b3">geolocation</a>, geolocation) == 0) {</div>
+<div class="line"><span class="lineno">  288</span>            filteredList = <a class="code hl_function" href="ll_8c.html#a1fa6dd9a03210aa0112ec79d6086ef05">addItemLastIterative</a>(filteredList, v);</div>
+<div class="line"><span class="lineno">  289</span>        }</div>
+<div class="line"><span class="lineno">  290</span>        listVehicle = listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
+<div class="line"><span class="lineno">  291</span>    }</div>
+<div class="line"><span class="lineno">  292</span> </div>
+<div class="line"><span class="lineno">  293</span>    <span class="keywordflow">return</span> filteredList;</div>
+<div class="line"><span class="lineno">  294</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1062,21 +1061,21 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The new list of vehicles.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00297">297</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  297</span>                                                    {</div>
-<div class="line"><span class="lineno">  298</span>    <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> filteredList = NULL;</div>
-<div class="line"><span class="lineno">  299</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v;</div>
-<div class="line"><span class="lineno">  300</span> </div>
-<div class="line"><span class="lineno">  301</span>    <span class="keywordflow">while</span> (listVehicle != NULL) {</div>
-<div class="line"><span class="lineno">  302</span>        v = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
-<div class="line"><span class="lineno">  303</span>        if (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#adc4747e59356ef81f6e5df973870970b">inUse</a> == 0) {</div>
-<div class="line"><span class="lineno">  304</span>            filteredList = <a class="code hl_function" href="ll_8c.html#a1fa6dd9a03210aa0112ec79d6086ef05">addItemLastIterative</a>(filteredList, v);</div>
-<div class="line"><span class="lineno">  305</span>        }</div>
-<div class="line"><span class="lineno">  306</span>        listVehicle = listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
-<div class="line"><span class="lineno">  307</span>    }</div>
-<div class="line"><span class="lineno">  308</span> </div>
-<div class="line"><span class="lineno">  309</span>    <span class="keywordflow">return</span> filteredList;</div>
-<div class="line"><span class="lineno">  310</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00296">296</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  296</span>                                                    {</div>
+<div class="line"><span class="lineno">  297</span>    <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> filteredList = NULL;</div>
+<div class="line"><span class="lineno">  298</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v;</div>
+<div class="line"><span class="lineno">  299</span> </div>
+<div class="line"><span class="lineno">  300</span>    <span class="keywordflow">while</span> (listVehicle != NULL) {</div>
+<div class="line"><span class="lineno">  301</span>        v = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
+<div class="line"><span class="lineno">  302</span>        if (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#adc4747e59356ef81f6e5df973870970b">inUse</a> == 0) {</div>
+<div class="line"><span class="lineno">  303</span>            filteredList = <a class="code hl_function" href="ll_8c.html#a1fa6dd9a03210aa0112ec79d6086ef05">addItemLastIterative</a>(filteredList, v);</div>
+<div class="line"><span class="lineno">  304</span>        }</div>
+<div class="line"><span class="lineno">  305</span>        listVehicle = listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
+<div class="line"><span class="lineno">  306</span>    }</div>
+<div class="line"><span class="lineno">  307</span> </div>
+<div class="line"><span class="lineno">  308</span>    <span class="keywordflow">return</span> filteredList;</div>
+<div class="line"><span class="lineno">  309</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1123,18 +1122,18 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The pointer of the vehicle with the specified type and code, or NULL if it does not exist in the list.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00312">312</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  312</span>                                                                            {</div>
-<div class="line"><span class="lineno">  313</span>    <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> currElem = listVehicle;</div>
-<div class="line"><span class="lineno">  314</span>    <span class="keywordflow">while</span> (currElem != NULL) {</div>
-<div class="line"><span class="lineno">  315</span>        <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> currVehicle = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)currElem-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
-<div class="line"><span class="lineno">  316</span>        if (strcmp(currVehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>, type) == 0 &amp;&amp; currVehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a> == code) {</div>
-<div class="line"><span class="lineno">  317</span>            <span class="keywordflow">return</span> currVehicle;</div>
-<div class="line"><span class="lineno">  318</span>        }</div>
-<div class="line"><span class="lineno">  319</span>        currElem = currElem-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
-<div class="line"><span class="lineno">  320</span>    }</div>
-<div class="line"><span class="lineno">  321</span>    <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><span class="lineno">  322</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00311">311</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  311</span>                                                                            {</div>
+<div class="line"><span class="lineno">  312</span>    <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> currElem = listVehicle;</div>
+<div class="line"><span class="lineno">  313</span>    <span class="keywordflow">while</span> (currElem != NULL) {</div>
+<div class="line"><span class="lineno">  314</span>        <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> currVehicle = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)currElem-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
+<div class="line"><span class="lineno">  315</span>        if (strcmp(currVehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>, type) == 0 &amp;&amp; currVehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a> == code) {</div>
+<div class="line"><span class="lineno">  316</span>            <span class="keywordflow">return</span> currVehicle;</div>
+<div class="line"><span class="lineno">  317</span>        }</div>
+<div class="line"><span class="lineno">  318</span>        currElem = currElem-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
+<div class="line"><span class="lineno">  319</span>    }</div>
+<div class="line"><span class="lineno">  320</span>    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  321</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1188,7 +1187,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   41</span>            free(v);</div>
 <div class="line"><span class="lineno">   42</span>            <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">   43</span>        }</div>
-<div class="line"><span class="lineno">   44</span>        <span class="comment">//listV = addItemHead(listV, v);</span></div>
+<div class="line"><span class="lineno">   44</span> </div>
 <div class="line"><span class="lineno">   45</span>        listVehicles = <a class="code hl_function" href="ll_8c.html#ab40afed773ca2c01c5c21d1705e45883">addItemOrderedIterative</a>(listVehicles, v, &amp;<a class="code hl_function" href="vehicle_8c.html#ae6ff76cb6a61d7fe6e44603562fd0812">compareAutonomy</a>);</div>
 <div class="line"><span class="lineno">   46</span>    }</div>
 <div class="line"><span class="lineno">   47</span> </div>
@@ -1224,26 +1223,26 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The percentage of vehicles in use.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00225">225</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  226</span>{</div>
-<div class="line"><span class="lineno">  227</span>    <span class="keywordtype">int</span> total = 0, inUse = 0;</div>
-<div class="line"><span class="lineno">  228</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v;</div>
-<div class="line"><span class="lineno">  229</span> </div>
-<div class="line"><span class="lineno">  230</span>    <span class="keywordflow">while</span> (listVehicle != NULL) {</div>
-<div class="line"><span class="lineno">  231</span>        v = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
-<div class="line"><span class="lineno">  232</span>        if (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#adc4747e59356ef81f6e5df973870970b">inUse</a>) {</div>
-<div class="line"><span class="lineno">  233</span>            inUse++;</div>
-<div class="line"><span class="lineno">  234</span>        }</div>
-<div class="line"><span class="lineno">  235</span>        total++;</div>
-<div class="line"><span class="lineno">  236</span>        listVehicle = listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
-<div class="line"><span class="lineno">  237</span>    }</div>
-<div class="line"><span class="lineno">  238</span> </div>
-<div class="line"><span class="lineno">  239</span>    <span class="keywordflow">if</span> (total == 0) {</div>
-<div class="line"><span class="lineno">  240</span>        <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><span class="lineno">  241</span>    }</div>
-<div class="line"><span class="lineno">  242</span> </div>
-<div class="line"><span class="lineno">  243</span>    <span class="keywordflow">return</span> ((<span class="keywordtype">float</span>)inUse / total) * 100;</div>
-<div class="line"><span class="lineno">  244</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00224">224</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  225</span>{</div>
+<div class="line"><span class="lineno">  226</span>    <span class="keywordtype">int</span> total = 0, inUse = 0;</div>
+<div class="line"><span class="lineno">  227</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v;</div>
+<div class="line"><span class="lineno">  228</span> </div>
+<div class="line"><span class="lineno">  229</span>    <span class="keywordflow">while</span> (listVehicle != NULL) {</div>
+<div class="line"><span class="lineno">  230</span>        v = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
+<div class="line"><span class="lineno">  231</span>        if (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#adc4747e59356ef81f6e5df973870970b">inUse</a>) {</div>
+<div class="line"><span class="lineno">  232</span>            inUse++;</div>
+<div class="line"><span class="lineno">  233</span>        }</div>
+<div class="line"><span class="lineno">  234</span>        total++;</div>
+<div class="line"><span class="lineno">  235</span>        listVehicle = listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
+<div class="line"><span class="lineno">  236</span>    }</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>    <span class="keywordflow">if</span> (total == 0) {</div>
+<div class="line"><span class="lineno">  239</span>        <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><span class="lineno">  240</span>    }</div>
+<div class="line"><span class="lineno">  241</span> </div>
+<div class="line"><span class="lineno">  242</span>    <span class="keywordflow">return</span> ((<span class="keywordtype">float</span>)inUse / total) * 100;</div>
+<div class="line"><span class="lineno">  243</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1283,146 +1282,146 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The modified list of vehicles.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00521">521</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  521</span>                                                              {</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00519">519</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  519</span>                                                              {</div>
+<div class="line"><span class="lineno">  520</span> </div>
+<div class="line"><span class="lineno">  521</span>    <a class="code hl_function" href="menu_8c.html#af3eac3ad203ab091baad010ef3f7ab0a">clrscr</a>();</div>
 <div class="line"><span class="lineno">  522</span> </div>
-<div class="line"><span class="lineno">  523</span>    <a class="code hl_function" href="menu_8c.html#af3eac3ad203ab091baad010ef3f7ab0a">clrscr</a>();</div>
+<div class="line"><span class="lineno">  523</span>    <a class="code hl_function" href="menu_8c.html#a9f809d3b08485e9e7fe169bff0a6fa25">showtime</a>();</div>
 <div class="line"><span class="lineno">  524</span> </div>
-<div class="line"><span class="lineno">  525</span>    <a class="code hl_function" href="menu_8c.html#a9f809d3b08485e9e7fe169bff0a6fa25">showtime</a>();</div>
+<div class="line"><span class="lineno">  525</span>    <a class="code hl_function" href="menu_8c.html#a920cd6e1098e5aa8049cd34249c43430">signnewuser</a>();</div>
 <div class="line"><span class="lineno">  526</span> </div>
-<div class="line"><span class="lineno">  527</span>    <a class="code hl_function" href="menu_8c.html#a920cd6e1098e5aa8049cd34249c43430">signnewuser</a>();</div>
+<div class="line"><span class="lineno">  527</span>    fflush(stdin);</div>
 <div class="line"><span class="lineno">  528</span> </div>
-<div class="line"><span class="lineno">  529</span>    fflush(stdin);</div>
+<div class="line"><span class="lineno">  529</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)malloc(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structdatavehicle.html">datavehicle</a>));</div>
 <div class="line"><span class="lineno">  530</span> </div>
-<div class="line"><span class="lineno">  531</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)malloc(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structdatavehicle.html">datavehicle</a>));</div>
-<div class="line"><span class="lineno">  532</span> </div>
-<div class="line"><span class="lineno">  533</span>    printf(<span class="stringliteral">&quot;\n Insira o modelo do veiculo: &quot;</span>); <span class="comment">//NOME</span></div>
-<div class="line"><span class="lineno">  534</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>);</div>
-<div class="line"><span class="lineno">  535</span> </div>
-<div class="line"><span class="lineno">  536</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>[i] != <span class="charliteral">&#39;\0&#39;</span>; i++)</div>
-<div class="line"><span class="lineno">  537</span>    {</div>
-<div class="line"><span class="lineno">  538</span>        <span class="keywordflow">if</span> ((v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>[i] &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>[i] &lt;= <span class="charliteral">&#39;z&#39;</span>) || v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>[i] == <span class="charliteral">&#39; &#39;</span> || (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>[i] &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>[i] &lt;= <span class="charliteral">&#39;Z&#39;</span>))</div>
-<div class="line"><span class="lineno">  539</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  540</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  541</span>        {</div>
-<div class="line"><span class="lineno">  542</span>            free(v);</div>
-<div class="line"><span class="lineno">  543</span>            <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  544</span>        }</div>
-<div class="line"><span class="lineno">  545</span>            </div>
-<div class="line"><span class="lineno">  546</span>    }</div>
-<div class="line"><span class="lineno">  547</span> </div>
-<div class="line"><span class="lineno">  548</span>    printf(<span class="stringliteral">&quot;\n Insira o codigo do veiculo: &quot;</span>);</div>
-<div class="line"><span class="lineno">  549</span>    <span class="keywordtype">char</span> auxCode[10];</div>
-<div class="line"><span class="lineno">  550</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxCode);</div>
-<div class="line"><span class="lineno">  551</span> </div>
-<div class="line"><span class="lineno">  552</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxCode))</div>
-<div class="line"><span class="lineno">  553</span>        v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a> = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxCode);</div>
-<div class="line"><span class="lineno">  554</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  555</span>    {</div>
-<div class="line"><span class="lineno">  556</span>        free(v);</div>
-<div class="line"><span class="lineno">  557</span>        <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  558</span>    }</div>
-<div class="line"><span class="lineno">  559</span>    <span class="keywordflow">if</span> (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a> &lt;= 0)</div>
-<div class="line"><span class="lineno">  560</span>    {</div>
-<div class="line"><span class="lineno">  561</span>        free(v);</div>
-<div class="line"><span class="lineno">  562</span>        <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  563</span>    }</div>
-<div class="line"><span class="lineno">  564</span> </div>
-<div class="line"><span class="lineno">  565</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="vehicle_8c.html#aa10e6b92f11d52cbce445b7231abb6fa">vehicleExists</a>(v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a>, v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>, listVehicle))</div>
-<div class="line"><span class="lineno">  566</span>    {</div>
-<div class="line"><span class="lineno">  567</span>        free(v);</div>
-<div class="line"><span class="lineno">  568</span>        <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  569</span>    }</div>
-<div class="line"><span class="lineno">  570</span> </div>
-<div class="line"><span class="lineno">  571</span>    printf(<span class="stringliteral">&quot;\n Insira a localizacao: &quot;</span>); <span class="comment">//NOME</span></div>
-<div class="line"><span class="lineno">  572</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a8ec22531817bb25a7bfd6c4366de54b3">geolocation</a>);</div>
-<div class="line"><span class="lineno">  573</span> </div>
-<div class="line"><span class="lineno">  574</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="vehicle_8c.html#a561022cfa65d0ac963a1ddadf3c0b261">validGeolocation</a>(v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a8ec22531817bb25a7bfd6c4366de54b3">geolocation</a>))</div>
-<div class="line"><span class="lineno">  575</span>    {</div>
-<div class="line"><span class="lineno">  576</span>        free(v);</div>
-<div class="line"><span class="lineno">  577</span>        <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  578</span>    }</div>
-<div class="line"><span class="lineno">  579</span> </div>
-<div class="line"><span class="lineno">  580</span>    printf(<span class="stringliteral">&quot;\n Insira a bateria do veiculo: &quot;</span>);</div>
-<div class="line"><span class="lineno">  581</span>    <span class="keywordtype">char</span> auxBattery[10];</div>
-<div class="line"><span class="lineno">  582</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxBattery);</div>
-<div class="line"><span class="lineno">  583</span> </div>
-<div class="line"><span class="lineno">  584</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxBattery) || <a class="code hl_function" href="menu_8c.html#ab96924be11a25dc748563360c39becb0">isFloat</a>(auxBattery))</div>
-<div class="line"><span class="lineno">  585</span>        v-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe893e21455b5e3ba30d98b78a5f4479">battery</a> = <a class="code hl_function" href="menu_8c.html#a37e0276c190ac96aed8122851fd3275b">stringToFloat</a>(auxBattery);</div>
-<div class="line"><span class="lineno">  586</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  587</span>    {</div>
-<div class="line"><span class="lineno">  588</span>        free(v);</div>
-<div class="line"><span class="lineno">  589</span>        <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  590</span>    }</div>
-<div class="line"><span class="lineno">  591</span> </div>
-<div class="line"><span class="lineno">  592</span>    <span class="keywordflow">if</span> ((v-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe893e21455b5e3ba30d98b78a5f4479">battery</a> &lt;= 0) || (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe893e21455b5e3ba30d98b78a5f4479">battery</a> &gt; 100))</div>
-<div class="line"><span class="lineno">  593</span>    {</div>
-<div class="line"><span class="lineno">  594</span>        free(v);</div>
-<div class="line"><span class="lineno">  595</span>        <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  596</span>    }</div>
-<div class="line"><span class="lineno">  597</span> </div>
-<div class="line"><span class="lineno">  598</span>    printf(<span class="stringliteral">&quot;\n Insira a autonima do veiculo: &quot;</span>);</div>
-<div class="line"><span class="lineno">  599</span>    <span class="keywordtype">char</span> auxAutonomy[10];</div>
-<div class="line"><span class="lineno">  600</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxAutonomy);</div>
-<div class="line"><span class="lineno">  601</span> </div>
-<div class="line"><span class="lineno">  602</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxAutonomy) || <a class="code hl_function" href="menu_8c.html#ab96924be11a25dc748563360c39becb0">isFloat</a>(auxAutonomy))</div>
-<div class="line"><span class="lineno">  603</span>        v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a> = <a class="code hl_function" href="menu_8c.html#a37e0276c190ac96aed8122851fd3275b">stringToFloat</a>(auxAutonomy);</div>
-<div class="line"><span class="lineno">  604</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  605</span>    {</div>
-<div class="line"><span class="lineno">  606</span>        free(v);</div>
-<div class="line"><span class="lineno">  607</span>        <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  608</span>    }</div>
-<div class="line"><span class="lineno">  609</span>    <span class="keywordflow">if</span> (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a> &lt;= 0)</div>
-<div class="line"><span class="lineno">  610</span>    {</div>
-<div class="line"><span class="lineno">  611</span>        free(v);</div>
-<div class="line"><span class="lineno">  612</span>        <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  613</span>    }</div>
-<div class="line"><span class="lineno">  614</span> </div>
-<div class="line"><span class="lineno">  615</span>    printf(<span class="stringliteral">&quot;\n Insira o custo por hora do veiculo: &quot;</span>);</div>
-<div class="line"><span class="lineno">  616</span>    <span class="keywordtype">char</span> auxCosthour[10];</div>
-<div class="line"><span class="lineno">  617</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxCosthour);</div>
-<div class="line"><span class="lineno">  618</span> </div>
-<div class="line"><span class="lineno">  619</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxCosthour) || <a class="code hl_function" href="menu_8c.html#ab96924be11a25dc748563360c39becb0">isFloat</a>(auxCosthour))</div>
-<div class="line"><span class="lineno">  620</span>        v-&gt;<a class="code hl_variable" href="structdatavehicle.html#af098be7d698ae45ee6ef1f2fed01a25b">costhour</a> = <a class="code hl_function" href="menu_8c.html#a37e0276c190ac96aed8122851fd3275b">stringToFloat</a>(auxCosthour);</div>
-<div class="line"><span class="lineno">  621</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  622</span>    {</div>
-<div class="line"><span class="lineno">  623</span>        free(v);</div>
-<div class="line"><span class="lineno">  624</span>        <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  625</span>    }</div>
-<div class="line"><span class="lineno">  626</span>    <span class="keywordflow">if</span> (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#af098be7d698ae45ee6ef1f2fed01a25b">costhour</a> &lt;= 0)</div>
-<div class="line"><span class="lineno">  627</span>    {</div>
-<div class="line"><span class="lineno">  628</span>        free(v);</div>
-<div class="line"><span class="lineno">  629</span>        <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  630</span>    }</div>
-<div class="line"><span class="lineno">  631</span> </div>
-<div class="line"><span class="lineno">  632</span>    printf(<span class="stringliteral">&quot;\n Insira o custo por km do veiculo: &quot;</span>);</div>
-<div class="line"><span class="lineno">  633</span>    <span class="keywordtype">char</span> auxCostkm[10];</div>
-<div class="line"><span class="lineno">  634</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxCostkm);</div>
-<div class="line"><span class="lineno">  635</span> </div>
-<div class="line"><span class="lineno">  636</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxCostkm))</div>
-<div class="line"><span class="lineno">  637</span>        v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a40c56f500e49fad57b2f7cae41462082">costkm</a> = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxCostkm);</div>
-<div class="line"><span class="lineno">  638</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  639</span>    {</div>
-<div class="line"><span class="lineno">  640</span>        free(v);</div>
-<div class="line"><span class="lineno">  641</span>        <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  642</span>    }</div>
-<div class="line"><span class="lineno">  643</span>    <span class="keywordflow">if</span> (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a40c56f500e49fad57b2f7cae41462082">costkm</a> &lt;= 0)</div>
-<div class="line"><span class="lineno">  644</span>    {</div>
-<div class="line"><span class="lineno">  645</span>        free(v);</div>
-<div class="line"><span class="lineno">  646</span>        <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  647</span>    }</div>
-<div class="line"><span class="lineno">  648</span> </div>
-<div class="line"><span class="lineno">  649</span>    v-&gt;<a class="code hl_variable" href="structdatavehicle.html#adc4747e59356ef81f6e5df973870970b">inUse</a> = 0;</div>
-<div class="line"><span class="lineno">  650</span>    v-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1">totalkms</a> = 0;</div>
+<div class="line"><span class="lineno">  531</span>    printf(<span class="stringliteral">&quot;\n Insira o modelo do veiculo: &quot;</span>);</div>
+<div class="line"><span class="lineno">  532</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>);</div>
+<div class="line"><span class="lineno">  533</span> </div>
+<div class="line"><span class="lineno">  534</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>[i] != <span class="charliteral">&#39;\0&#39;</span>; i++)</div>
+<div class="line"><span class="lineno">  535</span>    {</div>
+<div class="line"><span class="lineno">  536</span>        <span class="keywordflow">if</span> ((v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>[i] &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>[i] &lt;= <span class="charliteral">&#39;z&#39;</span>) || v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>[i] == <span class="charliteral">&#39; &#39;</span> || (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>[i] &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>[i] &lt;= <span class="charliteral">&#39;Z&#39;</span>))</div>
+<div class="line"><span class="lineno">  537</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  538</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  539</span>        {</div>
+<div class="line"><span class="lineno">  540</span>            free(v);</div>
+<div class="line"><span class="lineno">  541</span>            <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  542</span>        }</div>
+<div class="line"><span class="lineno">  543</span>            </div>
+<div class="line"><span class="lineno">  544</span>    }</div>
+<div class="line"><span class="lineno">  545</span> </div>
+<div class="line"><span class="lineno">  546</span>    printf(<span class="stringliteral">&quot;\n Insira o codigo do veiculo: &quot;</span>);</div>
+<div class="line"><span class="lineno">  547</span>    <span class="keywordtype">char</span> auxCode[10];</div>
+<div class="line"><span class="lineno">  548</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxCode);</div>
+<div class="line"><span class="lineno">  549</span> </div>
+<div class="line"><span class="lineno">  550</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxCode))</div>
+<div class="line"><span class="lineno">  551</span>        v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a> = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxCode);</div>
+<div class="line"><span class="lineno">  552</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  553</span>    {</div>
+<div class="line"><span class="lineno">  554</span>        free(v);</div>
+<div class="line"><span class="lineno">  555</span>        <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  556</span>    }</div>
+<div class="line"><span class="lineno">  557</span>    <span class="keywordflow">if</span> (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a> &lt;= 0)</div>
+<div class="line"><span class="lineno">  558</span>    {</div>
+<div class="line"><span class="lineno">  559</span>        free(v);</div>
+<div class="line"><span class="lineno">  560</span>        <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  561</span>    }</div>
+<div class="line"><span class="lineno">  562</span> </div>
+<div class="line"><span class="lineno">  563</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="vehicle_8c.html#aa10e6b92f11d52cbce445b7231abb6fa">vehicleExists</a>(v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a>, v-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>, listVehicle))</div>
+<div class="line"><span class="lineno">  564</span>    {</div>
+<div class="line"><span class="lineno">  565</span>        free(v);</div>
+<div class="line"><span class="lineno">  566</span>        <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  567</span>    }</div>
+<div class="line"><span class="lineno">  568</span> </div>
+<div class="line"><span class="lineno">  569</span>    printf(<span class="stringliteral">&quot;\n Insira a localizacao: &quot;</span>);</div>
+<div class="line"><span class="lineno">  570</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a8ec22531817bb25a7bfd6c4366de54b3">geolocation</a>);</div>
+<div class="line"><span class="lineno">  571</span> </div>
+<div class="line"><span class="lineno">  572</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="vehicle_8c.html#a561022cfa65d0ac963a1ddadf3c0b261">validGeolocation</a>(v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a8ec22531817bb25a7bfd6c4366de54b3">geolocation</a>))</div>
+<div class="line"><span class="lineno">  573</span>    {</div>
+<div class="line"><span class="lineno">  574</span>        free(v);</div>
+<div class="line"><span class="lineno">  575</span>        <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  576</span>    }</div>
+<div class="line"><span class="lineno">  577</span> </div>
+<div class="line"><span class="lineno">  578</span>    printf(<span class="stringliteral">&quot;\n Insira a bateria do veiculo: &quot;</span>);</div>
+<div class="line"><span class="lineno">  579</span>    <span class="keywordtype">char</span> auxBattery[10];</div>
+<div class="line"><span class="lineno">  580</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxBattery);</div>
+<div class="line"><span class="lineno">  581</span> </div>
+<div class="line"><span class="lineno">  582</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxBattery) || <a class="code hl_function" href="menu_8c.html#ab96924be11a25dc748563360c39becb0">isFloat</a>(auxBattery))</div>
+<div class="line"><span class="lineno">  583</span>        v-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe893e21455b5e3ba30d98b78a5f4479">battery</a> = <a class="code hl_function" href="menu_8c.html#a37e0276c190ac96aed8122851fd3275b">stringToFloat</a>(auxBattery);</div>
+<div class="line"><span class="lineno">  584</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  585</span>    {</div>
+<div class="line"><span class="lineno">  586</span>        free(v);</div>
+<div class="line"><span class="lineno">  587</span>        <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  588</span>    }</div>
+<div class="line"><span class="lineno">  589</span> </div>
+<div class="line"><span class="lineno">  590</span>    <span class="keywordflow">if</span> ((v-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe893e21455b5e3ba30d98b78a5f4479">battery</a> &lt;= 0) || (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe893e21455b5e3ba30d98b78a5f4479">battery</a> &gt; 100))</div>
+<div class="line"><span class="lineno">  591</span>    {</div>
+<div class="line"><span class="lineno">  592</span>        free(v);</div>
+<div class="line"><span class="lineno">  593</span>        <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  594</span>    }</div>
+<div class="line"><span class="lineno">  595</span> </div>
+<div class="line"><span class="lineno">  596</span>    printf(<span class="stringliteral">&quot;\n Insira a autonima do veiculo: &quot;</span>);</div>
+<div class="line"><span class="lineno">  597</span>    <span class="keywordtype">char</span> auxAutonomy[10];</div>
+<div class="line"><span class="lineno">  598</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxAutonomy);</div>
+<div class="line"><span class="lineno">  599</span> </div>
+<div class="line"><span class="lineno">  600</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxAutonomy) || <a class="code hl_function" href="menu_8c.html#ab96924be11a25dc748563360c39becb0">isFloat</a>(auxAutonomy))</div>
+<div class="line"><span class="lineno">  601</span>        v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a> = <a class="code hl_function" href="menu_8c.html#a37e0276c190ac96aed8122851fd3275b">stringToFloat</a>(auxAutonomy);</div>
+<div class="line"><span class="lineno">  602</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  603</span>    {</div>
+<div class="line"><span class="lineno">  604</span>        free(v);</div>
+<div class="line"><span class="lineno">  605</span>        <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  606</span>    }</div>
+<div class="line"><span class="lineno">  607</span>    <span class="keywordflow">if</span> (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a> &lt;= 0)</div>
+<div class="line"><span class="lineno">  608</span>    {</div>
+<div class="line"><span class="lineno">  609</span>        free(v);</div>
+<div class="line"><span class="lineno">  610</span>        <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  611</span>    }</div>
+<div class="line"><span class="lineno">  612</span> </div>
+<div class="line"><span class="lineno">  613</span>    printf(<span class="stringliteral">&quot;\n Insira o custo por hora do veiculo: &quot;</span>);</div>
+<div class="line"><span class="lineno">  614</span>    <span class="keywordtype">char</span> auxCosthour[10];</div>
+<div class="line"><span class="lineno">  615</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxCosthour);</div>
+<div class="line"><span class="lineno">  616</span> </div>
+<div class="line"><span class="lineno">  617</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxCosthour) || <a class="code hl_function" href="menu_8c.html#ab96924be11a25dc748563360c39becb0">isFloat</a>(auxCosthour))</div>
+<div class="line"><span class="lineno">  618</span>        v-&gt;<a class="code hl_variable" href="structdatavehicle.html#af098be7d698ae45ee6ef1f2fed01a25b">costhour</a> = <a class="code hl_function" href="menu_8c.html#a37e0276c190ac96aed8122851fd3275b">stringToFloat</a>(auxCosthour);</div>
+<div class="line"><span class="lineno">  619</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  620</span>    {</div>
+<div class="line"><span class="lineno">  621</span>        free(v);</div>
+<div class="line"><span class="lineno">  622</span>        <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  623</span>    }</div>
+<div class="line"><span class="lineno">  624</span>    <span class="keywordflow">if</span> (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#af098be7d698ae45ee6ef1f2fed01a25b">costhour</a> &lt;= 0)</div>
+<div class="line"><span class="lineno">  625</span>    {</div>
+<div class="line"><span class="lineno">  626</span>        free(v);</div>
+<div class="line"><span class="lineno">  627</span>        <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  628</span>    }</div>
+<div class="line"><span class="lineno">  629</span> </div>
+<div class="line"><span class="lineno">  630</span>    printf(<span class="stringliteral">&quot;\n Insira o custo por km do veiculo: &quot;</span>);</div>
+<div class="line"><span class="lineno">  631</span>    <span class="keywordtype">char</span> auxCostkm[10];</div>
+<div class="line"><span class="lineno">  632</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxCostkm);</div>
+<div class="line"><span class="lineno">  633</span> </div>
+<div class="line"><span class="lineno">  634</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxCostkm))</div>
+<div class="line"><span class="lineno">  635</span>        v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a40c56f500e49fad57b2f7cae41462082">costkm</a> = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxCostkm);</div>
+<div class="line"><span class="lineno">  636</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  637</span>    {</div>
+<div class="line"><span class="lineno">  638</span>        free(v);</div>
+<div class="line"><span class="lineno">  639</span>        <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  640</span>    }</div>
+<div class="line"><span class="lineno">  641</span>    <span class="keywordflow">if</span> (v-&gt;<a class="code hl_variable" href="structdatavehicle.html#a40c56f500e49fad57b2f7cae41462082">costkm</a> &lt;= 0)</div>
+<div class="line"><span class="lineno">  642</span>    {</div>
+<div class="line"><span class="lineno">  643</span>        free(v);</div>
+<div class="line"><span class="lineno">  644</span>        <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  645</span>    }</div>
+<div class="line"><span class="lineno">  646</span> </div>
+<div class="line"><span class="lineno">  647</span>    v-&gt;<a class="code hl_variable" href="structdatavehicle.html#adc4747e59356ef81f6e5df973870970b">inUse</a> = 0;</div>
+<div class="line"><span class="lineno">  648</span>    v-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1">totalkms</a> = 0;</div>
+<div class="line"><span class="lineno">  649</span> </div>
+<div class="line"><span class="lineno">  650</span>    listVehicle = <a class="code hl_function" href="ll_8c.html#ab40afed773ca2c01c5c21d1705e45883">addItemOrderedIterative</a>(listVehicle, (<span class="keywordtype">void</span>*)v, &amp;<a class="code hl_function" href="vehicle_8c.html#ae6ff76cb6a61d7fe6e44603562fd0812">compareAutonomy</a>);</div>
 <div class="line"><span class="lineno">  651</span> </div>
-<div class="line"><span class="lineno">  652</span>    listVehicle = <a class="code hl_function" href="ll_8c.html#ab40afed773ca2c01c5c21d1705e45883">addItemOrderedIterative</a>(listVehicle, (<span class="keywordtype">void</span>*)v, &amp;<a class="code hl_function" href="vehicle_8c.html#ae6ff76cb6a61d7fe6e44603562fd0812">compareAutonomy</a>);</div>
-<div class="line"><span class="lineno">  653</span> </div>
-<div class="line"><span class="lineno">  654</span>    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  655</span>    <a class="code hl_function" href="menu_8c.html#a98c3e0a1460df9c765832a93d64113b5">signupok</a>();</div>
-<div class="line"><span class="lineno">  656</span>    <a class="code hl_function" href="menu_8c.html#aa3b21853f890838c88d047d6c2786917">wait</a>();</div>
-<div class="line"><span class="lineno">  657</span>    *modified = 1;</div>
-<div class="line"><span class="lineno">  658</span>    <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  659</span>}</div>
+<div class="line"><span class="lineno">  652</span>    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  653</span>    <a class="code hl_function" href="menu_8c.html#a98c3e0a1460df9c765832a93d64113b5">signupok</a>();</div>
+<div class="line"><span class="lineno">  654</span>    <a class="code hl_function" href="menu_8c.html#aa3b21853f890838c88d047d6c2786917">wait</a>();</div>
+<div class="line"><span class="lineno">  655</span>    *modified = 1;</div>
+<div class="line"><span class="lineno">  656</span>    <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  657</span>}</div>
 <div class="ttc" id="amenu_8c_html_a920cd6e1098e5aa8049cd34249c43430"><div class="ttname"><a href="menu_8c.html#a920cd6e1098e5aa8049cd34249c43430">signnewuser</a></div><div class="ttdeci">void signnewuser()</div><div class="ttdoc">Prints a sign new user header.</div><div class="ttdef"><b>Definition:</b> <a href="menu_8c_source.html#l00123">menu.c:123</a></div></div>
 <div class="ttc" id="amenu_8c_html_a98c3e0a1460df9c765832a93d64113b5"><div class="ttname"><a href="menu_8c.html#a98c3e0a1460df9c765832a93d64113b5">signupok</a></div><div class="ttdeci">void signupok()</div><div class="ttdoc">Prints a confirmation of signup header.</div><div class="ttdef"><b>Definition:</b> <a href="menu_8c_source.html#l00133">menu.c:133</a></div></div>
 <div class="ttc" id="amenu_8c_html_a9f809d3b08485e9e7fe169bff0a6fa25"><div class="ttname"><a href="menu_8c.html#a9f809d3b08485e9e7fe169bff0a6fa25">showtime</a></div><div class="ttdeci">void showtime()</div><div class="ttdoc">Prints time and date.</div><div class="ttdef"><b>Definition:</b> <a href="menu_8c_source.html#l00056">menu.c:56</a></div></div>
@@ -1466,44 +1465,44 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The new list of vehicles.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00172">172</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  173</span>{</div>
-<div class="line"><span class="lineno">  174</span>    <a class="code hl_function" href="ll_8c.html#a2e440cfa67ada211c9a895fb3929be4b">showListIterative</a>(listVehicle, &amp;<a class="code hl_function" href="vehicle_8c.html#a4af9ab728b6057dab0f8da96b4652c40">showVehicle</a>);</div>
-<div class="line"><span class="lineno">  175</span> </div>
-<div class="line"><span class="lineno">  176</span>    printf(<span class="stringliteral">&quot; Insira o indice do veiculo a ser removido: &quot;</span>);</div>
-<div class="line"><span class="lineno">  177</span>    <span class="keywordtype">char</span> auxOption[10];</div>
-<div class="line"><span class="lineno">  178</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxOption);</div>
-<div class="line"><span class="lineno">  179</span> </div>
-<div class="line"><span class="lineno">  180</span>    <span class="keywordtype">int</span> option = 0;</div>
-<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxOption))</div>
-<div class="line"><span class="lineno">  182</span>        option = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxOption);</div>
-<div class="line"><span class="lineno">  183</span> </div>
-<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">if</span> ((option != 0) &amp;&amp; (option &lt;= <a class="code hl_function" href="ll_8c.html#a1feda813b463cd2332420273d4bff451">listLength</a>(listVehicle)))</div>
-<div class="line"><span class="lineno">  185</span>    {</div>
-<div class="line"><span class="lineno">  186</span>        <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> auxElem = <a class="code hl_function" href="ll_8c.html#a2cd5efb9a09b91778822bc771079d921">obtainElementPosition</a>(listVehicle, option - 1);</div>
-<div class="line"><span class="lineno">  187</span>        <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> vehicle = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)auxElem-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
-<div class="line"><span class="lineno">  188</span> </div>
-<div class="line"><span class="lineno">  189</span>        <a class="code hl_function" href="menu_8c.html#af3eac3ad203ab091baad010ef3f7ab0a">clrscr</a>();</div>
-<div class="line"><span class="lineno">  190</span>        <a class="code hl_function" href="vehicle_8c.html#a4af9ab728b6057dab0f8da96b4652c40">showVehicle</a>(vehicle);</div>
-<div class="line"><span class="lineno">  191</span> </div>
-<div class="line"><span class="lineno">  192</span>        printf(<span class="stringliteral">&quot; Deseja remover o veiculo acima? (1- Sim / 2- Nao): &quot;</span>);</div>
-<div class="line"><span class="lineno">  193</span> </div>
-<div class="line"><span class="lineno">  194</span>        <span class="keywordtype">int</span> removeOption = 0;</div>
-<div class="line"><span class="lineno">  195</span>        <span class="keywordtype">char</span> auxRemoveOption[10];</div>
-<div class="line"><span class="lineno">  196</span>        scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxRemoveOption);</div>
-<div class="line"><span class="lineno">  197</span> </div>
-<div class="line"><span class="lineno">  198</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxRemoveOption))</div>
-<div class="line"><span class="lineno">  199</span>            removeOption = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxRemoveOption);</div>
-<div class="line"><span class="lineno">  200</span> </div>
-<div class="line"><span class="lineno">  201</span>        <span class="keywordflow">if</span> (removeOption == 1) {</div>
-<div class="line"><span class="lineno">  202</span>            listVehicle = <a class="code hl_function" href="ll_8c.html#a52fca54354585c1f5f31326f2863d822">removeElementByIndex</a>(listVehicle, option - 1);</div>
-<div class="line"><span class="lineno">  203</span>            free(vehicle);</div>
-<div class="line"><span class="lineno">  204</span>            *modified = 1;</div>
-<div class="line"><span class="lineno">  205</span>        }</div>
-<div class="line"><span class="lineno">  206</span> </div>
-<div class="line"><span class="lineno">  207</span>    }</div>
-<div class="line"><span class="lineno">  208</span>    <span class="keywordflow">return</span> listVehicle;</div>
-<div class="line"><span class="lineno">  209</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00171">171</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>{</div>
+<div class="line"><span class="lineno">  173</span>    <a class="code hl_function" href="ll_8c.html#a2e440cfa67ada211c9a895fb3929be4b">showListIterative</a>(listVehicle, &amp;<a class="code hl_function" href="vehicle_8c.html#a4af9ab728b6057dab0f8da96b4652c40">showVehicle</a>);</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>    printf(<span class="stringliteral">&quot; Insira o indice do veiculo a ser removido: &quot;</span>);</div>
+<div class="line"><span class="lineno">  176</span>    <span class="keywordtype">char</span> auxOption[10];</div>
+<div class="line"><span class="lineno">  177</span>    scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxOption);</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>    <span class="keywordtype">int</span> option = 0;</div>
+<div class="line"><span class="lineno">  180</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxOption))</div>
+<div class="line"><span class="lineno">  181</span>        option = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxOption);</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">if</span> ((option != 0) &amp;&amp; (option &lt;= <a class="code hl_function" href="ll_8c.html#a1feda813b463cd2332420273d4bff451">listLength</a>(listVehicle)))</div>
+<div class="line"><span class="lineno">  184</span>    {</div>
+<div class="line"><span class="lineno">  185</span>        <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> auxElem = <a class="code hl_function" href="ll_8c.html#a2cd5efb9a09b91778822bc771079d921">obtainElementPosition</a>(listVehicle, option - 1);</div>
+<div class="line"><span class="lineno">  186</span>        <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> vehicle = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)auxElem-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>        <a class="code hl_function" href="menu_8c.html#af3eac3ad203ab091baad010ef3f7ab0a">clrscr</a>();</div>
+<div class="line"><span class="lineno">  189</span>        <a class="code hl_function" href="vehicle_8c.html#a4af9ab728b6057dab0f8da96b4652c40">showVehicle</a>(vehicle);</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>        printf(<span class="stringliteral">&quot; Deseja remover o veiculo acima? (1- Sim / 2- Nao): &quot;</span>);</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>        <span class="keywordtype">int</span> removeOption = 0;</div>
+<div class="line"><span class="lineno">  194</span>        <span class="keywordtype">char</span> auxRemoveOption[10];</div>
+<div class="line"><span class="lineno">  195</span>        scanf(<span class="stringliteral">&quot; %[^\n]%*c&quot;</span>, auxRemoveOption);</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxRemoveOption))</div>
+<div class="line"><span class="lineno">  198</span>            removeOption = <a class="code hl_function" href="menu_8c.html#ae504c7ad54270101004e65ebd78620ba">stringToInt</a>(auxRemoveOption);</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>        <span class="keywordflow">if</span> (removeOption == 1) {</div>
+<div class="line"><span class="lineno">  201</span>            listVehicle = <a class="code hl_function" href="ll_8c.html#a52fca54354585c1f5f31326f2863d822">removeElementByIndex</a>(listVehicle, option - 1);</div>
+<div class="line"><span class="lineno">  202</span>            free(vehicle);</div>
+<div class="line"><span class="lineno">  203</span>            *modified = 1;</div>
+<div class="line"><span class="lineno">  204</span>        }</div>
+<div class="line"><span class="lineno">  205</span> </div>
+<div class="line"><span class="lineno">  206</span>    }</div>
+<div class="line"><span class="lineno">  207</span>    <span class="keywordflow">return</span> listVehicle;</div>
+<div class="line"><span class="lineno">  208</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1574,20 +1573,20 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The sorted list of vehicles</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00211">211</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  212</span>{</div>
-<div class="line"><span class="lineno">  213</span>    <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> sortedList = NULL;</div>
-<div class="line"><span class="lineno">  214</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v;</div>
-<div class="line"><span class="lineno">  215</span> </div>
-<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">while</span> (listVehicle != NULL) {</div>
-<div class="line"><span class="lineno">  217</span>        v = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;        </div>
-<div class="line"><span class="lineno">  218</span>        sortedList = <a class="code hl_function" href="ll_8c.html#ab40afed773ca2c01c5c21d1705e45883">addItemOrderedIterative</a>(sortedList, v, &amp;<a class="code hl_function" href="vehicle_8c.html#ac451666b3c1ca407ec68da66dee5651b">compareTotalKms</a>);</div>
-<div class="line"><span class="lineno">  219</span>        listVehicle = listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
-<div class="line"><span class="lineno">  220</span>    }</div>
-<div class="line"><span class="lineno">  221</span> </div>
-<div class="line"><span class="lineno">  222</span>    <span class="keywordflow">return</span> sortedList;</div>
-<div class="line"><span class="lineno">  223</span>}</div>
-<div class="ttc" id="avehicle_8c_html_ac451666b3c1ca407ec68da66dee5651b"><div class="ttname"><a href="vehicle_8c.html#ac451666b3c1ca407ec68da66dee5651b">compareTotalKms</a></div><div class="ttdeci">int compareTotalKms(void *data1, void *data2)</div><div class="ttdoc">Compares two vehicle data pointers by their total kilometers driven in descending order.</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00114">vehicle.c:114</a></div></div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00210">210</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  211</span>{</div>
+<div class="line"><span class="lineno">  212</span>    <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> sortedList = NULL;</div>
+<div class="line"><span class="lineno">  213</span>    <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> v;</div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">while</span> (listVehicle != NULL) {</div>
+<div class="line"><span class="lineno">  216</span>        v = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;        </div>
+<div class="line"><span class="lineno">  217</span>        sortedList = <a class="code hl_function" href="ll_8c.html#ab40afed773ca2c01c5c21d1705e45883">addItemOrderedIterative</a>(sortedList, v, &amp;<a class="code hl_function" href="vehicle_8c.html#ac451666b3c1ca407ec68da66dee5651b">compareTotalKms</a>);</div>
+<div class="line"><span class="lineno">  218</span>        listVehicle = listVehicle-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
+<div class="line"><span class="lineno">  219</span>    }</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">return</span> sortedList;</div>
+<div class="line"><span class="lineno">  222</span>}</div>
+<div class="ttc" id="avehicle_8c_html_ac451666b3c1ca407ec68da66dee5651b"><div class="ttname"><a href="vehicle_8c.html#ac451666b3c1ca407ec68da66dee5651b">compareTotalKms</a></div><div class="ttdeci">int compareTotalKms(void *data1, void *data2)</div><div class="ttdoc">Compares two vehicle data pointers by their total kilometers driven in descending order.</div><div class="ttdef"><b>Definition:</b> <a href="vehicle_8c_source.html#l00113">vehicle.c:113</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1620,31 +1619,30 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   54</span>    <span class="keywordtype">char</span> cwd[500];</div>
 <div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span> (getcwd(cwd, <span class="keyword">sizeof</span>(cwd)) == NULL)</div>
 <div class="line"><span class="lineno">   56</span>    {</div>
-<div class="line"><span class="lineno">   57</span>        <a class="code hl_function" href="menu_8c.html#a7e15c8e2885871839fc2b820dfbdb4ce">error</a>(); <span class="comment">//Espera input do user</span></div>
-<div class="line"><span class="lineno">   58</span>        <span class="comment">//registerClient(registerFromAdmin);</span></div>
-<div class="line"><span class="lineno">   59</span>    }</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>    <span class="keywordtype">char</span> vehicles_bin[500];</div>
-<div class="line"><span class="lineno">   62</span>    strcpy(vehicles_bin, cwd);</div>
-<div class="line"><span class="lineno">   63</span>    strcat(vehicles_bin, <span class="stringliteral">&quot;\\vehicles.bin&quot;</span>);</div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>    FILE* file = fopen(vehicles_bin, <span class="stringliteral">&quot;wb&quot;</span>); <span class="comment">// open the file in write binary mode</span></div>
-<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">if</span> (file == NULL) {</div>
-<div class="line"><span class="lineno">   67</span>        printf(<span class="stringliteral">&quot; Error opening file %s.\n&quot;</span>, vehicles_bin);</div>
-<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   69</span>    }</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>    <span class="comment">// iterate through the list of vehicles and write their information to the file</span></div>
-<div class="line"><span class="lineno">   72</span>    <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> current = <a class="code hl_variable" href="_e_d_a___fase1_8c.html#a5208aaa5c10b1c45461a1dcb3827dc32">listV</a>;</div>
-<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">while</span> (current != NULL) {</div>
-<div class="line"><span class="lineno">   74</span>        <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> vehicle = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)current-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
-<div class="line"><span class="lineno">   75</span>        fprintf(file, <span class="stringliteral">&quot;%d|%s|%s|%.2f|%.2f|%.2f|%.2f|%d|%.2f\n&quot;</span>,</div>
-<div class="line"><span class="lineno">   76</span>            vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a8ec22531817bb25a7bfd6c4366de54b3">geolocation</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe893e21455b5e3ba30d98b78a5f4479">battery</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#af098be7d698ae45ee6ef1f2fed01a25b">costhour</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a40c56f500e49fad57b2f7cae41462082">costkm</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#adc4747e59356ef81f6e5df973870970b">inUse</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1">totalkms</a>);</div>
-<div class="line"><span class="lineno">   77</span>        current = current-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
-<div class="line"><span class="lineno">   78</span>    }</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>    fclose(file); <span class="comment">// close the file</span></div>
-<div class="line"><span class="lineno">   81</span>}</div>
+<div class="line"><span class="lineno">   57</span>        <a class="code hl_function" href="menu_8c.html#a7e15c8e2885871839fc2b820dfbdb4ce">error</a>();</div>
+<div class="line"><span class="lineno">   58</span>    }</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordtype">char</span> vehicles_bin[500];</div>
+<div class="line"><span class="lineno">   61</span>    strcpy(vehicles_bin, cwd);</div>
+<div class="line"><span class="lineno">   62</span>    strcat(vehicles_bin, <span class="stringliteral">&quot;\\vehicles.bin&quot;</span>);</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    FILE* file = fopen(vehicles_bin, <span class="stringliteral">&quot;wb&quot;</span>); <span class="comment">// open the file in write binary mode</span></div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">if</span> (file == NULL) {</div>
+<div class="line"><span class="lineno">   66</span>        printf(<span class="stringliteral">&quot; Error opening file %s.\n&quot;</span>, vehicles_bin);</div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   68</span>    }</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    <span class="comment">// iterate through the list of vehicles and write their information to the file</span></div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_struct" href="structs_list_elem.html">ListElem</a> current = <a class="code hl_variable" href="_e_d_a___fase1_8c.html#a5208aaa5c10b1c45461a1dcb3827dc32">listV</a>;</div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">while</span> (current != NULL) {</div>
+<div class="line"><span class="lineno">   73</span>        <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> vehicle = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)current-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
+<div class="line"><span class="lineno">   74</span>        fprintf(file, <span class="stringliteral">&quot;%d|%s|%s|%.2f|%.2f|%.2f|%.2f|%d|%.2f\n&quot;</span>,</div>
+<div class="line"><span class="lineno">   75</span>            vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a8ec22531817bb25a7bfd6c4366de54b3">geolocation</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe893e21455b5e3ba30d98b78a5f4479">battery</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">autonomy</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#af098be7d698ae45ee6ef1f2fed01a25b">costhour</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a40c56f500e49fad57b2f7cae41462082">costkm</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#adc4747e59356ef81f6e5df973870970b">inUse</a>, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1">totalkms</a>);</div>
+<div class="line"><span class="lineno">   76</span>        current = current-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
+<div class="line"><span class="lineno">   77</span>    }</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>    fclose(file); <span class="comment">// close the file</span></div>
+<div class="line"><span class="lineno">   80</span>}</div>
 <div class="ttc" id="a_e_d_a___fase1_8c_html_a5208aaa5c10b1c45461a1dcb3827dc32"><div class="ttname"><a href="_e_d_a___fase1_8c.html#a5208aaa5c10b1c45461a1dcb3827dc32">listV</a></div><div class="ttdeci">ListElem listV</div><div class="ttdoc">List of vehicles.</div><div class="ttdef"><b>Definition:</b> <a href="_e_d_a___fase1_8c_source.html#l00025">EDA_Fase1.c:25</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1674,25 +1672,25 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if the geolocation is valid, 0 otherwise.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00501">501</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  502</span>{</div>
-<div class="line"><span class="lineno">  503</span>    <span class="keywordtype">char</span> geo_aux[50];</div>
-<div class="line"><span class="lineno">  504</span>    strcpy(geo_aux, geolocation);</div>
-<div class="line"><span class="lineno">  505</span> </div>
-<div class="line"><span class="lineno">  506</span>    <span class="keywordtype">int</span> words = 0;</div>
-<div class="line"><span class="lineno">  507</span>    <span class="keywordtype">char</span>* tokens = strtok(geo_aux, <span class="stringliteral">&quot;.&quot;</span>);</div>
-<div class="line"><span class="lineno">  508</span>    <span class="keywordflow">while</span> (tokens != NULL) {</div>
-<div class="line"><span class="lineno">  509</span>        words++;</div>
-<div class="line"><span class="lineno">  510</span>        tokens = strtok(NULL, <span class="stringliteral">&quot;.&quot;</span>);</div>
-<div class="line"><span class="lineno">  511</span>    }</div>
-<div class="line"><span class="lineno">  512</span> </div>
-<div class="line"><span class="lineno">  513</span>    <span class="keywordflow">if</span> (words == 3) {</div>
-<div class="line"><span class="lineno">  514</span>        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  515</span>    }</div>
-<div class="line"><span class="lineno">  516</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  517</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  518</span>    }</div>
-<div class="line"><span class="lineno">  519</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00499">499</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  500</span>{</div>
+<div class="line"><span class="lineno">  501</span>    <span class="keywordtype">char</span> geo_aux[50];</div>
+<div class="line"><span class="lineno">  502</span>    strcpy(geo_aux, geolocation);</div>
+<div class="line"><span class="lineno">  503</span> </div>
+<div class="line"><span class="lineno">  504</span>    <span class="keywordtype">int</span> words = 0;</div>
+<div class="line"><span class="lineno">  505</span>    <span class="keywordtype">char</span>* tokens = strtok(geo_aux, <span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><span class="lineno">  506</span>    <span class="keywordflow">while</span> (tokens != NULL) {</div>
+<div class="line"><span class="lineno">  507</span>        words++;</div>
+<div class="line"><span class="lineno">  508</span>        tokens = strtok(NULL, <span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><span class="lineno">  509</span>    }</div>
+<div class="line"><span class="lineno">  510</span> </div>
+<div class="line"><span class="lineno">  511</span>    <span class="keywordflow">if</span> (words == 3) {</div>
+<div class="line"><span class="lineno">  512</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  513</span>    }</div>
+<div class="line"><span class="lineno">  514</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  515</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  516</span>    }</div>
+<div class="line"><span class="lineno">  517</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1739,17 +1737,17 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if the vehicle exists, 0 otherwise.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00490">490</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  490</span>                                                               {</div>
-<div class="line"><span class="lineno">  491</span>    <span class="keywordflow">while</span> (listVehicles != NULL) {</div>
-<div class="line"><span class="lineno">  492</span>        <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> vehicle = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)listVehicles-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
-<div class="line"><span class="lineno">  493</span>        if (code == vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a> &amp;&amp; strcmp(type, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>) == 0) {</div>
-<div class="line"><span class="lineno">  494</span>            <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  495</span>        }</div>
-<div class="line"><span class="lineno">  496</span>        listVehicles = listVehicles-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
-<div class="line"><span class="lineno">  497</span>    }</div>
-<div class="line"><span class="lineno">  498</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  499</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vehicle_8c_source.html#l00488">488</a> of file <a class="el" href="vehicle_8c_source.html">vehicle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  488</span>                                                               {</div>
+<div class="line"><span class="lineno">  489</span>    <span class="keywordflow">while</span> (listVehicles != NULL) {</div>
+<div class="line"><span class="lineno">  490</span>        <a class="code hl_struct" href="structdatavehicle.html">Vehicle</a> vehicle = (<a class="code hl_typedef" href="vehicle_8h.html#a113a9e077a63af4238116c0969974847">Vehicle</a>)listVehicles-&gt;<a class="code hl_variable" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">data</a>;</div>
+<div class="line"><span class="lineno">  491</span>        if (code == vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">code</a> &amp;&amp; strcmp(type, vehicle-&gt;<a class="code hl_variable" href="structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2">type</a>) == 0) {</div>
+<div class="line"><span class="lineno">  492</span>            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  493</span>        }</div>
+<div class="line"><span class="lineno">  494</span>        listVehicles = listVehicles-&gt;<a class="code hl_variable" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">next</a>;</div>
+<div class="line"><span class="lineno">  495</span>    }</div>
+<div class="line"><span class="lineno">  496</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  497</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

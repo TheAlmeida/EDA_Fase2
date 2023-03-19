@@ -41,7 +41,7 @@ ListElem loadDataVehicles(ListElem listVehicles)
             free(v);
             break;
         }
-        //listV = addItemHead(listV, v);
+
         listVehicles = addItemOrderedIterative(listVehicles, v, &compareAutonomy);
     }
 
@@ -54,8 +54,7 @@ void storeDataVehicles(ListElem listV)
     char cwd[500];
     if (getcwd(cwd, sizeof(cwd)) == NULL)
     {
-        error(); //Espera input do user
-        //registerClient(registerFromAdmin);
+        error();
     }
 
     char vehicles_bin[500];
@@ -348,7 +347,6 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
         int optionLine = 0;
         if (isInt(auxLine))
             optionLine = stringToInt(auxLine);
-        //printf("\n");
 
         char edit[50];
         int editInt = -1;
@@ -530,7 +528,7 @@ ListElem registerVehicle(ListElem listVehicle, int* modified) {
 
     Vehicle v = (Vehicle)malloc(sizeof(struct datavehicle));
 
-    printf("\n Insira o modelo do veiculo: "); //NOME
+    printf("\n Insira o modelo do veiculo: ");
     scanf(" %[^\n]%*c", v->type);
 
     for (int i = 0; v->type[i] != '\0'; i++)
@@ -568,7 +566,7 @@ ListElem registerVehicle(ListElem listVehicle, int* modified) {
         return listVehicle;
     }
 
-    printf("\n Insira a localizacao: "); //NOME
+    printf("\n Insira a localizacao: ");
     scanf(" %[^\n]%*c", v->geolocation);
 
     if (!validGeolocation(v->geolocation))

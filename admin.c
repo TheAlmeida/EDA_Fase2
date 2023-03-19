@@ -50,8 +50,7 @@ void storeDataAdmins(ListElem listA) {
     char cwd[500];
     if (getcwd(cwd, sizeof(cwd)) == NULL)
     {
-        error(); //Espera input do user
-        //registerClient(registerFromAdmin);
+        error();
     }
 
     char admins_bin[500];
