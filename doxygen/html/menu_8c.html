@@ -168,6 +168,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8b369a47f7adcf40d3d5e92b497f8785"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8c.html#a8b369a47f7adcf40d3d5e92b497f8785">admincstatsbytrips</a> ()</td></tr>
 <tr class="memdesc:a8b369a47f7adcf40d3d5e92b497f8785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a header for client stats.  <br /></td></tr>
 <tr class="separator:a8b369a47f7adcf40d3d5e92b497f8785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e6b3c31342e4adc82ba4c4dbb152f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8c.html#ac0e6b3c31342e4adc82ba4c4dbb152f7">adminhistory</a> ()</td></tr>
+<tr class="memdesc:ac0e6b3c31342e4adc82ba4c4dbb152f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a header for histories.  <br /></td></tr>
+<tr class="separator:ac0e6b3c31342e4adc82ba4c4dbb152f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67efd2040296d818486c4318c6aaccea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8c.html#a67efd2040296d818486c4318c6aaccea">adminvstats</a> ()</td></tr>
 <tr class="memdesc:a67efd2040296d818486c4318c6aaccea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a header for vehicle stats.  <br /></td></tr>
 <tr class="separator:a67efd2040296d818486c4318c6aaccea"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -244,6 +247,36 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="ac0e6b3c31342e4adc82ba4c4dbb152f7" name="ac0e6b3c31342e4adc82ba4c4dbb152f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e6b3c31342e4adc82ba4c4dbb152f7">&#9670;&#160;</a></span>adminhistory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void adminhistory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prints a header for histories. </p>
+
+<p class="definition">Definition at line <a class="el" href="menu_8c_source.html#l00283">283</a> of file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  284</span>{</div>
+<div class="line"><span class="lineno">  285</span>    <a class="code hl_function" href="menu_8c.html#af3eac3ad203ab091baad010ef3f7ab0a">clrscr</a>();</div>
+<div class="line"><span class="lineno">  286</span>    <a class="code hl_function" href="menu_8c.html#a9f809d3b08485e9e7fe169bff0a6fa25">showtime</a>();</div>
+<div class="line"><span class="lineno">  287</span> </div>
+<div class="line"><span class="lineno">  288</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  289</span>    printf(<span class="stringliteral">&quot;|                              HISTORICO                             |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  290</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  291</span>    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  292</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ab94906debe465784ce5a3d92390ed7a2" name="ab94906debe465784ce5a3d92390ed7a2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab94906debe465784ce5a3d92390ed7a2">&#9670;&#160;</a></span>adminmenu()</h2>
 
@@ -303,16 +336,16 @@ Functions</h2></td></tr>
 
 <p>Prints a header for vehicle stats. </p>
 
-<p class="definition">Definition at line <a class="el" href="menu_8c_source.html#l00283">283</a> of file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  284</span>{</div>
-<div class="line"><span class="lineno">  285</span>    <a class="code hl_function" href="menu_8c.html#af3eac3ad203ab091baad010ef3f7ab0a">clrscr</a>();</div>
-<div class="line"><span class="lineno">  286</span>    <a class="code hl_function" href="menu_8c.html#a9f809d3b08485e9e7fe169bff0a6fa25">showtime</a>();</div>
-<div class="line"><span class="lineno">  287</span> </div>
-<div class="line"><span class="lineno">  288</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  289</span>    printf(<span class="stringliteral">&quot;|                        ESTATISTICAS VEICULOS                       |\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  290</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  291</span>    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  292</span>}</div>
+<p class="definition">Definition at line <a class="el" href="menu_8c_source.html#l00294">294</a> of file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  295</span>{</div>
+<div class="line"><span class="lineno">  296</span>    <a class="code hl_function" href="menu_8c.html#af3eac3ad203ab091baad010ef3f7ab0a">clrscr</a>();</div>
+<div class="line"><span class="lineno">  297</span>    <a class="code hl_function" href="menu_8c.html#a9f809d3b08485e9e7fe169bff0a6fa25">showtime</a>();</div>
+<div class="line"><span class="lineno">  298</span> </div>
+<div class="line"><span class="lineno">  299</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  300</span>    printf(<span class="stringliteral">&quot;|                        ESTATISTICAS VEICULOS                       |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  301</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  302</span>    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  303</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -333,13 +366,13 @@ Functions</h2></td></tr>
 
 <p>Prints a header for vehicle stats. </p>
 
-<p class="definition">Definition at line <a class="el" href="menu_8c_source.html#l00294">294</a> of file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  295</span>{</div>
-<div class="line"><span class="lineno">  296</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  297</span>    printf(<span class="stringliteral">&quot;|                    VEICULOS ABAIXO 50%% BATERIA                     |\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  298</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  299</span>    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  300</span>}</div>
+<p class="definition">Definition at line <a class="el" href="menu_8c_source.html#l00305">305</a> of file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  306</span>{</div>
+<div class="line"><span class="lineno">  307</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  308</span>    printf(<span class="stringliteral">&quot;|                    VEICULOS ABAIXO 50%% BATERIA                     |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  309</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  310</span>    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  311</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -360,13 +393,13 @@ Functions</h2></td></tr>
 
 <p>Prints a header for vehicle stats. </p>
 
-<p class="definition">Definition at line <a class="el" href="menu_8c_source.html#l00302">302</a> of file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  303</span>{</div>
-<div class="line"><span class="lineno">  304</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  305</span>    printf(<span class="stringliteral">&quot;|                        VEICULOS POR NRO KMS                        |\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  306</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  307</span>    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  308</span>}</div>
+<p class="definition">Definition at line <a class="el" href="menu_8c_source.html#l00313">313</a> of file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  314</span>{</div>
+<div class="line"><span class="lineno">  315</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  316</span>    printf(<span class="stringliteral">&quot;|                        VEICULOS POR NRO KMS                        |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  317</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  318</span>    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  319</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -538,28 +571,28 @@ Functions</h2></td></tr>
 
 <p>Prints the contactus menu. </p>
 
-<p class="definition">Definition at line <a class="el" href="menu_8c_source.html#l00310">310</a> of file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  311</span>{</div>
-<div class="line"><span class="lineno">  312</span>    <a class="code hl_function" href="menu_8c.html#af3eac3ad203ab091baad010ef3f7ab0a">clrscr</a>();</div>
-<div class="line"><span class="lineno">  313</span>    <a class="code hl_function" href="menu_8c.html#a9f809d3b08485e9e7fe169bff0a6fa25">showtime</a>();</div>
-<div class="line"><span class="lineno">  314</span> </div>
-<div class="line"><span class="lineno">  315</span>    printf(<span class="stringliteral">&quot;|------------------------------------------------------------------|\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  316</span>    printf(<span class="stringliteral">&quot;|        BRAGA        |        PORTO        |        LISBOA        |\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  317</span>    printf(<span class="stringliteral">&quot;|                     |                     |                      |\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  318</span>    printf(<span class="stringliteral">&quot;|                     |                     |                      |\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  319</span>    printf(<span class="stringliteral">&quot;| Nr�:                | Nr�                 | Nr�                  |\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  320</span>    printf(<span class="stringliteral">&quot;| 253340965           | 223458652           | 214564753            |\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  321</span>    printf(<span class="stringliteral">&quot;| Horario:            | Horario:            | Horario:             |\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  322</span>    printf(<span class="stringliteral">&quot;| 2� � 6�             | 2� � 6�             | 2� � 6�              |\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  323</span>    printf(<span class="stringliteral">&quot;| Morada:             | Morada:             | Morada:              |\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  324</span>    printf(<span class="stringliteral">&quot;| Pra�a do Com�rcio   | R. da Bolsa         | Tv. Inglesinhos      |\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  325</span>    printf(<span class="stringliteral">&quot;| 4700-370 Braga      | n�19,4050-253 Porto | n�46A,1200-079 Lisboa|\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  326</span>    printf(<span class="stringliteral">&quot;|                     |                     |                      |\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  327</span>    printf(<span class="stringliteral">&quot;| 1 - Ver localiza��o | 2 - Ver localiza��o | 3 - Ver localiza��o  |\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  328</span>    printf(<span class="stringliteral">&quot;|------------------------------------------------------------------|\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  329</span>    printf(<span class="stringliteral">&quot;|                                                    0 - RETROCEDER|\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  330</span>    printf(<span class="stringliteral">&quot;|------------------------------------------------------------------|\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  331</span>}</div>
+<p class="definition">Definition at line <a class="el" href="menu_8c_source.html#l00321">321</a> of file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  322</span>{</div>
+<div class="line"><span class="lineno">  323</span>    <a class="code hl_function" href="menu_8c.html#af3eac3ad203ab091baad010ef3f7ab0a">clrscr</a>();</div>
+<div class="line"><span class="lineno">  324</span>    <a class="code hl_function" href="menu_8c.html#a9f809d3b08485e9e7fe169bff0a6fa25">showtime</a>();</div>
+<div class="line"><span class="lineno">  325</span> </div>
+<div class="line"><span class="lineno">  326</span>    printf(<span class="stringliteral">&quot;|------------------------------------------------------------------|\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  327</span>    printf(<span class="stringliteral">&quot;|        BRAGA        |        PORTO        |        LISBOA        |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  328</span>    printf(<span class="stringliteral">&quot;|                     |                     |                      |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  329</span>    printf(<span class="stringliteral">&quot;|                     |                     |                      |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  330</span>    printf(<span class="stringliteral">&quot;| Nr�:                | Nr�                 | Nr�                  |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  331</span>    printf(<span class="stringliteral">&quot;| 253340965           | 223458652           | 214564753            |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  332</span>    printf(<span class="stringliteral">&quot;| Horario:            | Horario:            | Horario:             |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  333</span>    printf(<span class="stringliteral">&quot;| 2� � 6�             | 2� � 6�             | 2� � 6�              |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  334</span>    printf(<span class="stringliteral">&quot;| Morada:             | Morada:             | Morada:              |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  335</span>    printf(<span class="stringliteral">&quot;| Pra�a do Com�rcio   | R. da Bolsa         | Tv. Inglesinhos      |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  336</span>    printf(<span class="stringliteral">&quot;| 4700-370 Braga      | n�19,4050-253 Porto | n�46A,1200-079 Lisboa|\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  337</span>    printf(<span class="stringliteral">&quot;|                     |                     |                      |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  338</span>    printf(<span class="stringliteral">&quot;| 1 - Ver localiza��o | 2 - Ver localiza��o | 3 - Ver localiza��o  |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  339</span>    printf(<span class="stringliteral">&quot;|------------------------------------------------------------------|\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  340</span>    printf(<span class="stringliteral">&quot;|                                                    0 - RETROCEDER|\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  341</span>    printf(<span class="stringliteral">&quot;|------------------------------------------------------------------|\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  342</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -580,17 +613,17 @@ Functions</h2></td></tr>
 
 <p>Prints an end program header and terminates the program. </p>
 
-<p class="definition">Definition at line <a class="el" href="menu_8c_source.html#l00333">333</a> of file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  334</span>{</div>
-<div class="line"><span class="lineno">  335</span>    <a class="code hl_function" href="menu_8c.html#af3eac3ad203ab091baad010ef3f7ab0a">clrscr</a>();</div>
-<div class="line"><span class="lineno">  336</span>    <a class="code hl_function" href="menu_8c.html#a9f809d3b08485e9e7fe169bff0a6fa25">showtime</a>();</div>
-<div class="line"><span class="lineno">  337</span> </div>
-<div class="line"><span class="lineno">  338</span>    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  339</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  340</span>    printf(<span class="stringliteral">&quot;|                  PROGRAMA TERMINADO COM SUCESSO!                   |\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  341</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  342</span>    exit(0);</div>
-<div class="line"><span class="lineno">  343</span>}</div>
+<p class="definition">Definition at line <a class="el" href="menu_8c_source.html#l00344">344</a> of file <a class="el" href="menu_8c_source.html">menu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  345</span>{</div>
+<div class="line"><span class="lineno">  346</span>    <a class="code hl_function" href="menu_8c.html#af3eac3ad203ab091baad010ef3f7ab0a">clrscr</a>();</div>
+<div class="line"><span class="lineno">  347</span>    <a class="code hl_function" href="menu_8c.html#a9f809d3b08485e9e7fe169bff0a6fa25">showtime</a>();</div>
+<div class="line"><span class="lineno">  348</span> </div>
+<div class="line"><span class="lineno">  349</span>    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  350</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  351</span>    printf(<span class="stringliteral">&quot;|                  PROGRAMA TERMINADO COM SUCESSO!                   |\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  352</span>    printf(<span class="stringliteral">&quot;|--------------------------------------------------------------------|\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  353</span>    exit(0);</div>
+<div class="line"><span class="lineno">  354</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

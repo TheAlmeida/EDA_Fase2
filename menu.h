@@ -161,6 +161,11 @@ void admincstats();
 void admincstatsbytrips();
 
 /// <summary>
+/// Prints a header for histories.
+/// </summary>
+void adminhistory();
+
+/// <summary>
 /// Prints a header for vehicle stats.
 /// </summary>
 void adminvstats();

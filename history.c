@@ -53,8 +53,7 @@ void storeDataHistory(ListElem listH)
     char cwd[500];
     if (getcwd(cwd, sizeof(cwd)) == NULL)
     {
-        error(); //Espera input do user
-        //registerClient(registerFromAdmin);
+        error();
     }
 
     char history_bin[500];
@@ -152,9 +151,7 @@ ListElem filterHistoryByType(ListElem originalList, char* typeToFilter)
 
 ListElem filterHistory(ListElem listHistory, int by)
 {
-    //clrscr();
-
-    //adminmenu();
+    adminhistory();
 
     if (by == 0)
         printf(" Insira o modelo do veiculo a utilizar como filtro: ");

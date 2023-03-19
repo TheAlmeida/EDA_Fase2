@@ -134,7 +134,6 @@ void vehicleStats(ListElem listVehicles)
 
     adminvstatstotalkms();
 
-    //ListElem sortListV = NULL;
     ListElem sortListV = sortByTotalKms(listVehicles);
     showListIterative(sortListV, &showVehicle);
 
@@ -258,6 +257,7 @@ void modeAdmin()
                 }
                 break;
             case 13:
+                adminhistory();
                 showListIterative(listH, &showHistory);
                 wait();
                 break;
@@ -508,12 +508,11 @@ int login() {
 
     printf("\n");
     printf(" Insira o seu nome de utilizador: ");
-    scanf(" %[^\n]", tmpUsername); // %[^\n]%*c
+    scanf(" %[^\n]", tmpUsername);
     printf(" Insira a sua password: ");
     scanf(" %[^\n]", tmpPassword);
 
     ListElem currentList;
-    // Check admin list
     currentList = listA;
     while (currentList != NULL)
     {
@@ -538,7 +537,6 @@ int login() {
         }
         currentList = currentList->next;
     }
-    // Check client list
     currentList = listC;
     while (currentList != NULL)
     {
@@ -549,7 +547,6 @@ int login() {
                 if (strcmp(((Client)currentList->data)->password, tmpPassword) == 0)
                 {
                     // Login successful for client
-
                     currentClient = (Client)currentList->data;
                     signinok(currentClient->username);
                     wait();
@@ -654,9 +651,6 @@ int main()
                 errornotvalid();
             }
         }
-        //free(a);
-        //free(v);
-        //free(c);
     } while (option != 0);
 
     return 0;

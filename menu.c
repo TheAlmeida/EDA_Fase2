@@ -280,6 +280,17 @@ void admincstatsbytrips()
     printf("\n");
 }
 
+void adminhistory()
+{
+    clrscr();
+    showtime();
+
+    printf("|--------------------------------------------------------------------|\n");
+    printf("|                              HISTORICO                             |\n");
+    printf("|--------------------------------------------------------------------|\n");
+    printf("\n");
+}
+
 void adminvstats()
 {
     clrscr();
