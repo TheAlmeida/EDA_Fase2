@@ -43,7 +43,7 @@ Vehicle currentVehicle;
 /// Loads the linked lists from binary files.
 /// Allows the user to register, login, check the physical stores information or kill the program.
 /// </summary>
-/// <returns></returns>
+/// <returns>0 if exited correctly.</returns>
 int main();
 
 /// <summary>
@@ -67,8 +67,8 @@ int choosingVehicle(ListElem listAV);
 /// <summary>
 /// Simulates the renting of a vehicle by asking the user for input.
 /// </summary>
-/// <param name="c">A pointer to the current logged in client</param>
-/// <param name="v">A pointer to the currently selected vehicle</param>
+/// <param name="c">A pointer to the current logged in client.</param>
+/// <param name="v">A pointer to the currently selected vehicle.</param>
 /// <returns>1 if simulation was successfull. 0 otherwise.</returns>
 int simulateTrip(Client c, Vehicle v);
 
@@ -99,13 +99,17 @@ void clientStats(ListElem listClients);
 
 void clientStats(ListElem listClients)
 {
+    admincstats();
+
     char clientMaxTrips[21];
     int maxTrips = 0;
     findClientWithMostTrips(listClients, clientMaxTrips, &maxTrips);
-    printf(" O cliente com mais viagens e: %s com %d viagens.\n", clientMaxTrips, maxTrips);
+    printf(" O cliente com mais viagens e: %s com %d viagens.\n\n", clientMaxTrips, maxTrips);
 
     float avgAge = calculateAverageAge(listClients);
-    printf(" A idade media dos utilizadores e: %.1f anos\n", avgAge);
+    printf(" A idade media dos utilizadores e: %.1f anos\n\n", avgAge);
+
+    admincstatsbytrips();
 
     ListElem sortListC = sortByTrips(listClients);
     showListIterative(sortListC, &showClient);
@@ -115,14 +119,20 @@ void clientStats(ListElem listClients)
 
 void vehicleStats(ListElem listVehicles)
 {
+    adminvstats();
+
     float percentInUse = percentageInUse(listVehicles);
-    printf(" A percentagem de veiculos em uso e de: %.2f%%\n", percentInUse);
+    printf(" A percentagem de veiculos em uso e de: %.2f%%\n\n", percentInUse);
 
     float avgAutonomy = averageAutonomy(listVehicles);
-    printf(" A autonomia media de todos os veiculos registados e de: %.2fkms\n", avgAutonomy);
+    printf(" A autonomia media de todos os veiculos registados e de: %.2fkms\n\n", avgAutonomy);
+
+    adminvstatsbatteryunder50();
 
     ListElem auxListV = filterVehicleByBattery(listVehicles);
     showListIterative(auxListV, &showVehicle);
+
+    adminvstatstotalkms();
 
     //ListElem sortListV = NULL;
     ListElem sortListV = sortByTotalKms(listVehicles);
@@ -312,7 +322,9 @@ int simulateTrip(Client c, Vehicle v) {
 
     if (isInt(auxDuration) || isFloat(auxDuration))
     {
-        h->duration = stringToFloat(auxDuration);
+        int hours = 0, minutes = 0;
+        sscanf(auxDuration, "%d.%d", &hours, &minutes);
+        h->duration = (float)hours + ((float)minutes / 60.0);
     }
     else
     {
@@ -330,13 +342,30 @@ int simulateTrip(Client c, Vehicle v) {
 
     c->totalkms += h->distance;
     c->totaltrips++;
+
+    if (h->cost > c->balance)
+    {
+        
+        while (h->cost > c->balance)
+        {
+            float difference = (h->cost) - (c->balance);
+            printf("\n Nao tem saldo que chegue! Por favor, carregue a sua conta com pelo menos %.2f euros. \n", difference);
+            int modified = 0;
+            addBalance(c, &modified);
+            if (modified)
+                storeDataClients(listC);
+            else
+                errornotvalidinfo();
+        }
+    }
+
     c->balance -= h->cost;
+    printf("\n A viagem teve um custo de: %2.f euros.\n O seu balanco e de: %.2f euros. \n\n", h->cost, c->balance);
+    wait();
 
     strcpy(v->geolocation, h->finish);
     v->totalkms += h->distance;
     v->inUse = 0;
-
-    //showHistory(h);
 
     storeDataClients(listC);
     storeDataVehicles(listV);
@@ -541,7 +570,6 @@ int login() {
     return 0;
 }
 
-// Procedimento principal
 int main()
 {
     listA = NULL;

@@ -151,6 +151,31 @@ void signinokadmin();
 void adminmenu();
 
 /// <summary>
+/// Prints a header for client stats.
+/// </summary>
+void admincstats();
+
+/// <summary>
+/// Prints a header for client stats.
+/// </summary>
+void admincstatsbytrips();
+
+/// <summary>
+/// Prints a header for vehicle stats.
+/// </summary>
+void adminvstats();
+
+/// <summary>
+/// Prints a header for vehicle stats.
+/// </summary>
+void adminvstatsbatteryunder50();
+
+/// <summary>
+/// Prints a header for vehicle stats.
+/// </summary>
+void adminvstatstotalkms();
+
+/// <summary>
 /// Prints the contactus menu.
 /// </summary>
 void contactus();

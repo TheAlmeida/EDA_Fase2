@@ -57,9 +57,9 @@ ListElem filterHistoryByTransport(ListElem originalList, char* transportToFilter
 /// Returns a new list of histories that have a type in common.
 /// </summary>
 /// <param name="originalList">A pointer to the linked list of histories.</param>
-/// <param name="transportToFilter">String passed as the type to compare to.</param>
+/// <param name="typeToFilter">String passed as the type to compare to.</param>
 /// <returns>The new list of vehicles.</returns>
-ListElem filterHistoryByType(ListElem originalList, char* transportToFilter);
+ListElem filterHistoryByType(ListElem originalList, char* typeToFilter);
 
 /// <summary>
 /// Returns a new list of histories after being passed down to one of the other 3 filterHistory functios.

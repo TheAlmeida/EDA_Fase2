@@ -123,7 +123,7 @@ ListElem filterHistoryByTransport(ListElem originalList, char* transportToFilter
     return filteredList;
 }
 
-ListElem filterHistoryByType(ListElem originalList, char* transportToFilter)
+ListElem filterHistoryByType(ListElem originalList, char* typeToFilter)
 {
     ListElem filteredList = NULL;
     ListElem current = originalList;
@@ -135,7 +135,7 @@ ListElem filterHistoryByType(ListElem originalList, char* transportToFilter)
         if (underscorePos != NULL) {
             *underscorePos = '\0';  // null-terminate the string at the underscore
         }
-        if (strcmp(transport, transportToFilter) == 0) {
+        if (strcmp(transport, typeToFilter) == 0) {
             ListElem newElem = (ListElem)malloc(sizeof(SListElem));
             newElem->data = current->data;
             newElem->next = filteredList;
