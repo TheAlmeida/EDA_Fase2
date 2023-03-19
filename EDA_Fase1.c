@@ -26,16 +26,11 @@ Vehicle currentVehicle;
 
 // Prototypes
 int main();
-//int registerClient(ListElem listClient);
-//int usernameExists(char* username, ListElem listClients, ListElem listAdmins);
 int login();
 void modeClient();
 int choosingVehicle(ListElem listAV);
 int simulateTrip(Client c, Vehicle v);
 void modeAdmin();
-//int registerAdmin(ListElem listAdmin);
-//int registerVehicle(ListElem listVehicle);
-//int vehicleExists(int code, char* type, ListElem listVehicles);
 void vehicleStats(ListElem listVehicles);
 void clientStats(ListElem listClients);
 char getWorkingDirectory(char cwd[]);
@@ -225,6 +220,13 @@ void modeAdmin()
 
 }
 
+/**
+ * .
+ * 
+ * \param c
+ * \param v
+ * \return 
+ */
 int simulateTrip(Client c, Vehicle v) {
 
     simulatemenu();
