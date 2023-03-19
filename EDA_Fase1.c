@@ -9,37 +9,93 @@
 #include "vehicle.h"
 #include "history.h"
 
-typedef struct
-{
-    char naccount[50];
-    float balance;
-} BankAccount;
+//Global vars
 
-//Variaveis globais
+/// <summary>
+/// List of clients
+/// </summary>
 ListElem listC = NULL;
+/// <summary>
+/// List of admins
+/// </summary>
 ListElem listA = NULL;
+/// <summary>
+/// List of vehicles
+/// </summary>
 ListElem listV = NULL;
+/// <summary>
+/// List of histories
+/// </summary>
 ListElem listH = NULL;
 
+/// <summary>
+/// Current logged in client.
+/// </summary>
 Client currentClient;
+/// <summary>
+/// Current vehicle in simulation.
+/// </summary>
 Vehicle currentVehicle;
 
 // Prototypes
+
+/// <summary>
+/// Loads the linked lists from binary files.
+/// Allows the user to register, login, check the physical stores information or kill the program.
+/// </summary>
+/// <returns></returns>
 int main();
+
+/// <summary>
+/// Iterates over the admin and client lists until it finds a corresponding username, then checks the password.
+/// </summary>
+/// <returns>0 if login failed, 1 if login successfull as admin, 2 if login successfull for client</returns>
 int login();
+
+/// <summary>
+/// Allows the user to rent a vehicle by vehicles available(/in a specified geocode), consult and charge the user's account balance and to see some stats.
+/// </summary>
 void modeClient();
+
+/// <summary>
+/// Allows the user to select the vehicle to use on it's trip.
+/// </summary>
+/// <param name="listAV">A pointer to the head of the linked list of available vehicles.</param>
+/// <returns>1 if selection was successfull. 0 otherwise.</returns>
 int choosingVehicle(ListElem listAV);
+
+/// <summary>
+/// Simulates the renting of a vehicle by asking the user for input.
+/// </summary>
+/// <param name="c">A pointer to the current logged in client</param>
+/// <param name="v">A pointer to the currently selected vehicle</param>
+/// <returns>1 if simulation was successfull. 0 otherwise.</returns>
 int simulateTrip(Client c, Vehicle v);
+
+/// <summary>
+/// Allows the user to add/edit/remove any client/admin/vehicle, to see the histories filtered by vehicle(type+code)/type/client and to see some stats for clients/vehicles.
+/// Updates the files with every change.
+/// </summary>
 void modeAdmin();
+
+/// <summary>
+/// Prints the percentage of vehicles in use off the linked list of vehicles
+/// Prints the average autonomy of the field autonomy in all the elements of the linked list of vehicles.
+/// Prints the filtered linked list of vehicles where each vehicle must have the battery field below 50.
+/// Prints the sorted linked list of vehicles by decreasing order of total kms.
+/// </summary>
+/// <param name="listVehicles">A pointer to the head of the linked list of vehicles.</param>
 void vehicleStats(ListElem listVehicles);
+
+/// <summary>
+/// Prints the highest value of the field totalTrips in all the elements of the linked list of clients and the corresponding client's username.
+/// Prints the average age of the field age in all the elements of the linked list of clients.
+/// Prints the sorted linked list of clients by decreasing order of total Trips.
+/// </summary>
+/// <param name="listClients">A pointer to the head of the linked list of clients.</param>
 void clientStats(ListElem listClients);
-char getWorkingDirectory(char cwd[]);
 
-// Implementações
-char getWorkingDirectory(char cwd[])
-{
-
-}
+// Implementations
 
 void clientStats(ListElem listClients)
 {
@@ -498,13 +554,6 @@ int main()
         fflush(stdin);
 
         menu();
-
-        //loadData(firstLoad);
-
-        showListIterative(listA, &showAdmin);
-        showListIterative(listC, &showClient);
-        showListIterative(listV, &showVehicle);
-        showListIterative(listH, &showHistory);
 
         printf(" Selecione a opcao pretendida: ");
         char auxOption[10];

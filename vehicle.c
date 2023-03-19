@@ -124,16 +124,6 @@ int compareTotalKms(void* data1, void* data2)
         return 0;
 }
 
-int equal(void* data1, void* data2)
-{
-    Vehicle d1 = (Vehicle)data1;
-    int* d2 = (int*)data2;
-    if ((d1 != NULL) && (d2 != NULL))
-        return (d1->code == *d2);
-    else
-        return (0);
-}
-
 void changeVType(Vehicle vehicle, const char* newType)
 {
     strcpy(vehicle->type, newType);
