@@ -380,7 +380,7 @@ int choosingVehicle(ListElem listAV)
     int lenght = listLength(listAV);
     do {
         availablevehicles();
-        showListIterative(listAV, &showVehicle);
+        showListIterative(listAV, &showVehicleRent);
         
         printf(" Selecione o veiculo pretendido: ");
         char auxChoice[10];

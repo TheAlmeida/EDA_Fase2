@@ -17,6 +17,21 @@ void showVehicle(void* data)
     printf("\n");
 }
 
+void showVehicleRent(void* data)
+{
+    Vehicle v = (Vehicle)data;
+    if (v != NULL)
+        printf(" Veiculo: %s\n"
+            " Identificador: %d\n"
+            " Localizacao: %s\n"
+            " Bateria: %.2f %%\n"
+            " Autonomia: %.2f kms\n"
+            " Custo/hora: %.2f euros\n"
+            " Custo/km: %.2f euros\n",
+            v->type, v->code, v->geolocation, v->battery, v->autonomy, v->costhour, v->costkm);
+    printf("\n");
+}
+
 ListElem loadDataVehicles(ListElem listVehicles)
 {
     char cwd[500];

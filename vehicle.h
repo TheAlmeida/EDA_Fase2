@@ -28,6 +28,12 @@ typedef struct datavehicle
 void showVehicle(void* data);
 
 /// <summary>
+/// Shows vehicle data on the console to the client (reduced info).
+/// </summary>
+/// <param name="data">A pointer to the vehicle data.</param>
+void showVehicleRent(void* data);
+
+/// <summary>
 /// Loads vehicle data from a file into a linked list.
 /// </summary>
 /// <param name="listVehicles">A pointer to the head of the linked list of vehicles.</param>
