@@ -111,7 +111,7 @@ void menu()
     showtime();
 
     printf("|--------------------------------------------------------------------|\n");
-    printf("|                           LOJA ONLINE                              |\n");
+    printf("|                            CLEAN GO                                |\n");
     printf("|--------------------------------------------------------------------|\n");
     printf("| 1 - REGISTAR                                                       |\n");
     printf("| 2 - INICIAR SESSAO                                                 |\n");

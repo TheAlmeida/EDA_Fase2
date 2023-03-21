@@ -4,7 +4,8 @@ void showVehicle(void* data)
 {
     Vehicle v = (Vehicle)data;
     if (v != NULL)
-        printf(" Veiculo: %s %d\n"
+        printf(" Veiculo: %s\n"
+            " Identificador: %d\n"
             " Localizacao: %s\n"
             " Bateria: %.2f %%\n"
             " Autonomia: %.2f kms\n"
