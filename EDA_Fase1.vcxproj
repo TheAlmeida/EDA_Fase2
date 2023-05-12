@@ -70,6 +70,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LibraryPath>$(ProjectDir)\curl;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
+    <IncludePath>$(ProjectDir)\curl;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -108,6 +112,9 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcurl_a_debug.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -130,18 +137,22 @@
     <ClCompile Include="admin.c" />
     <ClCompile Include="client.c" />
     <ClCompile Include="EDA_Fase1.c" />
+    <ClCompile Include="graph.c" />
     <ClCompile Include="history.c" />
     <ClCompile Include="ll.c" />
     <ClCompile Include="menu.c" />
     <ClCompile Include="vehicle.c" />
+    <ClCompile Include="what3words.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="admin.h" />
     <ClInclude Include="client.h" />
+    <ClInclude Include="graph.h" />
     <ClInclude Include="history.h" />
     <ClInclude Include="ll.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="vehicle.h" />
+    <ClInclude Include="what3words.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

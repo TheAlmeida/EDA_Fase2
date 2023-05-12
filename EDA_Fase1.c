@@ -567,6 +567,7 @@ int login() {
     return 0;
 }
 
+
 int main()
 {
     listA = NULL;
@@ -578,6 +579,10 @@ int main()
     listC = loadDataClients(listC);
     listV = loadDataVehicles(listV);
     listH = loadDataHistory(listH);
+
+    //geolocationToCoordinates("faixa.posou.rolos");
+    coordinatesToGeolocation(59.1234, -74.0060);
+    wait();
 
     int option = 99;
     do {

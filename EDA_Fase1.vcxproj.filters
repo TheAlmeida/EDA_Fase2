@@ -36,6 +36,12 @@
     <ClCompile Include="history.c">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="what3words.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graph.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="menu.h">
@@ -54,6 +60,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="history.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="what3words.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
