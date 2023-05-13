@@ -13,6 +13,13 @@ typedef struct sListElem
 } *ListElem, SListElem; ///< Pointer to sListElem struct and alias for sListElem struct
 
 /// <summary>
+/// Creates a new ListElem.
+/// </summary>
+/// <param name="data">Data pointer to the data of the new element.</param>
+/// <returns></returns>
+ListElem createListElem(void* data);
+
+/// <summary>
 /// Returns the length of the linked list.
 /// </summary>
 /// <param name="head">Head pointer to the head of the list.</param>

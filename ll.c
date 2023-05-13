@@ -1,5 +1,14 @@
 #include "ll.h"
 
+// Function to create a new list element
+ListElem createListElem(void* data)
+{
+    ListElem elem = (ListElem)malloc(sizeof(SListElem));
+    elem->data = data;
+    elem->next = NULL;
+    return elem;
+}
+
 int listLength(ListElem head)
 {
     int i = 0;

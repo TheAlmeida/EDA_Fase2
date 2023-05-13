@@ -14,6 +14,11 @@
 #define M_PI 3.14159265358979323846
 #endif
 
+typedef struct {
+    double latitude;
+    double longitude;
+} Coordinates;
+
 double degreesToRadians(double degrees);
 
 //Haversine formula implementation
@@ -23,7 +28,7 @@ double calculateDistance(double lat1, double lon1, double lat2, double lon2);
 size_t writeCallback(void* contents, size_t size, size_t nmemb, char* output);
 
 // Function to convert geolocation to coordinates
-void geolocationToCoordinates(const char* location);
+Coordinates geolocationToCoordinates(const char* location);
 
 // Function to convert coordinates to geolocation
-void coordinatesToGeolocation(double latitude, double longitude);
+char* coordinatesToGeolocation(double latitude, double longitude);
