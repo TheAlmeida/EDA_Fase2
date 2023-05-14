@@ -15,7 +15,7 @@ typedef struct sLocation
 typedef struct sAdjacentLocation
 {
     struct sLocation* location;
-    int weight;
+    double weight;
 } AdjacentLocation;
 
 typedef struct sGraph
@@ -33,13 +33,17 @@ Location* createLocation(const char* name);
 void addLocation(Graph* graph, Location* location);
 
 // Function to add an adjacent location to a location
-void addAdjacentLocation(Location* location, Location* adjacentLocation, int weight);
+void addAdjacentLocation(Location* location, Location* adjacentLocation, double weight);
 
 // Function to create locations based on unique geolocations found in vehicles and add them to the graph
 void createLocationsFromVehicles(Graph* graph, ListElem listV);
 
 // Function to find a location in the graph by geolocation
 Location* findLocationByGeolocation(Graph* graph, const char* geolocation);
+
+void connectAdjacentLocations(Graph* graph);
+
+Location* getRandomLocation(Graph* graph, Location* excludeLocation);
 
 // Function to print the graph
 void printGraph(Graph* graph);

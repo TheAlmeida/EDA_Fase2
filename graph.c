@@ -25,11 +25,10 @@ void addLocation(Graph* graph, Location* location)
 }
 
 // Function to add an adjacent location to a location
-void addAdjacentLocation(Location* location, Location* adjacentLocation, int weight)
+void addAdjacentLocation(Location* location, Location* adjacentLocation, double weight)
 {
     AdjacentLocation* adjLocation = (AdjacentLocation*)malloc(sizeof(AdjacentLocation));
     adjLocation->location = adjacentLocation;
-    //adjLocation->weight = calculateDistance(geolocationToCoordinates(location), geolocationToCoordinates(adjacentLocation));
     adjLocation->weight = weight;
 
     ListElem elem = createListElem(adjLocation);
@@ -74,6 +73,81 @@ Location* findLocationByGeolocation(Graph* graph, const char* geolocation)
     return NULL;
 }
 
+void connectAdjacentLocations(Graph* graph)
+{
+    ListElem currLocation = graph->locations;
+    while (currLocation != NULL)
+    {
+        Location* location = (Location*)currLocation->data;
+
+        // Get the adjacent locations count (1 or 2)
+        int adjacentCount = (rand() % 2) + 1;
+
+        for (int i = 0; i < adjacentCount; i++)
+        {
+            // Select a random adjacent location
+            Location* adjacentLocation = getRandomLocation(graph, location);
+
+            // Calculate the weight using geolocation and distance
+            Coordinates locationCoords = geolocationToCoordinates(location->name);
+            Coordinates adjacentCoords = geolocationToCoordinates(adjacentLocation->name);
+            double weight = calculateDistance(locationCoords.latitude, locationCoords.longitude, adjacentCoords.latitude, adjacentCoords.longitude);
+            /*
+            double locationLat = geolocationToCoordinates(location->name).latitude;
+            double locationLon = geolocationToCoordinates(location->name).longitude;
+            double adjacentLat = geolocationToCoordinates(adjacentLocation->name).latitude;
+            double adjacentLon = geolocationToCoordinates(adjacentLocation->name).longitude;
+            double weight = calculateDistance(locationLat, locationLon, adjacentLat, adjacentLon);
+            */
+            
+
+            // Add the adjacent location to the current location
+            addAdjacentLocation(location, adjacentLocation, weight);
+        }
+
+        currLocation = currLocation->next;
+    }
+}
+
+Location* getRandomLocation(Graph* graph, Location* excludeLocation)
+{
+    ListElem currLocation = graph->locations;
+    int numLocations = 0;
+
+    // Count the number of available locations (excluding the excludeLocation)
+    while (currLocation != NULL)
+    {
+        Location* location = (Location*)currLocation->data;
+        if (location != excludeLocation)
+            numLocations++;
+        currLocation = currLocation->next;
+    }
+
+    // Select a random index within the available locations range
+    int randomIndex = rand() % numLocations;
+
+    // Get the location at the random index
+    currLocation = graph->locations;
+    int currentIndex = 0;
+
+    while (currLocation != NULL)
+    {
+        Location* location = (Location*)currLocation->data;
+
+        if (location != excludeLocation)
+        {
+            if (currentIndex == randomIndex)
+                return location;
+
+            currentIndex++;
+        }
+
+        currLocation = currLocation->next;
+    }
+
+    return NULL; // Return NULL if no location found
+}
+
 
 // Function to print the graph
 void printGraph(Graph* graph)
@@ -88,7 +162,7 @@ void printGraph(Graph* graph)
         while (currAdjacentLocation != NULL)
         {
             AdjacentLocation* adjLocation = (AdjacentLocation*)currAdjacentLocation->data;
-            printf("Adjacent Location: %s (Weight: %d)\n", adjLocation->location->name, adjLocation->weight);
+            printf("Adjacent Location: %s (Weight: %.3f)\n", adjLocation->location->name, adjLocation->weight);
             currAdjacentLocation = currAdjacentLocation->next;
         }
 

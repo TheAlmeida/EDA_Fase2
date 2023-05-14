@@ -584,17 +584,17 @@ int main()
 
     Graph* graph = createGraph();
     createLocationsFromVehicles(graph, listV);
+    connectAdjacentLocations(graph);
     printGraph(graph);
-    //freeGraph(graph);
+    freeGraph(graph);
 
-    //Coordinates coords = geolocationToCoordinates("faixa.posou.rolos");
+    /*
     char* geolocation = "selling.cheat.cherub";
     Coordinates coords = geolocationToCoordinates(geolocation);
     printf("Coordinates for %s: latitude = %.6f, longitude = %.6f\n", geolocation, coords.latitude, coords.longitude);
     char* geolocationWords = coordinatesToGeolocation(coords.latitude, coords.longitude);
     printf("Geolocation for %.6f, %.6f: words = %s\n", coords.latitude, coords.longitude, geolocationWords);
-    //geolocationToCoordinates("faixa.posou.rolos");
-    //coordinatesToGeolocation(59.1234, -74.0060);
+    */
     
     wait();
 
