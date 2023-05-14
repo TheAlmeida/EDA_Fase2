@@ -23,6 +23,10 @@ typedef struct sGraph
     struct sListElem* locations;
 } Graph;
 
+void storeDataGraph(const Graph* graph);
+
+Graph* loadDataGraph(Graph* graph);
+
 // Function to create a new graph
 Graph* createGraph();
 

@@ -583,18 +583,12 @@ int main()
     listH = loadDataHistory(listH);
 
     Graph* graph = createGraph();
+    //graph = loadDataGraph(graph);
     createLocationsFromVehicles(graph, listV);
     connectAdjacentLocations(graph);
     printGraph(graph);
-    freeGraph(graph);
-
-    /*
-    char* geolocation = "selling.cheat.cherub";
-    Coordinates coords = geolocationToCoordinates(geolocation);
-    printf("Coordinates for %s: latitude = %.6f, longitude = %.6f\n", geolocation, coords.latitude, coords.longitude);
-    char* geolocationWords = coordinatesToGeolocation(coords.latitude, coords.longitude);
-    printf("Geolocation for %.6f, %.6f: words = %s\n", coords.latitude, coords.longitude, geolocationWords);
-    */
+    storeDataGraph(graph);
+    //freeGraph(graph);
     
     wait();
 

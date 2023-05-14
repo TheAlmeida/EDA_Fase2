@@ -1,5 +1,131 @@
 #include "graph.h"
 
+void storeDataGraph(const Graph* graph)
+{
+    char cwd[500];
+    if (getcwd(cwd, sizeof(cwd)) == NULL)
+        error();
+
+    char graph_bin[500];
+    strcpy(graph_bin, cwd);
+    strcat(graph_bin, "\\graph.bin");
+
+    FILE* graphFile = fopen(graph_bin, "wb");
+    if (graphFile == NULL) {
+        printf("Failed to open file for writing.\n");
+        return;
+    }
+
+    // Write the number of locations in the graph
+    int locationCount = 0;
+    ListElem locationElem = graph->locations;
+    while (locationElem != NULL) {
+        locationCount++;
+        locationElem = locationElem->next;
+    }
+    fwrite(&locationCount, sizeof(int), 1, graphFile);
+
+    // Write each location and its adjacent locations
+    locationElem = graph->locations;
+    while (locationElem != NULL) {
+        Location* location = (Location*)locationElem->data;
+
+        // Write the length of the location name
+        size_t nameLength = strlen(location->name);
+        fwrite(&nameLength, sizeof(size_t), 1, graphFile);
+
+        // Write the location name
+        fwrite(location->name, sizeof(char), nameLength, graphFile);
+
+        // Write the number of adjacent locations
+        int adjacentCount = 0;
+        ListElem adjacentElem = location->adjacentLocations;
+        while (adjacentElem != NULL) {
+            adjacentCount++;
+            adjacentElem = adjacentElem->next;
+        }
+        fwrite(&adjacentCount, sizeof(int), 1, graphFile);
+
+        // Write each adjacent location and its weight
+        adjacentElem = location->adjacentLocations;
+        while (adjacentElem != NULL) {
+            AdjacentLocation* adjacentLocation = (AdjacentLocation*)adjacentElem->data;
+
+            // Write the length of the adjacent location name
+            size_t adjacentNameLength = strlen(adjacentLocation->location->name);
+            fwrite(&adjacentNameLength, sizeof(size_t), 1, graphFile);
+
+            // Write the adjacent location name
+            fwrite(adjacentLocation->location->name, sizeof(char), adjacentNameLength, graphFile);
+
+            // Write the weight
+            fwrite(&adjacentLocation->weight, sizeof(double), 1, graphFile);
+
+            adjacentElem = adjacentElem->next;
+        }
+
+        locationElem = locationElem->next;
+    }
+
+    fclose(graphFile);
+}
+
+Graph* loadDataGraph(Graph* graph)
+{
+    char cwd[500];
+    if (getcwd(cwd, sizeof(cwd)) == NULL)
+        error();
+
+    char graph_bin[500];
+    strcpy(graph_bin, cwd);
+    strcat(graph_bin, "\\graph.bin");
+
+    FILE* graphFile = fopen(graph_bin, "rb");
+    if (graphFile == NULL) {
+        printf("Failed to open file for reading.\n");
+        return NULL;
+    }
+
+    // Read the number of locations in the graph
+    int locationCount;
+    fread(&locationCount, sizeof(int), 1, graphFile);
+
+    // Read each location and its adjacent locations
+    for (int i = 0; i < locationCount; i++) {
+        // Read the location name
+        char locationName[50];
+        fread(locationName, sizeof(char), sizeof(locationName), graphFile);
+
+        // Create a new location
+        Location* location = createLocation(locationName);
+        addLocation(graph, location);
+
+        // Read the number of adjacent locations
+        int adjacentCount;
+        fread(&adjacentCount, sizeof(int), 1, graphFile);
+
+        // Read each adjacent location and its weight
+        for (int j = 0; j < adjacentCount; j++) {
+            // Read the adjacent location name
+            char adjacentName[50];
+            fread(adjacentName, sizeof(char), sizeof(adjacentName), graphFile);
+
+            // Read the weight
+            double weight;
+            fread(&weight, sizeof(double), 1, graphFile);
+
+            // Find the adjacent location in the graph
+            Location* adjacentLocation = findLocationByGeolocation(graph, adjacentName);
+
+            // Create the adjacent location entry
+            addAdjacentLocation(location, adjacentLocation, weight);
+        }
+    }
+
+    fclose(graphFile);
+    return graph;
+}
+
 Graph* createGraph()
 {
     Graph* graph = (Graph*)malloc(sizeof(Graph));
