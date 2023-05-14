@@ -91,17 +91,8 @@ void connectAdjacentLocations(Graph* graph)
             // Calculate the weight using geolocation and distance
             Coordinates locationCoords = geolocationToCoordinates(location->name);
             Coordinates adjacentCoords = geolocationToCoordinates(adjacentLocation->name);
-            double weight = calculateDistance(locationCoords.latitude, locationCoords.longitude, adjacentCoords.latitude, adjacentCoords.longitude);
-            /*
-            double locationLat = geolocationToCoordinates(location->name).latitude;
-            double locationLon = geolocationToCoordinates(location->name).longitude;
-            double adjacentLat = geolocationToCoordinates(adjacentLocation->name).latitude;
-            double adjacentLon = geolocationToCoordinates(adjacentLocation->name).longitude;
-            double weight = calculateDistance(locationLat, locationLon, adjacentLat, adjacentLon);
-            */
-            
+            double weight = calculateDistance(locationCoords.latitude, locationCoords.longitude, adjacentCoords.latitude, adjacentCoords.longitude);            
 
-            // Add the adjacent location to the current location
             addAdjacentLocation(location, adjacentLocation, weight);
         }
 
@@ -145,7 +136,7 @@ Location* getRandomLocation(Graph* graph, Location* excludeLocation)
         currLocation = currLocation->next;
     }
 
-    return NULL; // Return NULL if no location found
+    return NULL;
 }
 
 
