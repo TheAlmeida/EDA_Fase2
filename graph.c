@@ -1,5 +1,7 @@
 #include "graph.h"
 
+// TODO: adicionar clientes ao grafo;; VALIDAR TODAS AS LOCALIZACOES ATRAVES DE CURL?
+
 void storeDataGraphBin(const Graph* graph)
 {
     char cwd[500];
@@ -58,6 +60,16 @@ void storeDataGraphBin(const Graph* graph)
 
             adjacentElem = adjacentElem->next;
         }
+
+        // Write the vehicle info
+        VehicleInfo* vehicleInfo = location->vehicleInfo;
+        while (vehicleInfo != NULL)
+        {
+            fprintf(graphFile, "%d %s\n", vehicleInfo->code, vehicleInfo->type);
+            vehicleInfo = vehicleInfo->next;
+        }
+
+        fprintf(graphFile, "-1\n");  // To mark the end of the vehicle info list for this location
 
         locationElem = locationElem->next;
     }
@@ -161,6 +173,28 @@ Graph* loadDataGraphBin(Graph* graph)
 
             // Add the adjacent location and weight to the current location
             addAdjacentLocation(location, adjacentLocation, weight);
+        }
+
+        // Read the vehicle info
+        while (1)
+        {
+            int vehicleCode;
+            char vehicleType[50];
+            if (fscanf(graphFile, "%d", &vehicleCode) != 1 || vehicleCode == -1)
+            {
+                break;  // End of the vehicle info list for this location
+            }
+
+            if (fscanf(graphFile, "%s", vehicleType) != 1)
+            {
+                printf("Failed to read vehicle type.\n");
+                fclose(graphFile);
+                freeGraph(graph);
+                return NULL;
+            }
+
+            VehicleInfo* vehicleInfo = createVehicleInfo(vehicleCode, vehicleType);
+            addVehicleInfo(location, vehicleInfo);
         }
     }
 
@@ -305,6 +339,7 @@ Location* createLocation(const char* name)
     strncpy(location->name, name, sizeof(location->name) - 1);
     location->name[sizeof(location->name) - 1] = '\0';  // Ensure null-termination
     location->adjacentLocations = NULL;
+    location->vehicleInfo = NULL;  // Initialize vehicle info to NULL
     return location;
 }
 
@@ -328,6 +363,33 @@ void addAdjacentLocation(Location* location, Location* adjacentLocation, double 
     location->adjacentLocations = elem;
 }
 
+VehicleInfo* createVehicleInfo(int code, const char* type)
+{
+    VehicleInfo* vehicleInfo = (VehicleInfo*)malloc(sizeof(VehicleInfo));
+    vehicleInfo->code = code;
+    strncpy(vehicleInfo->type, type, sizeof(vehicleInfo->type) - 1);
+    vehicleInfo->type[sizeof(vehicleInfo->type) - 1] = '\0';  // Ensure null-termination
+    vehicleInfo->next = NULL;
+    return vehicleInfo;
+}
+
+void addVehicleInfo(Location* location, VehicleInfo* vehicleInfo)
+{
+    if (location->vehicleInfo == NULL)
+    {
+        location->vehicleInfo = vehicleInfo;
+    }
+    else
+    {
+        VehicleInfo* currVehicleInfo = location->vehicleInfo;
+        while (currVehicleInfo->next != NULL)
+        {
+            currVehicleInfo = currVehicleInfo->next;
+        }
+        currVehicleInfo->next = vehicleInfo;
+    }
+}
+
 // Function to create locations based on unique geolocations found in vehicles and add them to the graph
 void createLocationsFromVehicles(Graph* graph, ListElem listV)
 {
@@ -343,7 +405,12 @@ void createLocationsFromVehicles(Graph* graph, ListElem listV)
             // Geolocation not found, create a new location and add it to the graph
             Location* newLocation = createLocation(vehicle->geolocation);
             addLocation(graph, newLocation);
+            existingLocation = newLocation; // Set the existingLocation to the newly created location
         }
+
+        // Register the vehicle type and code in the location's vehicleInfo list
+        VehicleInfo* newVehicleInfo = createVehicleInfo(vehicle->code, vehicle->type);
+        addVehicleInfo(existingLocation, newVehicleInfo);
 
         currV = currV->next;
     }
@@ -459,6 +526,14 @@ void printGraph(Graph* graph)
             currAdjacentLocation = currAdjacentLocation->next;
         }
 
+        // Print the vehicle info
+        VehicleInfo* currVehicleInfo = location->vehicleInfo;
+        while (currVehicleInfo != NULL)
+        {
+            printf("Vehicle Code: %d, Type: %s\n", currVehicleInfo->code, currVehicleInfo->type);
+            currVehicleInfo = currVehicleInfo->next;
+        }
+
         printf("\n");
         currLocation = currLocation->next;
     }
@@ -471,6 +546,15 @@ void freeGraph(Graph* graph)
     while (currLocation != NULL)
     {
         Location* location = (Location*)currLocation->data;
+
+        // Free the vehicle info
+        VehicleInfo* currVehicleInfo = location->vehicleInfo;
+        while (currVehicleInfo != NULL)
+        {
+            VehicleInfo* nextVehicleInfo = currVehicleInfo->next;
+            free(currVehicleInfo);
+            currVehicleInfo = nextVehicleInfo;
+        }
 
         // Free the adjacent locations
         ListElem currAdjacentLocation = location->adjacentLocations;

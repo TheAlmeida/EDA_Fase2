@@ -6,11 +6,20 @@
 #include "vehicle.h"
 #include "what3words.h"
 
+typedef struct sVehicleInfo
+{
+    int code;             ///< Code of the vehicle
+    char type[50];        ///< Type of the vehicle
+    struct sVehicleInfo* next;  ///< Pointer to the next vehicle info in the list
+} VehicleInfo;
+
 typedef struct sLocation
 {
     char name[50];
     struct sListElem* adjacentLocations;
+    struct sVehicleInfo* vehicleInfo;  ///< Vehicle information associated with the location
 } Location;
+
 
 typedef struct sAdjacentLocation
 {
@@ -42,6 +51,10 @@ void addLocation(Graph* graph, Location* location);
 
 // Function to add an adjacent location to a location
 void addAdjacentLocation(Location* location, Location* adjacentLocation, double weight);
+
+VehicleInfo* createVehicleInfo(int code, const char* type);
+
+void addVehicleInfo(Location* location, VehicleInfo* vehicleInfo);
 
 // Function to create locations based on unique geolocations found in vehicles and add them to the graph
 void createLocationsFromVehicles(Graph* graph, ListElem listV);

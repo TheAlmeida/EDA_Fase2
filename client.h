@@ -15,8 +15,8 @@ typedef struct dataclient
 	char username[20]; ///< Username of the client
 	char password[50]; ///< Password of the client
 	char name[50]; ///< Name of the client
-	char email[50]; ///< Email address of the client
-	char address[50]; ///< Address of the client
+	char email[50]; ///< Email geolocation of the client
+	char geolocation[50]; ///< Geolocation of the client
 	int nif; ///< Tax identification number of the client
 	int cellphone; ///< Cellphone number of the client
 	int age; ///< Age of the client
@@ -72,7 +72,7 @@ void changeCCellphone(Client client, int newCellphone);
 
 void changeCAge(Client client, int newAge);
 
-void changeCAddress(Client client, char* newAddress);
+void changeCGeolocation(Client client, char* newGeolocation);
 
 void changeCTotalKms(Client client, float newTotalKms);
 

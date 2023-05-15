@@ -12,12 +12,12 @@ void showClient(void* data)
             " Cellphone number: %d\n"
             " NIF: %d\n"
             " Age: %d anos\n"
-            " Address: %s\n"
+            " Geolocation: %s\n"
             " Total trips: %d\n"
             " Total distance travelled: %.2f kms\n"
             " Saldo: %.2f euros\n",
             c->username, c->password, c->name, c->email, c->cellphone,
-            c->nif, c->age, c->address, c->totaltrips, c->totalkms, c->balance);
+            c->nif, c->age, c->geolocation, c->totaltrips, c->totalkms, c->balance);
         printf("\n");
     }
 }
@@ -42,7 +42,7 @@ ListElem loadDataClients(ListElem listClients)
         c = (Client)malloc(sizeof(struct dataclient));
         if (fscanf(clientsFile, "%19[^|]|%49[^|]|%49[^|]|%49[^|]|%d|%d|%49[^|]|%f|%d|%d|%f\n",
             c->username, c->password, c->name, c->email,
-            &(c->cellphone), &(c->age), c->address, &(c->totalkms),
+            &(c->cellphone), &(c->age), c->geolocation, &(c->totalkms),
             &(c->nif), &(c->totaltrips), &(c->balance)) == EOF) {
             free(c);
             break;
@@ -78,7 +78,7 @@ void storeDataClients(ListElem listC) {
         Client client = (Client)current->data;
         fprintf(file, "%s|%s|%s|%s|%d|%d|%s|%.2f|%d|%d|%.2f\n",
             client->username, client->password, client->name, client->email, client->cellphone, client->age,
-            client->address, client->totalkms, client->nif, client->totaltrips, client->balance);
+            client->geolocation, client->totalkms, client->nif, client->totaltrips, client->balance);
         current = current->next;
     }
 
@@ -134,9 +134,9 @@ void changeCAge(Client client, int newAge)
     client->age = newAge;
 }
 
-void changeCAddress(Client client, char* newAddress)
+void changeCGeolocation(Client client, char* newGeolocation)
 {
-    strcpy(client->address, newAddress);
+    strcpy(client->geolocation, newGeolocation);
 }
 
 void changeCTotalKms(Client client, float newTotalKms)
@@ -367,9 +367,9 @@ ListElem editClient(ListElem listClient, int* modified)
             }            
             break;
         case 8:
-            printf(" Insira uma nova morada: ");
+            printf(" Insira uma nova geolocalizacao: ");
             scanf(" %[^\n]%*c", edit);
-            changeCAddress(client, edit);
+            changeCGeolocation(client, edit);
             *modified = 1;
             break;
         case 9:
@@ -476,8 +476,8 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
         }
     }
 
-    printf("\n Insira a sua morada: ");
-    scanf(" %[^\n]%*c", c->address);
+    printf("\n Insira a sua geolocalizacao: ");
+    scanf(" %[^\n]%*c", c->geolocation);
 
     char auxAge[5];
     printf("\n Insira a sua idade: "); 
