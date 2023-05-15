@@ -576,19 +576,20 @@ int main()
     listC = NULL;
     listV = NULL;
     listH = NULL;
+    Graph* graph = createGraph();
 
     listA = loadDataAdmins(listA);
     listC = loadDataClients(listC);
     listV = loadDataVehicles(listV);
     listH = loadDataHistory(listH);
 
-    Graph* graph = createGraph();
-    //graph = loadDataGraph(graph);
-    createLocationsFromVehicles(graph, listV);
-    connectAdjacentLocations(graph);
-    //printGraph(graph);
-    storeDataGraph(graph);
-    //freeGraph(graph);
+    
+    graph = loadDataGraphBin(graph);
+    //createLocationsFromVehicles(graph, listV);
+    //connectAdjacentLocations(graph);
+    printGraph(graph);
+    storeDataGraphBin(graph);
+    freeGraph(graph);
     
     wait();
 

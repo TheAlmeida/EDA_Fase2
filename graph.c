@@ -2,7 +2,8 @@
 
 //Binary storeDataGraph
 /*
-void storeDataGraph(const Graph* graph) {
+void storeDataGraphBin(const Graph* graph)
+{
     char cwd[500];
     if (getcwd(cwd, sizeof(cwd)) == NULL) {
         printf("Failed to get current working directory.\n");
@@ -22,41 +23,47 @@ void storeDataGraph(const Graph* graph) {
     // Write the number of locations in the graph
     int locationCount = 0;
     ListElem locationElem = graph->locations;
-    while (locationElem != NULL) {
+    while (locationElem != NULL)
+    {
         locationCount++;
         locationElem = locationElem->next;
     }
-    fwrite(&locationCount, sizeof(int), 1, graphFile);
+    fprintf(graphFile, "%d\n", locationCount);
 
     // Write each location and its adjacent locations
     locationElem = graph->locations;
-    while (locationElem != NULL) {
+    while (locationElem != NULL)
+    {
         Location* location = (Location*)locationElem->data;
 
-        // Write the location name
-        int nameLength = strlen(location->name);
-        fwrite(&nameLength, sizeof(int), 1, graphFile);
-        fwrite(location->name, sizeof(char), nameLength, graphFile);
+        // Write the location name length and name
+        size_t nameLength = strlen(location->name);
+        fprintf(graphFile, "%zu\n", nameLength);
+        fprintf(graphFile, "%s", location->name);
 
         // Write the number of adjacent locations
         int adjacentCount = 0;
         ListElem adjacentElem = location->adjacentLocations;
-        while (adjacentElem != NULL) {
+        while (adjacentElem != NULL)
+        {
             adjacentCount++;
             adjacentElem = adjacentElem->next;
         }
-        fwrite(&adjacentCount, sizeof(int), 1, graphFile);
+        fprintf(graphFile, "%d\n", adjacentCount);
 
         // Write each adjacent location and its weight
         adjacentElem = location->adjacentLocations;
-        while (adjacentElem != NULL) {
+        while (adjacentElem != NULL)
+        {
             AdjacentLocation* adjacentLocation = (AdjacentLocation*)adjacentElem->data;
 
-            // Write the adjacent location name and weight
-            int adjacentNameLength = strlen(adjacentLocation->location->name);
-            fwrite(&adjacentNameLength, sizeof(int), 1, graphFile);
-            fwrite(adjacentLocation->location->name, sizeof(char), adjacentNameLength, graphFile);
-            fwrite(&adjacentLocation->weight, sizeof(double), 1, graphFile);
+            // Write the adjacent location name length and name
+            size_t adjacentNameLength = strlen(adjacentLocation->location->name);
+            fprintf(graphFile, "%zu\n", adjacentNameLength);
+            fprintf(graphFile, "%s", adjacentLocation->location->name);
+
+            // Write the weight
+            fprintf(graphFile, "%lf\n", adjacentLocation->weight);
 
             adjacentElem = adjacentElem->next;
         }
@@ -68,14 +75,15 @@ void storeDataGraph(const Graph* graph) {
 }
 */
 
-
 //Binary loadDataGraph
 /*
 Graph* loadDataGraph(Graph* graph)
 {
     char cwd[500];
-    if (getcwd(cwd, sizeof(cwd)) == NULL)
-        error();
+    if (getcwd(cwd, sizeof(cwd)) == NULL) {
+        printf("Failed to get current working directory.\n");
+        return;
+    }
 
     char graph_bin[500];
     strcpy(graph_bin, cwd);
@@ -83,52 +91,38 @@ Graph* loadDataGraph(Graph* graph)
 
     FILE* graphFile = fopen(graph_bin, "rb");
     if (graphFile == NULL) {
-        printf("Failed to open file for reading.\n");
-        return NULL;
+        printf("Failed to open file for writing.\n");
+        return;
     }
 
-    // Read the number of locations in the graph
-    int locationCount;
-    fread(&locationCount, sizeof(int), 1, graphFile);
-
-    // Read each location and its adjacent locations
-    for (int i = 0; i < locationCount; i++) {
-        // Read the location name
-        char locationName[50];
-        fread(locationName, sizeof(char), sizeof(locationName), graphFile);
-
-        // Create a new location
+    // Read locations
+    char locationName[50];
+    while (fread(locationName, sizeof(char), sizeof(locationName), graphFile) == sizeof(locationName))
+    {
         Location* location = createLocation(locationName);
         addLocation(graph, location);
+    }
 
-        // Read the number of adjacent locations
-        int adjacentCount;
-        fread(&adjacentCount, sizeof(int), 1, graphFile);
-
-        // Read each adjacent location and its weight
-        for (int j = 0; j < adjacentCount; j++) {
-            // Read the adjacent location name
-            char adjacentName[50];
-            fread(adjacentName, sizeof(char), sizeof(adjacentName), graphFile);
-
-            // Read the weight
-            double weight;
-            fread(&weight, sizeof(double), 1, graphFile);
-
-            // Find the adjacent location in the graph
-            Location* adjacentLocation = findLocationByGeolocation(graph, adjacentName);
-
-            // Create the adjacent location entry
-            addAdjacentLocation(location, adjacentLocation, weight);
-        }
+    // Read edges
+    char startLocationName[50], endLocationName[50];
+    double weight;
+    while (fread(startLocationName, sizeof(char), sizeof(startLocationName), graphFile) == sizeof(startLocationName)
+        && fread(endLocationName, sizeof(char), sizeof(endLocationName), graphFile) == sizeof(endLocationName)
+        && fread(&weight, sizeof(double), 1, graphFile) == 1)
+    {
+        Location* startLocation = findLocationByGeolocation(graph, startLocationName);
+        Location* endLocation = findLocationByGeolocation(graph, endLocationName);
+        addAdjacentLocation(startLocation, endLocation, weight);
     }
 
     fclose(graphFile);
+
     return graph;
 }
 */
 
-void storeDataGraph(const Graph* graph) {
+void storeDataGraphBin(const Graph* graph)
+{
     char cwd[500];
     if (getcwd(cwd, sizeof(cwd)) == NULL) {
         printf("Failed to get current working directory.\n");
@@ -148,37 +142,40 @@ void storeDataGraph(const Graph* graph) {
     // Write the number of locations in the graph
     int locationCount = 0;
     ListElem locationElem = graph->locations;
-    while (locationElem != NULL) {
+    while (locationElem != NULL)
+    {
         locationCount++;
         locationElem = locationElem->next;
     }
-    fwrite(&locationCount, sizeof(int), 1, graphFile);
+    fprintf(graphFile, "%d\n", locationCount);
 
     // Write each location and its adjacent locations
     locationElem = graph->locations;
-    while (locationElem != NULL) {
+    while (locationElem != NULL)
+    {
         Location* location = (Location*)locationElem->data;
 
         // Write the location name
-        fwrite(location->name, sizeof(location->name), 1, graphFile);
+        fprintf(graphFile, "%s\n", location->name);
 
         // Write the number of adjacent locations
         int adjacentCount = 0;
         ListElem adjacentElem = location->adjacentLocations;
-        while (adjacentElem != NULL) {
+        while (adjacentElem != NULL)
+        {
             adjacentCount++;
             adjacentElem = adjacentElem->next;
         }
-        fwrite(&adjacentCount, sizeof(int), 1, graphFile);
+        fprintf(graphFile, "%d\n", adjacentCount);
 
         // Write each adjacent location and its weight
         adjacentElem = location->adjacentLocations;
-        while (adjacentElem != NULL) {
+        while (adjacentElem != NULL)
+        {
             AdjacentLocation* adjacentLocation = (AdjacentLocation*)adjacentElem->data;
 
             // Write the adjacent location name and weight
-            fwrite(adjacentLocation->location->name, sizeof(adjacentLocation->location->name), 1, graphFile);
-            fwrite(&adjacentLocation->weight, sizeof(double), 1, graphFile);
+            fprintf(graphFile, "%s %.3f\n", adjacentLocation->location->name, adjacentLocation->weight);
 
             adjacentElem = adjacentElem->next;
         }
@@ -188,6 +185,106 @@ void storeDataGraph(const Graph* graph) {
 
     fclose(graphFile);
 }
+
+Graph* loadDataGraphBin(Graph* graph)
+{
+    char cwd[500];
+    if (getcwd(cwd, sizeof(cwd)) == NULL) {
+        printf("Failed to get current working directory.\n");
+        return NULL;
+    }
+
+    char graph_bin[500];
+    strcpy(graph_bin, cwd);
+    strcat(graph_bin, "\\graph.bin");
+
+    FILE* graphFile = fopen(graph_bin, "rb");
+    if (graphFile == NULL)
+    {
+        printf("Failed to open file for reading.\n");
+        return NULL;
+    }
+
+    // Read the number of locations in the graph
+    int locationCount;
+    if (fscanf(graphFile, "%d", &locationCount) != 1)
+    {
+        printf("Failed to read location count.\n");
+        fclose(graphFile);
+        return NULL;
+    }
+    fgetc(graphFile); // Consume the newline character after the location count
+
+    printf("Location count: %d\n", locationCount);
+
+    // Read each location and its adjacent locations
+    for (int i = 0; i < locationCount; i++)
+    {
+        // Read the location name
+        char locationName[100];
+        if (fscanf(graphFile, "%s", locationName) != 1)
+        {
+            printf("Failed to read location name.\n");
+            fclose(graphFile);
+            freeGraph(graph);
+            return NULL;
+        }
+
+        printf("Location name: %s\n", locationName);
+
+        // Create a new location and add it to the graph
+        Location* location = createLocation(locationName);
+        addLocation(graph, location);
+
+        // Read the number of adjacent locations
+        int adjacentCount;
+        if (fscanf(graphFile, "%d", &adjacentCount) != 1)
+        {
+            printf("Failed to read adjacent location count.\n");
+            fclose(graphFile);
+            freeGraph(graph);
+            return NULL;
+        }
+        fgetc(graphFile); // Consume the newline character after the adjacent location count
+
+        printf("Adjacent location count: %d\n", adjacentCount);
+
+        // Read each adjacent location and its weight
+        for (int j = 0; j < adjacentCount; j++)
+        {
+            // Read the adjacent location name and weight
+            char adjacentLocationName[100];
+            double weight;
+            if (fscanf(graphFile, "%s %lf", adjacentLocationName, &weight) != 2)
+            {
+                printf("Failed to read adjacent location and weight.\n");
+                fclose(graphFile);
+                freeGraph(graph);
+                return NULL;
+            }
+
+            printf("Adjacent location name: %s, Weight: %.3f\n", adjacentLocationName, weight);
+
+            // Find the adjacent location by name
+            Location* adjacentLocation = findLocationByGeolocation(graph, adjacentLocationName);
+            if (adjacentLocation == NULL)
+            {
+                printf("Error: Adjacent location not found. Location: %s, Adjacent Location: %s\n", location->name, adjacentLocationName);
+                fclose(graphFile);
+                freeGraph(graph);
+                return NULL;
+            }
+
+            // Add the adjacent location and weight to the current location
+            addAdjacentLocation(location, adjacentLocation, weight);
+        }
+    }
+
+    fclose(graphFile);
+    return graph;
+}
+
+
 
 
 void storeDataGraphTxt(const Graph* graph)

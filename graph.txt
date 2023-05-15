@@ -1,14 +1,14 @@
 4
-chart.maximum.ahead
-2
-servants.munched.polished 0.118
-mammoth.risen.trial 0.447
-tequila.jazzy.striving
-1
-mammoth.risen.trial 0.104
-servants.munched.polished
-1
-chart.maximum.ahead 0.118
 mammoth.risen.trial
 1
 tequila.jazzy.striving 0.104
+servants.munched.polished
+1
+chart.maximum.ahead 0.118
+tequila.jazzy.striving
+1
+mammoth.risen.trial 0.104
+chart.maximum.ahead
+2
+mammoth.risen.trial 0.447
+servants.munched.polished 0.118
