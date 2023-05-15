@@ -27,9 +27,9 @@ void storeDataGraphTxt(const Graph* graph);
 
 Graph* loadDataGraphTxt(Graph* graph);
 
-void storeDataGraph(const Graph* graph);
+void storeDataGraphBin(const Graph* graph);
 
-Graph* loadDataGraph(Graph* graph);
+Graph* loadDataGraphBin(Graph* graph);
 
 // Function to create a new graph
 Graph* createGraph();

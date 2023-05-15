@@ -569,7 +569,6 @@ int login() {
     return 0;
 }
 
-
 int main()
 {
     listA = NULL;
@@ -582,15 +581,16 @@ int main()
     listC = loadDataClients(listC);
     listV = loadDataVehicles(listV);
     listH = loadDataHistory(listH);
-
-    
     graph = loadDataGraphBin(graph);
+    
+    
+    printGraph(graph);
+    wait();
     //createLocationsFromVehicles(graph, listV);
     //connectAdjacentLocations(graph);
-    printGraph(graph);
     storeDataGraphBin(graph);
+    printGraph(graph);
     freeGraph(graph);
-    
     wait();
 
     int option = 99;
