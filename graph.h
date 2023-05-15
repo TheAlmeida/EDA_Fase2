@@ -23,6 +23,10 @@ typedef struct sGraph
     struct sListElem* locations;
 } Graph;
 
+void storeDataGraphTxt(const Graph* graph);
+
+Graph* loadDataGraphTxt(Graph* graph);
+
 void storeDataGraph(const Graph* graph);
 
 Graph* loadDataGraph(Graph* graph);

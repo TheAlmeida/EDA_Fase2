@@ -586,7 +586,7 @@ int main()
     //graph = loadDataGraph(graph);
     createLocationsFromVehicles(graph, listV);
     connectAdjacentLocations(graph);
-    printGraph(graph);
+    //printGraph(graph);
     storeDataGraph(graph);
     //freeGraph(graph);
     
