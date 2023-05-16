@@ -61,6 +61,16 @@ void storeDataGraphBin(const Graph* graph)
             adjacentElem = adjacentElem->next;
         }
 
+        // Write the client info
+        ClientInfo* clientInfo = location->clientInfo;
+        while (clientInfo != NULL)
+        {
+            fprintf(graphFile, "%s\n", clientInfo->username);
+            clientInfo = clientInfo->next;
+        }
+
+        fprintf(graphFile, "-1\n");  // To mark the end of the client info list for this location
+
         // Write the vehicle info
         VehicleInfo* vehicleInfo = location->vehicleInfo;
         while (vehicleInfo != NULL)
@@ -173,6 +183,18 @@ Graph* loadDataGraphBin(Graph* graph)
 
             // Add the adjacent location and weight to the current location
             addAdjacentLocation(location, adjacentLocation, weight);
+        }
+
+        while (1)
+        {
+            char clientUsername[50];
+            if (fscanf(graphFile, "%s", clientUsername) != 1 || strcmp(clientUsername, "-1") == 0)
+            {
+                break;  // End of the client info list for this location
+            }
+
+            ClientInfo* clientInfo = createClientInfo(clientUsername);
+            addClientInfo(location, clientInfo);
         }
 
         // Read the vehicle info
@@ -339,7 +361,8 @@ Location* createLocation(const char* name)
     strncpy(location->name, name, sizeof(location->name) - 1);
     location->name[sizeof(location->name) - 1] = '\0';  // Ensure null-termination
     location->adjacentLocations = NULL;
-    location->vehicleInfo = NULL;  // Initialize vehicle info to NULL
+    location->clientInfo = NULL;  // Initialize client info to NULL
+    location->vehicleInfo = NULL;
     return location;
 }
 
@@ -361,6 +384,34 @@ void addAdjacentLocation(Location* location, Location* adjacentLocation, double 
     ListElem elem = createListElem(adjLocation);
     elem->next = location->adjacentLocations;
     location->adjacentLocations = elem;
+}
+
+// Function to create a new client info
+ClientInfo* createClientInfo(const char* username)
+{
+    ClientInfo* clientInfo = (ClientInfo*)malloc(sizeof(ClientInfo));
+    strncpy(clientInfo->username, username, sizeof(clientInfo->username) - 1);
+    clientInfo->username[sizeof(clientInfo->username) - 1] = '\0';  // Ensure null-termination
+    clientInfo->next = NULL;
+    return clientInfo;
+}
+
+// Function to add a client info to a location
+void addClientInfo(Location* location, ClientInfo* clientInfo)
+{
+    if (location->clientInfo == NULL)
+    {
+        location->clientInfo = clientInfo;
+    }
+    else
+    {
+        ClientInfo* currClientInfo = location->clientInfo;
+        while (currClientInfo->next != NULL)
+        {
+            currClientInfo = currClientInfo->next;
+        }
+        currClientInfo->next = clientInfo;
+    }
 }
 
 VehicleInfo* createVehicleInfo(int code, const char* type)
@@ -389,6 +440,32 @@ void addVehicleInfo(Location* location, VehicleInfo* vehicleInfo)
         currVehicleInfo->next = vehicleInfo;
     }
 }
+
+void createLocationsFromClients(Graph* graph, ListElem listC)
+{
+    ListElem currC = listC;
+    while (currC != NULL)
+    {
+        Client client = (Client)currC->data;
+
+        // Check if the geolocation is already added as a location in the graph
+        Location* existingLocation = findLocationByGeolocation(graph, client->geolocation);
+        if (existingLocation == NULL)
+        {
+            // Geolocation not found, create a new location and add it to the graph
+            Location* newLocation = createLocation(client->geolocation);
+            addLocation(graph, newLocation);
+            existingLocation = newLocation; // Set the existingLocation to the newly created location
+        }
+
+        // Register the client id and name in the location's clientInfo list
+        ClientInfo* newClientInfo = createClientInfo(client->username);
+        addClientInfo(existingLocation, newClientInfo);
+
+        currC = currC->next;
+    }
+}
+
 
 // Function to create locations based on unique geolocations found in vehicles and add them to the graph
 void createLocationsFromVehicles(Graph* graph, ListElem listV)
@@ -526,11 +603,19 @@ void printGraph(Graph* graph)
             currAdjacentLocation = currAdjacentLocation->next;
         }
 
+        // Print the client info
+        ClientInfo* currClientInfo = location->clientInfo;
+        while (currClientInfo != NULL)
+        {
+            printf("Client Username: %s\n", currClientInfo->username);
+            currClientInfo = currClientInfo->next;
+        }
+
         // Print the vehicle info
         VehicleInfo* currVehicleInfo = location->vehicleInfo;
         while (currVehicleInfo != NULL)
         {
-            printf("Vehicle Code: %d, Type: %s\n", currVehicleInfo->code, currVehicleInfo->type);
+            printf("Vehicle Type_Code: %s_%d\n", currVehicleInfo->type, currVehicleInfo->code);
             currVehicleInfo = currVehicleInfo->next;
         }
 
@@ -546,6 +631,15 @@ void freeGraph(Graph* graph)
     while (currLocation != NULL)
     {
         Location* location = (Location*)currLocation->data;
+
+        // Free the vehicle info
+        ClientInfo* currClientInfo = location->clientInfo;
+        while (currClientInfo != NULL)
+        {
+            ClientInfo* nextClientInfo = currClientInfo->next;
+            free(currClientInfo);
+            currClientInfo = nextClientInfo;
+        }
 
         // Free the vehicle info
         VehicleInfo* currVehicleInfo = location->vehicleInfo;

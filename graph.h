@@ -3,8 +3,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include "ll.h"
+#include "client.h"
 #include "vehicle.h"
 #include "what3words.h"
+
+typedef struct sClientInfo
+{
+    char username[50];        ///< Username of the client
+    struct sClientInfo* next;  ///< Pointer to the next client info in the list
+} ClientInfo;
 
 typedef struct sVehicleInfo
 {
@@ -17,9 +24,9 @@ typedef struct sLocation
 {
     char name[50];
     struct sListElem* adjacentLocations;
+    struct sClientInfo* clientInfo;   ///< Client information associated with the location
     struct sVehicleInfo* vehicleInfo;  ///< Vehicle information associated with the location
 } Location;
-
 
 typedef struct sAdjacentLocation
 {
@@ -52,9 +59,17 @@ void addLocation(Graph* graph, Location* location);
 // Function to add an adjacent location to a location
 void addAdjacentLocation(Location* location, Location* adjacentLocation, double weight);
 
+// Function to create a new client info
+ClientInfo* createClientInfo(const char* username);
+
+// Function to add a client info to a location
+void addClientInfo(Location* location, ClientInfo* clientInfo);
+
 VehicleInfo* createVehicleInfo(int code, const char* type);
 
 void addVehicleInfo(Location* location, VehicleInfo* vehicleInfo);
+
+void createLocationsFromClients(Graph* graph, ListElem listC);
 
 // Function to create locations based on unique geolocations found in vehicles and add them to the graph
 void createLocationsFromVehicles(Graph* graph, ListElem listV);

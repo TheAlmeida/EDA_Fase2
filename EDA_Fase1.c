@@ -587,6 +587,7 @@ int main()
     printGraph(graph);
     wait();
     //createLocationsFromVehicles(graph, listV);
+    //createLocationsFromClients(graph, listC);
     //connectAdjacentLocations(graph);
     storeDataGraphBin(graph);
     printGraph(graph);
