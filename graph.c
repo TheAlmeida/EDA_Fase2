@@ -1,6 +1,6 @@
 #include "graph.h"
 
-// TODO: adicionar clientes ao grafo;; VALIDAR TODAS AS LOCALIZACOES ATRAVES DE CURL?
+// TODO: ADICIONAR INTERAÇÕES CALCULAR DISTANCIA DE CLIENTE A VEICULOS. APOS VIAGEM ATUALIZAR GRAPH. VALIDAR TODAS AS LOCALIZACOES ATRAVES DE CURL? DIJKSTRA ALGORITHM
 
 void storeDataGraphBin(const Graph* graph)
 {
@@ -465,7 +465,6 @@ void createLocationsFromClients(Graph* graph, ListElem listC)
         currC = currC->next;
     }
 }
-
 
 // Function to create locations based on unique geolocations found in vehicles and add them to the graph
 void createLocationsFromVehicles(Graph* graph, ListElem listV)
