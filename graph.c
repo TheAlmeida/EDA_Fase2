@@ -396,6 +396,8 @@ Location* findLocationByGeolocation(Graph* graph, const char* geolocation)
     return NULL;
 }
 
+
+/*
 void connectAdjacentLocations(Graph* graph)
 {
     ListElem currLocation = graph->locations;
@@ -411,9 +413,6 @@ void connectAdjacentLocations(Graph* graph)
             // Select a random adjacent location
             Location* adjacentLocation = getRandomLocation(graph, location);
 
-            // Calculate the weight using geolocation and distance
-            //Coordinates locationCoords = geolocationToCoordinates(location->name);
-            //Coordinates adjacentCoords = geolocationToCoordinates(adjacentLocation->name);
             double weight = calculateDistance(location->coordinates.latitude, location->coordinates.longitude, adjacentLocation->coordinates.latitude, adjacentLocation->coordinates.longitude);
 
             addAdjacentLocation(location, adjacentLocation, weight);
@@ -422,6 +421,8 @@ void connectAdjacentLocations(Graph* graph)
         currLocation = currLocation->next;
     }
 }
+*/
+
 
 Location* getRandomLocation(Graph* graph, Location* excludeLocation)
 {
@@ -461,6 +462,89 @@ Location* getRandomLocation(Graph* graph, Location* excludeLocation)
 
     return NULL;
 }
+
+int locationHasAdjacency(Location* location, Location* otherLocation)
+{
+    ListElem currAdjacency = location->adjacentLocations;
+    while (currAdjacency != NULL)
+    {
+        AdjacentLocation* adjLoc = (AdjacentLocation*)currAdjacency->data;
+        if (adjLoc->location == otherLocation)
+            return 1;
+
+        currAdjacency = currAdjacency->next;
+    }
+
+    return 0;
+}
+
+void connectAdjacentLocations(Graph* graph)
+{
+    ListElem currLocation = graph->locations;
+
+    // Ensure every location has at least one outgoing connection
+    while (currLocation != NULL)
+    {
+        Location* location = (Location*)currLocation->data;
+        Location* adjacentLocation;
+
+        // Ensure the location has at least one outgoing connection and is not the same location
+        do
+        {
+            adjacentLocation = getRandomLocation(graph, location);
+        } while (locationHasAdjacency(location, adjacentLocation) || adjacentLocation == location);
+
+        double weight = calculateDistance(location->coordinates.latitude,
+            location->coordinates.longitude,
+            adjacentLocation->coordinates.latitude,
+            adjacentLocation->coordinates.longitude);
+
+        addAdjacentLocation(location, adjacentLocation, weight);
+
+        currLocation = currLocation->next;
+    }
+
+    // Second pass to ensure that every location has at least one incoming connection
+    currLocation = graph->locations;
+    while (currLocation != NULL)
+    {
+        Location* location = (Location*)currLocation->data;
+
+        // Check if location has incoming connections
+        int hasIncoming = 0;
+        ListElem otherLocation = graph->locations;
+        while (otherLocation != NULL)
+        {
+            Location* other = (Location*)otherLocation->data;
+            if (locationHasAdjacency(other, location))
+            {
+                hasIncoming = 1;
+                break;
+            }
+            otherLocation = otherLocation->next;
+        }
+
+        // If location doesn't have incoming connections, add one from a random location
+        if (!hasIncoming)
+        {
+            Location* incomingLocation;
+            do
+            {
+                incomingLocation = getRandomLocation(graph, location);
+            } while (locationHasAdjacency(incomingLocation, location) || incomingLocation == location);
+
+            double weight = calculateDistance(location->coordinates.latitude,
+                location->coordinates.longitude,
+                incomingLocation->coordinates.latitude,
+                incomingLocation->coordinates.longitude);
+
+            addAdjacentLocation(incomingLocation, location, weight);
+        }
+
+        currLocation = currLocation->next;
+    }
+}
+
 
 void printGraph(Graph* graph)
 {

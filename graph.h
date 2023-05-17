@@ -74,9 +74,11 @@ void createLocationsFromVehicles(Graph* graph, ListElem listV);
 // Function to find a location in the graph by geolocation
 Location* findLocationByGeolocation(Graph* graph, const char* geolocation);
 
-void connectAdjacentLocations(Graph* graph);
-
 Location* getRandomLocation(Graph* graph, Location* excludeLocation);
+
+int locationHasAdjacency(Location* location, Location* otherLocation);
+
+void connectAdjacentLocations(Graph* graph);
 
 // Function to print the graph
 void printGraph(Graph* graph);

@@ -569,6 +569,8 @@ int login() {
     return 0;
 }
 
+// TODO: ADICIONAR INTERAÇÕES CALCULAR DISTANCIA DE CLIENTE A VEICULOS. APOS VIAGEM ATUALIZAR GRAPH. DIJKSTRA ALGORITHM. TRUE RANDOM? EDITAR GRAPH? VALIDAR TODAS AS LOCALIZACOES ATRAVES DE CURL? 
+
 int main()
 {
     listA = NULL;
@@ -581,14 +583,14 @@ int main()
     listC = loadDataClients(listC);
     listV = loadDataVehicles(listV);
     listH = loadDataHistory(listH);
-    graph = loadDataGraphBin(graph);
+    //graph = loadDataGraphBin(graph);
     
     
-    printGraph(graph);
-    wait();
-    //createLocationsFromVehicles(graph, listV);
-    //createLocationsFromClients(graph, listC);
-    //connectAdjacentLocations(graph);
+    //printGraph(graph);
+    //wait();
+    createLocationsFromVehicles(graph, listV);
+    createLocationsFromClients(graph, listC);
+    connectAdjacentLocations(graph);
     storeDataGraphBin(graph);
     printGraph(graph);
     freeGraph(graph);
