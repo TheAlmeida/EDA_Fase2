@@ -37,7 +37,7 @@ void storeDataGraphBin(const Graph* graph)
         Location* location = (Location*)locationElem->data;
 
         // Write the location name
-        fprintf(graphFile, "%s\n", location->name);
+        fprintf(graphFile, "%s %.6f, %.6f\n", location->name, location->coordinates.latitude, location->coordinates.longitude);
 
         // Write the number of adjacent locations
         int adjacentCount = 0;
@@ -122,25 +122,23 @@ Graph* loadDataGraphBin(Graph* graph)
     {
         // Read the location name
         char locationName[100];
-        if (fscanf(graphFile, "%s", locationName) != 1)
+        double latitude, longitude;
+        if (fscanf(graphFile, "%s %lf, %lf", locationName, &latitude, &longitude) != 3)
         {
-            printf("Failed to read location name.\n");
+            printf("Failed to read location name and coordinates.\n");
             fclose(graphFile);
             freeGraph(graph);
             return NULL;
         }
 
-        printf("Location name: %s\n", locationName);
+        printf("Location name: %s %.6f, %.6f\n", locationName, latitude, longitude);
 
-        // Create a new location and add it to the graph
-        //Location* location = createLocation(locationName);
-        //addLocation(graph, location);
         // Check if the location already exists in the graph
         Location* location = findLocationByGeolocation(graph, locationName);
         if (location == NULL)
         {
             // Create a new location and add it to the graph
-            location = createLocation(locationName);
+            location = createLocation(locationName, latitude, longitude);
             addLocation(graph, location);
         }
 
@@ -177,7 +175,7 @@ Graph* loadDataGraphBin(Graph* graph)
             if (adjacentLocation == NULL)
             {
                 // If the adjacent location doesn't exist, create it and add it to the graph
-                adjacentLocation = createLocation(adjacentLocationName);
+                adjacentLocation = createLocation(adjacentLocationName, 0.0, 0.0);
                 addLocation(graph, adjacentLocation);
             }
 
@@ -224,129 +222,6 @@ Graph* loadDataGraphBin(Graph* graph)
     return graph;
 }
 
-void storeDataGraphTxt(const Graph* graph)
-{
-    char cwd[500];
-    if (getcwd(cwd, sizeof(cwd)) == NULL)
-    {
-        printf("Failed to get current working directory.\n");
-        return;
-    }
-
-    char graph_txt[500];
-    strcpy(graph_txt, cwd);
-    strcat(graph_txt, "\\graph.txt");
-
-    FILE* graphFile = fopen(graph_txt, "w");
-    if (graphFile == NULL)
-    {
-        printf("Failed to open file for writing.\n");
-        return;
-    }
-
-    // Write the number of locations in the graph
-    int locationCount = 0;
-    ListElem locationElem = graph->locations;
-    while (locationElem != NULL)
-    {
-        locationCount++;
-        locationElem = locationElem->next;
-    }
-    fprintf(graphFile, "%d\n", locationCount);
-
-    // Write each location and its adjacent locations
-    locationElem = graph->locations;
-    while (locationElem != NULL)
-    {
-        Location* location = (Location*)locationElem->data;
-
-        // Write the location name
-        fprintf(graphFile, "%s\n", location->name);
-
-        // Write the number of adjacent locations
-        int adjacentCount = 0;
-        ListElem adjacentElem = location->adjacentLocations;
-        while (adjacentElem != NULL)
-        {
-            adjacentCount++;
-            adjacentElem = adjacentElem->next;
-        }
-        fprintf(graphFile, "%d\n", adjacentCount);
-
-        // Write each adjacent location and its weight
-        adjacentElem = location->adjacentLocations;
-        while (adjacentElem != NULL)
-        {
-            AdjacentLocation* adjacentLocation = (AdjacentLocation*)adjacentElem->data;
-
-            // Write the adjacent location name and weight
-            fprintf(graphFile, "%s %.3f\n", adjacentLocation->location->name, adjacentLocation->weight);
-
-            adjacentElem = adjacentElem->next;
-        }
-
-        locationElem = locationElem->next;
-    }
-
-    fclose(graphFile);
-}
-
-Graph* loadDataGraphTxt(Graph* graph) {
-    
-    char cwd[500];
-    if (getcwd(cwd, sizeof(cwd)) == NULL)
-    {
-        printf("Failed to get current working directory.\n");
-        return;
-    }
-
-    char graph_txt[500];
-    strcpy(graph_txt, cwd);
-    strcat(graph_txt, "\\graph.txt");
-
-    FILE* graphFile = fopen(graph_txt, "r");
-    if (graphFile == NULL)
-    {
-        printf("Failed to open file for reading.\n");
-        return;
-    }
-
-    // Read the number of locations in the graph
-    int locationCount;
-    fscanf(graphFile, "%d", &locationCount);
-
-    // Read the locations and their adjacent locations
-    for (int i = 0; i < locationCount; i++) {
-        // Read the location name
-        char locationName[50];
-        fscanf(graphFile, "%s", locationName);
-
-        // Create the location
-        Location* location = createLocation(locationName);
-
-        // Read the number of adjacent locations
-        int adjacentCount;
-        fscanf(graphFile, "%d", &adjacentCount);
-
-        // Read the adjacent locations and their weights
-        for (int j = 0; j < adjacentCount; j++) {
-            char adjacentName[50];
-            double weight;
-            fscanf(graphFile, "%s %lf", adjacentName, &weight);
-
-            // Create the adjacent location and add it to the current location
-            Location* adjacentLocation = createLocation(adjacentName);
-            addAdjacentLocation(location, adjacentLocation, weight);
-        }
-
-        // Add the location to the graph
-        addLocation(graph, location);
-    }
-
-    fclose(graphFile);
-    return graph;
-}
-
 Graph* createGraph()
 {
     Graph* graph = (Graph*)malloc(sizeof(Graph));
@@ -355,13 +230,26 @@ Graph* createGraph()
 }
 
 // Function to create a new location
-Location* createLocation(const char* name)
+Location* createLocation(const char* name, double latitude, double longitude)
 {
     Location* location = (Location*)malloc(sizeof(Location));
     strncpy(location->name, name, sizeof(location->name) - 1);
     location->name[sizeof(location->name) - 1] = '\0';  // Ensure null-termination
+
+    if (latitude == 0.0 && longitude == 0.0)
+    {
+        Coordinates coordinates = geolocationToCoordinates(name);
+        location->coordinates.latitude = coordinates.latitude;
+        location->coordinates.longitude = coordinates.longitude;
+    }
+    else
+    {
+        location->coordinates.latitude = latitude;
+        location->coordinates.longitude = longitude;
+    }
+    
     location->adjacentLocations = NULL;
-    location->clientInfo = NULL;  // Initialize client info to NULL
+    location->clientInfo = NULL;
     location->vehicleInfo = NULL;
     return location;
 }
@@ -453,7 +341,7 @@ void createLocationsFromClients(Graph* graph, ListElem listC)
         if (existingLocation == NULL)
         {
             // Geolocation not found, create a new location and add it to the graph
-            Location* newLocation = createLocation(client->geolocation);
+            Location* newLocation = createLocation(client->geolocation, 0.0, 0.0);
             addLocation(graph, newLocation);
             existingLocation = newLocation; // Set the existingLocation to the newly created location
         }
@@ -479,7 +367,7 @@ void createLocationsFromVehicles(Graph* graph, ListElem listV)
         if (existingLocation == NULL)
         {
             // Geolocation not found, create a new location and add it to the graph
-            Location* newLocation = createLocation(vehicle->geolocation);
+            Location* newLocation = createLocation(vehicle->geolocation, 0.0, 0.0);
             addLocation(graph, newLocation);
             existingLocation = newLocation; // Set the existingLocation to the newly created location
         }
@@ -524,9 +412,9 @@ void connectAdjacentLocations(Graph* graph)
             Location* adjacentLocation = getRandomLocation(graph, location);
 
             // Calculate the weight using geolocation and distance
-            Coordinates locationCoords = geolocationToCoordinates(location->name);
-            Coordinates adjacentCoords = geolocationToCoordinates(adjacentLocation->name);
-            double weight = calculateDistance(locationCoords.latitude, locationCoords.longitude, adjacentCoords.latitude, adjacentCoords.longitude);            
+            //Coordinates locationCoords = geolocationToCoordinates(location->name);
+            //Coordinates adjacentCoords = geolocationToCoordinates(adjacentLocation->name);
+            double weight = calculateDistance(location->coordinates.latitude, location->coordinates.longitude, adjacentLocation->coordinates.latitude, adjacentLocation->coordinates.longitude);
 
             addAdjacentLocation(location, adjacentLocation, weight);
         }
@@ -581,7 +469,7 @@ void printGraph(Graph* graph)
     while (currLocation != NULL)
     {
         Location* location = (Location*)currLocation->data;
-        printf("Location: %s\n", location->name);
+        printf("Location: %s Coordinates: %.6f, %.6f (lat, lon)\n", location->name, location->coordinates.latitude, location->coordinates.longitude);
 
         ListElem currAdjacentLocation = location->adjacentLocations;
         while (currAdjacentLocation != NULL)

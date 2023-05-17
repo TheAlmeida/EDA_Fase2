@@ -23,6 +23,7 @@ typedef struct sVehicleInfo
 typedef struct sLocation
 {
     char name[50];
+    Coordinates coordinates;
     struct sListElem* adjacentLocations;
     struct sClientInfo* clientInfo;   ///< Client information associated with the location
     struct sVehicleInfo* vehicleInfo;  ///< Vehicle information associated with the location
@@ -39,10 +40,6 @@ typedef struct sGraph
     struct sListElem* locations;
 } Graph;
 
-void storeDataGraphTxt(const Graph* graph);
-
-Graph* loadDataGraphTxt(Graph* graph);
-
 void storeDataGraphBin(const Graph* graph);
 
 Graph* loadDataGraphBin(Graph* graph);
@@ -51,7 +48,7 @@ Graph* loadDataGraphBin(Graph* graph);
 Graph* createGraph();
 
 // Function to create a new location
-Location* createLocation(const char* name);
+Location* createLocation(const char* name, double latitude, double longitude);
 
 // Function to add a location to the graph
 void addLocation(Graph* graph, Location* location);
