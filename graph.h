@@ -40,9 +40,9 @@ typedef struct sGraph
     struct sListElem* locations;
 } Graph;
 
-void storeDataGraphBin(const Graph* graph);
+void storeDataGraph(const Graph* graph);
 
-Graph* loadDataGraphBin(Graph* graph);
+Graph* loadDataGraph(Graph* graph);
 
 // Function to create a new graph
 Graph* createGraph();
@@ -62,9 +62,13 @@ ClientInfo* createClientInfo(const char* username);
 // Function to add a client info to a location
 void addClientInfo(Location* location, ClientInfo* clientInfo);
 
+void removeClientInfo(Location* location, const char* username);
+
 VehicleInfo* createVehicleInfo(int code, const char* type);
 
 void addVehicleInfo(Location* location, VehicleInfo* vehicleInfo);
+
+void removeVehicleInfo(Location* location, int code, const char* type);
 
 void createLocationsFromClients(Graph* graph, ListElem listC);
 

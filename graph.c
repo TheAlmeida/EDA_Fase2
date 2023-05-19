@@ -2,7 +2,7 @@
 
 // TODO: ADICIONAR INTERAÇÕES CALCULAR DISTANCIA DE CLIENTE A VEICULOS. APOS VIAGEM ATUALIZAR GRAPH. VALIDAR TODAS AS LOCALIZACOES ATRAVES DE CURL? DIJKSTRA ALGORITHM
 
-void storeDataGraphBin(const Graph* graph)
+void storeDataGraph(const Graph* graph)
 {
     char cwd[500];
     if (getcwd(cwd, sizeof(cwd)) == NULL) {
@@ -87,7 +87,7 @@ void storeDataGraphBin(const Graph* graph)
     fclose(graphFile);
 }
 
-Graph* loadDataGraphBin(Graph* graph)
+Graph* loadDataGraph(Graph* graph)
 {
     char cwd[500];
     if (getcwd(cwd, sizeof(cwd)) == NULL) {
@@ -302,6 +302,32 @@ void addClientInfo(Location* location, ClientInfo* clientInfo)
     }
 }
 
+void removeClientInfo(Location* location, const char* username) {
+    ClientInfo* currClientInfo = location->clientInfo;
+    ClientInfo* prevClientInfo = NULL;
+
+    while (currClientInfo != NULL) {
+        if (strcmp(currClientInfo->username, username) == 0) {
+            // Client found, remove it from the list
+            if (prevClientInfo == NULL) {
+                // Client is the first element
+                location->clientInfo = currClientInfo->next;
+            }
+            else {
+                // Client is in the middle or at the end
+                prevClientInfo->next = currClientInfo->next;
+            }
+
+            // Free the memory of the removed client info
+            free(currClientInfo);
+            return;
+        }
+
+        prevClientInfo = currClientInfo;
+        currClientInfo = currClientInfo->next;
+    }
+}
+
 VehicleInfo* createVehicleInfo(int code, const char* type)
 {
     VehicleInfo* vehicleInfo = (VehicleInfo*)malloc(sizeof(VehicleInfo));
@@ -326,6 +352,32 @@ void addVehicleInfo(Location* location, VehicleInfo* vehicleInfo)
             currVehicleInfo = currVehicleInfo->next;
         }
         currVehicleInfo->next = vehicleInfo;
+    }
+}
+
+void removeVehicleInfo(Location* location, int code, const char* type) {
+    VehicleInfo* currVehicleInfo = location->vehicleInfo;
+    VehicleInfo* prevVehicleInfo = NULL;
+
+    while (currVehicleInfo != NULL) {
+        if (currVehicleInfo->code == code && strcmp(currVehicleInfo->type, type) == 0) {
+            // Vehicle found, remove it from the list
+            if (prevVehicleInfo == NULL) {
+                // Vehicle is the first element
+                location->vehicleInfo = currVehicleInfo->next;
+            }
+            else {
+                // Vehicle is in the middle or at the end
+                prevVehicleInfo->next = currVehicleInfo->next;
+            }
+
+            // Free the memory of the removed vehicle info
+            free(currVehicleInfo);
+            return;
+        }
+
+        prevVehicleInfo = currVehicleInfo;
+        currVehicleInfo = currVehicleInfo->next;
     }
 }
 
@@ -395,34 +447,6 @@ Location* findLocationByGeolocation(Graph* graph, const char* geolocation)
     }
     return NULL;
 }
-
-
-/*
-void connectAdjacentLocations(Graph* graph)
-{
-    ListElem currLocation = graph->locations;
-    while (currLocation != NULL)
-    {
-        Location* location = (Location*)currLocation->data;
-
-        // Get the adjacent locations count (1 or 2)
-        int adjacentCount = (rand() % 2) + 1;
-
-        for (int i = 0; i < adjacentCount; i++)
-        {
-            // Select a random adjacent location
-            Location* adjacentLocation = getRandomLocation(graph, location);
-
-            double weight = calculateDistance(location->coordinates.latitude, location->coordinates.longitude, adjacentLocation->coordinates.latitude, adjacentLocation->coordinates.longitude);
-
-            addAdjacentLocation(location, adjacentLocation, weight);
-        }
-
-        currLocation = currLocation->next;
-    }
-}
-*/
-
 
 Location* getRandomLocation(Graph* graph, Location* excludeLocation)
 {
@@ -544,7 +568,6 @@ void connectAdjacentLocations(Graph* graph)
         currLocation = currLocation->next;
     }
 }
-
 
 void printGraph(Graph* graph)
 {

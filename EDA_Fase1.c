@@ -22,13 +22,17 @@ ListElem listC;
 /// </summary>
 ListElem listA;
 /// <summary>
-/// List of vehicles
+/// List of vehicles.
 /// </summary>
 ListElem listV;
 /// <summary>
-/// List of histories
+/// List of histories.
 /// </summary>
 ListElem listH;
+/// <summary>
+/// Graph containing locations.
+/// </summary>
+Graph* graph;
 
 /// <summary>
 /// Current logged in client.
@@ -72,7 +76,7 @@ int choosingVehicle(ListElem listAV);
 /// <param name="c">A pointer to the current logged in client.</param>
 /// <param name="v">A pointer to the currently selected vehicle.</param>
 /// <returns>1 if simulation was successfull. 0 otherwise.</returns>
-int simulateTrip(Client c, Vehicle v);
+int simulateTrip(Client c, Vehicle v, Graph* graph);
 
 /// <summary>
 /// Allows the user to add/edit/remove any client/admin/vehicle, to see the histories filtered by vehicle(type+code)/type/client and to see some stats for clients/vehicles.
@@ -281,7 +285,7 @@ void modeAdmin()
 
 }
 
-int simulateTrip(Client c, Vehicle v) {
+int simulateTrip(Client c, Vehicle v, Graph* graph) {
 
     simulatemenu();
 
@@ -291,7 +295,6 @@ int simulateTrip(Client c, Vehicle v) {
 
     char type_code[60];
     sprintf(type_code, "%s_%d", v->type, v->code);
-
     strcpy(h->transport, type_code);
 
     strcpy(h->start, v->geolocation);
@@ -299,24 +302,31 @@ int simulateTrip(Client c, Vehicle v) {
     printf("\n Insira o geocodigo do local de chegada: "); //NOME
     scanf(" %[^\n]%*c", h->finish);
 
+    /*
     printf("\n Insira a distancia do percurso: ");
     char auxDistance[10];
     scanf(" %[^\n]%*c", auxDistance);
+    */
 
-    if (isInt(auxDistance) || isFloat(auxDistance))
-    {
-        h->distance = stringToFloat(auxDistance);
+    // Check if the finish geolocation is already added as a location in the graph
+    Location* finishLocation = findLocationByGeolocation(graph, h->finish);
+    if (finishLocation == NULL) {
+        // Geolocation not found, create a new location and add it to the graph
+        finishLocation = createLocation(h->finish, 0.0, 0.0);
+        addLocation(graph, finishLocation);
     }
-    else
-    {
-        errornotvalidinfo();
-        return 0;
-    }
-    if (h->distance <= 0)
-    {
-        errornotvalidinfo();
-        return 0;
-    }
+
+    Location* startLocation = findLocationByGeolocation(graph, h->start);
+
+    double distance = calculateDistance(startLocation->coordinates.latitude, startLocation->coordinates.longitude, 
+                                        finishLocation->coordinates.latitude, finishLocation->coordinates.longitude);
+
+    // Add finishLocation as an adjacent location to the starting location
+    addAdjacentLocation(startLocation, finishLocation, distance);
+    addAdjacentLocation(finishLocation, startLocation, distance);
+
+
+    h->distance = (float)distance;
 
     printf("\n Insira a duracao do percurso em horas: ");
     char auxDuration[10];
@@ -365,6 +375,14 @@ int simulateTrip(Client c, Vehicle v) {
     printf("\n A viagem teve um custo de: %2.f euros.\n O seu balanco e de: %.2f euros. \n\n", h->cost, c->balance);
     wait();
 
+    // Remove used client and vehicle from the starting location
+    removeClientInfo(startLocation, c->username);
+    removeVehicleInfo(startLocation, v->code, v->type);
+
+    // Add client and vehicle to the finish location
+    addClientInfo(finishLocation, createClientInfo(c->username));
+    addVehicleInfo(finishLocation, createVehicleInfo(v->code, v->type));
+
     strcpy(v->geolocation, h->finish);
     v->totalkms += h->distance;
     v->inUse = 0;
@@ -372,6 +390,7 @@ int simulateTrip(Client c, Vehicle v) {
     storeDataClients(listC);
     storeDataVehicles(listV);
     storeDataHistory(listH);
+    storeDataGraph(graph);
 
     return 1;
 }
@@ -439,7 +458,7 @@ void modeClient()
                 if (listLength(listAvailableV) > 0)
                 {
                     if (choosingVehicle(listAvailableV)) {
-                        if (!simulateTrip(currentClient, currentVehicle))
+                        if (!simulateTrip(currentClient, currentVehicle, graph))
                         {
                             currentVehicle->inUse = 0;
                             storeDataVehicles(listV);
@@ -461,7 +480,7 @@ void modeClient()
                 if (listLength(listAvailableGeoV) > 0)
                 {
                     if (choosingVehicle(listAvailableGeoV)) {
-                        if (!simulateTrip(currentClient, currentVehicle))
+                        if (!simulateTrip(currentClient, currentVehicle, graph))
                         {
                             currentVehicle->inUse = 0;
                             storeDataVehicles(listV);
@@ -569,7 +588,7 @@ int login() {
     return 0;
 }
 
-// TODO: ADICIONAR INTERAÇÕES CALCULAR DISTANCIA DE CLIENTE A VEICULOS. APOS VIAGEM ATUALIZAR GRAPH. DIJKSTRA ALGORITHM. TRUE RANDOM? EDITAR GRAPH? VALIDAR TODAS AS LOCALIZACOES ATRAVES DE CURL? 
+// TODO: ADICIONAR INTERAÇÕES CALCULAR DISTANCIA DE CLIENTE A VEICULOS. DIJKSTRA ALGORITHM. TRUE RANDOM? EDITAR GRAPH? VALIDAR TODAS AS LOCALIZACOES ATRAVES DE CURL? 
 
 int main()
 {
@@ -577,23 +596,22 @@ int main()
     listC = NULL;
     listV = NULL;
     listH = NULL;
-    Graph* graph = createGraph();
+    graph = createGraph();
 
     listA = loadDataAdmins(listA);
     listC = loadDataClients(listC);
     listV = loadDataVehicles(listV);
     listH = loadDataHistory(listH);
-    //graph = loadDataGraphBin(graph);
+    graph = loadDataGraph(graph);
     
     
     //printGraph(graph);
     //wait();
-    createLocationsFromVehicles(graph, listV);
-    createLocationsFromClients(graph, listC);
-    connectAdjacentLocations(graph);
-    storeDataGraphBin(graph);
+    //createLocationsFromVehicles(graph, listV);
+    //createLocationsFromClients(graph, listC);
+    //connectAdjacentLocations(graph);
+    //storeDataGraph(graph);
     printGraph(graph);
-    freeGraph(graph);
     wait();
 
     int option = 99;
