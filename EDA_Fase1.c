@@ -375,17 +375,18 @@ int simulateTrip(Client c, Vehicle v, Graph* graph) {
     printf("\n A viagem teve um custo de: %2.f euros.\n O seu balanco e de: %.2f euros. \n\n", h->cost, c->balance);
     wait();
 
-    // Remove used client and vehicle from the starting location
-    removeClientInfo(startLocation, c->username);
-    removeVehicleInfo(startLocation, v->code, v->type);
-
-    // Add client and vehicle to the finish location
-    addClientInfo(finishLocation, createClientInfo(c->username));
-    addVehicleInfo(finishLocation, createVehicleInfo(v->code, v->type));
-
+    strcpy(c->geolocation, h->finish);
     strcpy(v->geolocation, h->finish);
     v->totalkms += h->distance;
     v->inUse = 0;
+
+    // Remove used client and vehicle from the starting location
+    removeClientFromLocation(startLocation, c->username);
+    removeVehicleFromLocation(startLocation, v->code, v->type);
+
+    // Add client and vehicle to the finish location
+    addClientToLocation(finishLocation, c);
+    addVehicleToLocation(finishLocation, v);
 
     storeDataClients(listC);
     storeDataVehicles(listV);
@@ -588,7 +589,7 @@ int login() {
     return 0;
 }
 
-// TODO: ALTERAR LOCATIONS PARA CONTER LISTA DE CLIENTES E VEICULOS NA LOCALIZAÇÃO. ADICIONAR INTERAÇÕES CALCULAR DISTANCIA DE CLIENTE A VEICULOS. DIJKSTRA ALGORITHM. TRUE RANDOM? EDITAR GRAPH? VALIDAR TODAS AS LOCALIZACOES ATRAVES DE CURL? 
+// TODO: choosingVehicle - ADICIONAR INTERAÇÕES CALCULAR DISTANCIA DE CLIENTE A VEICULOS. DIJKSTRA ALGORITHM com capacidade total. TRUE RANDOM? EDITAR GRAPH? VALIDAR GEOLOCALS? 
 
 int main()
 {
@@ -602,17 +603,17 @@ int main()
     listC = loadDataClients(listC);
     listV = loadDataVehicles(listV);
     listH = loadDataHistory(listH);
-    graph = loadDataGraph(graph);
+    graph = loadDataGraph(graph, listC, listV);
     
     
-    //printGraph(graph);
-    //wait();
+    printGraph(graph);
+    wait();
     //createLocationsFromVehicles(graph, listV);
     //createLocationsFromClients(graph, listC);
     //connectAdjacentLocations(graph);
     //storeDataGraph(graph);
-    printGraph(graph);
-    wait();
+    //printGraph(graph);
+    //wait();
 
     int option = 99;
     do {

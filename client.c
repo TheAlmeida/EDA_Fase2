@@ -442,6 +442,19 @@ int usernameExists(char* username, ListElem listClient, ListElem listAdmin) {
     return 0;
 }
 
+Client getClientByUsername(ListElem listClient, char* username)
+{
+    ListElem currElem = listClient;
+    while (currElem != NULL) {
+        Client currClient = (Client)currElem->data;
+        if (strcmp(currClient->username, username) == 0) {
+            return currClient;
+        }
+        currElem = currElem->next;
+    }
+    return NULL;
+}
+
 ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) {
 
     clrscr();

@@ -129,6 +129,8 @@ ListElem editClient(ListElem listClient, int* modified);
 /// <returns>1 if the username passed as argument exists in either listClients or listAdmin, 0 otherwise.</returns>
 int usernameExists(char* username, ListElem listClients, ListElem listAdmin);
 
+Client getClientByUsername(ListElem listClient, char* username);
+
 /// <summary>
 /// Registers a new client in the list.
 /// </summary>

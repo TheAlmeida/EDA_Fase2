@@ -61,6 +61,8 @@ void storeDataGraph(const Graph* graph)
             adjacentElem = adjacentElem->next;
         }
 
+        
+        /*
         // Write the client info
         ClientInfo* clientInfo = location->clientInfo;
         while (clientInfo != NULL)
@@ -68,16 +70,35 @@ void storeDataGraph(const Graph* graph)
             fprintf(graphFile, "%s\n", clientInfo->username);
             clientInfo = clientInfo->next;
         }
+        */
+
+        // Write the client info
+        ListElem currentC = location->clientList;
+        while (currentC != NULL) {
+            Client client = (Client)currentC->data;
+            fprintf(graphFile, "%s\n", client->username);
+            currentC = currentC->next;
+        }
+
 
         fprintf(graphFile, "-1\n");  // To mark the end of the client info list for this location
 
         // Write the vehicle info
+        ListElem currentV = location->vehicleList;
+        while (currentV != NULL) {
+            Vehicle vehicle = (Vehicle)currentV->data;
+            fprintf(graphFile, "%d %s\n", vehicle->code, vehicle->type);
+            currentV = currentV->next;
+        }
+        /*
         VehicleInfo* vehicleInfo = location->vehicleInfo;
         while (vehicleInfo != NULL)
         {
             fprintf(graphFile, "%d %s\n", vehicleInfo->code, vehicleInfo->type);
             vehicleInfo = vehicleInfo->next;
         }
+        */
+        
 
         fprintf(graphFile, "-1\n");  // To mark the end of the vehicle info list for this location
 
@@ -87,7 +108,7 @@ void storeDataGraph(const Graph* graph)
     fclose(graphFile);
 }
 
-Graph* loadDataGraph(Graph* graph)
+Graph* loadDataGraph(Graph* graph, ListElem listClients, ListElem listVehicles)
 {
     char cwd[500];
     if (getcwd(cwd, sizeof(cwd)) == NULL) {
@@ -183,21 +204,24 @@ Graph* loadDataGraph(Graph* graph)
             addAdjacentLocation(location, adjacentLocation, weight);
         }
 
-        while (1)
-        {
+        // Read the client info
+        Client c = NULL;
+        while (1) {
+            c = (Client)malloc(sizeof(struct dataclient));
             char clientUsername[50];
-            if (fscanf(graphFile, "%s", clientUsername) != 1 || strcmp(clientUsername, "-1") == 0)
-            {
-                break;  // End of the client info list for this location
+            if (fscanf(graphFile, "%s", clientUsername) != 1 || strcmp(clientUsername, "-1") == 0) {
+                free(c);
+                break;
             }
-
-            ClientInfo* clientInfo = createClientInfo(clientUsername);
-            addClientInfo(location, clientInfo);
+            c = getClientByUsername(listClients, clientUsername);
+            location->clientList = addItemLastIterative(location->clientList, c);
         }
 
         // Read the vehicle info
+        Vehicle v = NULL;
         while (1)
         {
+            v = (Vehicle)malloc(sizeof(struct datavehicle));
             int vehicleCode;
             char vehicleType[50];
             if (fscanf(graphFile, "%d", &vehicleCode) != 1 || vehicleCode == -1)
@@ -213,8 +237,9 @@ Graph* loadDataGraph(Graph* graph)
                 return NULL;
             }
 
-            VehicleInfo* vehicleInfo = createVehicleInfo(vehicleCode, vehicleType);
-            addVehicleInfo(location, vehicleInfo);
+            v = getVehicleByTypeAndCode(listVehicles, vehicleType, vehicleCode);
+            location->vehicleList = addItemLastIterative(location->vehicleList, v);
+
         }
     }
 
@@ -249,8 +274,8 @@ Location* createLocation(const char* name, double latitude, double longitude)
     }
     
     location->adjacentLocations = NULL;
-    location->clientInfo = NULL;
-    location->vehicleInfo = NULL;
+    location->clientList = NULL;
+    location->vehicleList = NULL;
     return location;
 }
 
@@ -274,110 +299,77 @@ void addAdjacentLocation(Location* location, Location* adjacentLocation, double 
     location->adjacentLocations = elem;
 }
 
-// Function to create a new client info
-ClientInfo* createClientInfo(const char* username)
+// Function to add a client to a location
+void addClientToLocation(Location* location, Client client)
 {
-    ClientInfo* clientInfo = (ClientInfo*)malloc(sizeof(ClientInfo));
-    strncpy(clientInfo->username, username, sizeof(clientInfo->username) - 1);
-    clientInfo->username[sizeof(clientInfo->username) - 1] = '\0';  // Ensure null-termination
-    clientInfo->next = NULL;
-    return clientInfo;
+    location->clientList = addItemLastIterative(location->clientList, client);
 }
 
-// Function to add a client info to a location
-void addClientInfo(Location* location, ClientInfo* clientInfo)
+// Function to remove a client from a location
+void removeClientFromLocation(Location* location, const char* username)
 {
-    if (location->clientInfo == NULL)
+    ListElem currClient = location->clientList;
+    ListElem prevClient = NULL;
+
+    while (currClient != NULL)
     {
-        location->clientInfo = clientInfo;
-    }
-    else
-    {
-        ClientInfo* currClientInfo = location->clientInfo;
-        while (currClientInfo->next != NULL)
+        Client client = (Client)currClient->data;
+
+        if (strcmp(client->username, username) == 0)
         {
-            currClientInfo = currClientInfo->next;
-        }
-        currClientInfo->next = clientInfo;
-    }
-}
-
-void removeClientInfo(Location* location, const char* username) {
-    ClientInfo* currClientInfo = location->clientInfo;
-    ClientInfo* prevClientInfo = NULL;
-
-    while (currClientInfo != NULL) {
-        if (strcmp(currClientInfo->username, username) == 0) {
-            // Client found, remove it from the list
-            if (prevClientInfo == NULL) {
-                // Client is the first element
-                location->clientInfo = currClientInfo->next;
+            if (prevClient == NULL)
+            {
+                // Client is the first element in the list
+                location->clientList = currClient->next;
             }
-            else {
-                // Client is in the middle or at the end
-                prevClientInfo->next = currClientInfo->next;
+            else
+            {
+                // Client is in the middle or at the end of the list
+                prevClient->next = currClient->next;
             }
-
-            // Free the memory of the removed client info
-            free(currClientInfo);
-            return;
+            free(currClient);
+            break;
         }
 
-        prevClientInfo = currClientInfo;
-        currClientInfo = currClientInfo->next;
+        prevClient = currClient;
+        currClient = currClient->next;
     }
 }
 
-VehicleInfo* createVehicleInfo(int code, const char* type)
+// Function to add a vehicle to a location
+void addVehicleToLocation(Location* location, Vehicle vehicle)
 {
-    VehicleInfo* vehicleInfo = (VehicleInfo*)malloc(sizeof(VehicleInfo));
-    vehicleInfo->code = code;
-    strncpy(vehicleInfo->type, type, sizeof(vehicleInfo->type) - 1);
-    vehicleInfo->type[sizeof(vehicleInfo->type) - 1] = '\0';  // Ensure null-termination
-    vehicleInfo->next = NULL;
-    return vehicleInfo;
+    location->vehicleList = addItemLastIterative(location->vehicleList, vehicle);
 }
 
-void addVehicleInfo(Location* location, VehicleInfo* vehicleInfo)
+// Function to remove a vehicle from a location
+void removeVehicleFromLocation(Location* location, int code, const char* type)
 {
-    if (location->vehicleInfo == NULL)
+    ListElem currVehicle = location->vehicleList;
+    ListElem prevVehicle = NULL;
+
+    while (currVehicle != NULL)
     {
-        location->vehicleInfo = vehicleInfo;
-    }
-    else
-    {
-        VehicleInfo* currVehicleInfo = location->vehicleInfo;
-        while (currVehicleInfo->next != NULL)
+        Vehicle vehicle = (Vehicle)currVehicle->data;
+
+        if (vehicle->code == code && strcmp(vehicle->type, type) == 0)
         {
-            currVehicleInfo = currVehicleInfo->next;
-        }
-        currVehicleInfo->next = vehicleInfo;
-    }
-}
-
-void removeVehicleInfo(Location* location, int code, const char* type) {
-    VehicleInfo* currVehicleInfo = location->vehicleInfo;
-    VehicleInfo* prevVehicleInfo = NULL;
-
-    while (currVehicleInfo != NULL) {
-        if (currVehicleInfo->code == code && strcmp(currVehicleInfo->type, type) == 0) {
-            // Vehicle found, remove it from the list
-            if (prevVehicleInfo == NULL) {
-                // Vehicle is the first element
-                location->vehicleInfo = currVehicleInfo->next;
+            if (prevVehicle == NULL)
+            {
+                // Vehicle is the first element in the list
+                location->vehicleList = currVehicle->next;
             }
-            else {
-                // Vehicle is in the middle or at the end
-                prevVehicleInfo->next = currVehicleInfo->next;
+            else
+            {
+                // Vehicle is in the middle or at the end of the list
+                prevVehicle->next = currVehicle->next;
             }
-
-            // Free the memory of the removed vehicle info
-            free(currVehicleInfo);
-            return;
+            free(currVehicle);
+            break;
         }
 
-        prevVehicleInfo = currVehicleInfo;
-        currVehicleInfo = currVehicleInfo->next;
+        prevVehicle = currVehicle;
+        currVehicle = currVehicle->next;
     }
 }
 
@@ -397,10 +389,9 @@ void createLocationsFromClients(Graph* graph, ListElem listC)
             addLocation(graph, newLocation);
             existingLocation = newLocation; // Set the existingLocation to the newly created location
         }
-
-        // Register the client id and name in the location's clientInfo list
-        ClientInfo* newClientInfo = createClientInfo(client->username);
-        addClientInfo(existingLocation, newClientInfo);
+       
+        // Register the client in the location's clientList
+        addClientToLocation(existingLocation, client);
 
         currC = currC->next;
     }
@@ -425,8 +416,7 @@ void createLocationsFromVehicles(Graph* graph, ListElem listV)
         }
 
         // Register the vehicle type and code in the location's vehicleInfo list
-        VehicleInfo* newVehicleInfo = createVehicleInfo(vehicle->code, vehicle->type);
-        addVehicleInfo(existingLocation, newVehicleInfo);
+        addVehicleToLocation(existingLocation, vehicle);
 
         currV = currV->next;
     }
@@ -598,19 +588,21 @@ void printGraph(Graph* graph)
         }
 
         // Print the client info
-        ClientInfo* currClientInfo = location->clientInfo;
-        while (currClientInfo != NULL)
+        ListElem currClient = location->clientList;
+        while (currClient != NULL)
         {
-            printf("Client Username: %s\n", currClientInfo->username);
-            currClientInfo = currClientInfo->next;
+            Client client = (Client)currClient->data;
+            printf("Client Username: %s\n", client->username);
+            currClient = currClient->next;
         }
 
         // Print the vehicle info
-        VehicleInfo* currVehicleInfo = location->vehicleInfo;
-        while (currVehicleInfo != NULL)
+        ListElem currVehicle = location->vehicleList;
+        while (currVehicle != NULL)
         {
-            printf("Vehicle Type_Code: %s_%d\n", currVehicleInfo->type, currVehicleInfo->code);
-            currVehicleInfo = currVehicleInfo->next;
+            Vehicle vehicle = (Vehicle)currVehicle->data;
+            printf("Vehicle Type_Code: %s_%d\n", vehicle->type, vehicle->code);
+            currVehicle = currVehicle->next;
         }
 
         printf("\n");
@@ -626,22 +618,22 @@ void freeGraph(Graph* graph)
     {
         Location* location = (Location*)currLocation->data;
 
-        // Free the vehicle info
-        ClientInfo* currClientInfo = location->clientInfo;
-        while (currClientInfo != NULL)
+        // Free the client info
+        ListElem currClient = location->clientList;
+        while (currClient != NULL)
         {
-            ClientInfo* nextClientInfo = currClientInfo->next;
-            free(currClientInfo);
-            currClientInfo = nextClientInfo;
+            ListElem nextClient = currClient->next;
+            free(currClient);
+            currClient = nextClient;
         }
 
         // Free the vehicle info
-        VehicleInfo* currVehicleInfo = location->vehicleInfo;
-        while (currVehicleInfo != NULL)
+        ListElem currVehicle = location->vehicleList;
+        while (currVehicle != NULL)
         {
-            VehicleInfo* nextVehicleInfo = currVehicleInfo->next;
-            free(currVehicleInfo);
-            currVehicleInfo = nextVehicleInfo;
+            ListElem nextVehicle = currVehicle->next;
+            free(currVehicle);
+            currVehicle = nextVehicle;
         }
 
         // Free the adjacent locations

@@ -7,6 +7,7 @@
 #include "vehicle.h"
 #include "what3words.h"
 
+/*
 typedef struct sClientInfo
 {
     char username[50];        ///< Username of the client
@@ -19,14 +20,15 @@ typedef struct sVehicleInfo
     char type[50];        ///< Type of the vehicle
     struct sVehicleInfo* next;  ///< Pointer to the next vehicle info in the list
 } VehicleInfo;
+*/
 
 typedef struct sLocation
 {
     char name[50];
     Coordinates coordinates;
     struct sListElem* adjacentLocations;
-    struct sClientInfo* clientInfo;   ///< Client information associated with the location
-    struct sVehicleInfo* vehicleInfo;  ///< Vehicle information associated with the location
+    ListElem clientList;   ///< List of client pointers associated with the location
+    ListElem vehicleList;  ///< List of vehicle pointers associated with the location
 } Location;
 
 typedef struct sAdjacentLocation
@@ -42,7 +44,7 @@ typedef struct sGraph
 
 void storeDataGraph(const Graph* graph);
 
-Graph* loadDataGraph(Graph* graph);
+Graph* loadDataGraph(Graph* graph, ListElem listClients, ListElem listVehicles);
 
 // Function to create a new graph
 Graph* createGraph();
@@ -56,19 +58,14 @@ void addLocation(Graph* graph, Location* location);
 // Function to add an adjacent location to a location
 void addAdjacentLocation(Location* location, Location* adjacentLocation, double weight);
 
-// Function to create a new client info
-ClientInfo* createClientInfo(const char* username);
-
 // Function to add a client info to a location
-void addClientInfo(Location* location, ClientInfo* clientInfo);
+void addClientToLocation(Location* location, Client client);
 
-void removeClientInfo(Location* location, const char* username);
+void removeClientFromLocation(Location* location, const char* username);
 
-VehicleInfo* createVehicleInfo(int code, const char* type);
+void addVehicleToLocation(Location* location, Vehicle vehicle);
 
-void addVehicleInfo(Location* location, VehicleInfo* vehicleInfo);
-
-void removeVehicleInfo(Location* location, int code, const char* type);
+void removeVehicleFromLocation(Location* location, int code, const char* type);
 
 void createLocationsFromClients(Graph* graph, ListElem listC);
 
