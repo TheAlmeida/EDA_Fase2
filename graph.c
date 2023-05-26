@@ -20,7 +20,6 @@ void storeDataGraph(const Graph* graph)
         return;
     }
 
-    // Write the number of locations in the graph
     int locationCount = 0;
     ListElem locationElem = graph->locations;
     while (locationElem != NULL)
@@ -36,10 +35,8 @@ void storeDataGraph(const Graph* graph)
     {
         Location* location = (Location*)locationElem->data;
 
-        // Write the location name
         fprintf(graphFile, "%s %.6f, %.6f\n", location->name, location->coordinates.latitude, location->coordinates.longitude);
 
-        // Write the number of adjacent locations
         int adjacentCount = 0;
         ListElem adjacentElem = location->adjacentLocations;
         while (adjacentElem != NULL)
@@ -55,22 +52,10 @@ void storeDataGraph(const Graph* graph)
         {
             AdjacentLocation* adjacentLocation = (AdjacentLocation*)adjacentElem->data;
 
-            // Write the adjacent location name and weight
             fprintf(graphFile, "%s %.3f\n", adjacentLocation->location->name, adjacentLocation->weight);
 
             adjacentElem = adjacentElem->next;
         }
-
-        
-        /*
-        // Write the client info
-        ClientInfo* clientInfo = location->clientInfo;
-        while (clientInfo != NULL)
-        {
-            fprintf(graphFile, "%s\n", clientInfo->username);
-            clientInfo = clientInfo->next;
-        }
-        */
 
         // Write the client info
         ListElem currentC = location->clientList;
@@ -81,7 +66,7 @@ void storeDataGraph(const Graph* graph)
         }
 
 
-        fprintf(graphFile, "-1\n");  // To mark the end of the client info list for this location
+        fprintf(graphFile, "-1\n");
 
         // Write the vehicle info
         ListElem currentV = location->vehicleList;
@@ -89,18 +74,9 @@ void storeDataGraph(const Graph* graph)
             Vehicle vehicle = (Vehicle)currentV->data;
             fprintf(graphFile, "%d %s\n", vehicle->code, vehicle->type);
             currentV = currentV->next;
-        }
-        /*
-        VehicleInfo* vehicleInfo = location->vehicleInfo;
-        while (vehicleInfo != NULL)
-        {
-            fprintf(graphFile, "%d %s\n", vehicleInfo->code, vehicleInfo->type);
-            vehicleInfo = vehicleInfo->next;
-        }
-        */
-        
+        }        
 
-        fprintf(graphFile, "-1\n");  // To mark the end of the vehicle info list for this location
+        fprintf(graphFile, "-1\n");
 
         locationElem = locationElem->next;
     }
@@ -324,7 +300,6 @@ void removeClientFromLocation(Location* location, const char* username)
             }
             else
             {
-                // Client is in the middle or at the end of the list
                 prevClient->next = currClient->next;
             }
             free(currClient);
@@ -361,7 +336,6 @@ void removeVehicleFromLocation(Location* location, int code, const char* type)
             }
             else
             {
-                // Vehicle is in the middle or at the end of the list
                 prevVehicle->next = currVehicle->next;
             }
             free(currVehicle);
@@ -434,6 +408,24 @@ Location* findLocationByGeolocation(Graph* graph, const char* geolocation)
             return location;
         }
         currLocation = currLocation->next;
+    }
+    return NULL;
+}
+
+Location* findLocationByVehicle(Graph* graph, Vehicle vehicle)
+{
+    ListElem currLocationElem = graph->locations;
+    while (currLocationElem != NULL) {
+        Location* location = (Location*)currLocationElem->data;
+        ListElem vehicleElem = location->vehicleList;
+        while (vehicleElem != NULL) {
+            Vehicle currVehicle = (Vehicle)vehicleElem->data;
+            if (currVehicle == vehicle) {
+                return location;
+            }
+            vehicleElem = vehicleElem->next;
+        }
+        currLocationElem = currLocationElem->next;
     }
     return NULL;
 }
@@ -514,49 +506,249 @@ void connectAdjacentLocations(Graph* graph)
             adjacentLocation->coordinates.longitude);
 
         addAdjacentLocation(location, adjacentLocation, weight);
+        addAdjacentLocation(adjacentLocation, location, weight); // Add incoming connection
 
         currLocation = currLocation->next;
     }
+}
 
-    // Second pass to ensure that every location has at least one incoming connection
-    currLocation = graph->locations;
-    while (currLocation != NULL)
-    {
-        Location* location = (Location*)currLocation->data;
+// Helper function to find the minimum distance location in the unvisited set
+Location* findMinDistanceLocation(ListElem unvisitedSet)
+{
+    Location* minLocation = NULL;
+    double minDistance = 9999;
 
-        // Check if location has incoming connections
-        int hasIncoming = 0;
-        ListElem otherLocation = graph->locations;
-        while (otherLocation != NULL)
-        {
-            Location* other = (Location*)otherLocation->data;
-            if (locationHasAdjacency(other, location))
-            {
-                hasIncoming = 1;
-                break;
+    ListElem curr = unvisitedSet;
+    while (curr != NULL) {
+        VisitedLocation* visitedLocation = (VisitedLocation*)curr->data;
+        if (visitedLocation->distance < minDistance) {
+            minDistance = visitedLocation->distance;
+            minLocation = visitedLocation->location;
+        }
+        curr = curr->next;
+    }
+
+    return minLocation;
+}
+
+ListElem removeVisitedLocationByLocation(ListElem head, Location* location) {
+    ListElem current = head;
+    ListElem prev = NULL;
+    while (current != NULL) {
+        VisitedLocation* visitedLocation = (VisitedLocation*)current->data;
+        if (visitedLocation->location == location) {
+            if (prev == NULL) {
+                ListElem next = current->next;
+                free(current);
+                return next;
             }
-            otherLocation = otherLocation->next;
+            else {
+                prev->next = current->next;
+                free(current);
+                return head;
+            }
         }
-
-        // If location doesn't have incoming connections, add one from a random location
-        if (!hasIncoming)
-        {
-            Location* incomingLocation;
-            do
-            {
-                incomingLocation = getRandomLocation(graph, location);
-            } while (locationHasAdjacency(incomingLocation, location) || incomingLocation == location);
-
-            double weight = calculateDistance(location->coordinates.latitude,
-                location->coordinates.longitude,
-                incomingLocation->coordinates.latitude,
-                incomingLocation->coordinates.longitude);
-
-            addAdjacentLocation(incomingLocation, location, weight);
-        }
-
-        currLocation = currLocation->next;
+        prev = current;
+        current = current->next;
     }
+    return head;
+}
+
+// Helper function to create a visited location with initial distance
+VisitedLocation* createVisitedLocation(Location* location, double distance, VisitedLocation* previous) {
+    VisitedLocation* visitedLocation = (VisitedLocation*)malloc(sizeof(VisitedLocation));
+    visitedLocation->location = location;
+    visitedLocation->distance = distance;
+    visitedLocation->previous = previous;
+    return visitedLocation;
+}
+
+// Helper function to update the distance of a visited location
+void updateVisitedLocationDistance(VisitedLocation* visitedLocation, double distance)
+{
+    visitedLocation->distance = distance;
+}
+
+// Helper function to update the previous visited location
+void updateVisitedLocationPrevious(VisitedLocation* visitedLocation, VisitedLocation* previous)
+{
+    visitedLocation->previous = previous;
+}
+
+VisitedLocation* findVisitedLocationByLocation(ListElem visitedSet, Location* location) {
+    ListElem curr = visitedSet;
+    while (curr != NULL) {
+        VisitedLocation* visitedLocation = (VisitedLocation*)curr->data;
+        if (visitedLocation->location == location) {
+            return visitedLocation;
+        }
+        curr = curr->next;
+    }
+
+    // Didn't find a VisitedLocation for this Location
+    return NULL;
+}
+
+AdjacentLocation* findAdjacentLocation(Location* from, Location* to) {
+    ListElem currElem = from->adjacentLocations;
+    while (currElem != NULL) {
+        AdjacentLocation* adjLocation = (AdjacentLocation*)currElem->data;
+        if (adjLocation->location == to) {
+            return adjLocation;
+        }
+        currElem = currElem->next;
+    }
+    return NULL;  // Return NULL if no AdjacentLocation is found
+}
+
+// Helper function to get the shortest path from the start location to the target location
+ListElem getShortestPath(VisitedLocation* target)
+{
+    ListElem path = NULL;
+
+    VisitedLocation* curr = target;
+    while (curr != NULL) {
+        path = addItemHead(path, curr->location);
+        curr = curr->previous;
+    }
+
+    return path;
+}
+
+ListElem calculateShortestPath(Graph* graph, Location* start, Location* target)
+{
+    ListElem unvisitedSet = NULL;
+    ListElem visitedSet = NULL;
+    double newDistance = 0.0;
+    VisitedLocation* currentVisitedLocation = NULL;
+
+    // Initialize all locations with initial distance infinity
+    ListElem currLocationElem = graph->locations;
+    while (currLocationElem != NULL) {
+        Location* location = (Location*)currLocationElem->data;
+        double distance = (location == start) ? 0.0 : DBL_MAX;
+        VisitedLocation* visitedLocation = createVisitedLocation(location, distance, NULL);
+        unvisitedSet = addItemHead(unvisitedSet, visitedLocation);
+        currLocationElem = currLocationElem->next;
+    }
+
+    printf("Start Loc: %s\n", start->name);
+    printf("Target Loc: %s\n", target->name);
+    printf("\n");
+
+    while (unvisitedSet != NULL) {
+        Location* currentLocation = findMinDistanceLocation(unvisitedSet);
+
+        if (currentLocation == NULL) {
+            printf("Current location is NULL\n");
+            break;
+        }
+
+        printf("Current Loc: %s\n", currentLocation->name);
+
+        // Set currentVisitedLocation before traversing neighbors
+        currentVisitedLocation = findVisitedLocationByLocation(unvisitedSet, currentLocation);
+        if (currentVisitedLocation == NULL) {
+            printf("Error: Current visited location is NULL\n");
+            return NULL;
+        }
+
+        // Traverse the adjacent locations of the current location
+        ListElem adjacentElem = currentLocation->adjacentLocations;
+        while (adjacentElem != NULL) {
+            AdjacentLocation* adjLocation = (AdjacentLocation*)adjacentElem->data;
+            Location* adjacentLocation = adjLocation->location;
+            double weight = adjLocation->weight;
+
+            if (adjacentLocation != NULL) {
+                VisitedLocation* visitedLocation = findVisitedLocationByLocation(unvisitedSet, adjacentLocation);
+
+                if (visitedLocation != NULL) {
+                    newDistance = currentVisitedLocation->distance + weight;
+
+                    if (newDistance < visitedLocation->distance) {
+                        visitedLocation->distance = newDistance;
+                        visitedLocation->previous = currentVisitedLocation;
+                    }
+                }
+            }
+
+            adjacentElem = adjacentElem->next;
+        }
+
+        // After all neighbours have been visited, move current location to visited set
+        unvisitedSet = removeVisitedLocationByLocation(unvisitedSet, currentLocation);
+        visitedSet = addItemHead(visitedSet, currentVisitedLocation);
+
+        if (currentLocation == target) {
+            // Building shortest path with Location pointers
+            ListElem path = getShortestPath(currentVisitedLocation);
+            printf("Shortest Path:\n");
+            showPathIterative(path);
+
+            // Print the distance
+            printf("Distance: %.3f\n", currentVisitedLocation->distance);
+
+            return path;
+        }
+    }
+
+    return NULL;
+}
+
+double calculatePathDistance(ListElem path)
+{
+    double distance = 0.0;
+    ListElem currElem = path;
+    while (currElem != NULL && currElem->next != NULL) {
+        Location* currentLocation = (Location*)currElem->data;
+        Location* nextLocation = (Location*)currElem->next->data;
+        AdjacentLocation* adjLocation = findAdjacentLocation(currentLocation, nextLocation);
+        if (adjLocation != NULL) {
+            distance += adjLocation->weight;
+        }
+        currElem = currElem->next;
+    }
+    return distance;
+}
+
+void showPathIterative(ListElem path)
+{
+    double cumulativeDistance = 0.0;
+    ListElem currElem = path;
+    while (currElem != NULL && currElem->next != NULL) {
+        Location* currentLocation = (Location*)currElem->data;
+        Location* nextLocation = (Location*)currElem->next->data;
+        AdjacentLocation* adjLocation = findAdjacentLocation(currentLocation, nextLocation);
+        if (adjLocation != NULL) {
+            double distance = adjLocation->weight;
+            cumulativeDistance += distance;
+            printf("%s -> %s (Distance: %.3f, Cumulative Distance: %.3f)\n", currentLocation->name, nextLocation->name, distance, cumulativeDistance);
+        }
+        currElem = currElem->next;
+    }
+}
+
+void printVisitedSet(ListElem visitedSet) {
+    printf("Visited Set: ");
+    ListElem current = visitedSet;
+    while (current != NULL) {
+        VisitedLocation* visitedLocation = (VisitedLocation*)current->data;
+        printf("%s ", visitedLocation->location->name);
+        current = current->next;
+    }
+    printf("\n");
+}
+
+void printUnvisitedSet(ListElem unvisitedSet) {
+    printf("Unvisited Set: ");
+    ListElem current = unvisitedSet;
+    while (current != NULL) {
+        VisitedLocation* visitedLocation = (VisitedLocation*)current->data;
+        printf("%s ", visitedLocation->location->name);
+        current = current->next;
+    }
+    printf("\n");
 }
 
 void printGraph(Graph* graph)

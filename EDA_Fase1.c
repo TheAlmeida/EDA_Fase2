@@ -63,19 +63,8 @@ int login();
 /// </summary>
 void modeClient();
 
-/// <summary>
-/// Allows the user to select the vehicle to use on it's trip.
-/// </summary>
-/// <param name="listAV">A pointer to the head of the linked list of available vehicles.</param>
-/// <returns>1 if selection was successfull. 0 otherwise.</returns>
-int choosingVehicle(ListElem listAV);
+int choosingVehicle(Graph* graph, Location* start);
 
-/// <summary>
-/// Simulates the renting of a vehicle by asking the user for input.
-/// </summary>
-/// <param name="c">A pointer to the current logged in client.</param>
-/// <param name="v">A pointer to the currently selected vehicle.</param>
-/// <returns>1 if simulation was successfull. 0 otherwise.</returns>
 int simulateTrip(Client c, Vehicle v, Graph* graph);
 
 /// <summary>
@@ -172,42 +161,60 @@ void modeAdmin()
             case 1:
                 listV = registerVehicle(listV,&modified);
                 if (modified)
+                {
                     storeDataVehicles(listV);
+                    storeDataGraph(graph);
+                }                   
                 else
                     errornotvalid();
                 break;
             case 2:
                 listV = editVehicle(listV, &modified);
                 if (modified)
+                {
                     storeDataVehicles(listV);
+                    storeDataGraph(graph);
+                }                   
                 else
                     errornotvalid();
                 break;
             case 3:
                 listV = removeVehicle(listV, &modified);
                 if (modified)
+                {
                     storeDataVehicles(listV);
+                    storeDataGraph(graph);
+                }
                 else
                     errornotvalid();
                 break;
             case 4:
                 listC = registerClient(listC, listA, &modified);
                 if (modified)
+                {
                     storeDataClients(listC);
+                    storeDataGraph(graph);
+                }
                 else
                     errornotvalid();
                 break;
             case 5:
                 listC = editClient(listC, &modified);
                 if (modified)
+                {
                     storeDataClients(listC);
+                    storeDataGraph(graph);
+                }
                 else
                     errornotvalid();
                 break;
             case 6:
                 listC = removeClient(listC, &modified);
                 if (modified)
+                {
                     storeDataClients(listC);
+                    storeDataGraph(graph);
+                }
                 else
                     errornotvalid();
                 break;
@@ -302,12 +309,6 @@ int simulateTrip(Client c, Vehicle v, Graph* graph) {
     printf("\n Insira o geocodigo do local de chegada: "); //NOME
     scanf(" %[^\n]%*c", h->finish);
 
-    /*
-    printf("\n Insira a distancia do percurso: ");
-    char auxDistance[10];
-    scanf(" %[^\n]%*c", auxDistance);
-    */
-
     // Check if the finish geolocation is already added as a location in the graph
     Location* finishLocation = findLocationByGeolocation(graph, h->finish);
     if (finishLocation == NULL) {
@@ -396,6 +397,8 @@ int simulateTrip(Client c, Vehicle v, Graph* graph) {
     return 1;
 }
 
+//choosingVehicle - working without range OLD
+/*
 int choosingVehicle(ListElem listAV)
 {
     int choice = 99;
@@ -403,7 +406,7 @@ int choosingVehicle(ListElem listAV)
     do {
         availablevehicles();
         showListIterative(listAV, &showVehicleRent);
-        
+
         printf(" Selecione o veiculo pretendido: ");
         char auxChoice[10];
         scanf(" %[^\n]", auxChoice);
@@ -411,7 +414,7 @@ int choosingVehicle(ListElem listAV)
 
         if (isInt(auxChoice))
             choice = stringToInt(auxChoice);
-         
+
         if ((choice != 0) && (choice <= lenght))
         {
             ListElem auxElem = obtainElementPosition(listAV, choice - 1);
@@ -427,6 +430,85 @@ int choosingVehicle(ListElem listAV)
 
     } while ((choice > 0) && (choice <= lenght));
 
+    return 0;
+}
+*/
+
+int choosingVehicle(Graph* graph, Location* start)
+{
+    int choice = 0;
+    int length = 0;
+    double maxDistance = 0.0;
+    ListElem filteredVehicles = NULL;
+
+    
+    printf("\n Insira a distancia maxima a que se pode encontrar o veiculo: ");
+    char auxMaxDist[10];
+    scanf(" %[^\n]%*c", auxMaxDist);
+
+    if (isInt(auxMaxDist) || isFloat(auxMaxDist))
+        maxDistance = stringToFloat(auxMaxDist);
+    else
+        return 0;
+
+    // Iterate over locations and vehicles to filter available vehicles within the maxDistance range
+    ListElem currLocationElem = graph->locations;
+    while (currLocationElem != NULL) {
+        Location* location = (Location*)currLocationElem->data;
+        ListElem vehicleElem = location->vehicleList;
+        while (vehicleElem != NULL) {
+            Vehicle vehicle = (Vehicle)vehicleElem->data;
+            if (vehicle->inUse == 0) {
+                Location* vehicleLocation = findLocationByVehicle(graph, vehicle);
+                ListElem shortestPath = calculateShortestPath(graph, start, vehicleLocation);
+                double distance = calculatePathDistance(shortestPath);
+                if (distance <= maxDistance) {
+                    length++;
+                    filteredVehicles = addItemLastIterative(filteredVehicles, vehicle);
+                    printf("%d. Tipo de veiculo: %s, Codigo: %d\n", length, vehicle->type, vehicle->code);
+                    printf("   Distancia: %.3f\n", distance);
+                    printf("   Caminho: ");
+                    showPathIterative(shortestPath);
+                    printf("\n\n");
+                }
+            }
+            vehicleElem = vehicleElem->next;
+        }
+        currLocationElem = currLocationElem->next;
+    }
+
+    if (length == 0) {
+        printf("Nao existem veiculos disponiveis dentro do raio indicado.\n");
+        return 0;
+    }
+
+    do {
+        printf(" Selecione o veiculo pretendido: ");
+        char auxChoice[10];
+        scanf(" %[^\n]", auxChoice);
+        printf("\n");
+
+        if (isInt(auxChoice))
+            choice = stringToInt(auxChoice);
+
+        if ((choice >= 1) && (choice <= length))
+        {
+            ListElem selectedVehicleElem = obtainElementPosition(filteredVehicles, choice - 1);
+            Vehicle selectedVehicle = (Vehicle)selectedVehicleElem->data;
+            selectedVehicle->inUse = 1;
+            storeDataVehicles(listV);
+            currentVehicle = selectedVehicle;
+            free(filteredVehicles);
+            return 1;
+        }
+        else
+        {
+            printf("Escolha errada, tente outra vez.\n");
+        }
+
+    } while (choice != 0);
+
+    free(filteredVehicles);
     return 0;
 }
 
@@ -458,7 +540,8 @@ void modeClient()
 
                 if (listLength(listAvailableV) > 0)
                 {
-                    if (choosingVehicle(listAvailableV)) {
+                    Location* clientLocation = findLocationByGeolocation(graph, currentClient->geolocation);
+                    if (choosingVehicle(graph, clientLocation)) {
                         if (!simulateTrip(currentClient, currentVehicle, graph))
                         {
                             currentVehicle->inUse = 0;
@@ -480,7 +563,8 @@ void modeClient()
 
                 if (listLength(listAvailableGeoV) > 0)
                 {
-                    if (choosingVehicle(listAvailableGeoV)) {
+                    Location* clientLocation = findLocationByGeolocation(graph, currentClient->geolocation);
+                    if (choosingVehicle(graph, clientLocation)) {
                         if (!simulateTrip(currentClient, currentVehicle, graph))
                         {
                             currentVehicle->inUse = 0;
@@ -589,7 +673,10 @@ int login() {
     return 0;
 }
 
-// TODO: choosingVehicle - ADICIONAR INTERAÇÕES CALCULAR DISTANCIA DE CLIENTE A VEICULOS. DIJKSTRA ALGORITHM com capacidade total. TRUE RANDOM? EDITAR GRAPH? VALIDAR GEOLOCALS? 
+// TODO: FILTRAR POR TIPO DE VEICULO 
+// TODO: ADD NEW LOCATION TO GRAPH and random adjacencies when new finish in simulateTrip or new registered geolocal in registerClient/Vehicle createLocationsFromClients/vEHICLE com connectAdjacentLocations???
+// TODO: DIJKSTRA ALGORITHM com capacidade total. 
+// TODO: EDITAR GRAPH? VALIDAR GEOLOCALS? TRUER RANDOM?  
 
 int main()
 {
@@ -606,14 +693,14 @@ int main()
     graph = loadDataGraph(graph, listC, listV);
     
     
-    printGraph(graph);
-    wait();
+    //printGraph(graph);
+    //wait();
     //createLocationsFromVehicles(graph, listV);
     //createLocationsFromClients(graph, listC);
     //connectAdjacentLocations(graph);
     //storeDataGraph(graph);
-    //printGraph(graph);
-    //wait();
+    printGraph(graph);
+    wait();
 
     int option = 99;
     do {
@@ -636,7 +723,10 @@ int main()
             case 1:
                 listC = registerClient(listC, listA, &modified);
                 if (modified)
+                {
                     storeDataClients(listC);
+                    storeDataGraph(graph);
+                }   
                 else
                     errornotvalid();
                 break;

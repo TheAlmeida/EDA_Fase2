@@ -2,25 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <float.h>
 #include "ll.h"
 #include "client.h"
 #include "vehicle.h"
 #include "what3words.h"
-
-/*
-typedef struct sClientInfo
-{
-    char username[50];        ///< Username of the client
-    struct sClientInfo* next;  ///< Pointer to the next client info in the list
-} ClientInfo;
-
-typedef struct sVehicleInfo
-{
-    int code;             ///< Code of the vehicle
-    char type[50];        ///< Type of the vehicle
-    struct sVehicleInfo* next;  ///< Pointer to the next vehicle info in the list
-} VehicleInfo;
-*/
 
 typedef struct sLocation
 {
@@ -36,6 +22,12 @@ typedef struct sAdjacentLocation
     struct sLocation* location;
     double weight;
 } AdjacentLocation;
+
+typedef struct sVisitedLocation {
+    Location* location;
+    double distance;
+    struct sVisitedLocation* previous;
+} VisitedLocation;
 
 typedef struct sGraph
 {
@@ -75,11 +67,37 @@ void createLocationsFromVehicles(Graph* graph, ListElem listV);
 // Function to find a location in the graph by geolocation
 Location* findLocationByGeolocation(Graph* graph, const char* geolocation);
 
+Location* findLocationByVehicle(Graph* graph, Vehicle vehicle);
+
 Location* getRandomLocation(Graph* graph, Location* excludeLocation);
 
 int locationHasAdjacency(Location* location, Location* otherLocation);
 
 void connectAdjacentLocations(Graph* graph);
+
+Location* findMinDistanceLocation(ListElem unvisitedSet);
+
+VisitedLocation* createVisitedLocation(Location* location, double distance, VisitedLocation* previous);
+
+void updateVisitedLocationDistance(VisitedLocation* visitedLocation, double distance);
+
+void updateVisitedLocationPrevious(VisitedLocation* visitedLocation, VisitedLocation* previous);
+
+VisitedLocation* findVisitedLocationByLocation(ListElem visitedSet, Location* location);
+
+AdjacentLocation* findAdjacentLocation(Location* from, Location* to);
+
+ListElem getShortestPath(VisitedLocation* target);
+
+ListElem calculateShortestPath(Graph* graph, Location* start, Location* target);
+
+double calculatePathDistance(ListElem path);
+
+void showPathIterative(ListElem path);
+
+void printVisitedSet(ListElem visitedSet);
+
+void printUnvisitedSet(ListElem unvisitedSet);
 
 // Function to print the graph
 void printGraph(Graph* graph);
