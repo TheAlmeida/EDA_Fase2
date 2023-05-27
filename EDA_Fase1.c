@@ -73,6 +73,8 @@ int simulateTrip(Client c, Vehicle v, Graph* graph);
 /// </summary>
 void modeAdmin();
 
+int returnVehicles(Graph* graph, Location* start, float totalWeight);
+
 /// <summary>
 /// Prints the percentage of vehicles in use off the linked list of vehicles.
 /// Prints the average autonomy of the field autonomy in all the elements of the linked list of vehicles.
@@ -135,6 +137,73 @@ void vehicleStats(ListElem listVehicles)
     wait();
 }
 
+int returnVehicles(Graph* graph, Location* start, float totalWeight) {
+    Location* targetLocation = calculateShortestPathWithVehicle(graph, start);
+    int pickedUp = 0; // Flag to indicate if any vehicles were picked up
+
+    while (targetLocation != NULL) {
+        // Calculate the shortest path from start to the target location
+        ListElem path = calculateShortestPath(graph, start, targetLocation);
+
+        // Traverse the path
+        ListElem pathElem = path;
+        Location* currentLocation = NULL;
+        float remainingWeight = totalWeight;
+        ListElem pickedUpVehicles = NULL; // List of vehicles picked up along the path
+        PickUpResult result = { NULL, 0 }; // Initialize result outside the loop
+
+        while (pathElem != NULL) {
+            currentLocation = (Location*)pathElem->data;
+            result = pickUpVehicles(currentLocation, remainingWeight);
+            if (result.pickedUpVehicles != NULL) {
+                pickedUp = 1;
+            }
+            // Update remaining weight
+            ListElem vehiclesElem = result.pickedUpVehicles;
+            while (vehiclesElem != NULL) {
+                Vehicle vehicle = (Vehicle*)vehiclesElem->data;
+                remainingWeight -= vehicle->weight;
+                vehiclesElem = vehiclesElem->next;
+            }
+            printf("Picking up vehicles at %s, remaining weight: %.2f\n", currentLocation->name, remainingWeight);
+            // Add vehicles to the list of picked up vehicles
+            pickedUpVehicles = appendList(pickedUpVehicles, result.pickedUpVehicles);
+            if (remainingWeight <= 0 || result.vehicleTooHeavy) {
+                break;
+            }
+            pathElem = pathElem->next;
+        }
+
+        // After the truck can't pick up more vehicles, or encounters a vehicle too heavy to lift, it returns to the start location
+        if (remainingWeight <= totalWeight*0.25 || result.vehicleTooHeavy) {
+            // Calculate the shortest path from current location to the start location
+            ListElem returnPath = calculateShortestPath(graph, currentLocation, start);
+            printf("Shortest path from %s to %s:\n", currentLocation->name, start->name);
+            showPath(returnPath);
+            printf("\n");
+
+            // Traverse the return path (without picking up vehicles)
+            ListElem returnPathElem = returnPath;
+            while (returnPathElem != NULL) {
+                returnPathElem = returnPathElem->next;
+            }
+
+            // Unload vehicles, refuel, etc. at the start location
+            unloadVehicles(start, pickedUpVehicles);
+
+            // Free the return path and the list of picked up vehicles
+            freePath(returnPath);
+            freePath(pickedUpVehicles);
+        }
+
+        // Free the path after traversing it
+        freePath(path);
+
+        targetLocation = calculateShortestPathWithVehicle(graph, start);
+    }
+    return pickedUp;
+}
+
 void modeAdmin() 
 {
     int option = 99;
@@ -189,6 +258,16 @@ void modeAdmin()
                     errornotvalid();
                 break;
             case 4:
+                if (returnVehicles(graph, findLocationByGeolocation(graph, "chart.maximum.ahead"), 100))
+                {
+                    showListIterative(listV, &showVehicle);
+                    storeDataVehicles(listV);
+                    showGraph(graph);
+                    storeDataGraph(graph);
+                    wait();
+                }
+                break;
+            case 5:
                 listC = registerClient(listC, listA, &modified);
                 if (modified)
                 {
@@ -198,7 +277,7 @@ void modeAdmin()
                 else
                     errornotvalid();
                 break;
-            case 5:
+            case 6:
                 listC = editClient(listC, &modified);
                 if (modified)
                 {
@@ -208,7 +287,7 @@ void modeAdmin()
                 else
                     errornotvalid();
                 break;
-            case 6:
+            case 7:
                 listC = removeClient(listC, &modified);
                 if (modified)
                 {
@@ -218,28 +297,28 @@ void modeAdmin()
                 else
                     errornotvalid();
                 break;
-            case 7:
+            case 8:
                 listA = registerAdmin(listA, listC, &modified);
                 if (modified)
                     storeDataAdmins(listA);
                 else
                     errornotvalid();
                 break;
-            case 8:
+            case 9:
                 listA = editAdmin(listA, &modified);
                 if (modified)
                     storeDataAdmins(listA);
                 else
                     errornotvalid();
                 break;
-            case 9:
+            case 10:
                 listA = removeAdmin(listA, &modified);
                 if (modified)
                     storeDataAdmins(listA);
                 else
                     errornotvalid();
                 break;
-            case 10:
+            case 11:
                 listHfiltered = filterHistory(listH, 0);
                 if (listHfiltered == NULL)
                     errornotvalid();
@@ -249,7 +328,7 @@ void modeAdmin()
                     wait();
                 }
                 break;              
-            case 11:
+            case 12:
                 listHfiltered = filterHistory(listH, 1);
                 if (listHfiltered == NULL)
                     errornotvalid();
@@ -259,7 +338,7 @@ void modeAdmin()
                     wait();
                 }
                 break;
-            case 12:
+            case 13:
                 listHfiltered = filterHistory(listH, 2);
                 if (listHfiltered == NULL)
                     errornotvalid();
@@ -269,15 +348,15 @@ void modeAdmin()
                     wait();
                 }
                 break;
-            case 13:
+            case 14:
                 adminhistory();
                 showListIterative(listH, &showHistory);
                 wait();
                 break;
-            case 14:
+            case 15:
                 vehicleStats(listV);
                 break;
-            case 15:
+            case 16:
                 clientStats(listC);
                 break;
             case 0:
@@ -315,6 +394,7 @@ int simulateTrip(Client c, Vehicle v, Graph* graph) {
         // Geolocation not found, create a new location and add it to the graph
         finishLocation = createLocation(h->finish, 0.0, 0.0);
         addLocation(graph, finishLocation);
+        connectAdjacentLocations(graph);
     }
 
     Location* startLocation = findLocationByGeolocation(graph, h->start);
@@ -397,43 +477,6 @@ int simulateTrip(Client c, Vehicle v, Graph* graph) {
     return 1;
 }
 
-//choosingVehicle - working without range OLD
-/*
-int choosingVehicle(ListElem listAV)
-{
-    int choice = 99;
-    int lenght = listLength(listAV);
-    do {
-        availablevehicles();
-        showListIterative(listAV, &showVehicleRent);
-
-        printf(" Selecione o veiculo pretendido: ");
-        char auxChoice[10];
-        scanf(" %[^\n]", auxChoice);
-        printf("\n");
-
-        if (isInt(auxChoice))
-            choice = stringToInt(auxChoice);
-
-        if ((choice != 0) && (choice <= lenght))
-        {
-            ListElem auxElem = obtainElementPosition(listAV, choice - 1);
-            Vehicle auxVehicle = (Vehicle)auxElem->data;
-
-            Vehicle inUseVehicle = getVehicleByTypeAndCode(listV, auxVehicle->type, auxVehicle->code);
-            inUseVehicle->inUse = 1;
-
-            storeDataVehicles(listV);
-            currentVehicle = inUseVehicle;
-            return 1;
-        }
-
-    } while ((choice > 0) && (choice <= lenght));
-
-    return 0;
-}
-*/
-
 int choosingVehicle(Graph* graph, Location* start)
 {
     int choice = 0;
@@ -468,7 +511,7 @@ int choosingVehicle(Graph* graph, Location* start)
                     printf("%d. Tipo de veiculo: %s, Codigo: %d\n", length, vehicle->type, vehicle->code);
                     printf("   Distancia: %.3f\n", distance);
                     printf("   Caminho: ");
-                    showPathIterative(shortestPath);
+                    showPath(shortestPath);
                     printf("\n\n");
                 }
             }
@@ -673,10 +716,9 @@ int login() {
     return 0;
 }
 
-// TODO: FILTRAR POR TIPO DE VEICULO 
-// TODO: ADD NEW LOCATION TO GRAPH and random adjacencies when new finish in simulateTrip or new registered geolocal in registerClient/Vehicle createLocationsFromClients/vEHICLE com connectAdjacentLocations???
-// TODO: DIJKSTRA ALGORITHM com capacidade total. 
-// TODO: EDITAR GRAPH? VALIDAR GEOLOCALS? TRUER RANDOM?  
+// TODO: FILTRAR POR TIPO DE VEICULO (falta apenas adicionar ao choosign e alterar os seus prints BTW)
+// TODO: ADD NEW LOCATION TO GRAPH and random adjacencies when new finish registered geolocal in registerClient/Vehicle com connectAdjacentLocations??? VALIDAR GEOLOCALS?
+// TODO: EDITAR GRAPH? TRUER RANDOM?  
 
 int main()
 {
@@ -693,13 +735,13 @@ int main()
     graph = loadDataGraph(graph, listC, listV);
     
     
-    //printGraph(graph);
+    //showGraph(graph);
     //wait();
     //createLocationsFromVehicles(graph, listV);
     //createLocationsFromClients(graph, listC);
     //connectAdjacentLocations(graph);
     //storeDataGraph(graph);
-    printGraph(graph);
+    showGraph(graph);
     wait();
 
     int option = 99;

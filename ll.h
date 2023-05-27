@@ -82,6 +82,8 @@ ListElem removeItemIterative(ListElem head, void* data, int (*compare)(void* dat
 /// <returns>Pointer to the head of the deleted linked list, which is NULL.</returns>
 ListElem deleteList(ListElem head);
 
+ListElem appendList(ListElem firstList, ListElem secondList);
+
 /// <summary>
 /// Obtains the element at the given position in a linked list.
 /// </summary>

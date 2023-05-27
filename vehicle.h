@@ -13,6 +13,7 @@ typedef struct datavehicle
 	int code; ///< Code of the electric mobility transport
 	char type[50]; ///< Type of the vehicle
 	char geolocation[50]; ///< Location of the vehicle (e.g. just.like.this)
+	float weight; ///< Weight of the vehicle (in Kg)
 	float battery; ///< Battery percentage of the vehicle
 	float autonomy; ///< Autonomy in kilometers of the vehicle
 	float costhour; ///< Cost per hour of the vehicle
@@ -84,6 +85,8 @@ void changeVCode(Vehicle vehicle, int code);
 
 void changeVGeolocation(Vehicle vehicle, const char* newGeolocation);
 
+void changeVWeight(Vehicle vehicle, float newWeight);
+
 void changeVBattery(Vehicle vehicle, float newBattery);
 
 void changeVAutonomy(Vehicle vehicle, float newAutonomy);
@@ -125,6 +128,8 @@ float percentageInUse(ListElem listVehicle);
 /// <returns>The average autonomy of the vehicles.</returns>
 float averageAutonomy(ListElem listVehicle);
 
+void updateBatteryAndAutonomy(Vehicle vehicle);
+
 /// <summary>
 /// Returns a new list of vehicles that have a battery percentage lesser than 50%.
 /// </summary>
@@ -155,6 +160,8 @@ ListElem filterVehicleByInUse(ListElem listV);
 /// <param name="code">The code of the vehicle.</param>
 /// <returns>The pointer of the vehicle with the specified type and code, or NULL if it does not exist in the list.</returns>
 Vehicle getVehicleByTypeAndCode(ListElem listVehicle, char* type, int code);
+
+Vehicle getVehicleByType(ListElem listVehicle, char* type);
 
 /// <summary>
 /// Edits the data of a vehicle in the list.

@@ -7,13 +7,14 @@ void showVehicle(void* data)
         printf(" Veiculo: %s\n"
             " Identificador: %d\n"
             " Localizacao: %s\n"
+            " Peso: %.2f kgs\n"
             " Bateria: %.2f %%\n"
             " Autonomia: %.2f kms\n"
             " Custo/hora: %.2f euros\n"
             " Custo/km: %.2f euros\n"
             " Em uso: %d\n"
             " Total kms percorridos: %.2f kms\n",
-            v->type, v->code, v->geolocation, v->battery, v->autonomy, v->costhour, v->costkm, v->inUse, v->totalkms);
+            v->type, v->code, v->geolocation, v->weight, v->battery, v->autonomy, v->costhour, v->costkm, v->inUse, v->totalkms);
     printf("\n");
 }
 
@@ -50,8 +51,8 @@ ListElem loadDataVehicles(ListElem listVehicles)
     Vehicle v = NULL;
     while (1) {
         v = (Vehicle)malloc(sizeof(struct datavehicle));
-        if (fscanf(vehiclesFile, "%d|%49[^|]|%49[^|]|%f|%f|%f|%f|%d|%f\n",
-            &(v->code), v->type, v->geolocation, &(v->battery),
+        if (fscanf(vehiclesFile, "%d|%49[^|]|%49[^|]|%f|%f|%f|%f|%f|%d|%f\n",
+            &(v->code), v->type, v->geolocation, &(v->weight), &(v->battery),
             &(v->autonomy), &(v->costhour), &(v->costkm),
             &(v->inUse), &(v->totalkms)) == EOF) {
             free(v);
@@ -87,8 +88,8 @@ void storeDataVehicles(ListElem listV)
     ListElem current = listV;
     while (current != NULL) {
         Vehicle vehicle = (Vehicle)current->data;
-        fprintf(file, "%d|%s|%s|%.2f|%.2f|%.2f|%.2f|%d|%.2f\n",
-            vehicle->code, vehicle->type, vehicle->geolocation, vehicle->battery, vehicle->autonomy, vehicle->costhour, vehicle->costkm, vehicle->inUse, vehicle->totalkms);
+        fprintf(file, "%d|%s|%s|%.2f|%.2f|%.2f|%.2f|%.2f|%d|%.2f\n",
+            vehicle->code, vehicle->type, vehicle->geolocation, vehicle->weight, vehicle->battery, vehicle->autonomy, vehicle->costhour, vehicle->costkm, vehicle->inUse, vehicle->totalkms);
         current = current->next;
     }
 
@@ -152,6 +153,11 @@ void changeVCode(Vehicle vehicle, int code)
 void changeVGeolocation(Vehicle vehicle, const char* newGeolocation)
 {
     strcpy(vehicle->geolocation, newGeolocation);
+}
+
+void changeVWeight(Vehicle vehicle, float newWeight)
+{
+    vehicle->weight = newWeight;
 }
 
 void changeVBattery(Vehicle vehicle, float newBattery)
@@ -278,6 +284,12 @@ float averageAutonomy(ListElem listVehicle)
     return sum / count;
 }
 
+// Update battery and autonomy of vehicle
+void updateBatteryAndAutonomy(Vehicle vehicle) {
+    vehicle->autonomy = (vehicle->autonomy / vehicle->battery) * 100.0;
+    vehicle->battery = 100.0;
+}
+
 ListElem filterVehicleByBattery(ListElem listVehicle)
 {
     ListElem filteredList = NULL;
@@ -329,6 +341,18 @@ Vehicle getVehicleByTypeAndCode(ListElem listVehicle, char* type, int code) {
     while (currElem != NULL) {
         Vehicle currVehicle = (Vehicle)currElem->data;
         if (strcmp(currVehicle->type, type) == 0 && currVehicle->code == code) {
+            return currVehicle;
+        }
+        currElem = currElem->next;
+    }
+    return NULL;
+}
+
+Vehicle getVehicleByType(ListElem listVehicle, char* type) {
+    ListElem currElem = listVehicle;
+    while (currElem != NULL) {
+        Vehicle currVehicle = (Vehicle)currElem->data;
+        if (strcmp(currVehicle->type, type)) {
             return currVehicle;
         }
         currElem = currElem->next;
@@ -409,6 +433,20 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
             }
             break;
         case 4:
+            printf(" Insira o novo peso: ");
+            char auxWeight[10];
+            scanf(" %[^\n]%*c", auxWeight);
+
+            if (isInt(auxWeight) || isFloat(auxWeight))
+                editFloat = stringToFloat(auxWeight);
+
+            if ((editFloat >= 0) && (editFloat <= 100))
+            {
+                changeVWeight(vehicle, editFloat);
+                *modified = 1;
+            }
+            break;
+        case 5:
             printf(" Insira o novo nivel de bateria: ");
             char auxBattery[10];
             scanf(" %[^\n]%*c", auxBattery);
@@ -422,7 +460,7 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
                 *modified = 1;
             }            
             break;
-        case 5:
+        case 6:
             printf(" Insira o novo nivel de autonomia: ");
             char auxAutonomy[10];
             scanf(" %[^\n]%*c", auxAutonomy);
@@ -439,7 +477,7 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
                 *modified = 1;
             }          
             break;
-        case 6:
+        case 7:
             printf(" Insira o novo custo por hora: ");
             char auxCosthour[10];
             scanf(" %[^\n]%*c", auxCosthour);
@@ -452,7 +490,7 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
                 *modified = 1;
             }
             break;
-        case 7:
+        case 8:
             printf(" Insira o novo custo por km: ");
             char auxCostkm[10];
             scanf(" %[^\n]%*c", auxCostkm);
@@ -465,7 +503,7 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
                 *modified = 1;
             }
             break;
-        case 8:
+        case 9:
             printf(" Insira o novo estado de aluger: ");
             char auxRentState[10];
             scanf(" %[^\n]%*c", auxRentState);
@@ -479,7 +517,7 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
                 *modified = 1;   
             }
             break;
-        case 9:
+        case 10:
             printf(" Insira o novo total de kms: ");
             char auxTotalkm[10];
             scanf(" %[^\n]%*c", auxTotalkm);
@@ -586,6 +624,24 @@ ListElem registerVehicle(ListElem listVehicle, int* modified) {
     scanf(" %[^\n]%*c", v->geolocation);
 
     if (!validGeolocation(v->geolocation))
+    {
+        free(v);
+        return listVehicle;
+    }
+
+    printf("\n Insira o peso do veiculo: ");
+    char auxWeight[10];
+    scanf(" %[^\n]%*c", auxWeight);
+
+    if (isInt(auxWeight) || isFloat(auxWeight))
+        v->weight = stringToFloat(auxWeight);
+    else
+    {
+        free(v);
+        return listVehicle;
+    }
+
+    if (v->weight <= 0)
     {
         free(v);
         return listVehicle;

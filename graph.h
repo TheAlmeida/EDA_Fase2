@@ -8,6 +8,11 @@
 #include "vehicle.h"
 #include "what3words.h"
 
+typedef struct {
+    ListElem pickedUpVehicles;
+    int vehicleTooHeavy;
+} PickUpResult;
+
 typedef struct sLocation
 {
     char name[50];
@@ -89,18 +94,29 @@ AdjacentLocation* findAdjacentLocation(Location* from, Location* to);
 
 ListElem getShortestPath(VisitedLocation* target);
 
-ListElem calculateShortestPath(Graph* graph, Location* start, Location* target);
-
 double calculatePathDistance(ListElem path);
 
-void showPathIterative(ListElem path);
+ListElem calculateShortestPath(Graph* graph, Location* start, Location* target);
+
+Location* calculateShortestPathWithVehicle(Graph* graph, Location* start);
+
+void unloadVehicles(Location* start, ListElem vehicles);
+
+PickUpResult pickUpVehicles(Location* location, float maxWeight);
+
+int hasVehicleToPickUp(Location* location);
 
 void printVisitedSet(ListElem visitedSet);
 
 void printUnvisitedSet(ListElem unvisitedSet);
 
+void showPath(ListElem path);
+
 // Function to print the graph
-void printGraph(Graph* graph);
+void showGraph(Graph* graph);
+
+// Frees the memory allocated for a path
+void freePath(ListElem path);
 
 // Function to free the memory allocated for the graph
 void freeGraph(Graph* graph);

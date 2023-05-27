@@ -158,6 +158,25 @@ ListElem removeItemIterative(ListElem head, void* data, int (*compare)(void* dat
     return head;
 }
 
+ListElem appendList(ListElem list1, ListElem list2) {
+    if (list1 == NULL) {
+        return list2;
+    }
+    else if (list2 == NULL) {
+        return list1;
+    }
+    else {
+        // Both lists are not NULL, append list2 at the end of list1
+        ListElem temp = list1;
+        while (temp->next != NULL) {
+            temp = temp->next;
+        }
+        temp->next = list2;
+        return list1;
+    }
+}
+
+
 ListElem obtainElementPosition(ListElem head, int pos)
 {
     // Handle empty list

@@ -8,7 +8,7 @@ username|password|name|email|cellphone|age|geolocation|totalkms|nif|totaltrips|b
 user|transport|start|finish|distance|duration|cost
 
 -vehicles bin file
-code|type|geolocation|battery|autonomy|costhour|costkm|inUse|totalkms
+code|type|geolocation|weight|battery|autonomy|costhour|costkm|inUse|totalkms
 
 -graph bin file
 nº total loc

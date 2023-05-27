@@ -230,7 +230,7 @@ Graph* createGraph()
     return graph;
 }
 
-// Function to create a new location
+// Function to create a new location (0.0, 0.0 as coords input means we need to convert geolocation to coordinates)
 Location* createLocation(const char* name, double latitude, double longitude)
 {
     Location* location = (Location*)malloc(sizeof(Location));
@@ -615,6 +615,22 @@ ListElem getShortestPath(VisitedLocation* target)
     return path;
 }
 
+double calculatePathDistance(ListElem path)
+{
+    double distance = 0.0;
+    ListElem currElem = path;
+    while (currElem != NULL && currElem->next != NULL) {
+        Location* currentLocation = (Location*)currElem->data;
+        Location* nextLocation = (Location*)currElem->next->data;
+        AdjacentLocation* adjLocation = findAdjacentLocation(currentLocation, nextLocation);
+        if (adjLocation != NULL) {
+            distance += adjLocation->weight;
+        }
+        currElem = currElem->next;
+    }
+    return distance;
+}
+
 ListElem calculateShortestPath(Graph* graph, Location* start, Location* target)
 {
     ListElem unvisitedSet = NULL;
@@ -684,7 +700,7 @@ ListElem calculateShortestPath(Graph* graph, Location* start, Location* target)
             // Building shortest path with Location pointers
             ListElem path = getShortestPath(currentVisitedLocation);
             printf("Shortest Path:\n");
-            showPathIterative(path);
+            showPath(path);
 
             // Print the distance
             printf("Distance: %.3f\n", currentVisitedLocation->distance);
@@ -696,37 +712,104 @@ ListElem calculateShortestPath(Graph* graph, Location* start, Location* target)
     return NULL;
 }
 
-double calculatePathDistance(ListElem path)
-{
-    double distance = 0.0;
-    ListElem currElem = path;
-    while (currElem != NULL && currElem->next != NULL) {
-        Location* currentLocation = (Location*)currElem->data;
-        Location* nextLocation = (Location*)currElem->next->data;
-        AdjacentLocation* adjLocation = findAdjacentLocation(currentLocation, nextLocation);
-        if (adjLocation != NULL) {
-            distance += adjLocation->weight;
+// Function to find the shortest path to a location with a vehicle to pick up
+Location* calculateShortestPathWithVehicle(Graph* graph, Location* start) {
+    Location* closestLocation = NULL;
+    ListElem path = NULL;
+    double minDistance = DBL_MAX;
+
+    ListElem locationElem = graph->locations;
+    while (locationElem != NULL) {
+        Location* targetLocation = (Location*)locationElem->data;
+
+        // Ignore the start location and locations without vehicles to pick up
+        if (targetLocation != start && hasVehicleToPickUp(targetLocation)) {
+            ListElem newPath = calculateShortestPath(graph, start, targetLocation);
+
+            // Get the distance of the path
+            VisitedLocation* visitedLocation = (VisitedLocation*)newPath->data;
+            double distance = visitedLocation->distance;
+
+            if (distance < minDistance) {
+                if (path != NULL) {
+                    freePath(path);
+                }
+                minDistance = distance;
+                path = newPath;
+                closestLocation = targetLocation;
+            }
+            else {
+                freePath(newPath);
+            }
         }
-        currElem = currElem->next;
+
+        locationElem = locationElem->next;
     }
-    return distance;
+
+    return closestLocation;
 }
 
-void showPathIterative(ListElem path)
-{
-    double cumulativeDistance = 0.0;
-    ListElem currElem = path;
-    while (currElem != NULL && currElem->next != NULL) {
-        Location* currentLocation = (Location*)currElem->data;
-        Location* nextLocation = (Location*)currElem->next->data;
-        AdjacentLocation* adjLocation = findAdjacentLocation(currentLocation, nextLocation);
-        if (adjLocation != NULL) {
-            double distance = adjLocation->weight;
-            cumulativeDistance += distance;
-            printf("%s -> %s (Distance: %.3f, Cumulative Distance: %.3f)\n", currentLocation->name, nextLocation->name, distance, cumulativeDistance);
-        }
-        currElem = currElem->next;
+// Unload vehicles at start location and update their battery and autonomy
+void unloadVehicles(Location* start, ListElem pickedUpVehicles) {
+    ListElem vehicleElem = pickedUpVehicles;
+    while (vehicleElem != NULL) {
+        Vehicle vehicle = (Vehicle*)vehicleElem->data;
+        strcpy(vehicle->geolocation, start->name);
+        updateBatteryAndAutonomy(vehicle);
+        start->vehicleList = addItemHead(start->vehicleList, vehicle);
+        vehicleElem = vehicleElem->next;
     }
+}
+
+PickUpResult pickUpVehicles(Location* location, float maxWeight) {
+    ListElem previous = NULL;
+    ListElem current = location->vehicleList;
+    ListElem pickedUpVehicles = NULL;
+    int vehicleTooHeavy = 0;
+
+    while (current != NULL && maxWeight > 0) {
+        Vehicle vehicle = (Vehicle*)current->data;
+        if (vehicle->battery < 50) {
+            if (vehicle->weight <= maxWeight) {
+                // remove vehicle from location's vehicle list
+                if (previous == NULL) {
+                    location->vehicleList = current->next;
+                }
+                else {
+                    previous->next = current->next;
+                }
+                // add vehicle to picked up vehicles
+                current->next = NULL;
+                pickedUpVehicles = appendList(pickedUpVehicles, current);
+                maxWeight -= vehicle->weight;
+                current = previous ? previous->next : location->vehicleList;
+            }
+            else {
+                vehicleTooHeavy = 1;
+                break;
+            }
+        }
+        else {
+            previous = current;
+            current = current->next;
+        }
+    }
+
+    PickUpResult result = { pickedUpVehicles, vehicleTooHeavy };
+    return result;
+}
+
+// Function to check if a location has vehicles that need to be picked up
+int hasVehicleToPickUp(Location* location) {
+    ListElem vehicleElem = location->vehicleList;
+    while (vehicleElem != NULL) {
+        Vehicle vehicle = (Vehicle)vehicleElem->data;
+        if (vehicle->battery < 50.0) {
+            return 1;
+        }
+        vehicleElem = vehicleElem->next;
+    }
+    return 0;
 }
 
 void printVisitedSet(ListElem visitedSet) {
@@ -751,7 +834,24 @@ void printUnvisitedSet(ListElem unvisitedSet) {
     printf("\n");
 }
 
-void printGraph(Graph* graph)
+void showPath(ListElem path)
+{
+    double cumulativeDistance = 0.0;
+    ListElem currElem = path;
+    while (currElem != NULL && currElem->next != NULL) {
+        Location* currentLocation = (Location*)currElem->data;
+        Location* nextLocation = (Location*)currElem->next->data;
+        AdjacentLocation* adjLocation = findAdjacentLocation(currentLocation, nextLocation);
+        if (adjLocation != NULL) {
+            double distance = adjLocation->weight;
+            cumulativeDistance += distance;
+            printf("%s -> %s (Distance: %.3f, Cumulative Distance: %.3f)\n", currentLocation->name, nextLocation->name, distance, cumulativeDistance);
+        }
+        currElem = currElem->next;
+    }
+}
+
+void showGraph(Graph* graph)
 {
     printf("\n\n");
     ListElem currLocation = graph->locations;
@@ -799,6 +899,15 @@ void printGraph(Graph* graph)
 
         printf("\n");
         currLocation = currLocation->next;
+    }
+}
+
+void freePath(ListElem path) {
+    ListElem currentElem = path;
+    while (currentElem != NULL) {
+        ListElem nextElem = currentElem->next;
+        free(currentElem);
+        currentElem = nextElem;
     }
 }
 
