@@ -1,6 +1,5 @@
 #include "admin.h"
 
-
 void showAdmin(void* data)
 {
     Admin a = (Admin)data;

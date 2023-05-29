@@ -39,7 +39,6 @@ ListElem loadDataHistory(ListElem listHistory)
             free(h);
             break;
         }
-        //listHistory = addItemHead(listHistory, h);
         listHistory = addItemLastIterative(listHistory, h);
     }
 
@@ -60,13 +59,13 @@ void storeDataHistory(ListElem listH)
     strcpy(history_bin, cwd);
     strcat(history_bin, "\\history.bin");
 
-    FILE* file = fopen(history_bin, "wb"); // open the file in write binary mode
+    FILE* file = fopen(history_bin, "wb"); // Open the file in write binary mode
     if (file == NULL) {
         printf("Error opening file %s.\n", history_bin);
         return;
     }
 
-    // iterate through the list of history records and write their information to the file
+    // Iterate through the list of history records and write their information to the file
     ListElem current = listH;
     while (current != NULL) {
         History history = (History)current->data;
@@ -75,7 +74,7 @@ void storeDataHistory(ListElem listH)
         current = current->next;
     }
 
-    fclose(file); // close the file
+    fclose(file);
 }
 
 ListElem filterHistoryByUser(ListElem originalList, char* userToFilter)
@@ -132,7 +131,7 @@ ListElem filterHistoryByType(ListElem originalList, char* typeToFilter)
         char* transport = history->transport;
         char* underscorePos = strchr(transport, '_');
         if (underscorePos != NULL) {
-            *underscorePos = '\0';  // null-terminate the string at the underscore
+            *underscorePos = '\0';  // Null-terminate the string at the underscore
         }
         if (strcmp(transport, typeToFilter) == 0) {
             ListElem newElem = (ListElem)malloc(sizeof(SListElem));
@@ -141,7 +140,7 @@ ListElem filterHistoryByType(ListElem originalList, char* typeToFilter)
             filteredList = newElem;
         }
         if (underscorePos != NULL) {
-            *underscorePos = '_';  // restore the original string
+            *underscorePos = '_';  // Restore the original string
         }
         current = current->next;
     }

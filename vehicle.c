@@ -190,7 +190,7 @@ void changeVkms(Vehicle vehicle, float newTotalkms)
     vehicle->totalkms = newTotalkms;
 }
 
-ListElem removeVehicle(ListElem listVehicle, int* modified) 
+ListElem removeVehicle(ListElem listVehicle, int* modified, Vehicle* v) 
 {
     showListIterative(listVehicle, &showVehicle);
 
@@ -205,10 +205,10 @@ ListElem removeVehicle(ListElem listVehicle, int* modified)
     if ((option != 0) && (option <= listLength(listVehicle)))
     {
         ListElem auxElem = obtainElementPosition(listVehicle, option - 1);
-        Vehicle vehicle = (Vehicle)auxElem->data;
+        *v = (Vehicle)auxElem->data;
 
         clrscr();
-        showVehicle(vehicle);
+        showVehicle(*v);
 
         printf(" Deseja remover o veiculo acima? (1- Sim / 2- Nao): ");
 
@@ -221,7 +221,6 @@ ListElem removeVehicle(ListElem listVehicle, int* modified)
 
         if (removeOption == 1) {
             listVehicle = removeElementByIndex(listVehicle, option - 1);
-            free(vehicle);
             *modified = 1;
         }
 
@@ -284,8 +283,7 @@ float averageAutonomy(ListElem listVehicle)
     return sum / count;
 }
 
-// Update battery and autonomy of vehicle
-void updateBatteryAndAutonomy(Vehicle vehicle) {
+void refillBatteryAndAutonomy(Vehicle vehicle) {
     vehicle->autonomy = (vehicle->autonomy / vehicle->battery) * 100.0;
     vehicle->battery = 100.0;
 }
@@ -360,7 +358,7 @@ Vehicle getVehicleByType(ListElem listVehicle, char* type) {
     return NULL;
 }
 
-ListElem editVehicle(ListElem listVehicle, int* modified)
+ListElem editVehicle(ListElem listVehicle, int* modified, Vehicle* v, char* oldGeolocation)
 {
     showListIterative(listVehicle, &showVehicle);
 
@@ -375,10 +373,11 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
     if ((option != 0) && (option <= listLength(listVehicle)))
     {
         ListElem auxElem = obtainElementPosition(listVehicle, option - 1);
-        Vehicle vehicle = (Vehicle)auxElem->data;
+        *v = (Vehicle)auxElem->data;
+        strcpy(oldGeolocation, (*v)->geolocation);
 
         clrscr();
-        showVehicle(vehicle);
+        showVehicle(*v);
 
         printf(" Insira o indice do parametro a alterar: ");
         char auxLine[10];
@@ -403,9 +402,9 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
                 else
                     return listVehicle;
             }
-            if (!vehicleExists(vehicle->code, edit, listVehicle))
+            if (!vehicleExists((*v)->code, edit, listVehicle))
             {
-                changeVType(vehicle, edit);
+                changeVType(*v, edit);
                 *modified = 1;
             }
             break;
@@ -417,9 +416,9 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
             if (isInt(auxCode))
                 editInt = stringToInt(auxCode);
 
-            if (editInt > 0 && !vehicleExists(editInt, vehicle->type, listVehicle))
+            if (editInt > 0 && !vehicleExists(editInt, (*v)->type, listVehicle))
             {
-                changeVCode(vehicle, editInt);
+                changeVCode(*v, editInt);
                 *modified = 1;
             }
             break;
@@ -428,7 +427,7 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
             scanf(" %[^\n]%*c", edit);
             if (validGeolocation(edit))
             {
-                changeVGeolocation(vehicle, edit);
+                changeVGeolocation(*v, edit);
                 *modified = 1;
             }
             break;
@@ -442,7 +441,7 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
 
             if ((editFloat >= 0) && (editFloat <= 100))
             {
-                changeVWeight(vehicle, editFloat);
+                changeVWeight(*v, editFloat);
                 *modified = 1;
             }
             break;
@@ -456,7 +455,7 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
 
             if ((editFloat >= 0) && (editFloat <= 100))
             {
-                changeVBattery(vehicle, editFloat);
+                changeVBattery(*v, editFloat);
                 *modified = 1;
             }            
             break;
@@ -472,8 +471,8 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
             {
                 ListElem auxHead = removeElementByIndex(listVehicle, option - 1);
                 listVehicle = auxHead;
-                changeVAutonomy(vehicle, editFloat);
-                listVehicle = addItemOrderedIterative(listVehicle, (void*)vehicle, &compareAutonomy);
+                changeVAutonomy(*v, editFloat);
+                listVehicle = addItemOrderedIterative(listVehicle, (void*)(*v), &compareAutonomy);
                 *modified = 1;
             }          
             break;
@@ -486,7 +485,7 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
                 editFloat = stringToFloat(auxCosthour);
             if (editFloat > 0)
             {
-                changeVCosthour(vehicle, editFloat);
+                changeVCosthour(*v, editFloat);
                 *modified = 1;
             }
             break;
@@ -499,7 +498,7 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
                 editFloat = stringToInt(auxCostkm);
             if (editFloat > 0)
             {
-                changeVCostkm(vehicle, editFloat);
+                changeVCostkm(*v, editFloat);
                 *modified = 1;
             }
             break;
@@ -513,7 +512,7 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
 
             if (editInt == 0 || editInt == 1)
             {
-                changeVstate(vehicle, editInt);
+                changeVstate(*v, editInt);
                 *modified = 1;   
             }
             break;
@@ -527,7 +526,7 @@ ListElem editVehicle(ListElem listVehicle, int* modified)
 
             if (editFloat > 0)
             {
-                changeVkms(vehicle, editFloat);
+                changeVkms(*v, editFloat);
                 *modified = 1;
             }        
             break;
@@ -570,7 +569,7 @@ int validGeolocation(char* geolocation)
     }
 }
 
-ListElem registerVehicle(ListElem listVehicle, int* modified) {
+ListElem registerVehicle(ListElem listVehicle, int* modified, Vehicle v) {
 
     clrscr();
 
@@ -579,8 +578,6 @@ ListElem registerVehicle(ListElem listVehicle, int* modified) {
     signnewuser();
 
     fflush(stdin);
-
-    Vehicle v = (Vehicle)malloc(sizeof(struct datavehicle));
 
     printf("\n Insira o modelo do veiculo: ");
     scanf(" %[^\n]%*c", v->type);

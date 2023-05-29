@@ -22,6 +22,28 @@ int listLength(ListElem head)
     return i;
 }
 
+void reorderList(ListElem* head, int (*compare)(void* data1, void* data2)) {
+    ListElem newHead = NULL;
+
+    // Iterate through the original list
+    ListElem current = *head;
+    while (current != NULL) {
+        ListElem next = current->next;
+
+        // Remove the current node from the original list
+        current->next = NULL;
+
+        // Insert the current node into the new list in the correct order
+        newHead = addItemOrderedIterative(newHead, current->data, compare);
+
+        // Move to the next node in the original list
+        current = next;
+    }
+
+    // Update the head of the original list to point to the reordered list
+    *head = newHead;
+}
+
 ListElem removeElementByIndex(ListElem head, int index) {
     // Handle empty list
     if (head == NULL) {
@@ -175,7 +197,6 @@ ListElem appendList(ListElem list1, ListElem list2) {
         return list1;
     }
 }
-
 
 ListElem obtainElementPosition(ListElem head, int pos)
 {

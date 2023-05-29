@@ -159,7 +159,7 @@ void changeCTotalTrips(Client client, int newTotalTrips)
     client->totaltrips = newTotalTrips;
 }
 
-ListElem removeClient(ListElem listClient, int* modified) 
+ListElem removeClient(ListElem listClient, int* modified, Client* c) 
 {
     showListIterative(listClient, &showClient);
 
@@ -174,10 +174,10 @@ ListElem removeClient(ListElem listClient, int* modified)
     if ((option != 0) && (option <= listLength(listClient)))
     {
         ListElem auxElem = obtainElementPosition(listClient, option - 1);
-        Client client = (Client)auxElem->data;
+        *c = (Client)auxElem->data;
 
         clrscr();
-        showClient(client);
+        showClient(*c);
 
         printf(" Deseja remover o cliente acima? (1- Sim / 2- Nao): ");
 
@@ -190,7 +190,6 @@ ListElem removeClient(ListElem listClient, int* modified)
 
         if (removeOption == 1) {
             listClient = removeElementByIndex(listClient, option - 1);
-            free(client);
             *modified = 1;
         }
 
@@ -255,7 +254,7 @@ float calculateAverageAge(ListElem listClient)
     return (float)sumAge / numClients;
 }
 
-ListElem editClient(ListElem listClient, int* modified)
+ListElem editClient(ListElem listClient, int* modified, Client* c, char* oldGeolocation)
 {
     showListIterative(listClient, &showClient);
 
@@ -270,10 +269,11 @@ ListElem editClient(ListElem listClient, int* modified)
     if ((option != 0) && (option <= listLength(listClient)))
     {
         ListElem auxElem = obtainElementPosition(listClient, option - 1);
-        Client client = (Client)auxElem->data;
+        *c = (Client)auxElem->data;
+        strcpy(oldGeolocation, (*c)->geolocation);
 
         clrscr();
-        showClient(client);
+        showClient(*c);
 
         printf(" Insira o indice do parametro a alterar: ");
         char auxLine[10];
@@ -294,14 +294,14 @@ ListElem editClient(ListElem listClient, int* modified)
 
             ListElem auxHead = removeElementByIndex(listClient, option - 1);
             listClient = auxHead;
-            changeCUsername(client, edit);
-            listClient = addItemOrderedIterative(listClient, (void*)client, &compareNamesClients);
+            changeCUsername(*c, edit);
+            listClient = addItemOrderedIterative(listClient, (void*)(*c), &compareNamesClients);
             *modified = 1;
             break;
         case 2:
             printf(" Insira uma nova password: ");
             scanf(" %[^\n]%*c", edit);
-            changeCPassword(client, edit);
+            changeCPassword(*c, edit);
             *modified = 1;
             break;
         case 3:
@@ -315,13 +315,13 @@ ListElem editClient(ListElem listClient, int* modified)
                     return listClient;
                 }
             }
-            changeCName(client, edit);
+            changeCName(*c, edit);
             *modified = 1;
             break;
         case 4:
             printf(" Insira um novo email: ");
             scanf(" %[^\n]%*c", edit);
-            changeCEmail(client, edit);
+            changeCEmail(*c, edit);
             *modified = 1;
             break;
         case 5:
@@ -334,7 +334,7 @@ ListElem editClient(ListElem listClient, int* modified)
 
             if (editInt > 0)
             {
-                changeCCellphone(client, editInt);
+                changeCCellphone(*c, editInt);
                 *modified = 1;
             }           
             break;
@@ -348,7 +348,7 @@ ListElem editClient(ListElem listClient, int* modified)
 
             if (editInt > 0)
             {
-                changeCNif(client, editInt);
+                changeCNif(*c, editInt);
                 *modified = 1;
             }
             break;
@@ -362,14 +362,14 @@ ListElem editClient(ListElem listClient, int* modified)
 
             if (editInt > 0)
             {
-                changeCAge(client, editInt);
+                changeCAge(*c, editInt);
                 *modified = 1;
             }            
             break;
         case 8:
             printf(" Insira uma nova geolocalizacao: ");
             scanf(" %[^\n]%*c", edit);
-            changeCGeolocation(client, edit);
+            changeCGeolocation(*c, edit);
             *modified = 1;
             break;
         case 9:
@@ -382,7 +382,7 @@ ListElem editClient(ListElem listClient, int* modified)
 
             if (editInt > 0)
             {
-                changeCTotalTrips(client, editInt);
+                changeCTotalTrips(*c, editInt);
                 *modified = 1;
             }           
             break;
@@ -396,7 +396,7 @@ ListElem editClient(ListElem listClient, int* modified)
 
             if (editFloat > 0)
             {
-                changeCTotalKms(client, editFloat);
+                changeCTotalKms(*c, editFloat);
                 *modified = 1;
             }
             break;
@@ -410,7 +410,7 @@ ListElem editClient(ListElem listClient, int* modified)
 
             if (editFloat > 0)
             {
-                changeCBalance(client, editFloat);
+                changeCBalance(*c, editFloat);
                 *modified = 1;
             }            
             break;
@@ -455,7 +455,7 @@ Client getClientByUsername(ListElem listClient, char* username)
     return NULL;
 }
 
-ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) {
+ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified, Client c) {
 
     clrscr();
 
@@ -464,8 +464,6 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified) 
     signnewuser();
 
     fflush(stdin);
-
-    Client c = (Client)malloc(sizeof(struct dataclient));
 
     printf("\n Insira o seu nome de utilizador: "); 
     scanf(" %[^\n]", c->username);

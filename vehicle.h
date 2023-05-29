@@ -105,7 +105,7 @@ void changeVkms(Vehicle vehicle, float newTotalkms);
 /// <param name="listVehicle">A pointer to the head of the linked list of vehicles.</param>
 /// <param name="modified">A pointer to a variable that will be set to 1 if the list is modified, 0 otherwise</param>
 /// <returns>The new list of vehicles.</returns>
-ListElem removeVehicle(ListElem listVehicle, int* modified);
+ListElem removeVehicle(ListElem listVehicle, int* modified, Vehicle* v);
 
 /// <summary>
 /// Sorts the list of vehicles by the total kilometers driven by each vehicle, in descending order.
@@ -128,7 +128,11 @@ float percentageInUse(ListElem listVehicle);
 /// <returns>The average autonomy of the vehicles.</returns>
 float averageAutonomy(ListElem listVehicle);
 
-void updateBatteryAndAutonomy(Vehicle vehicle);
+/// <summary>
+/// Refill the battery level and autonomy of a vehicle.
+/// </summary>
+/// <param name="vehicle">Vehicle whose battery level and autonomy are to be updated.</param>
+void refillBatteryAndAutonomy(Vehicle vehicle);
 
 /// <summary>
 /// Returns a new list of vehicles that have a battery percentage lesser than 50%.
@@ -161,6 +165,12 @@ ListElem filterVehicleByInUse(ListElem listV);
 /// <returns>The pointer of the vehicle with the specified type and code, or NULL if it does not exist in the list.</returns>
 Vehicle getVehicleByTypeAndCode(ListElem listVehicle, char* type, int code);
 
+/// <summary>
+/// Retrieves a vehicle from the vehicle list based on its type.
+/// </summary>
+/// <param name="listVehicle">Head pointer to the head of the vehicle list.</param>
+/// <param name="type">Type of the vehicle to retrieve.</param>
+/// <returns>The vehicle with the specified type, or NULL if not found.</returns>
 Vehicle getVehicleByType(ListElem listVehicle, char* type);
 
 /// <summary>
@@ -169,7 +179,7 @@ Vehicle getVehicleByType(ListElem listVehicle, char* type);
 /// <param name="listVehicle">A pointer to the head of the linked list of vehicles.</param>
 /// <param name="modified">Pointer to an integer that will be set to 1 if a modification is made, 0 otherwise.</param>
 /// <returns>The modified list of vehicles.</returns>
-ListElem editVehicle(ListElem listVehicle, int* modified);
+ListElem editVehicle(ListElem listVehicle, int* modified, Vehicle* v, char* oldGeolocation);
 
 /// <summary>
 /// Checks if a vehicle with the given code and type already exists in the list of vehicles.
@@ -193,4 +203,4 @@ int validGeolocation(char* geolocation);
 /// <param name="listVehicle">A pointer to the head of the linked list of vehicles.</param>
 /// <param name="modified">Pointer to an integer that will be set to 1 if a new vehicle is added, 0 otherwise.</param>
 /// <returns>The modified list of vehicles.</returns>
-ListElem registerVehicle(ListElem listVehicle, int* modified);
+ListElem registerVehicle(ListElem listVehicle, int* modified, Vehicle v);

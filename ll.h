@@ -27,6 +27,13 @@ ListElem createListElem(void* data);
 int listLength(ListElem head);
 
 /// <summary>
+/// Reorders the content of the linked list.
+/// </summary>
+/// <param name="head">Pointer to the head of the list.</param>
+/// <param name="compare">Function pointer to a function that compares the data of two nodes.</param>
+void reorderList(ListElem* head, int (*compare)(void* data1, void* data2));
+
+/// <summary>
 /// Removes an element from the list by its index.
 /// </summary>
 /// <param name="head">Pointer to the head of the list.</param>
@@ -62,7 +69,7 @@ ListElem addItemLastIterative(ListElem head, void* data);
 /// </summary>
 /// <param name="head">Head pointer to the head of the list.</param>
 /// <param name="data">Data pointer to the data of the new node to add.</param>
-/// <param name="compare"Function pointer to a function that compares the data of two nodes.></param>
+/// <param name="compare">Function pointer to a function that compares the data of two nodes.></param>
 /// <returns>Pointer to the head of the list after adding.</returns>
 ListElem addItemOrderedIterative(ListElem head, void* data, int (*compare)(void* data1, void* data2));
 
@@ -82,6 +89,12 @@ ListElem removeItemIterative(ListElem head, void* data, int (*compare)(void* dat
 /// <returns>Pointer to the head of the deleted linked list, which is NULL.</returns>
 ListElem deleteList(ListElem head);
 
+/// <summary>
+/// Appends the head of the second linked list to the end of the first linked list.
+/// </summary>
+/// <param name="firstList">Pointer to the head of the first linked list.</param>
+/// <param name="secondList">Pointer to the head of the second linked list.</param>
+/// <returns></returns>
 ListElem appendList(ListElem firstList, ListElem secondList);
 
 /// <summary>

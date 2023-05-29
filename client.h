@@ -86,9 +86,9 @@ void changeCTotalTrips(Client client, int newTotalTrips);
 /// Removes a client from the list of clients and returns the new list.
 /// </summary>
 /// <param name="listClient">A pointer to the head of the linked list of clients.</param>
-/// <param name="modified">Pointer to an integer that will be set to 1 if a new vehicle is added, 0 otherwise.</param>
+/// <param name="modified">Pointer to an integer that will be set to 1 if a client is removed, 0 otherwise.</param>
 /// <returns>The modified list of clients.</returns>
-ListElem removeClient(ListElem listClient, int* modified);
+ListElem removeClient(ListElem listClient, int* modified, Client* c);
 
 /// <summary>
 /// Sorts the list of clients by number of trips (by descending order).
@@ -116,9 +116,9 @@ float calculateAverageAge(ListElem listClient);
 /// Edits the data of a client in the list.
 /// </summary>
 /// <param name="listClient">A pointer to the head of the linked list of clients.</param>
-/// <param name="modified">Pointer to an integer that will be set to 1 if a new vehicle is added, 0 otherwise.</param>
+/// <param name="modified">Pointer to an integer that will be set to 1 if a new client is edited, 0 otherwise.</param>
 /// <returns>The modified list of clients.</returns>
-ListElem editClient(ListElem listClient, int* modified);
+ListElem editClient(ListElem listClient, int* modified, Client* c, char* oldGeolocation);
 
 /// <summary>
 /// Checks if the username passed as argument exists in either of the lists.
@@ -129,16 +129,23 @@ ListElem editClient(ListElem listClient, int* modified);
 /// <returns>1 if the username passed as argument exists in either listClients or listAdmin, 0 otherwise.</returns>
 int usernameExists(char* username, ListElem listClients, ListElem listAdmin);
 
+/// <summary>
+/// Retrieves a client with the given username from a linked list of clients.
+/// </summary>
+/// <param name="listClient">Head pointer to the head of the client list.</param>
+/// <param name="username">Username of the client to retrieve.</param>
+/// <returns>The client with the given username, or NULL if not found.</returns>
 Client getClientByUsername(ListElem listClient, char* username);
 
 /// <summary>
-/// Registers a new client in the list.
+/// Registers a new client and adds them to the client list.
 /// </summary>
-/// <param name="listClient">A pointer to the head of the linked list of clients.</param>
-/// <param name="listAdmin">A pointer to the head of the linked list of admins.</param>
-/// <param name="modified">Pointer to an integer that will be set to 1 if a new vehicle is added, 0 otherwise.</param>
-/// <returns>The modified list of clients.</returns>
-ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified);
+/// <param name="listClient">Head pointer to the head of the client list.</param>
+/// <param name="listAdmin">Head pointer to the head of the admin list.</param>
+/// <param name="modified">Pointer to an integer that will be set to 1 if a new client is added, 0 otherwise.</param>
+/// <param name="c">Client to be registered and added to the list.</param>
+/// <returns>The updated client list.</returns>
+ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified, Client c);
 
 /// <summary>
 /// Allows the user to attemp to add balance to their account.

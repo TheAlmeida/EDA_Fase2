@@ -2,6 +2,7 @@
 
 #define EARTH_RADIUS 6371.0 // Earth radius in kilometers
 
+//Valid set of coordinates/geolocations
 //41.551544, -8.423533 (Location: mammoth.risen.trial)
 //41.550682, -8.426128 (Location: selling.cheat.cherub)
 //41.551114, -8.423893 (Location: pursuing.sound.nets)
@@ -17,7 +18,6 @@ double degreesToRadians(double degrees) {
     return degrees * M_PI / 180.0;
 }
 
-//Haversine formula implementation
 double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
     double dLat = degreesToRadians(lat2 - lat1);
     double dLon = degreesToRadians(lon2 - lon1);
@@ -31,7 +31,6 @@ double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
     return distance;
 }
 
-// Function to write response data received from CURL
 size_t writeCallback(void* contents, size_t size, size_t nmemb, char* buffer) {
     size_t realsize = size * nmemb;
     strcat(buffer, (char*)contents);

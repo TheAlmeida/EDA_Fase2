@@ -60,9 +60,6 @@ void showtime()
     time(&rawtime);
     timeinfo = localtime(&rawtime);
     printf("Hora local: %s\n", asctime(timeinfo));
-    //O asctime() é uma função definida na livraria <time.h>.
-    //Esta função retorna um apontador string que contem a informação guardada na struct tm.
-    //Esta função retorna o local time definido pelo o sistema.
 }
 
 int isInt(char* str) {
@@ -170,8 +167,8 @@ void clientmenu()
     printf("|--------------------------------------------------------------------|\n");
     printf("|            **ALUGAR**            |            **SALDO**            |\n");
     printf("|--------------------------------------------------------------------|\n");
-    printf("|      1 - POR DISPONIBLIDADE      |         3 - CONSULTAR           |\n");
-    printf("|      2 - E POR GEOCODIGO         |         4 - CARREGAR            |\n");
+    printf("|       1 - POR TIPO E RAIO        |          3 - CONSULTAR          |\n");
+    printf("|       2 - POR GEOCODIGO          |          4 - CARREGAR           |\n");
     printf("|--------------------------------------------------------------------|\n");
     printf("| 5 - HISTORICO E CONSUMOS                                           |\n");
     printf("|--------------------------------------------------------------------|\n");
@@ -248,15 +245,16 @@ void adminmenu()
     printf("|--------------------------------------------------------------------|\n");
     printf("|     **VEICULOS**     |     **CLIENTES**     |     **GESTORES**     |\n");
     printf("|--------------------------------------------------------------------|\n");
-    printf("|    1 - ADICIONAR     |    5 - ADICIONAR     |    8 - ADICIONAR     |\n");
-    printf("|    2 - EDITAR        |    6 - EDITAR        |    9 - EDITAR        |\n");
-    printf("|    3 - REMOVER       |    7 - REMOVER       |    10 - REMOVER       |\n");
-    printf("|    4 - RECOLHER      |                      |                      |\n");
+    printf("|    1 - ADICIONAR     |    4 - ADICIONAR     |    7 - ADICIONAR     |\n");
+    printf("|    2 - EDITAR        |    5 - EDITAR        |    8 - EDITAR        |\n");
+    printf("|    3 - REMOVER       |    6 - REMOVER       |    9 - REMOVER       |\n");
     printf("|--------------------------------------------------------------------|\n");
-    printf("|                **HISTORICO**                |   **ESTATISTICAS**   |\n");
+    printf("|    **HISTORICO**     |   **ESTATISTICAS**   |      **GRAFO**       |\n");
     printf("|--------------------------------------------------------------------|\n");
-    printf("|   11 - POR MODELO       13 - POR CLIENTE    |   15 - VEICULOS      |\n");
-    printf("|   12 - POR VEICULO      14 - TODOS          |   16 - CLIENTES      |\n");
+    printf("|    10 - POR MODELO   |    14 - VEICULOS     |    16 - RECOLHER     |\n");
+    printf("|    11 - POR VEICULO  |    15 - CLIENTES     |      VEICULOS        |\n");
+    printf("|    12 - POR CLIENTE  |                      |    17 - EDITAR       |\n");
+    printf("|    13 - TODOS        |                      |                      |\n");
     printf("|--------------------------------------------------------------------|\n");
     printf("|  0 - LOGOUT                                                        |\n");
     printf("|--------------------------------------------------------------------|\n");
@@ -353,5 +351,3 @@ void endprogram()
     printf("|--------------------------------------------------------------------|\n");
     exit(0);
 }
-
-
