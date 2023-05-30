@@ -1,0 +1,39 @@
+\hypertarget{what3words_8h_source}{}\doxysection{C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/what3words.h}
+\mbox{\hyperlink{what3words_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00002}00002\ \textcolor{preprocessor}{\#pragma\ comment(lib,\ "{}wldap32.lib"{}}\ )}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00003}00003\ \textcolor{preprocessor}{\#pragma\ comment(lib,\ "{}crypt32.lib"{}}\ )}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00004}00004\ \textcolor{preprocessor}{\#pragma\ comment(lib,\ "{}Ws2\_32.lib"{}})}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00005}00005\ \textcolor{preprocessor}{\#pragma\ comment(lib,\ "{}Normaliz.lib"{}})}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00006}\mbox{\hyperlink{what3words_8h_aa07d4a99236e09c992abe5789d975472}{00006}}\ \textcolor{preprocessor}{\#define\ CURL\_STATICLIB}}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}curl\(\backslash\)curl.h"{}}}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00012}00012\ \textcolor{comment}{//\#define\ APIKEY\ "{}0NMQZEL0"{}}}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00013}00013\ \textcolor{comment}{//\#define\ APIKEY\ "{}5G4OATGL"{}}}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00014}\mbox{\hyperlink{what3words_8h_ae2688a4fe873d41c89cdbede8ba6f78b}{00014}}\ \textcolor{preprocessor}{\#define\ APIKEY\ "{}U1O07WRP"{}}}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00015}00015\ \textcolor{preprocessor}{\#ifndef\ M\_PI}}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00016}\mbox{\hyperlink{what3words_8h_ae71449b1cc6e6250b91f539153a7a0d3}{00016}}\ \textcolor{preprocessor}{\#define\ M\_PI\ 3.14159265358979323846}}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00017}00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00022}\mbox{\hyperlink{struct_coordinates}{00022}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00023}\mbox{\hyperlink{struct_coordinates_a20ea6542be083155699517939b03f259}{00023}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_coordinates_a20ea6542be083155699517939b03f259}{latitude}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00024}\mbox{\hyperlink{struct_coordinates_a474951b7ec4e5f12e788abbf852cd88b}{00024}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_coordinates_a474951b7ec4e5f12e788abbf852cd88b}{longitude}};\ \ }
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00025}00025\ \}\ \mbox{\hyperlink{struct_coordinates}{Coordinates}};}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00032}00032\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{what3words_8h_a8824538eb07749fa64fd2ef98e557be9}{degreesToRadians}}(\textcolor{keywordtype}{double}\ degrees);}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00042}00042\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{what3words_8h_a02434d9cbacdb757bbce7d8d872bc5d8}{calculateDistance}}(\textcolor{keywordtype}{double}\ lat1,\ \textcolor{keywordtype}{double}\ lon1,\ \textcolor{keywordtype}{double}\ lat2,\ \textcolor{keywordtype}{double}\ lon2);}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00052}00052\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{what3words_8h_a608ec60ee1f702916b7a18919466332d}{writeCallback}}(\textcolor{keywordtype}{void}*\ contents,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ nmemb,\ \textcolor{keywordtype}{char}*\ output);}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00059}00059\ \mbox{\hyperlink{struct_coordinates}{Coordinates}}\ \mbox{\hyperlink{what3words_8h_a3149a0122833b28c4c4a7cd6306de7c7}{geolocationToCoordinates}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ location);}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00067}00067\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{what3words_8h_a41951b64e606da0ca182a39a7458f361}{coordinatesToGeolocation}}(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{what3words_8h_source_l00074}\mbox{\hyperlink{what3words_8h_a561022cfa65d0ac963a1ddadf3c0b261}{00074}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{what3words_8h_a561022cfa65d0ac963a1ddadf3c0b261}{validGeolocation}}(\textcolor{keywordtype}{char}*\ geolocation);}
+
+\end{DoxyCode}

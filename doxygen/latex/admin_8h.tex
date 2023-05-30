@@ -1,0 +1,260 @@
+\hypertarget{admin_8h}{}\doxysection{C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/admin.h File Reference}
+\label{admin_8h}\index{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/admin.h@{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/admin.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}menu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ll.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}client.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdataadmin}{dataadmin}}
+\begin{DoxyCompactList}\small\item\em Struct for the admin data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structdataadmin}{dataadmin}} $\ast$ \mbox{\hyperlink{admin_8h_a5e06ff1ef42367c064e674abc1a29f77}{Admin}}
+\begin{DoxyCompactList}\small\item\em Struct for the admin data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{admin_8h_ad274e26a42c6c9215afb01bfd57f618a}{show\+Admin}} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Shows admin data on the console. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{admin_8h_ab3244935f8b7e828ec586d7f64694937}{load\+Data\+Admins}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Admins)
+\begin{DoxyCompactList}\small\item\em Loads admin data from a file into a linked list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{admin_8h_ae6b215143203d96bbd5577272d5e725b}{store\+Data\+Admins}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{_e_d_a___fase1_8c_a27cc03dc4c2f19714cd8240127422e33}{listA}})
+\begin{DoxyCompactList}\small\item\em Stores admin data from a linked list into a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{admin_8h_af17ffc91371bcffca23812a19e465229}{compare\+Names\+Admins}} (void $\ast$data1, void $\ast$data2)
+\begin{DoxyCompactList}\small\item\em Compares lexically two admin data pointers by their username. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{admin_8h_a241b1a167216f0a741ae6899f3fd4178}{change\+AUsername}} (\mbox{\hyperlink{admin_8h_a5e06ff1ef42367c064e674abc1a29f77}{Admin}} admin, char $\ast$new\+Username)
+\item 
+void \mbox{\hyperlink{admin_8h_aa72d252f7f1ee6f7f7e2765cdf39242d}{change\+APassword}} (\mbox{\hyperlink{admin_8h_a5e06ff1ef42367c064e674abc1a29f77}{Admin}} admin, char $\ast$new\+Password)
+\item 
+void \mbox{\hyperlink{admin_8h_a9cd0d8cf78eb3691a0ea15bf1935192e}{change\+AName}} (\mbox{\hyperlink{admin_8h_a5e06ff1ef42367c064e674abc1a29f77}{Admin}} admin, char $\ast$new\+Name)
+\item 
+void \mbox{\hyperlink{admin_8h_afa7333dd44a3092743ab27dee7059c79}{change\+AEmail}} (\mbox{\hyperlink{admin_8h_a5e06ff1ef42367c064e674abc1a29f77}{Admin}} admin, char $\ast$new\+Email)
+\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{admin_8h_acf22ec1ebdde94097eeb33f7b864e71c}{remove\+Admin}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Admin, int $\ast$modified)
+\begin{DoxyCompactList}\small\item\em Removes an admin from the list of admins and returns the new list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{admin_8h_a03cd89ec0768356ec2343de9d59e2b07}{edit\+Admin}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Admin, int $\ast$modified)
+\begin{DoxyCompactList}\small\item\em Edits the data of an admin in the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{admin_8h_a02d9bbacf8df20f5ac59d7bc4654ad62}{register\+Admin}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Admin, \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Client, int $\ast$modified)
+\begin{DoxyCompactList}\small\item\em Registers a new admin in the list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{admin_8h_a5e06ff1ef42367c064e674abc1a29f77}\label{admin_8h_a5e06ff1ef42367c064e674abc1a29f77}} 
+\index{admin.h@{admin.h}!Admin@{Admin}}
+\index{Admin@{Admin}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{Admin}{Admin}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structdataadmin}{dataadmin}} $\ast$ \mbox{\hyperlink{admin_8h_a5e06ff1ef42367c064e674abc1a29f77}{Admin}}}
+
+
+
+Struct for the admin data. 
+
+Pointer to dataadmin struct 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{admin_8h_afa7333dd44a3092743ab27dee7059c79}\label{admin_8h_afa7333dd44a3092743ab27dee7059c79}} 
+\index{admin.h@{admin.h}!changeAEmail@{changeAEmail}}
+\index{changeAEmail@{changeAEmail}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{changeAEmail()}{changeAEmail()}}
+{\footnotesize\ttfamily void change\+AEmail (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{admin_8h_a5e06ff1ef42367c064e674abc1a29f77}{Admin}}}]{admin,  }\item[{char $\ast$}]{new\+Email }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{admin_8c_source_l00099}{99}} of file \mbox{\hyperlink{admin_8c_source}{admin.\+c}}.
+
+\mbox{\Hypertarget{admin_8h_a9cd0d8cf78eb3691a0ea15bf1935192e}\label{admin_8h_a9cd0d8cf78eb3691a0ea15bf1935192e}} 
+\index{admin.h@{admin.h}!changeAName@{changeAName}}
+\index{changeAName@{changeAName}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{changeAName()}{changeAName()}}
+{\footnotesize\ttfamily void change\+AName (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{admin_8h_a5e06ff1ef42367c064e674abc1a29f77}{Admin}}}]{admin,  }\item[{char $\ast$}]{new\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{admin_8c_source_l00094}{94}} of file \mbox{\hyperlink{admin_8c_source}{admin.\+c}}.
+
+\mbox{\Hypertarget{admin_8h_aa72d252f7f1ee6f7f7e2765cdf39242d}\label{admin_8h_aa72d252f7f1ee6f7f7e2765cdf39242d}} 
+\index{admin.h@{admin.h}!changeAPassword@{changeAPassword}}
+\index{changeAPassword@{changeAPassword}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{changeAPassword()}{changeAPassword()}}
+{\footnotesize\ttfamily void change\+APassword (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{admin_8h_a5e06ff1ef42367c064e674abc1a29f77}{Admin}}}]{admin,  }\item[{char $\ast$}]{new\+Password }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{admin_8c_source_l00089}{89}} of file \mbox{\hyperlink{admin_8c_source}{admin.\+c}}.
+
+\mbox{\Hypertarget{admin_8h_a241b1a167216f0a741ae6899f3fd4178}\label{admin_8h_a241b1a167216f0a741ae6899f3fd4178}} 
+\index{admin.h@{admin.h}!changeAUsername@{changeAUsername}}
+\index{changeAUsername@{changeAUsername}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{changeAUsername()}{changeAUsername()}}
+{\footnotesize\ttfamily void change\+AUsername (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{admin_8h_a5e06ff1ef42367c064e674abc1a29f77}{Admin}}}]{admin,  }\item[{char $\ast$}]{new\+Username }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{admin_8c_source_l00084}{84}} of file \mbox{\hyperlink{admin_8c_source}{admin.\+c}}.
+
+\mbox{\Hypertarget{admin_8h_af17ffc91371bcffca23812a19e465229}\label{admin_8h_af17ffc91371bcffca23812a19e465229}} 
+\index{admin.h@{admin.h}!compareNamesAdmins@{compareNamesAdmins}}
+\index{compareNamesAdmins@{compareNamesAdmins}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{compareNamesAdmins()}{compareNamesAdmins()}}
+{\footnotesize\ttfamily int compare\+Names\+Admins (\begin{DoxyParamCaption}\item[{void $\ast$}]{data1,  }\item[{void $\ast$}]{data2 }\end{DoxyParamCaption})}
+
+
+
+Compares lexically two admin data pointers by their username. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data1} & A pointer to the first admin data.\\
+\hline
+{\em data2} & A pointer to the first admin data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer value indicating the result of the comparison (-\/1 if data1 is lexically smaller, 0 if they are equal, 1 if data1 is lexically greater).
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{admin_8c_source_l00077}{77}} of file \mbox{\hyperlink{admin_8c_source}{admin.\+c}}.
+
+\mbox{\Hypertarget{admin_8h_a03cd89ec0768356ec2343de9d59e2b07}\label{admin_8h_a03cd89ec0768356ec2343de9d59e2b07}} 
+\index{admin.h@{admin.h}!editAdmin@{editAdmin}}
+\index{editAdmin@{editAdmin}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{editAdmin()}{editAdmin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} edit\+Admin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Admin,  }\item[{int $\ast$}]{modified }\end{DoxyParamCaption})}
+
+
+
+Edits the data of an admin in the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Admin} & A pointer to the linked list of admins.\\
+\hline
+{\em modified} & Pointer to an integer that will be set to 1 if a new admin is added, 0 otherwise.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The modified list of admins.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{admin_8c_source_l00144}{144}} of file \mbox{\hyperlink{admin_8c_source}{admin.\+c}}.
+
+\mbox{\Hypertarget{admin_8h_ab3244935f8b7e828ec586d7f64694937}\label{admin_8h_ab3244935f8b7e828ec586d7f64694937}} 
+\index{admin.h@{admin.h}!loadDataAdmins@{loadDataAdmins}}
+\index{loadDataAdmins@{loadDataAdmins}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{loadDataAdmins()}{loadDataAdmins()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} load\+Data\+Admins (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Admins }\end{DoxyParamCaption})}
+
+
+
+Loads admin data from a file into a linked list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Admins} & A pointer to the head of the linked list of admins.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the linked list of admins with the loaded data.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{admin_8c_source_l00017}{17}} of file \mbox{\hyperlink{admin_8c_source}{admin.\+c}}.
+
+\mbox{\Hypertarget{admin_8h_a02d9bbacf8df20f5ac59d7bc4654ad62}\label{admin_8h_a02d9bbacf8df20f5ac59d7bc4654ad62}} 
+\index{admin.h@{admin.h}!registerAdmin@{registerAdmin}}
+\index{registerAdmin@{registerAdmin}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{registerAdmin()}{registerAdmin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} register\+Admin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Admin,  }\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Client,  }\item[{int $\ast$}]{modified }\end{DoxyParamCaption})}
+
+
+
+Registers a new admin in the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Admin} & A pointer to the head of the linked list of admins.\\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<}param name=\char`\"{}list\+Client\char`\"{}A pointer to the head of the linked list of clients, (needed to check if an username that is alredy registed with a client is not used by an admin).\texorpdfstring{$>$}{>}
+
+
+\begin{DoxyParams}{Parameters}
+{\em modified} & Pointer to an integer that will be set to 1 if a new admin is added, 0 otherwise.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The modified list of admins.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{admin_8c_source_l00221}{221}} of file \mbox{\hyperlink{admin_8c_source}{admin.\+c}}.
+
+\mbox{\Hypertarget{admin_8h_acf22ec1ebdde94097eeb33f7b864e71c}\label{admin_8h_acf22ec1ebdde94097eeb33f7b864e71c}} 
+\index{admin.h@{admin.h}!removeAdmin@{removeAdmin}}
+\index{removeAdmin@{removeAdmin}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{removeAdmin()}{removeAdmin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} remove\+Admin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Admin,  }\item[{int $\ast$}]{modified }\end{DoxyParamCaption})}
+
+
+
+Removes an admin from the list of admins and returns the new list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Admin} & A pointer to the linked list of admins.\\
+\hline
+{\em modified} & Pointer to an integer that will be set to 1 if a new admin is added, 0 otherwise.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The modified list of admins.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{admin_8c_source_l00104}{104}} of file \mbox{\hyperlink{admin_8c_source}{admin.\+c}}.
+
+\mbox{\Hypertarget{admin_8h_ad274e26a42c6c9215afb01bfd57f618a}\label{admin_8h_ad274e26a42c6c9215afb01bfd57f618a}} 
+\index{admin.h@{admin.h}!showAdmin@{showAdmin}}
+\index{showAdmin@{showAdmin}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{showAdmin()}{showAdmin()}}
+{\footnotesize\ttfamily void show\+Admin (\begin{DoxyParamCaption}\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Shows admin data on the console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A pointer to admin data.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{admin_8c_source_l00003}{3}} of file \mbox{\hyperlink{admin_8c_source}{admin.\+c}}.
+
+\mbox{\Hypertarget{admin_8h_ae6b215143203d96bbd5577272d5e725b}\label{admin_8h_ae6b215143203d96bbd5577272d5e725b}} 
+\index{admin.h@{admin.h}!storeDataAdmins@{storeDataAdmins}}
+\index{storeDataAdmins@{storeDataAdmins}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{storeDataAdmins()}{storeDataAdmins()}}
+{\footnotesize\ttfamily void store\+Data\+Admins (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{listA }\end{DoxyParamCaption})}
+
+
+
+Stores admin data from a linked list into a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em listA} & A pointer to the head of the linked list of admins.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{admin_8c_source_l00047}{47}} of file \mbox{\hyperlink{admin_8c_source}{admin.\+c}}.
+

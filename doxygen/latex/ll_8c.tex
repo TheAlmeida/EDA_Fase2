@@ -1,0 +1,313 @@
+\hypertarget{ll_8c}{}\doxysection{C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/ll.c File Reference}
+\label{ll_8c}\index{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/ll.c@{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/ll.c}}
+{\ttfamily \#include \char`\"{}ll.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{ll_8c_a890dfc0f3e67d9c168291af40efccab7}{create\+List\+Elem}} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Creates a new List\+Elem. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ll_8c_a1feda813b463cd2332420273d4bff451}{list\+Length}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} head)
+\begin{DoxyCompactList}\small\item\em Returns the length of the linked list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ll_8c_a7c8c40822d09dd9511eb6e659ae398b4}{reorder\+List}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} $\ast$head, int($\ast$\mbox{\hyperlink{vehicle_8c_abb1b6d240123b281a4faae0808b648f0}{compare}})(void $\ast$data1, void $\ast$data2))
+\begin{DoxyCompactList}\small\item\em Reorders the content of the linked list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{ll_8c_a52fca54354585c1f5f31326f2863d822}{remove\+Element\+By\+Index}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} head, int index)
+\begin{DoxyCompactList}\small\item\em Removes an element from the list by its index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ll_8c_a2e440cfa67ada211c9a895fb3929be4b}{show\+List\+Iterative}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} head, void($\ast$show)(void $\ast$data))
+\begin{DoxyCompactList}\small\item\em Iteratively shows the contents of a linked list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{ll_8c_a77f1517e35c70b302e7135debc4ee61c}{add\+Item\+Head}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} head, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Adds an element to the head of the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{ll_8c_a1fa6dd9a03210aa0112ec79d6086ef05}{add\+Item\+Last\+Iterative}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} head, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Iteratively adds an element to the end of the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{ll_8c_ab40afed773ca2c01c5c21d1705e45883}{add\+Item\+Ordered\+Iterative}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} head, void $\ast$data, int($\ast$\mbox{\hyperlink{vehicle_8c_abb1b6d240123b281a4faae0808b648f0}{compare}})(void $\ast$data1, void $\ast$data2))
+\begin{DoxyCompactList}\small\item\em Iteratively adds a new item to a linked list in ascending order, based on the given compare function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{ll_8c_a8e127eedf136451282cc824347846759}{remove\+Item\+Iterative}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} head, void $\ast$data, int($\ast$\mbox{\hyperlink{vehicle_8c_abb1b6d240123b281a4faae0808b648f0}{compare}})(void $\ast$data1, void $\ast$data2))
+\begin{DoxyCompactList}\small\item\em Removes an item with the given data from a singly linked list, based on the given compare function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{ll_8c_a94e75225c2c9eca248e9b3290f5b1a5b}{append\+List}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list1, \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list2)
+\begin{DoxyCompactList}\small\item\em Appends the head of the second linked list to the end of the first linked list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{ll_8c_a2cd5efb9a09b91778822bc771079d921}{obtain\+Element\+Position}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} head, int pos)
+\begin{DoxyCompactList}\small\item\em Obtains the element at the given position in a linked list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{ll_8c_a7534310b6b7ebb1d009a850e2bde4392}{delete\+List}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} head)
+\begin{DoxyCompactList}\small\item\em Deletes the entire linked list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ll_8c_a77f1517e35c70b302e7135debc4ee61c}\label{ll_8c_a77f1517e35c70b302e7135debc4ee61c}} 
+\index{ll.c@{ll.c}!addItemHead@{addItemHead}}
+\index{addItemHead@{addItemHead}!ll.c@{ll.c}}
+\doxysubsubsection{\texorpdfstring{addItemHead()}{addItemHead()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} add\+Item\+Head (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{head,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Adds an element to the head of the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Head pointer to the head of the list.\\
+\hline
+{\em data} & Data pointer to the data of the new node to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the head of the list after adding.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ll_8c_source_l00092}{92}} of file \mbox{\hyperlink{ll_8c_source}{ll.\+c}}.
+
+\mbox{\Hypertarget{ll_8c_a1fa6dd9a03210aa0112ec79d6086ef05}\label{ll_8c_a1fa6dd9a03210aa0112ec79d6086ef05}} 
+\index{ll.c@{ll.c}!addItemLastIterative@{addItemLastIterative}}
+\index{addItemLastIterative@{addItemLastIterative}!ll.c@{ll.c}}
+\doxysubsubsection{\texorpdfstring{addItemLastIterative()}{addItemLastIterative()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} add\+Item\+Last\+Iterative (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{head,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Iteratively adds an element to the end of the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Head pointer to the head of the list.\\
+\hline
+{\em data} & Data pointer to the data of the new node to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the head of the list after adding.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ll_8c_source_l00105}{105}} of file \mbox{\hyperlink{ll_8c_source}{ll.\+c}}.
+
+\mbox{\Hypertarget{ll_8c_ab40afed773ca2c01c5c21d1705e45883}\label{ll_8c_ab40afed773ca2c01c5c21d1705e45883}} 
+\index{ll.c@{ll.c}!addItemOrderedIterative@{addItemOrderedIterative}}
+\index{addItemOrderedIterative@{addItemOrderedIterative}!ll.c@{ll.c}}
+\doxysubsubsection{\texorpdfstring{addItemOrderedIterative()}{addItemOrderedIterative()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} add\+Item\+Ordered\+Iterative (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{head,  }\item[{void $\ast$}]{data,  }\item[{int($\ast$)(void $\ast$data1, void $\ast$data2)}]{compare }\end{DoxyParamCaption})}
+
+
+
+Iteratively adds a new item to a linked list in ascending order, based on the given compare function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Head pointer to the head of the list.\\
+\hline
+{\em data} & Data pointer to the data of the new node to add.\\
+\hline
+{\em compare} & Function pointer to a function that compares the data of two nodes.\texorpdfstring{$>$}{>}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the head of the list after adding.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ll_8c_source_l00124}{124}} of file \mbox{\hyperlink{ll_8c_source}{ll.\+c}}.
+
+\mbox{\Hypertarget{ll_8c_a94e75225c2c9eca248e9b3290f5b1a5b}\label{ll_8c_a94e75225c2c9eca248e9b3290f5b1a5b}} 
+\index{ll.c@{ll.c}!appendList@{appendList}}
+\index{appendList@{appendList}!ll.c@{ll.c}}
+\doxysubsubsection{\texorpdfstring{appendList()}{appendList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} append\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{first\+List,  }\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{second\+List }\end{DoxyParamCaption})}
+
+
+
+Appends the head of the second linked list to the end of the first linked list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+List} & Pointer to the head of the first linked list.\\
+\hline
+{\em second\+List} & Pointer to the head of the second linked list.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ll_8c_source_l00183}{183}} of file \mbox{\hyperlink{ll_8c_source}{ll.\+c}}.
+
+\mbox{\Hypertarget{ll_8c_a890dfc0f3e67d9c168291af40efccab7}\label{ll_8c_a890dfc0f3e67d9c168291af40efccab7}} 
+\index{ll.c@{ll.c}!createListElem@{createListElem}}
+\index{createListElem@{createListElem}!ll.c@{ll.c}}
+\doxysubsubsection{\texorpdfstring{createListElem()}{createListElem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} create\+List\+Elem (\begin{DoxyParamCaption}\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Creates a new List\+Elem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data pointer to the data of the new element.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ll_8c_source_l00004}{4}} of file \mbox{\hyperlink{ll_8c_source}{ll.\+c}}.
+
+\mbox{\Hypertarget{ll_8c_a7534310b6b7ebb1d009a850e2bde4392}\label{ll_8c_a7534310b6b7ebb1d009a850e2bde4392}} 
+\index{ll.c@{ll.c}!deleteList@{deleteList}}
+\index{deleteList@{deleteList}!ll.c@{ll.c}}
+\doxysubsubsection{\texorpdfstring{deleteList()}{deleteList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} delete\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{head }\end{DoxyParamCaption})}
+
+
+
+Deletes the entire linked list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Head pointer to the head of the list.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the head of the deleted linked list, which is NULL.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ll_8c_source_l00217}{217}} of file \mbox{\hyperlink{ll_8c_source}{ll.\+c}}.
+
+\mbox{\Hypertarget{ll_8c_a1feda813b463cd2332420273d4bff451}\label{ll_8c_a1feda813b463cd2332420273d4bff451}} 
+\index{ll.c@{ll.c}!listLength@{listLength}}
+\index{listLength@{listLength}!ll.c@{ll.c}}
+\doxysubsubsection{\texorpdfstring{listLength()}{listLength()}}
+{\footnotesize\ttfamily int list\+Length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{head }\end{DoxyParamCaption})}
+
+
+
+Returns the length of the linked list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Head pointer to the head of the list.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the length of the list.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ll_8c_source_l00012}{12}} of file \mbox{\hyperlink{ll_8c_source}{ll.\+c}}.
+
+\mbox{\Hypertarget{ll_8c_a2cd5efb9a09b91778822bc771079d921}\label{ll_8c_a2cd5efb9a09b91778822bc771079d921}} 
+\index{ll.c@{ll.c}!obtainElementPosition@{obtainElementPosition}}
+\index{obtainElementPosition@{obtainElementPosition}!ll.c@{ll.c}}
+\doxysubsubsection{\texorpdfstring{obtainElementPosition()}{obtainElementPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} obtain\+Element\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{head,  }\item[{int}]{pos }\end{DoxyParamCaption})}
+
+
+
+Obtains the element at the given position in a linked list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Head pointer to the head of the list.\\
+\hline
+{\em pos} & The position of the element to obtain.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element at the given position, or NULL if the list is empty or the position is invalid.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ll_8c_source_l00201}{201}} of file \mbox{\hyperlink{ll_8c_source}{ll.\+c}}.
+
+\mbox{\Hypertarget{ll_8c_a52fca54354585c1f5f31326f2863d822}\label{ll_8c_a52fca54354585c1f5f31326f2863d822}} 
+\index{ll.c@{ll.c}!removeElementByIndex@{removeElementByIndex}}
+\index{removeElementByIndex@{removeElementByIndex}!ll.c@{ll.c}}
+\doxysubsubsection{\texorpdfstring{removeElementByIndex()}{removeElementByIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} remove\+Element\+By\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{head,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Removes an element from the list by its index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the list.\\
+\hline
+{\em index} & The index of the element to remove.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the head of the list after removal.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ll_8c_source_l00047}{47}} of file \mbox{\hyperlink{ll_8c_source}{ll.\+c}}.
+
+\mbox{\Hypertarget{ll_8c_a8e127eedf136451282cc824347846759}\label{ll_8c_a8e127eedf136451282cc824347846759}} 
+\index{ll.c@{ll.c}!removeItemIterative@{removeItemIterative}}
+\index{removeItemIterative@{removeItemIterative}!ll.c@{ll.c}}
+\doxysubsubsection{\texorpdfstring{removeItemIterative()}{removeItemIterative()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} remove\+Item\+Iterative (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{head,  }\item[{void $\ast$}]{data,  }\item[{int($\ast$)(void $\ast$data1, void $\ast$data2)}]{compare }\end{DoxyParamCaption})}
+
+
+
+Removes an item with the given data from a singly linked list, based on the given compare function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Head pointer to the head of the list.\\
+\hline
+{\em data} & Data pointer to the data of the node to remove.\\
+\hline
+{\em compare} & Function pointer to a function that compares the data of two nodes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the head of the list after adding.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ll_8c_source_l00152}{152}} of file \mbox{\hyperlink{ll_8c_source}{ll.\+c}}.
+
+\mbox{\Hypertarget{ll_8c_a7c8c40822d09dd9511eb6e659ae398b4}\label{ll_8c_a7c8c40822d09dd9511eb6e659ae398b4}} 
+\index{ll.c@{ll.c}!reorderList@{reorderList}}
+\index{reorderList@{reorderList}!ll.c@{ll.c}}
+\doxysubsubsection{\texorpdfstring{reorderList()}{reorderList()}}
+{\footnotesize\ttfamily void reorder\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} $\ast$}]{head,  }\item[{int($\ast$)(void $\ast$data1, void $\ast$data2)}]{compare }\end{DoxyParamCaption})}
+
+
+
+Reorders the content of the linked list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the list.\\
+\hline
+{\em compare} & Function pointer to a function that compares the data of two nodes.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ll_8c_source_l00025}{25}} of file \mbox{\hyperlink{ll_8c_source}{ll.\+c}}.
+
+\mbox{\Hypertarget{ll_8c_a2e440cfa67ada211c9a895fb3929be4b}\label{ll_8c_a2e440cfa67ada211c9a895fb3929be4b}} 
+\index{ll.c@{ll.c}!showListIterative@{showListIterative}}
+\index{showListIterative@{showListIterative}!ll.c@{ll.c}}
+\doxysubsubsection{\texorpdfstring{showListIterative()}{showListIterative()}}
+{\footnotesize\ttfamily void show\+List\+Iterative (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{head,  }\item[{void($\ast$)(void $\ast$data)}]{show }\end{DoxyParamCaption})}
+
+
+
+Iteratively shows the contents of a linked list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Head pointer to the head of the list.\\
+\hline
+{\em show} & Function pointer to a function that prints the data of a node.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ll_8c_source_l00080}{80}} of file \mbox{\hyperlink{ll_8c_source}{ll.\+c}}.
+

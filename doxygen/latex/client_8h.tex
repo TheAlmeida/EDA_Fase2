@@ -1,0 +1,524 @@
+\hypertarget{client_8h}{}\doxysection{C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/client.h File Reference}
+\label{client_8h}\index{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/client.h@{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/client.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}menu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ll.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}admin.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}what3words.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdataclient}{dataclient}}
+\begin{DoxyCompactList}\small\item\em Struct for the client data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structdataclient}{dataclient}} $\ast$ \mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}
+\begin{DoxyCompactList}\small\item\em Struct for the client data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{client_8h_a59c309545fb35a1a899b4fdf9eabed15}{show\+Client}} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Shows client data on the console. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{client_8h_a62af75b123e65bcf5f2043f20fbef936}{load\+Data\+Clients}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Clients)
+\begin{DoxyCompactList}\small\item\em Loads client data from a file into a linked list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{client_8h_aafa93fb8008da6d2e42d7b940b8ff023}{store\+Data\+Clients}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{_e_d_a___fase1_8c_a5e21eee4b25172fcdd41a5b9fc5680c0}{listC}})
+\begin{DoxyCompactList}\small\item\em Stores client data from a linked list into a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{client_8h_aaaa46725e2191be4ac9e5dc555e127be}{compare\+Names\+Clients}} (void $\ast$data1, void $\ast$data2)
+\begin{DoxyCompactList}\small\item\em Compares two client data pointers by their username. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{client_8h_a770deed4fea5d473eee83234caf82fab}{compare\+Trips}} (void $\ast$data1, void $\ast$data2)
+\begin{DoxyCompactList}\small\item\em Compares two client data pointers by their number of trips. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{client_8h_adaedfada0c9e64447949d72928b9002f}{change\+CUsername}} (\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} client, char $\ast$new\+Username)
+\item 
+void \mbox{\hyperlink{client_8h_af4eedbffaec6c5737fd1a2627c26753c}{change\+CPassword}} (\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} client, char $\ast$new\+Password)
+\item 
+void \mbox{\hyperlink{client_8h_a5c219f9e978744c87d5a1780a5389c71}{change\+CName}} (\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} client, char $\ast$new\+Name)
+\item 
+void \mbox{\hyperlink{client_8h_a309b141030c3c84b67102a1a177cc9c8}{change\+CEmail}} (\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} client, char $\ast$new\+Email)
+\item 
+void \mbox{\hyperlink{client_8h_aed6994b6ce15d56ed3d96eb5a75852a3}{change\+CCellphone}} (\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} client, int new\+Cellphone)
+\item 
+void \mbox{\hyperlink{client_8h_aa0a9a5b40c12c656ab5318fe3d44aedd}{change\+CAge}} (\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} client, int new\+Age)
+\item 
+void \mbox{\hyperlink{client_8h_a680e33a2c0e39aadf1316147a71406e6}{change\+CGeolocation}} (\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} client, char $\ast$new\+Geolocation)
+\item 
+void \mbox{\hyperlink{client_8h_a0f5c136e5b261a270c14d889c3fa2e8b}{change\+CTotal\+Kms}} (\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} client, float new\+Total\+Kms)
+\item 
+void \mbox{\hyperlink{client_8h_ae9f1679dd5aa70ad7812237607b6be1d}{change\+CBalance}} (\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} client, float new\+Balance)
+\item 
+void \mbox{\hyperlink{client_8h_a713502e6c294c0c659c22ac8d4f7336f}{change\+CNif}} (\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} client, int new\+Nif)
+\item 
+void \mbox{\hyperlink{client_8h_a943d7837f5f90e9b9912cb4192d57839}{change\+CTotal\+Trips}} (\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} client, int new\+Total\+Trips)
+\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{client_8h_a76d99bb002e9d8bb3ad8840c6f7ed34b}{remove\+Client}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Client, int $\ast$modified, \mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Removes a client from the list of clients and returns the new list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{client_8h_a307be53b1125733fdb14c702e7253119}{sort\+By\+Trips}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Client)
+\begin{DoxyCompactList}\small\item\em Sorts the list of clients by number of trips (by descending order). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{client_8h_af7dace7c9508ecf48ee566947891fb97}{find\+Client\+With\+Most\+Trips}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Client, char $\ast$username, int $\ast$totaltrips)
+\begin{DoxyCompactList}\small\item\em Iterates the client list to find the max value for totaltrips and stores the totaltrips value and the corresponding username of the client in pointers passed as arguments. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{client_8h_aeb3c85f2a7ea752f6b8e54842bcd5b6b}{calculate\+Average\+Age}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Client)
+\begin{DoxyCompactList}\small\item\em Returns the average age of the clients in the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{client_8h_a7173badbaaf6e7e852ba62f2b6f10010}{edit\+Client}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Client, int $\ast$modified, \mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} $\ast$c, char $\ast$old\+Geolocation)
+\begin{DoxyCompactList}\small\item\em Edits the data of a client in the list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{client_8h_afb6831a58c7daddaf1779ece1f1d938a}{username\+Exists}} (char $\ast$username, \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Clients, \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Admin)
+\begin{DoxyCompactList}\small\item\em Checks if the username passed as argument exists in either of the lists. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} \mbox{\hyperlink{client_8h_ae7b858345ad41e0ce774c5619adf09c4}{get\+Client\+By\+Username}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Client, char $\ast$username)
+\begin{DoxyCompactList}\small\item\em Retrieves a client with the given username from a linked list of clients. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{client_8h_a02fcdb7220e5d671eaef800ec4fd0292}{register\+Client}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Client, \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Admin, int $\ast$modified, \mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} c)
+\begin{DoxyCompactList}\small\item\em Registers a new client and adds them to the client list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} \mbox{\hyperlink{client_8h_aad7e7bea217d312eca175980a44c1bcc}{add\+Balance}} (\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} c, int $\ast$modified)
+\begin{DoxyCompactList}\small\item\em Allows the user to attemp to add balance to their account. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}\label{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}} 
+\index{client.h@{client.h}!Client@{Client}}
+\index{Client@{Client}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{Client}{Client}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structdataclient}{dataclient}} $\ast$ \mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}
+
+
+
+Struct for the client data. 
+
+Pointer to dataclient struct 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{client_8h_aad7e7bea217d312eca175980a44c1bcc}\label{client_8h_aad7e7bea217d312eca175980a44c1bcc}} 
+\index{client.h@{client.h}!addBalance@{addBalance}}
+\index{addBalance@{addBalance}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{addBalance()}{addBalance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} add\+Balance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}]{c,  }\item[{int $\ast$}]{modified }\end{DoxyParamCaption})}
+
+
+
+Allows the user to attemp to add balance to their account. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & A pointer to client data.\\
+\hline
+{\em modified} & Pointer to an integer that will be set to 1 if a new vehicle is added, 0 otherwise.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer of the client.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00594}{594}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_aeb3c85f2a7ea752f6b8e54842bcd5b6b}\label{client_8h_aeb3c85f2a7ea752f6b8e54842bcd5b6b}} 
+\index{client.h@{client.h}!calculateAverageAge@{calculateAverageAge}}
+\index{calculateAverageAge@{calculateAverageAge}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{calculateAverageAge()}{calculateAverageAge()}}
+{\footnotesize\ttfamily float calculate\+Average\+Age (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Client }\end{DoxyParamCaption})}
+
+
+
+Returns the average age of the clients in the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Client} & A pointer to the head of the linked list of clients.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The average age of the clients.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00239}{239}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_aa0a9a5b40c12c656ab5318fe3d44aedd}\label{client_8h_aa0a9a5b40c12c656ab5318fe3d44aedd}} 
+\index{client.h@{client.h}!changeCAge@{changeCAge}}
+\index{changeCAge@{changeCAge}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{changeCAge()}{changeCAge()}}
+{\footnotesize\ttfamily void change\+CAge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}]{client,  }\item[{int}]{new\+Age }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00132}{132}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_ae9f1679dd5aa70ad7812237607b6be1d}\label{client_8h_ae9f1679dd5aa70ad7812237607b6be1d}} 
+\index{client.h@{client.h}!changeCBalance@{changeCBalance}}
+\index{changeCBalance@{changeCBalance}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{changeCBalance()}{changeCBalance()}}
+{\footnotesize\ttfamily void change\+CBalance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}]{client,  }\item[{float}]{new\+Balance }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00147}{147}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_aed6994b6ce15d56ed3d96eb5a75852a3}\label{client_8h_aed6994b6ce15d56ed3d96eb5a75852a3}} 
+\index{client.h@{client.h}!changeCCellphone@{changeCCellphone}}
+\index{changeCCellphone@{changeCCellphone}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{changeCCellphone()}{changeCCellphone()}}
+{\footnotesize\ttfamily void change\+CCellphone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}]{client,  }\item[{int}]{new\+Cellphone }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00127}{127}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_a309b141030c3c84b67102a1a177cc9c8}\label{client_8h_a309b141030c3c84b67102a1a177cc9c8}} 
+\index{client.h@{client.h}!changeCEmail@{changeCEmail}}
+\index{changeCEmail@{changeCEmail}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{changeCEmail()}{changeCEmail()}}
+{\footnotesize\ttfamily void change\+CEmail (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}]{client,  }\item[{char $\ast$}]{new\+Email }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00122}{122}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_a680e33a2c0e39aadf1316147a71406e6}\label{client_8h_a680e33a2c0e39aadf1316147a71406e6}} 
+\index{client.h@{client.h}!changeCGeolocation@{changeCGeolocation}}
+\index{changeCGeolocation@{changeCGeolocation}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{changeCGeolocation()}{changeCGeolocation()}}
+{\footnotesize\ttfamily void change\+CGeolocation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}]{client,  }\item[{char $\ast$}]{new\+Geolocation }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00137}{137}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_a5c219f9e978744c87d5a1780a5389c71}\label{client_8h_a5c219f9e978744c87d5a1780a5389c71}} 
+\index{client.h@{client.h}!changeCName@{changeCName}}
+\index{changeCName@{changeCName}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{changeCName()}{changeCName()}}
+{\footnotesize\ttfamily void change\+CName (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}]{client,  }\item[{char $\ast$}]{new\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00117}{117}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_a713502e6c294c0c659c22ac8d4f7336f}\label{client_8h_a713502e6c294c0c659c22ac8d4f7336f}} 
+\index{client.h@{client.h}!changeCNif@{changeCNif}}
+\index{changeCNif@{changeCNif}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{changeCNif()}{changeCNif()}}
+{\footnotesize\ttfamily void change\+CNif (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}]{client,  }\item[{int}]{new\+Nif }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00152}{152}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_af4eedbffaec6c5737fd1a2627c26753c}\label{client_8h_af4eedbffaec6c5737fd1a2627c26753c}} 
+\index{client.h@{client.h}!changeCPassword@{changeCPassword}}
+\index{changeCPassword@{changeCPassword}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{changeCPassword()}{changeCPassword()}}
+{\footnotesize\ttfamily void change\+CPassword (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}]{client,  }\item[{char $\ast$}]{new\+Password }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00112}{112}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_a0f5c136e5b261a270c14d889c3fa2e8b}\label{client_8h_a0f5c136e5b261a270c14d889c3fa2e8b}} 
+\index{client.h@{client.h}!changeCTotalKms@{changeCTotalKms}}
+\index{changeCTotalKms@{changeCTotalKms}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{changeCTotalKms()}{changeCTotalKms()}}
+{\footnotesize\ttfamily void change\+CTotal\+Kms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}]{client,  }\item[{float}]{new\+Total\+Kms }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00142}{142}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_a943d7837f5f90e9b9912cb4192d57839}\label{client_8h_a943d7837f5f90e9b9912cb4192d57839}} 
+\index{client.h@{client.h}!changeCTotalTrips@{changeCTotalTrips}}
+\index{changeCTotalTrips@{changeCTotalTrips}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{changeCTotalTrips()}{changeCTotalTrips()}}
+{\footnotesize\ttfamily void change\+CTotal\+Trips (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}]{client,  }\item[{int}]{new\+Total\+Trips }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00157}{157}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_adaedfada0c9e64447949d72928b9002f}\label{client_8h_adaedfada0c9e64447949d72928b9002f}} 
+\index{client.h@{client.h}!changeCUsername@{changeCUsername}}
+\index{changeCUsername@{changeCUsername}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{changeCUsername()}{changeCUsername()}}
+{\footnotesize\ttfamily void change\+CUsername (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}]{client,  }\item[{char $\ast$}]{new\+Username }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00107}{107}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_aaaa46725e2191be4ac9e5dc555e127be}\label{client_8h_aaaa46725e2191be4ac9e5dc555e127be}} 
+\index{client.h@{client.h}!compareNamesClients@{compareNamesClients}}
+\index{compareNamesClients@{compareNamesClients}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{compareNamesClients()}{compareNamesClients()}}
+{\footnotesize\ttfamily int compare\+Names\+Clients (\begin{DoxyParamCaption}\item[{void $\ast$}]{data1,  }\item[{void $\ast$}]{data2 }\end{DoxyParamCaption})}
+
+
+
+Compares two client data pointers by their username. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data1} & A pointer to the first client data.\\
+\hline
+{\em data2} & A pointer to the first client data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer value indicating the result of the comparison (-\/1 if data1 is lexically smaller, 0 if they are equal, 1 if data1 is lexically greater).
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00088}{88}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_a770deed4fea5d473eee83234caf82fab}\label{client_8h_a770deed4fea5d473eee83234caf82fab}} 
+\index{client.h@{client.h}!compareTrips@{compareTrips}}
+\index{compareTrips@{compareTrips}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{compareTrips()}{compareTrips()}}
+{\footnotesize\ttfamily int compare\+Trips (\begin{DoxyParamCaption}\item[{void $\ast$}]{data1,  }\item[{void $\ast$}]{data2 }\end{DoxyParamCaption})}
+
+
+
+Compares two client data pointers by their number of trips. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data1} & A pointer to the first client data.\\
+\hline
+{\em data2} & A pointer to the first client data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer value indicating the result of the comparison (-\/1 if data1 is greater, 0 if they are equal, 1 if data1 is smaller).
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00095}{95}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_a7173badbaaf6e7e852ba62f2b6f10010}\label{client_8h_a7173badbaaf6e7e852ba62f2b6f10010}} 
+\index{client.h@{client.h}!editClient@{editClient}}
+\index{editClient@{editClient}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{editClient()}{editClient()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} edit\+Client (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Client,  }\item[{int $\ast$}]{modified,  }\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} $\ast$}]{c,  }\item[{char $\ast$}]{old\+Geolocation }\end{DoxyParamCaption})}
+
+
+
+Edits the data of a client in the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Client} & A pointer to the head of the linked list of clients.\\
+\hline
+{\em modified} & Pointer to an integer that will be set to 1 if a new client is edited, 0 otherwise.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The modified list of clients.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00257}{257}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_af7dace7c9508ecf48ee566947891fb97}\label{client_8h_af7dace7c9508ecf48ee566947891fb97}} 
+\index{client.h@{client.h}!findClientWithMostTrips@{findClientWithMostTrips}}
+\index{findClientWithMostTrips@{findClientWithMostTrips}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{findClientWithMostTrips()}{findClientWithMostTrips()}}
+{\footnotesize\ttfamily void find\+Client\+With\+Most\+Trips (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Client,  }\item[{char $\ast$}]{username,  }\item[{int $\ast$}]{totaltrips }\end{DoxyParamCaption})}
+
+
+
+Iterates the client list to find the max value for totaltrips and stores the totaltrips value and the corresponding username of the client in pointers passed as arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Client} & A pointer to the head of the linked list of clients.\\
+\hline
+{\em username} & A pointer to the username of the client with the most trips.\\
+\hline
+{\em totaltrips} & A pointer to the int that contains the max value of trips.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00215}{215}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_ae7b858345ad41e0ce774c5619adf09c4}\label{client_8h_ae7b858345ad41e0ce774c5619adf09c4}} 
+\index{client.h@{client.h}!getClientByUsername@{getClientByUsername}}
+\index{getClientByUsername@{getClientByUsername}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{getClientByUsername()}{getClientByUsername()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} get\+Client\+By\+Username (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Client,  }\item[{char $\ast$}]{username }\end{DoxyParamCaption})}
+
+
+
+Retrieves a client with the given username from a linked list of clients. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Client} & Head pointer to the head of the client list.\\
+\hline
+{\em username} & Username of the client to retrieve.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The client with the given username, or NULL if not found.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00448}{448}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_a62af75b123e65bcf5f2043f20fbef936}\label{client_8h_a62af75b123e65bcf5f2043f20fbef936}} 
+\index{client.h@{client.h}!loadDataClients@{loadDataClients}}
+\index{loadDataClients@{loadDataClients}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{loadDataClients()}{loadDataClients()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} load\+Data\+Clients (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Clients }\end{DoxyParamCaption})}
+
+
+
+Loads client data from a file into a linked list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Clients} & A pointer to the head of the linked list of clients.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the linked list of clients with the loaded data.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00025}{25}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_a02fcdb7220e5d671eaef800ec4fd0292}\label{client_8h_a02fcdb7220e5d671eaef800ec4fd0292}} 
+\index{client.h@{client.h}!registerClient@{registerClient}}
+\index{registerClient@{registerClient}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{registerClient()}{registerClient()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} register\+Client (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Client,  }\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Admin,  }\item[{int $\ast$}]{modified,  }\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Registers a new client and adds them to the client list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Client} & Head pointer to the head of the client list.\\
+\hline
+{\em list\+Admin} & Head pointer to the head of the admin list.\\
+\hline
+{\em modified} & Pointer to an integer that will be set to 1 if a new client is added, 0 otherwise.\\
+\hline
+{\em c} & Client to be registered and added to the list.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The updated client list.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00461}{461}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_a76d99bb002e9d8bb3ad8840c6f7ed34b}\label{client_8h_a76d99bb002e9d8bb3ad8840c6f7ed34b}} 
+\index{client.h@{client.h}!removeClient@{removeClient}}
+\index{removeClient@{removeClient}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{removeClient()}{removeClient()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} remove\+Client (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Client,  }\item[{int $\ast$}]{modified,  }\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Removes a client from the list of clients and returns the new list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Client} & A pointer to the head of the linked list of clients.\\
+\hline
+{\em modified} & Pointer to an integer that will be set to 1 if a client is removed, 0 otherwise.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The modified list of clients.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00162}{162}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_a59c309545fb35a1a899b4fdf9eabed15}\label{client_8h_a59c309545fb35a1a899b4fdf9eabed15}} 
+\index{client.h@{client.h}!showClient@{showClient}}
+\index{showClient@{showClient}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{showClient()}{showClient()}}
+{\footnotesize\ttfamily void show\+Client (\begin{DoxyParamCaption}\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Shows client data on the console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A pointer to client data.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00003}{3}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_a307be53b1125733fdb14c702e7253119}\label{client_8h_a307be53b1125733fdb14c702e7253119}} 
+\index{client.h@{client.h}!sortByTrips@{sortByTrips}}
+\index{sortByTrips@{sortByTrips}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{sortByTrips()}{sortByTrips()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} sort\+By\+Trips (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Client }\end{DoxyParamCaption})}
+
+
+
+Sorts the list of clients by number of trips (by descending order). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Client} & A pointer to the head of the linked list of clients.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sorted list of clients.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00201}{201}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_aafa93fb8008da6d2e42d7b940b8ff023}\label{client_8h_aafa93fb8008da6d2e42d7b940b8ff023}} 
+\index{client.h@{client.h}!storeDataClients@{storeDataClients}}
+\index{storeDataClients@{storeDataClients}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{storeDataClients()}{storeDataClients()}}
+{\footnotesize\ttfamily void store\+Data\+Clients (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{listC }\end{DoxyParamCaption})}
+
+
+
+Stores client data from a linked list into a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em listC} & A pointer to the head of the linked list of clients.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00057}{57}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+
+\mbox{\Hypertarget{client_8h_afb6831a58c7daddaf1779ece1f1d938a}\label{client_8h_afb6831a58c7daddaf1779ece1f1d938a}} 
+\index{client.h@{client.h}!usernameExists@{usernameExists}}
+\index{usernameExists@{usernameExists}!client.h@{client.h}}
+\doxysubsubsection{\texorpdfstring{usernameExists()}{usernameExists()}}
+{\footnotesize\ttfamily int username\+Exists (\begin{DoxyParamCaption}\item[{char $\ast$}]{username,  }\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Clients,  }\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Admin }\end{DoxyParamCaption})}
+
+
+
+Checks if the username passed as argument exists in either of the lists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & A pointer to the string to compare to the usernames in the lists.\\
+\hline
+{\em list\+Client} & A pointer to the head of the linked list of clients.\\
+\hline
+{\em list\+Admin} & A pointer to the head of the linked list of admins.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the username passed as argument exists in either list\+Clients or list\+Admin, 0 otherwise.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{client_8c_source_l00430}{430}} of file \mbox{\hyperlink{client_8c_source}{client.\+c}}.
+

@@ -1,0 +1,173 @@
+\hypertarget{what3words_8c}{}\doxysection{C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/what3words.c File Reference}
+\label{what3words_8c}\index{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/what3words.c@{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/what3words.c}}
+{\ttfamily \#include \char`\"{}what3words.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{what3words_8c_aacdf1719d113d68a71127426f7c730cd}{EARTH\+\_\+\+RADIUS}}~6371.\+0
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{what3words_8c_a8824538eb07749fa64fd2ef98e557be9}{degrees\+To\+Radians}} (double degrees)
+\begin{DoxyCompactList}\small\item\em Converts degrees to radians. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{what3words_8c_a02434d9cbacdb757bbce7d8d872bc5d8}{calculate\+Distance}} (double lat1, double lon1, double lat2, double lon2)
+\begin{DoxyCompactList}\small\item\em Calculates the distance between two points using the Haversine formula. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{what3words_8c_a2cbfce46bd5b5d2203073f2f8bc7acf4}{write\+Callback}} (void $\ast$contents, size\+\_\+t size, size\+\_\+t nmemb, char $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Callback function to handle the response from a curl request and write the contents to a buffer. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{what3words_8c_a41951b64e606da0ca182a39a7458f361}{coordinates\+To\+Geolocation}} (double latitude, double longitude)
+\begin{DoxyCompactList}\small\item\em Converts coordinates to a geolocation using an API. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_coordinates}{Coordinates}} \mbox{\hyperlink{what3words_8c_a3149a0122833b28c4c4a7cd6306de7c7}{geolocation\+To\+Coordinates}} (const char $\ast$location)
+\begin{DoxyCompactList}\small\item\em Converts a geolocation to coordinates using an API. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{what3words_8c_a186e1cc3b973a183c7e0935aa412195b}{valid\+Geolocation}} (const char $\ast$geolocation)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{what3words_8c_aacdf1719d113d68a71127426f7c730cd}\label{what3words_8c_aacdf1719d113d68a71127426f7c730cd}} 
+\index{what3words.c@{what3words.c}!EARTH\_RADIUS@{EARTH\_RADIUS}}
+\index{EARTH\_RADIUS@{EARTH\_RADIUS}!what3words.c@{what3words.c}}
+\doxysubsubsection{\texorpdfstring{EARTH\_RADIUS}{EARTH\_RADIUS}}
+{\footnotesize\ttfamily \#define EARTH\+\_\+\+RADIUS~6371.\+0}
+
+
+
+Definition at line \mbox{\hyperlink{what3words_8c_source_l00003}{3}} of file \mbox{\hyperlink{what3words_8c_source}{what3words.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{what3words_8c_a02434d9cbacdb757bbce7d8d872bc5d8}\label{what3words_8c_a02434d9cbacdb757bbce7d8d872bc5d8}} 
+\index{what3words.c@{what3words.c}!calculateDistance@{calculateDistance}}
+\index{calculateDistance@{calculateDistance}!what3words.c@{what3words.c}}
+\doxysubsubsection{\texorpdfstring{calculateDistance()}{calculateDistance()}}
+{\footnotesize\ttfamily double calculate\+Distance (\begin{DoxyParamCaption}\item[{double}]{lat1,  }\item[{double}]{lon1,  }\item[{double}]{lat2,  }\item[{double}]{lon2 }\end{DoxyParamCaption})}
+
+
+
+Calculates the distance between two points using the Haversine formula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat1} & Latitude of the first point.\\
+\hline
+{\em lon1} & Longitude of the first point.\\
+\hline
+{\em lat2} & Latitude of the second point.\\
+\hline
+{\em lon2} & Longitude of the second point.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance between the two points.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{what3words_8c_source_l00021}{21}} of file \mbox{\hyperlink{what3words_8c_source}{what3words.\+c}}.
+
+\mbox{\Hypertarget{what3words_8c_a41951b64e606da0ca182a39a7458f361}\label{what3words_8c_a41951b64e606da0ca182a39a7458f361}} 
+\index{what3words.c@{what3words.c}!coordinatesToGeolocation@{coordinatesToGeolocation}}
+\index{coordinatesToGeolocation@{coordinatesToGeolocation}!what3words.c@{what3words.c}}
+\doxysubsubsection{\texorpdfstring{coordinatesToGeolocation()}{coordinatesToGeolocation()}}
+{\footnotesize\ttfamily char $\ast$ coordinates\+To\+Geolocation (\begin{DoxyParamCaption}\item[{double}]{latitude,  }\item[{double}]{longitude }\end{DoxyParamCaption})}
+
+
+
+Converts coordinates to a geolocation using an API. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em latitude} & Latitude value.\\
+\hline
+{\em longitude} & Longitude value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Geolocation string, or NULL if conversion fails or an error occurs.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{what3words_8c_source_l00040}{40}} of file \mbox{\hyperlink{what3words_8c_source}{what3words.\+c}}.
+
+\mbox{\Hypertarget{what3words_8c_a8824538eb07749fa64fd2ef98e557be9}\label{what3words_8c_a8824538eb07749fa64fd2ef98e557be9}} 
+\index{what3words.c@{what3words.c}!degreesToRadians@{degreesToRadians}}
+\index{degreesToRadians@{degreesToRadians}!what3words.c@{what3words.c}}
+\doxysubsubsection{\texorpdfstring{degreesToRadians()}{degreesToRadians()}}
+{\footnotesize\ttfamily double degrees\+To\+Radians (\begin{DoxyParamCaption}\item[{double}]{degrees }\end{DoxyParamCaption})}
+
+
+
+Converts degrees to radians. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degrees} & Degrees value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Radians value.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{what3words_8c_source_l00017}{17}} of file \mbox{\hyperlink{what3words_8c_source}{what3words.\+c}}.
+
+\mbox{\Hypertarget{what3words_8c_a3149a0122833b28c4c4a7cd6306de7c7}\label{what3words_8c_a3149a0122833b28c4c4a7cd6306de7c7}} 
+\index{what3words.c@{what3words.c}!geolocationToCoordinates@{geolocationToCoordinates}}
+\index{geolocationToCoordinates@{geolocationToCoordinates}!what3words.c@{what3words.c}}
+\doxysubsubsection{\texorpdfstring{geolocationToCoordinates()}{geolocationToCoordinates()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_coordinates}{Coordinates}} geolocation\+To\+Coordinates (\begin{DoxyParamCaption}\item[{const char $\ast$}]{location }\end{DoxyParamCaption})}
+
+
+
+Converts a geolocation to coordinates using an API. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & Geolocation string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_coordinates}{Coordinates}} of the location, or \{0.\+0, 0.\+0\} if conversion fails or an error occurs.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{what3words_8c_source_l00088}{88}} of file \mbox{\hyperlink{what3words_8c_source}{what3words.\+c}}.
+
+\mbox{\Hypertarget{what3words_8c_a186e1cc3b973a183c7e0935aa412195b}\label{what3words_8c_a186e1cc3b973a183c7e0935aa412195b}} 
+\index{what3words.c@{what3words.c}!validGeolocation@{validGeolocation}}
+\index{validGeolocation@{validGeolocation}!what3words.c@{what3words.c}}
+\doxysubsubsection{\texorpdfstring{validGeolocation()}{validGeolocation()}}
+{\footnotesize\ttfamily int valid\+Geolocation (\begin{DoxyParamCaption}\item[{const char $\ast$}]{geolocation }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{what3words_8c_source_l00151}{151}} of file \mbox{\hyperlink{what3words_8c_source}{what3words.\+c}}.
+
+\mbox{\Hypertarget{what3words_8c_a2cbfce46bd5b5d2203073f2f8bc7acf4}\label{what3words_8c_a2cbfce46bd5b5d2203073f2f8bc7acf4}} 
+\index{what3words.c@{what3words.c}!writeCallback@{writeCallback}}
+\index{writeCallback@{writeCallback}!what3words.c@{what3words.c}}
+\doxysubsubsection{\texorpdfstring{writeCallback()}{writeCallback()}}
+{\footnotesize\ttfamily size\+\_\+t write\+Callback (\begin{DoxyParamCaption}\item[{void $\ast$}]{contents,  }\item[{size\+\_\+t}]{size,  }\item[{size\+\_\+t}]{nmemb,  }\item[{char $\ast$}]{output }\end{DoxyParamCaption})}
+
+
+
+Callback function to handle the response from a curl request and write the contents to a buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contents} & Pointer to the response contents.\\
+\hline
+{\em size} & Size of each element.\\
+\hline
+{\em nmemb} & Number of elements.\\
+\hline
+{\em buffer} & Pointer to the buffer to write the contents.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total size of the response contents.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{what3words_8c_source_l00034}{34}} of file \mbox{\hyperlink{what3words_8c_source}{what3words.\+c}}.
+

@@ -1,0 +1,87 @@
+\hypertarget{vehicle_8h_source}{}\doxysection{C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/vehicle.h}
+\mbox{\hyperlink{vehicle_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{menu_8h}{menu.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ll_8h}{ll.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00011}\mbox{\hyperlink{structdatavehicle}{00011}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdatavehicle}{datavehicle}}}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00013}\mbox{\hyperlink{structdatavehicle_a80d1265871edd87d2b8f87072a1ef690}{00013}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structdatavehicle_a80d1265871edd87d2b8f87072a1ef690}{code}};\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00014}\mbox{\hyperlink{structdatavehicle_ab5cb89e952df9a69dd2b24f0aa02d860}{00014}}\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structdatavehicle_ab5cb89e952df9a69dd2b24f0aa02d860}{type}}[50];\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00015}\mbox{\hyperlink{structdatavehicle_ab31685e75111a85103e6359952e22144}{00015}}\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structdatavehicle_ab31685e75111a85103e6359952e22144}{geolocation}}[50];\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00016}\mbox{\hyperlink{structdatavehicle_aa83dc12d6236620f3ad3125b1fe4d56d}{00016}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structdatavehicle_aa83dc12d6236620f3ad3125b1fe4d56d}{weight}};\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00017}\mbox{\hyperlink{structdatavehicle_a3f8dedce17f2c20499bed3f4e95d5eec}{00017}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structdatavehicle_a3f8dedce17f2c20499bed3f4e95d5eec}{battery}};\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00018}\mbox{\hyperlink{structdatavehicle_a01d5e025f03795df18b1bb99a59251c1}{00018}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structdatavehicle_a01d5e025f03795df18b1bb99a59251c1}{autonomy}};\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00019}\mbox{\hyperlink{structdatavehicle_ae0327011ee061b2ab411a9181d9d31fb}{00019}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structdatavehicle_ae0327011ee061b2ab411a9181d9d31fb}{costhour}};\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00020}\mbox{\hyperlink{structdatavehicle_af84e018de0492f5d5c91214f014da58c}{00020}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structdatavehicle_af84e018de0492f5d5c91214f014da58c}{costkm}};\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00021}\mbox{\hyperlink{structdatavehicle_af91bfce865ad46376a5964013590f20f}{00021}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structdatavehicle_af91bfce865ad46376a5964013590f20f}{inUse}};\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00022}\mbox{\hyperlink{structdatavehicle_a41c0d8866166c6ff7ced1252e351b95e}{00022}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structdatavehicle_a41c0d8866166c6ff7ced1252e351b95e}{totalkms}};\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00023}\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{00023}}\ \}\ *\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}};\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00029}00029\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_a4af9ab728b6057dab0f8da96b4652c40}{showVehicle}}(\textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00035}00035\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_a2a873e45e1882604f536e900c223b26f}{showVehicleRent}}(\textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00042}00042\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{vehicle_8h_ad7bea33050959de0f9e989b791cef9f4}{loadDataVehicles}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listVehicles);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00048}00048\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_ad743472bd3b1659d5574fcd8dbd44b36}{storeDataVehicles}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{_e_d_a___fase1_8c_a5208aaa5c10b1c45461a1dcb3827dc32}{listV}});}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00056}00056\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{vehicle_8h_abb1b6d240123b281a4faae0808b648f0}{compare}}(\textcolor{keywordtype}{void}*\ data1,\ \textcolor{keywordtype}{void}*\ data2);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00064}00064\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{vehicle_8h_ae6ff76cb6a61d7fe6e44603562fd0812}{compareAutonomy}}(\textcolor{keywordtype}{void}*\ data1,\ \textcolor{keywordtype}{void}*\ data2);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00072}00072\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{vehicle_8h_a2d70ab762f3dba194761a8405643f0b4}{compareNamesVehicles}}(\textcolor{keywordtype}{void}*\ data1,\ \textcolor{keywordtype}{void}*\ data2);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00080}00080\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{vehicle_8h_ac451666b3c1ca407ec68da66dee5651b}{compareTotalKms}}(\textcolor{keywordtype}{void}*\ data1,\ \textcolor{keywordtype}{void}*\ data2);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00082}00082\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_ae575c2adeeb42fc8685dd06e576e1737}{changeVType}}(\mbox{\hyperlink{structdatavehicle}{Vehicle}}\ vehicle,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ newType);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00084}00084\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_a89b6f6c38de5f1bda6aaa72c49520c65}{changeVCode}}(\mbox{\hyperlink{structdatavehicle}{Vehicle}}\ vehicle,\ \textcolor{keywordtype}{int}\ code);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00086}00086\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_a27918ac2f8788a9f7b74dd4fce4e0838}{changeVGeolocation}}(\mbox{\hyperlink{structdatavehicle}{Vehicle}}\ vehicle,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ newGeolocation);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00088}00088\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_abd4728c41e9cee439f731974dc45d665}{changeVWeight}}(\mbox{\hyperlink{structdatavehicle}{Vehicle}}\ vehicle,\ \textcolor{keywordtype}{float}\ newWeight);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00090}00090\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_a932af4ba8876299bb7b6a53fbdf1bb0e}{changeVBattery}}(\mbox{\hyperlink{structdatavehicle}{Vehicle}}\ vehicle,\ \textcolor{keywordtype}{float}\ newBattery);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00092}00092\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_a6211a8837c2ff75e17489889dcb7bdc5}{changeVAutonomy}}(\mbox{\hyperlink{structdatavehicle}{Vehicle}}\ vehicle,\ \textcolor{keywordtype}{float}\ newAutonomy);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00094}00094\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_ac64e7c9ec4a9eba2c6c025a33db790aa}{changeVCosthour}}(\mbox{\hyperlink{structdatavehicle}{Vehicle}}\ vehicle,\ \textcolor{keywordtype}{float}\ newCosthour);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00096}00096\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_a808d6375edd83fb76653c2dcc6a8635c}{changeVCostkm}}(\mbox{\hyperlink{structdatavehicle}{Vehicle}}\ vehicle,\ \textcolor{keywordtype}{float}\ newCostkm);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00098}00098\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_a17d585631d761572439949d9b8fb2fc6}{changeVstate}}(\mbox{\hyperlink{structdatavehicle}{Vehicle}}\ vehicle,\ \textcolor{keywordtype}{int}\ inUse);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00100}00100\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_a2156847197b05c63566f8acf9444ea98}{changeVkms}}(\mbox{\hyperlink{structdatavehicle}{Vehicle}}\ vehicle,\ \textcolor{keywordtype}{float}\ newTotalkms);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00108}00108\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{vehicle_8h_a1584cd071bd44aad09850f27cd066af7}{removeVehicle}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listVehicle,\ \textcolor{keywordtype}{int}*\ modified,\ \mbox{\hyperlink{structdatavehicle}{Vehicle}}*\ v);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00115}00115\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{vehicle_8h_a64ff67ac07db84233fca8d5602dfae30}{sortByTotalKms}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listVehicle);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00122}00122\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{vehicle_8h_a6e07971749db187d06882118b818f991}{percentageInUse}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listVehicle);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00129}00129\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{vehicle_8h_ae408f6f90b25b9fd8fcab4930c5ddfc8}{averageAutonomy}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listVehicle);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00135}00135\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_ae0b4d6d4900654651ecbff37a1bc34c1}{refillBatteryAndAutonomy}}(\mbox{\hyperlink{structdatavehicle}{Vehicle}}\ vehicle);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00142}00142\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{vehicle_8h_a6830e498aa8b4c39dab316d3c477e9b4}{filterVehicleByBattery}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listVehicle);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00150}00150\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{vehicle_8h_a9590853a2fecd513816bf27c1306fc4f}{filterVehicleByGeo}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{_e_d_a___fase1_8c_a5208aaa5c10b1c45461a1dcb3827dc32}{listV}},\ \textcolor{keywordtype}{char}*\ geolocation);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00157}00157\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{vehicle_8h_a581e529f2bf7b7b50da95e7702417362}{filterVehicleByInUse}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{_e_d_a___fase1_8c_a5208aaa5c10b1c45461a1dcb3827dc32}{listV}});}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00166}00166\ \mbox{\hyperlink{structdatavehicle}{Vehicle}}\ \mbox{\hyperlink{vehicle_8h_ae78b91559e7e896926c1480175f53ef8}{getVehicleByTypeAndCode}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listVehicle,\ \textcolor{keywordtype}{char}*\ type,\ \textcolor{keywordtype}{int}\ code);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00174}00174\ \mbox{\hyperlink{structdatavehicle}{Vehicle}}\ \mbox{\hyperlink{vehicle_8h_a8a71c1e78031d3ae79e68cc6bb536136}{getVehicleByType}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listVehicle,\ \textcolor{keywordtype}{char}*\ type);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00182}00182\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{vehicle_8h_a0141381c4ef53de6c2ab831daa13b364}{editVehicle}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listVehicle,\ \textcolor{keywordtype}{int}*\ modified,\ \mbox{\hyperlink{structdatavehicle}{Vehicle}}*\ v,\ \textcolor{keywordtype}{char}*\ oldGeolocation);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00191}00191\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{vehicle_8h_aa10e6b92f11d52cbce445b7231abb6fa}{vehicleExists}}(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{char}*\ type,\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ listVehicles);}
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{vehicle_8h_source_l00199}00199\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{vehicle_8h_a2dbd9d5ff3df9ebf4c58548ea9c7bfe4}{registerVehicle}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listVehicle,\ \textcolor{keywordtype}{int}*\ modified,\ \mbox{\hyperlink{structdatavehicle}{Vehicle}}\ v);}
+
+\end{DoxyCode}

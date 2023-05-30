@@ -1,0 +1,336 @@
+\hypertarget{_e_d_a___fase1_8c}{}\doxysection{C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/\+EDA\+\_\+\+Fase1.c File Reference}
+\label{_e_d_a___fase1_8c}\index{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/EDA\_Fase1.c@{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/EDA\_Fase1.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ll.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}menu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}admin.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}client.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vehicle.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}history.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}what3words.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_e_d_a___fase1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Loads the linked lists from binary files. Allows the user to register, login, check the physical stores information or kill the program. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_e_d_a___fase1_8c_a59938e85b7f60cfb477647ed21b8a982}{login}} ()
+\begin{DoxyCompactList}\small\item\em Iterates over the admin and client lists until it finds a corresponding username, then checks the password. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_e_d_a___fase1_8c_a3b6747af53bb35cffc56ee74c920d59b}{mode\+Client}} ()
+\begin{DoxyCompactList}\small\item\em Allows the user to rent a vehicle by vehicles available(/in a specified geocode), consult and charge the user\textquotesingle{}s account balance and to see some stats. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_e_d_a___fase1_8c_a7abb610a29ccdf88884e77d23d4689dd}{choosing\+Vehicle}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}}, \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$start, int mode, char $\ast$geolocation)
+\begin{DoxyCompactList}\small\item\em Allows the user to choose a vehicle for a trip based on the provided graph and start location. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_e_d_a___fase1_8c_adcf34c4b26587e0e399cde85fc55a525}{simulate\+Trip}} (\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} c, \mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} v, \mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}})
+\begin{DoxyCompactList}\small\item\em Simulates a trip for a client using a vehicle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_e_d_a___fase1_8c_a9831490d79abb60492edadba140c7714}{mode\+Admin}} ()
+\begin{DoxyCompactList}\small\item\em Allows the user to add/edit/remove any client/admin/vehicle, to see the histories filtered by vehicle(type+code)/type/client and to see some stats for clients/vehicles. Updates the files with every change. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_e_d_a___fase1_8c_a260ad2a1788e6b462edd778d34b8951d}{return\+Vehicles}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}}, \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$start, float total\+Weight)
+\begin{DoxyCompactList}\small\item\em Returns vehicles to the start location if their battery is under 50\% (battery field \texorpdfstring{$<$}{<} 50), unloading vehicles and refueling along the way if necessary. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_e_d_a___fase1_8c_abfc57aeb6c7cdfec102e25c04ccc2438}{vehicle\+Stats}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Vehicles)
+\begin{DoxyCompactList}\small\item\em Prints the percentage of vehicles in use off the linked list of vehicles. Prints the average autonomy of the field autonomy in all the elements of the linked list of vehicles. Prints the filtered linked list of vehicles where each vehicle must have the battery field below 50. Prints the sorted linked list of vehicles by decreasing order of total kms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_e_d_a___fase1_8c_a08871ccefcea5a0d4859f614074914d3}{client\+Stats}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Clients)
+\begin{DoxyCompactList}\small\item\em Prints the highest value of the field total\+Trips in all the elements of the linked list of clients and the corresponding client\textquotesingle{}s username. Prints the average age of the field age in all the elements of the linked list of clients. Prints the sorted linked list of clients by decreasing order of total Trips. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{_e_d_a___fase1_8c_a5e21eee4b25172fcdd41a5b9fc5680c0}{listC}}
+\begin{DoxyCompactList}\small\item\em List of clients. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{_e_d_a___fase1_8c_a27cc03dc4c2f19714cd8240127422e33}{listA}}
+\begin{DoxyCompactList}\small\item\em List of admins. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{_e_d_a___fase1_8c_a5208aaa5c10b1c45461a1dcb3827dc32}{listV}}
+\begin{DoxyCompactList}\small\item\em List of vehicles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{_e_d_a___fase1_8c_ac6d4c5a58d7f64cd4dafb654b10d25e7}{listH}}
+\begin{DoxyCompactList}\small\item\em List of histories. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}}
+\begin{DoxyCompactList}\small\item\em Graph containing locations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} \mbox{\hyperlink{_e_d_a___fase1_8c_a1ece5669aa0388ea10dfdebf9ad98726}{current\+Client}}
+\begin{DoxyCompactList}\small\item\em Current logged in client. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} \mbox{\hyperlink{_e_d_a___fase1_8c_a46504dd0624de7ea06a1b5ce8e51e7d4}{current\+Vehicle}}
+\begin{DoxyCompactList}\small\item\em Current vehicle in simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_e_d_a___fase1_8c_a7abb610a29ccdf88884e77d23d4689dd}\label{_e_d_a___fase1_8c_a7abb610a29ccdf88884e77d23d4689dd}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!choosingVehicle@{choosingVehicle}}
+\index{choosingVehicle@{choosingVehicle}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{choosingVehicle()}{choosingVehicle()}}
+{\footnotesize\ttfamily int choosing\+Vehicle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph,  }\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{start,  }\item[{int}]{mode,  }\item[{char $\ast$}]{geolocation }\end{DoxyParamCaption})}
+
+
+
+Allows the user to choose a vehicle for a trip based on the provided graph and start location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph containing locations and vehicles.\\
+\hline
+{\em start} & Pointer to the user location.\\
+\hline
+{\em mode} & Mode indicating how the vehicles should be filtered (1 for range and type of vehicle, 2 for geolocation)\\
+\hline
+{\em geolocation} & Geolocation used for filtering vehicles in mode 2.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if a vehicle was successfully chosen, 0 otherwise.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00570}{570}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+
+\mbox{\Hypertarget{_e_d_a___fase1_8c_a08871ccefcea5a0d4859f614074914d3}\label{_e_d_a___fase1_8c_a08871ccefcea5a0d4859f614074914d3}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!clientStats@{clientStats}}
+\index{clientStats@{clientStats}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{clientStats()}{clientStats()}}
+{\footnotesize\ttfamily void client\+Stats (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Clients }\end{DoxyParamCaption})}
+
+
+
+Prints the highest value of the field total\+Trips in all the elements of the linked list of clients and the corresponding client\textquotesingle{}s username. Prints the average age of the field age in all the elements of the linked list of clients. Prints the sorted linked list of clients by decreasing order of total Trips. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Clients} & A pointer to the head of the linked list of clients.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00119}{119}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+
+\mbox{\Hypertarget{_e_d_a___fase1_8c_a59938e85b7f60cfb477647ed21b8a982}\label{_e_d_a___fase1_8c_a59938e85b7f60cfb477647ed21b8a982}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!login@{login}}
+\index{login@{login}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily int login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Iterates over the admin and client lists until it finds a corresponding username, then checks the password. 
+
+\begin{DoxyReturn}{Returns}
+0 if login failed, 1 if login successfull as admin, 2 if login successfull for client
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00760}{760}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+
+\mbox{\Hypertarget{_e_d_a___fase1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_e_d_a___fase1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!main@{main}}
+\index{main@{main}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads the linked lists from binary files. Allows the user to register, login, check the physical stores information or kill the program. 
+
+\begin{DoxyReturn}{Returns}
+0 if exited correctly.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00828}{828}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+
+\mbox{\Hypertarget{_e_d_a___fase1_8c_a9831490d79abb60492edadba140c7714}\label{_e_d_a___fase1_8c_a9831490d79abb60492edadba140c7714}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!modeAdmin@{modeAdmin}}
+\index{modeAdmin@{modeAdmin}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{modeAdmin()}{modeAdmin()}}
+{\footnotesize\ttfamily void mode\+Admin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Allows the user to add/edit/remove any client/admin/vehicle, to see the histories filtered by vehicle(type+code)/type/client and to see some stats for clients/vehicles. Updates the files with every change. 
+
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00230}{230}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+
+\mbox{\Hypertarget{_e_d_a___fase1_8c_a3b6747af53bb35cffc56ee74c920d59b}\label{_e_d_a___fase1_8c_a3b6747af53bb35cffc56ee74c920d59b}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!modeClient@{modeClient}}
+\index{modeClient@{modeClient}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{modeClient()}{modeClient()}}
+{\footnotesize\ttfamily void mode\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Allows the user to rent a vehicle by vehicles available(/in a specified geocode), consult and charge the user\textquotesingle{}s account balance and to see some stats. 
+
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00659}{659}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+
+\mbox{\Hypertarget{_e_d_a___fase1_8c_a260ad2a1788e6b462edd778d34b8951d}\label{_e_d_a___fase1_8c_a260ad2a1788e6b462edd778d34b8951d}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!returnVehicles@{returnVehicles}}
+\index{returnVehicles@{returnVehicles}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{returnVehicles()}{returnVehicles()}}
+{\footnotesize\ttfamily int return\+Vehicles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph,  }\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{start,  }\item[{float}]{total\+Weight }\end{DoxyParamCaption})}
+
+
+
+Returns vehicles to the start location if their battery is under 50\% (battery field \texorpdfstring{$<$}{<} 50), unloading vehicles and refueling along the way if necessary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph containing locations and vehicles.\\
+\hline
+{\em start} & Pointer to the starting location where vehicles are also returned to.\\
+\hline
+{\em total\+Weight} & Total weight allowed to carry at once.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if any vehicles were successfully returned, 0 otherwise.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00162}{162}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+
+\mbox{\Hypertarget{_e_d_a___fase1_8c_adcf34c4b26587e0e399cde85fc55a525}\label{_e_d_a___fase1_8c_adcf34c4b26587e0e399cde85fc55a525}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!simulateTrip@{simulateTrip}}
+\index{simulateTrip@{simulateTrip}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{simulateTrip()}{simulateTrip()}}
+{\footnotesize\ttfamily int simulate\+Trip (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}]{c,  }\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}}}]{v,  }\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph }\end{DoxyParamCaption})}
+
+
+
+Simulates a trip for a client using a vehicle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Client object representing the client.\\
+\hline
+{\em v} & Vehicle object representing the vehicle.\\
+\hline
+{\em graph} & Pointer to the graph.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the trip was successfully simulated, 0 otherwise.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00461}{461}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+
+\mbox{\Hypertarget{_e_d_a___fase1_8c_abfc57aeb6c7cdfec102e25c04ccc2438}\label{_e_d_a___fase1_8c_abfc57aeb6c7cdfec102e25c04ccc2438}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!vehicleStats@{vehicleStats}}
+\index{vehicleStats@{vehicleStats}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{vehicleStats()}{vehicleStats()}}
+{\footnotesize\ttfamily void vehicle\+Stats (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Vehicles }\end{DoxyParamCaption})}
+
+
+
+Prints the percentage of vehicles in use off the linked list of vehicles. Prints the average autonomy of the field autonomy in all the elements of the linked list of vehicles. Prints the filtered linked list of vehicles where each vehicle must have the battery field below 50. Prints the sorted linked list of vehicles by decreasing order of total kms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Vehicles} & A pointer to the head of the linked list of vehicles.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00139}{139}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_e_d_a___fase1_8c_a1ece5669aa0388ea10dfdebf9ad98726}\label{_e_d_a___fase1_8c_a1ece5669aa0388ea10dfdebf9ad98726}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!currentClient@{currentClient}}
+\index{currentClient@{currentClient}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{currentClient}{currentClient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} current\+Client}
+
+
+
+Current logged in client. 
+
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00040}{40}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+
+\mbox{\Hypertarget{_e_d_a___fase1_8c_a46504dd0624de7ea06a1b5ce8e51e7d4}\label{_e_d_a___fase1_8c_a46504dd0624de7ea06a1b5ce8e51e7d4}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!currentVehicle@{currentVehicle}}
+\index{currentVehicle@{currentVehicle}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{currentVehicle}{currentVehicle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} current\+Vehicle}
+
+
+
+Current vehicle in simulation. 
+
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00044}{44}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+
+\mbox{\Hypertarget{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}\label{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!graph@{graph}}
+\index{graph@{graph}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{graph}{graph}}
+{\footnotesize\ttfamily \mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}}$\ast$ graph}
+
+
+
+Graph containing locations. 
+
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00035}{35}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+
+\mbox{\Hypertarget{_e_d_a___fase1_8c_a27cc03dc4c2f19714cd8240127422e33}\label{_e_d_a___fase1_8c_a27cc03dc4c2f19714cd8240127422e33}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!listA@{listA}}
+\index{listA@{listA}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{listA}{listA}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} listA}
+
+
+
+List of admins. 
+
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00023}{23}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+
+\mbox{\Hypertarget{_e_d_a___fase1_8c_a5e21eee4b25172fcdd41a5b9fc5680c0}\label{_e_d_a___fase1_8c_a5e21eee4b25172fcdd41a5b9fc5680c0}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!listC@{listC}}
+\index{listC@{listC}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{listC}{listC}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} listC}
+
+
+
+List of clients. 
+
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00019}{19}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+
+\mbox{\Hypertarget{_e_d_a___fase1_8c_ac6d4c5a58d7f64cd4dafb654b10d25e7}\label{_e_d_a___fase1_8c_ac6d4c5a58d7f64cd4dafb654b10d25e7}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!listH@{listH}}
+\index{listH@{listH}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{listH}{listH}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} listH}
+
+
+
+List of histories. 
+
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00031}{31}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+
+\mbox{\Hypertarget{_e_d_a___fase1_8c_a5208aaa5c10b1c45461a1dcb3827dc32}\label{_e_d_a___fase1_8c_a5208aaa5c10b1c45461a1dcb3827dc32}} 
+\index{EDA\_Fase1.c@{EDA\_Fase1.c}!listV@{listV}}
+\index{listV@{listV}!EDA\_Fase1.c@{EDA\_Fase1.c}}
+\doxysubsubsection{\texorpdfstring{listV}{listV}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} listV}
+
+
+
+List of vehicles. 
+
+
+
+Definition at line \mbox{\hyperlink{_e_d_a___fase1_8c_source_l00027}{27}} of file \mbox{\hyperlink{_e_d_a___fase1_8c_source}{EDA\+\_\+\+Fase1.\+c}}.
+

@@ -1,0 +1,298 @@
+\hypertarget{history_8c}{}\doxysection{C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/history.c File Reference}
+\label{history_8c}\index{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/history.c@{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/history.c}}
+{\ttfamily \#include \char`\"{}history.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{history_8c_a748f87cb0b3f8d3156a2a6fc72f42fee}{show\+History}} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Shows history data on the console. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{history_8c_a1f7df9b33039d218e0fc8870b7f6a15b}{load\+Data\+History}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+History)
+\begin{DoxyCompactList}\small\item\em Loads history data from a file into a linked list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{history_8c_a53918f41fa1a64974ca97fca48bd5dd2}{store\+Data\+History}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{_e_d_a___fase1_8c_ac6d4c5a58d7f64cd4dafb654b10d25e7}{listH}})
+\begin{DoxyCompactList}\small\item\em Stores history data from a linked list into a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{history_8c_a1729cf4d0b3936a78cfbf14966d08352}{filter\+History\+By\+User}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} original\+List, char $\ast$user\+To\+Filter)
+\begin{DoxyCompactList}\small\item\em Returns a new list of histories that have a the client in common. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{history_8c_a75b1be3768a435b7cc16d4cf2f0316b3}{filter\+History\+By\+Transport}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} original\+List, char $\ast$transport\+To\+Filter)
+\begin{DoxyCompactList}\small\item\em Returns a new list of histories that have a the vehicle used in common. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{history_8c_a1230a549f4aecb8125a13f33d9d25e74}{filter\+History\+By\+Type}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} original\+List, char $\ast$type\+To\+Filter)
+\begin{DoxyCompactList}\small\item\em Returns a new list of histories that have a type in common. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{history_8c_af5ccd22b711f4f220c24583b96c58185}{filter\+History}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+History, int by)
+\begin{DoxyCompactList}\small\item\em Returns a new list of histories after being passed down to one of the other 3 filter\+History functios. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{history_8c_a5261207803f0bcb19dfa5ec38e1d4769}{average\+Distance}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+History)
+\begin{DoxyCompactList}\small\item\em Returns the average distance of all the trips recorded in the histories list. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{history_8c_a6504adf7dbe9aac19f742164a2f68f12}{average\+Duration}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+History)
+\begin{DoxyCompactList}\small\item\em Returns the average duration of all the trips recorded in the histories list. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{history_8c_a7b29604394726306122fe1f4ea4c0b5f}{average\+Cost}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+History)
+\begin{DoxyCompactList}\small\item\em Returns the average cost of all the trips recorded in the histories list. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{history_8c_a87e870e0b2ad4478ca6efc1243d8785d}{most\+Common\+Transport}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+History)
+\begin{DoxyCompactList}\small\item\em Returns the most common vehicle used by a client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{history_8c_a720524b9b493dce65822361e932bd439}{history\+Client\+Stats}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+History, char $\ast$username)
+\begin{DoxyCompactList}\small\item\em Prints the averages of a user as well as their full history. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{history_8c_a7b29604394726306122fe1f4ea4c0b5f}\label{history_8c_a7b29604394726306122fe1f4ea4c0b5f}} 
+\index{history.c@{history.c}!averageCost@{averageCost}}
+\index{averageCost@{averageCost}!history.c@{history.c}}
+\doxysubsubsection{\texorpdfstring{averageCost()}{averageCost()}}
+{\footnotesize\ttfamily float average\+Cost (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+History }\end{DoxyParamCaption})}
+
+
+
+Returns the average cost of all the trips recorded in the histories list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+History} & A pointer to the linked list of histories.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The average duration of the trips recorded in all histories.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{history_8c_source_l00217}{217}} of file \mbox{\hyperlink{history_8c_source}{history.\+c}}.
+
+\mbox{\Hypertarget{history_8c_a5261207803f0bcb19dfa5ec38e1d4769}\label{history_8c_a5261207803f0bcb19dfa5ec38e1d4769}} 
+\index{history.c@{history.c}!averageDistance@{averageDistance}}
+\index{averageDistance@{averageDistance}!history.c@{history.c}}
+\doxysubsubsection{\texorpdfstring{averageDistance()}{averageDistance()}}
+{\footnotesize\ttfamily float average\+Distance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+History }\end{DoxyParamCaption})}
+
+
+
+Returns the average distance of all the trips recorded in the histories list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+History} & A pointer to the linked list of histories.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The average distance of the trips recorded in all histories.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{history_8c_source_l00177}{177}} of file \mbox{\hyperlink{history_8c_source}{history.\+c}}.
+
+\mbox{\Hypertarget{history_8c_a6504adf7dbe9aac19f742164a2f68f12}\label{history_8c_a6504adf7dbe9aac19f742164a2f68f12}} 
+\index{history.c@{history.c}!averageDuration@{averageDuration}}
+\index{averageDuration@{averageDuration}!history.c@{history.c}}
+\doxysubsubsection{\texorpdfstring{averageDuration()}{averageDuration()}}
+{\footnotesize\ttfamily float average\+Duration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+History }\end{DoxyParamCaption})}
+
+
+
+Returns the average duration of all the trips recorded in the histories list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+History} & A pointer to the linked list of histories.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The average duration of the trips recorded in all histories.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{history_8c_source_l00197}{197}} of file \mbox{\hyperlink{history_8c_source}{history.\+c}}.
+
+\mbox{\Hypertarget{history_8c_af5ccd22b711f4f220c24583b96c58185}\label{history_8c_af5ccd22b711f4f220c24583b96c58185}} 
+\index{history.c@{history.c}!filterHistory@{filterHistory}}
+\index{filterHistory@{filterHistory}!history.c@{history.c}}
+\doxysubsubsection{\texorpdfstring{filterHistory()}{filterHistory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} filter\+History (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+History,  }\item[{int}]{by }\end{DoxyParamCaption})}
+
+
+
+Returns a new list of histories after being passed down to one of the other 3 filter\+History functios. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+History} & A pointer to the linked list of histories.\\
+\hline
+{\em by} & Determines which of the other filter\+History functions to call (0 is by type, 1 is by vehicle, 2 is by user).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new list of vehicles.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{history_8c_source_l00151}{151}} of file \mbox{\hyperlink{history_8c_source}{history.\+c}}.
+
+\mbox{\Hypertarget{history_8c_a75b1be3768a435b7cc16d4cf2f0316b3}\label{history_8c_a75b1be3768a435b7cc16d4cf2f0316b3}} 
+\index{history.c@{history.c}!filterHistoryByTransport@{filterHistoryByTransport}}
+\index{filterHistoryByTransport@{filterHistoryByTransport}!history.c@{history.c}}
+\doxysubsubsection{\texorpdfstring{filterHistoryByTransport()}{filterHistoryByTransport()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} filter\+History\+By\+Transport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{original\+List,  }\item[{char $\ast$}]{transport\+To\+Filter }\end{DoxyParamCaption})}
+
+
+
+Returns a new list of histories that have a the vehicle used in common. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original\+List} & A pointer to the linked list of histories.\\
+\hline
+{\em transport\+To\+Filter} & String passed as the vehicle to compare to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new list of vehicles.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{history_8c_source_l00099}{99}} of file \mbox{\hyperlink{history_8c_source}{history.\+c}}.
+
+\mbox{\Hypertarget{history_8c_a1230a549f4aecb8125a13f33d9d25e74}\label{history_8c_a1230a549f4aecb8125a13f33d9d25e74}} 
+\index{history.c@{history.c}!filterHistoryByType@{filterHistoryByType}}
+\index{filterHistoryByType@{filterHistoryByType}!history.c@{history.c}}
+\doxysubsubsection{\texorpdfstring{filterHistoryByType()}{filterHistoryByType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} filter\+History\+By\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{original\+List,  }\item[{char $\ast$}]{type\+To\+Filter }\end{DoxyParamCaption})}
+
+
+
+Returns a new list of histories that have a type in common. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original\+List} & A pointer to the linked list of histories.\\
+\hline
+{\em type\+To\+Filter} & String passed as the type to compare to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new list of vehicles.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{history_8c_source_l00124}{124}} of file \mbox{\hyperlink{history_8c_source}{history.\+c}}.
+
+\mbox{\Hypertarget{history_8c_a1729cf4d0b3936a78cfbf14966d08352}\label{history_8c_a1729cf4d0b3936a78cfbf14966d08352}} 
+\index{history.c@{history.c}!filterHistoryByUser@{filterHistoryByUser}}
+\index{filterHistoryByUser@{filterHistoryByUser}!history.c@{history.c}}
+\doxysubsubsection{\texorpdfstring{filterHistoryByUser()}{filterHistoryByUser()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} filter\+History\+By\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{original\+List,  }\item[{char $\ast$}]{user\+To\+Filter }\end{DoxyParamCaption})}
+
+
+
+Returns a new list of histories that have a the client in common. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original\+List} & A pointer to the linked list of histories.\\
+\hline
+{\em user\+To\+Filter} & String passed as the user to compare to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new list of vehicles.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{history_8c_source_l00080}{80}} of file \mbox{\hyperlink{history_8c_source}{history.\+c}}.
+
+\mbox{\Hypertarget{history_8c_a720524b9b493dce65822361e932bd439}\label{history_8c_a720524b9b493dce65822361e932bd439}} 
+\index{history.c@{history.c}!historyClientStats@{historyClientStats}}
+\index{historyClientStats@{historyClientStats}!history.c@{history.c}}
+\doxysubsubsection{\texorpdfstring{historyClientStats()}{historyClientStats()}}
+{\footnotesize\ttfamily void history\+Client\+Stats (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+History,  }\item[{char $\ast$}]{username }\end{DoxyParamCaption})}
+
+
+
+Prints the averages of a user as well as their full history. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+History} & A pointer to the linked list of histories of only a client.\\
+\hline
+{\em username} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{history_8c_source_l00279}{279}} of file \mbox{\hyperlink{history_8c_source}{history.\+c}}.
+
+\mbox{\Hypertarget{history_8c_a1f7df9b33039d218e0fc8870b7f6a15b}\label{history_8c_a1f7df9b33039d218e0fc8870b7f6a15b}} 
+\index{history.c@{history.c}!loadDataHistory@{loadDataHistory}}
+\index{loadDataHistory@{loadDataHistory}!history.c@{history.c}}
+\doxysubsubsection{\texorpdfstring{loadDataHistory()}{loadDataHistory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} load\+Data\+History (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+History }\end{DoxyParamCaption})}
+
+
+
+Loads history data from a file into a linked list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+History} & A pointer to the head of the linked list of histories.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the linked list of histories with the loaded data.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{history_8c_source_l00018}{18}} of file \mbox{\hyperlink{history_8c_source}{history.\+c}}.
+
+\mbox{\Hypertarget{history_8c_a87e870e0b2ad4478ca6efc1243d8785d}\label{history_8c_a87e870e0b2ad4478ca6efc1243d8785d}} 
+\index{history.c@{history.c}!mostCommonTransport@{mostCommonTransport}}
+\index{mostCommonTransport@{mostCommonTransport}!history.c@{history.c}}
+\doxysubsubsection{\texorpdfstring{mostCommonTransport()}{mostCommonTransport()}}
+{\footnotesize\ttfamily char $\ast$ most\+Common\+Transport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list }\end{DoxyParamCaption})}
+
+
+
+Returns the most common vehicle used by a client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & A pointer to the linked list of histories of only a client.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{history_8c_source_l00237}{237}} of file \mbox{\hyperlink{history_8c_source}{history.\+c}}.
+
+\mbox{\Hypertarget{history_8c_a748f87cb0b3f8d3156a2a6fc72f42fee}\label{history_8c_a748f87cb0b3f8d3156a2a6fc72f42fee}} 
+\index{history.c@{history.c}!showHistory@{showHistory}}
+\index{showHistory@{showHistory}!history.c@{history.c}}
+\doxysubsubsection{\texorpdfstring{showHistory()}{showHistory()}}
+{\footnotesize\ttfamily void show\+History (\begin{DoxyParamCaption}\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Shows history data on the console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A pointer to the history data.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{history_8c_source_l00003}{3}} of file \mbox{\hyperlink{history_8c_source}{history.\+c}}.
+
+\mbox{\Hypertarget{history_8c_a53918f41fa1a64974ca97fca48bd5dd2}\label{history_8c_a53918f41fa1a64974ca97fca48bd5dd2}} 
+\index{history.c@{history.c}!storeDataHistory@{storeDataHistory}}
+\index{storeDataHistory@{storeDataHistory}!history.c@{history.c}}
+\doxysubsubsection{\texorpdfstring{storeDataHistory()}{storeDataHistory()}}
+{\footnotesize\ttfamily void store\+Data\+History (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{listH }\end{DoxyParamCaption})}
+
+
+
+Stores history data from a linked list into a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em listH} & A pointer to the linked list of histories.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{history_8c_source_l00050}{50}} of file \mbox{\hyperlink{history_8c_source}{history.\+c}}.
+

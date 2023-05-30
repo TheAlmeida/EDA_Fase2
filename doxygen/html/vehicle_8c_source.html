@@ -536,7 +536,7 @@ $(document).ready(function(){initNavTree('vehicle_8c_source.html',''); initResiz
 <div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="menu_8c.html#a486bb30c5931dc2a5719fb89b40f89de">isInt</a>(auxWeight) || <a class="code hl_function" href="menu_8c.html#ab96924be11a25dc748563360c39becb0">isFloat</a>(auxWeight))</div>
 <div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>                editFloat = <a class="code hl_function" href="menu_8c.html#a37e0276c190ac96aed8122851fd3275b">stringToFloat</a>(auxWeight);</div>
 <div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span> </div>
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>            <span class="keywordflow">if</span> ((editFloat &gt;= 0) &amp;&amp; (editFloat &lt;= 100))</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>            <span class="keywordflow">if</span> ((editFloat &gt;= 0) &amp;&amp; (editFloat &lt;= 9999))</div>
 <div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>            {</div>
 <div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>                <a class="code hl_function" href="vehicle_8c.html#abd4728c41e9cee439f731974dc45d665">changeVWeight</a>(*v, editFloat);</div>
 <div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>                *modified = 1;</div>

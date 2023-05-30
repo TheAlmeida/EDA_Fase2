@@ -1,0 +1,1074 @@
+\hypertarget{graph_8c}{}\doxysection{C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/graph.c File Reference}
+\label{graph_8c}\index{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/graph.c@{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/graph.c}}
+{\ttfamily \#include \char`\"{}graph.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{graph_8c_ad4ba81e18885ccc52496b4b9a7165806}{store\+Data\+Graph}} (const \mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}})
+\begin{DoxyCompactList}\small\item\em Stores the data of the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$ \mbox{\hyperlink{graph_8c_af10d3314dd78168472132768563cdef2}{load\+Data\+Graph}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}}, \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Clients, \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Vehicles)
+\begin{DoxyCompactList}\small\item\em Loads the data into the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$ \mbox{\hyperlink{graph_8c_a7665daed45cec3b84a6f34684e5d63d9}{create\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$ \mbox{\hyperlink{graph_8c_a99b745f3ecfa11f9f49f5b8657ac0767}{create\+Location}} (const char $\ast$name, double latitude, double longitude)
+\begin{DoxyCompactList}\small\item\em Creates a new location with the given name, latitude, and longitude. In case latitude and longitude is not known (= 0.\+0) the location is converted to coordinates and then created. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_ad8330ccfc4b3741bbb8194b6937ecb6c}{add\+Location}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}}, \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$location)
+\begin{DoxyCompactList}\small\item\em Adds a location to the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_a5714b0803d01782b52e372fedc2cd6e4}{add\+Adjacent\+Location}} (\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$location, \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$adjacent\+Location, double weight)
+\begin{DoxyCompactList}\small\item\em Adds an adjacent location to a location with the given weight. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_a2fce6be73c007af41293cca227cd084b}{add\+Client\+To\+Location}} (\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$location, \mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}} client)
+\begin{DoxyCompactList}\small\item\em Adds a client to a location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_ab92800fb716d4fefb089ed23955bae19}{remove\+Client\+From\+Location}} (\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$location, const char $\ast$username)
+\begin{DoxyCompactList}\small\item\em Removes a client from a location by it\textquotesingle{}s username. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_a1af7c9306502cdaa1af8d9644d7ec77a}{add\+Vehicle\+To\+Location}} (\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$location, \mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} vehicle)
+\begin{DoxyCompactList}\small\item\em Adds a vehicle to a location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_a45b65a28a97906db4575bd99a4d86538}{remove\+Vehicle\+From\+Location}} (\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$location, int code, const char $\ast$type)
+\begin{DoxyCompactList}\small\item\em Removes a vehicle from a location by it\textquotesingle{}s code and type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_ab13733de13de62a4c3fd116aa0fba72c}{create\+Locations\+From\+Clients}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}}, \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{_e_d_a___fase1_8c_a5e21eee4b25172fcdd41a5b9fc5680c0}{listC}})
+\begin{DoxyCompactList}\small\item\em Creates locations based on unique geolocations found in clients and adds them to the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_a27fae164a724854773ab89b9787afe74}{create\+Locations\+From\+Vehicles}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}}, \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{_e_d_a___fase1_8c_a5208aaa5c10b1c45461a1dcb3827dc32}{listV}})
+\begin{DoxyCompactList}\small\item\em Creates locations based on unique geolocations found in vehicles and adds them to the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$ \mbox{\hyperlink{graph_8c_afff7fd8687094ebd158820f8351b0981}{find\+Location\+By\+Geolocation}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}}, const char $\ast$geolocation)
+\begin{DoxyCompactList}\small\item\em Finds a location in the graph by geolocation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$ \mbox{\hyperlink{graph_8c_a17a6d6a2ca158a4064f023c8e3a53b51}{find\+Location\+By\+Vehicle}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}}, \mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} vehicle)
+\begin{DoxyCompactList}\small\item\em Finds a location in the graph by vehicle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$ \mbox{\hyperlink{graph_8c_a92ceb27b870d734374cb9618b6d6a57a}{get\+Random\+Location}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}}, \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$exclude\+Location)
+\begin{DoxyCompactList}\small\item\em Gets a random location from the graph, excluding a specific location. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{graph_8c_a161044c3f91c6132f8239e63f9941880}{location\+Has\+Adjacency}} (\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$location, \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$other\+Location)
+\begin{DoxyCompactList}\small\item\em Checks if other\+Location is in the adjacency list of location. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{graph_8c_a21d28660a4092c351b2148cf90c09c76}{has\+Incoming\+Adjacency}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}}, \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$location)
+\begin{DoxyCompactList}\small\item\em Checks if location is an adjacent location of any other location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_adc1652ea4617cbe2fb6a4eb359928114}{maintain\+Connectivity}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}})
+\begin{DoxyCompactList}\small\item\em Checks that every location has at least an adjacency and is an adjacent location of at least another location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_ad1cfa14f0d85070bac3619eaec6e53cb}{pseudo\+Strongly\+Connect\+Locations}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}})
+\begin{DoxyCompactList}\small\item\em Creates outgoing and incoming adjacencies for every location in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$ \mbox{\hyperlink{graph_8c_ae25b39da91d38d4d0b44f91ad502d8fc}{find\+Min\+Distance\+Location}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} unvisited\+Set)
+\begin{DoxyCompactList}\small\item\em Finds the location with the minimum distance in the unvisited set of locations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{graph_8c_a8c2bb898e712f9e8174b8b3771dd6b57}{remove\+Visited\+Location\+By\+Location}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} head, \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$location)
+\item 
+\mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{Visited\+Location}} $\ast$ \mbox{\hyperlink{graph_8c_a9e7dbaef7e82a2e48c2ba00974718b32}{create\+Visited\+Location}} (\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$location, double distance, \mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{Visited\+Location}} $\ast$previous)
+\begin{DoxyCompactList}\small\item\em Creates a visited location with distance and previous location information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_a5670ffa099b12b4ee0201eb1b9fc3e37}{update\+Visited\+Location\+Distance}} (\mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{Visited\+Location}} $\ast$visited\+Location, double distance)
+\begin{DoxyCompactList}\small\item\em Updates the distance of a visited location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_a67b7a7e265b07a8e88902d49b366609a}{update\+Visited\+Location\+Previous}} (\mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{Visited\+Location}} $\ast$visited\+Location, \mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{Visited\+Location}} $\ast$previous)
+\begin{DoxyCompactList}\small\item\em Updates the previous location of a visited location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{Visited\+Location}} $\ast$ \mbox{\hyperlink{graph_8c_a4a4fc08679e632ce9c8a00a72ec1835e}{find\+Visited\+Location\+By\+Location}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} visited\+Set, \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$location)
+\begin{DoxyCompactList}\small\item\em Finds a visited location in the visited set by location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{graph_8h_a3ace7255dd591d5262ef733e3cddc726}{Adjacent\+Location}} $\ast$ \mbox{\hyperlink{graph_8c_a9577971b00adaf3b5cfffdf650a5edf9}{find\+Adjacent\+Location}} (\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$from, \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$to)
+\begin{DoxyCompactList}\small\item\em Finds the adjacent location between two locations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{graph_8c_aeb52e915d8905f5af470203fbafb3a77}{get\+Shortest\+Path}} (\mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{Visited\+Location}} $\ast$target)
+\begin{DoxyCompactList}\small\item\em Gets the shortest path from the visited location to the target. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{graph_8c_af64f6a643bc3b8296a3c19323459ecf6}{calculate\+Path\+Distance}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} path)
+\begin{DoxyCompactList}\small\item\em Calculates the total distance of a path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{graph_8c_a784e65738480be8e4926e679a477fe72}{calculate\+Shortest\+Path}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}}, \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$start, \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$target)
+\begin{DoxyCompactList}\small\item\em Dijkstra implementation. Calculates the shortest path between two locations in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$ \mbox{\hyperlink{graph_8c_a20b50a1b2bc3333f015ea6cf14188021}{calculate\+Shortest\+Path\+With\+Vehicle}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}}, \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$start)
+\begin{DoxyCompactList}\small\item\em Calculates the shortest path from a location with a vehicle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_a84d2453592a7c123e4903b36672e7d9a}{unload\+Vehicles}} (\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$start, \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} picked\+Up\+Vehicles)
+\begin{DoxyCompactList}\small\item\em Unloads vehicles at the start location from the given list of vehicles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_pick_up_result}{Pick\+Up\+Result}} \mbox{\hyperlink{graph_8c_af1c9d966eabe0d69058a1f796e2f929d}{pick\+Up\+Vehicles}} (\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$location, float max\+Weight)
+\begin{DoxyCompactList}\small\item\em Picks up vehicles from the location up to the maximum weight. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{graph_8c_a107777e2f3d5135fadcde34cafdb5d22}{has\+Vehicle\+To\+Pick\+Up}} (\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$location)
+\begin{DoxyCompactList}\small\item\em Checks if a location has vehicles to pick up. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_ac1509116530104f670c64534714f928a}{print\+Visited\+Set}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} visited\+Set)
+\begin{DoxyCompactList}\small\item\em Prints the visited set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_abe97053c75f5d4ba089081b8ceb14076}{print\+Unvisited\+Set}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} unvisited\+Set)
+\begin{DoxyCompactList}\small\item\em Prints the unvisited set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_a9ea548c63ba0f4f64d57099bb3b72031}{show\+Path}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} path)
+\begin{DoxyCompactList}\small\item\em Prints the path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_ae0cf9ae693d85508070880a5c480c124}{show\+Graph}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}})
+\begin{DoxyCompactList}\small\item\em Prints the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_a67b9afe5857b097b99ba949e75f8246c}{free\+Path}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} path)
+\begin{DoxyCompactList}\small\item\em Frees the memory allocated for a path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_ac503172ac443dd77a4dfc694e3df85af}{free\+Graph}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}})
+\begin{DoxyCompactList}\small\item\em Frees the memory allocated for the graph. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{graph_8c_aecc730e54cf44c94e8ccd5417d32de0f}{compare\+Adjacent\+Locations}} (void $\ast$data1, void $\ast$data2)
+\begin{DoxyCompactList}\small\item\em Compares two adjacent locations for reordering. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{graph_8c_a0bc67f251187c11ff2e3df6a1089e089}{compare\+Locations}} (void $\ast$data1, void $\ast$data2)
+\begin{DoxyCompactList}\small\item\em Compares two locations for reordering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_a913b92eec26620b4a496a5c89547e035}{remove\+Adjacent\+Location}} (\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$selected\+Location, int index)
+\begin{DoxyCompactList}\small\item\em Removes an adjacent location from a location by index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graph_8c_a199c07a893724bbb893e84f5dfab771a}{remove\+Location}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}}, \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$selected\+Location)
+\begin{DoxyCompactList}\small\item\em Removes a location from the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$ \mbox{\hyperlink{graph_8c_a194f251bcb4e70673f0abcc5938ae40c}{edit\+Graph}} (\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$\mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}}, int $\ast$modified)
+\begin{DoxyCompactList}\small\item\em Edits removing whole locations or specific adjacencies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \mbox{\hyperlink{graph_8c_a69f67f49d6589233e6806627a9f819ba}{garage}} \mbox{[}$\,$\mbox{]} = \char`\"{}chart.\+maximum.\+ahead\char`\"{}
+\begin{DoxyCompactList}\small\item\em External declaration of the garage location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{graph_8c_a5714b0803d01782b52e372fedc2cd6e4}\label{graph_8c_a5714b0803d01782b52e372fedc2cd6e4}} 
+\index{graph.c@{graph.c}!addAdjacentLocation@{addAdjacentLocation}}
+\index{addAdjacentLocation@{addAdjacentLocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{addAdjacentLocation()}{addAdjacentLocation()}}
+{\footnotesize\ttfamily void add\+Adjacent\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{location,  }\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{adjacent\+Location,  }\item[{double}]{weight }\end{DoxyParamCaption})}
+
+
+
+Adds an adjacent location to a location with the given weight. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & Pointer to the location.\\
+\hline
+{\em adjacent\+Location} & Pointer to the location to be added as an adjacent location.\\
+\hline
+{\em weight} & Weight of the adjacency.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00264}{264}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a2fce6be73c007af41293cca227cd084b}\label{graph_8c_a2fce6be73c007af41293cca227cd084b}} 
+\index{graph.c@{graph.c}!addClientToLocation@{addClientToLocation}}
+\index{addClientToLocation@{addClientToLocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{addClientToLocation()}{addClientToLocation()}}
+{\footnotesize\ttfamily void add\+Client\+To\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{location,  }\item[{\mbox{\hyperlink{client_8h_a41d3f49a296bce153dca14bfcb3ecc9d}{Client}}}]{client }\end{DoxyParamCaption})}
+
+
+
+Adds a client to a location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & Pointer to the location.\\
+\hline
+{\em client} & Client to be added.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00275}{275}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_ad8330ccfc4b3741bbb8194b6937ecb6c}\label{graph_8c_ad8330ccfc4b3741bbb8194b6937ecb6c}} 
+\index{graph.c@{graph.c}!addLocation@{addLocation}}
+\index{addLocation@{addLocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{addLocation()}{addLocation()}}
+{\footnotesize\ttfamily void add\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph,  }\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{location }\end{DoxyParamCaption})}
+
+
+
+Adds a location to the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph.\\
+\hline
+{\em location} & Pointer to the location to be added.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00257}{257}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a1af7c9306502cdaa1af8d9644d7ec77a}\label{graph_8c_a1af7c9306502cdaa1af8d9644d7ec77a}} 
+\index{graph.c@{graph.c}!addVehicleToLocation@{addVehicleToLocation}}
+\index{addVehicleToLocation@{addVehicleToLocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{addVehicleToLocation()}{addVehicleToLocation()}}
+{\footnotesize\ttfamily void add\+Vehicle\+To\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{location,  }\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}}}]{vehicle }\end{DoxyParamCaption})}
+
+
+
+Adds a vehicle to a location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & Pointer to the location.\\
+\hline
+{\em vehicle} & Vehicle to be added.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00309}{309}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_af64f6a643bc3b8296a3c19323459ecf6}\label{graph_8c_af64f6a643bc3b8296a3c19323459ecf6}} 
+\index{graph.c@{graph.c}!calculatePathDistance@{calculatePathDistance}}
+\index{calculatePathDistance@{calculatePathDistance}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{calculatePathDistance()}{calculatePathDistance()}}
+{\footnotesize\ttfamily double calculate\+Path\+Distance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{path }\end{DoxyParamCaption})}
+
+
+
+Calculates the total distance of a path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Pointer to the head of the path.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Total distance of the path.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00668}{668}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a784e65738480be8e4926e679a477fe72}\label{graph_8c_a784e65738480be8e4926e679a477fe72}} 
+\index{graph.c@{graph.c}!calculateShortestPath@{calculateShortestPath}}
+\index{calculateShortestPath@{calculateShortestPath}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{calculateShortestPath()}{calculateShortestPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} calculate\+Shortest\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph,  }\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{start,  }\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{target }\end{DoxyParamCaption})}
+
+
+
+Dijkstra implementation. Calculates the shortest path between two locations in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph.\\
+\hline
+{\em start} & Pointer to the start location.\\
+\hline
+{\em target} & Pointer to the target location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the head of the shortest path, or NULL if not found.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00684}{684}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a20b50a1b2bc3333f015ea6cf14188021}\label{graph_8c_a20b50a1b2bc3333f015ea6cf14188021}} 
+\index{graph.c@{graph.c}!calculateShortestPathWithVehicle@{calculateShortestPathWithVehicle}}
+\index{calculateShortestPathWithVehicle@{calculateShortestPathWithVehicle}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{calculateShortestPathWithVehicle()}{calculateShortestPathWithVehicle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$ calculate\+Shortest\+Path\+With\+Vehicle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph,  }\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{start }\end{DoxyParamCaption})}
+
+
+
+Calculates the shortest path from a location with a vehicle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph.\\
+\hline
+{\em start} & Pointer to the start location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the target location found on the shortest path, or NULL if not found.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00767}{767}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_aecc730e54cf44c94e8ccd5417d32de0f}\label{graph_8c_aecc730e54cf44c94e8ccd5417d32de0f}} 
+\index{graph.c@{graph.c}!compareAdjacentLocations@{compareAdjacentLocations}}
+\index{compareAdjacentLocations@{compareAdjacentLocations}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{compareAdjacentLocations()}{compareAdjacentLocations()}}
+{\footnotesize\ttfamily int compare\+Adjacent\+Locations (\begin{DoxyParamCaption}\item[{void $\ast$}]{data1,  }\item[{void $\ast$}]{data2 }\end{DoxyParamCaption})}
+
+
+
+Compares two adjacent locations for reordering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data1} & Pointer to the first adjacent location.\\
+\hline
+{\em data2} & Pointer to the second adjacent location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of the comparison.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l01020}{1020}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a0bc67f251187c11ff2e3df6a1089e089}\label{graph_8c_a0bc67f251187c11ff2e3df6a1089e089}} 
+\index{graph.c@{graph.c}!compareLocations@{compareLocations}}
+\index{compareLocations@{compareLocations}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{compareLocations()}{compareLocations()}}
+{\footnotesize\ttfamily int compare\+Locations (\begin{DoxyParamCaption}\item[{void $\ast$}]{data1,  }\item[{void $\ast$}]{data2 }\end{DoxyParamCaption})}
+
+
+
+Compares two locations for reordering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data1} & Pointer to the first location.\\
+\hline
+{\em data2} & Pointer to the second location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of the comparison.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l01031}{1031}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a7665daed45cec3b84a6f34684e5d63d9}\label{graph_8c_a7665daed45cec3b84a6f34684e5d63d9}} 
+\index{graph.c@{graph.c}!createGraph@{createGraph}}
+\index{createGraph@{createGraph}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{createGraph()}{createGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$ create\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a new graph. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the newly created graph.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00226}{226}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a99b745f3ecfa11f9f49f5b8657ac0767}\label{graph_8c_a99b745f3ecfa11f9f49f5b8657ac0767}} 
+\index{graph.c@{graph.c}!createLocation@{createLocation}}
+\index{createLocation@{createLocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{createLocation()}{createLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$ create\+Location (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{double}]{latitude,  }\item[{double}]{longitude }\end{DoxyParamCaption})}
+
+
+
+Creates a new location with the given name, latitude, and longitude. In case latitude and longitude is not known (= 0.\+0) the location is converted to coordinates and then created. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name (geolocation) of the location.\\
+\hline
+{\em latitude} & Latitude of the location.\\
+\hline
+{\em longitude} & Longitude of the location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the newly created location.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00233}{233}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_ab13733de13de62a4c3fd116aa0fba72c}\label{graph_8c_ab13733de13de62a4c3fd116aa0fba72c}} 
+\index{graph.c@{graph.c}!createLocationsFromClients@{createLocationsFromClients}}
+\index{createLocationsFromClients@{createLocationsFromClients}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{createLocationsFromClients()}{createLocationsFromClients()}}
+{\footnotesize\ttfamily void create\+Locations\+From\+Clients (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph,  }\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{listC }\end{DoxyParamCaption})}
+
+
+
+Creates locations based on unique geolocations found in clients and adds them to the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph.\\
+\hline
+{\em listC} & Pointer to the head of the list of clients.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00343}{343}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a27fae164a724854773ab89b9787afe74}\label{graph_8c_a27fae164a724854773ab89b9787afe74}} 
+\index{graph.c@{graph.c}!createLocationsFromVehicles@{createLocationsFromVehicles}}
+\index{createLocationsFromVehicles@{createLocationsFromVehicles}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{createLocationsFromVehicles()}{createLocationsFromVehicles()}}
+{\footnotesize\ttfamily void create\+Locations\+From\+Vehicles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph,  }\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{listV }\end{DoxyParamCaption})}
+
+
+
+Creates locations based on unique geolocations found in vehicles and adds them to the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph.\\
+\hline
+{\em listV} & Pointer to the head of the list of vehicles.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00366}{366}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a9e7dbaef7e82a2e48c2ba00974718b32}\label{graph_8c_a9e7dbaef7e82a2e48c2ba00974718b32}} 
+\index{graph.c@{graph.c}!createVisitedLocation@{createVisitedLocation}}
+\index{createVisitedLocation@{createVisitedLocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{createVisitedLocation()}{createVisitedLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{Visited\+Location}} $\ast$ create\+Visited\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{location,  }\item[{double}]{distance,  }\item[{\mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{Visited\+Location}} $\ast$}]{previous }\end{DoxyParamCaption})}
+
+
+
+Creates a visited location with distance and previous location information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & Pointer to the location.\\
+\hline
+{\em distance} & Distance to the location.\\
+\hline
+{\em previous} & Pointer to the previous visited location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the created visited location.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00608}{608}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a194f251bcb4e70673f0abcc5938ae40c}\label{graph_8c_a194f251bcb4e70673f0abcc5938ae40c}} 
+\index{graph.c@{graph.c}!editGraph@{editGraph}}
+\index{editGraph@{editGraph}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{editGraph()}{editGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$ edit\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph,  }\item[{int $\ast$}]{modified }\end{DoxyParamCaption})}
+
+
+
+Edits removing whole locations or specific adjacencies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph.\\
+\hline
+{\em modified} & Pointer to the modified flag.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the edited graph.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l01092}{1092}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a9577971b00adaf3b5cfffdf650a5edf9}\label{graph_8c_a9577971b00adaf3b5cfffdf650a5edf9}} 
+\index{graph.c@{graph.c}!findAdjacentLocation@{findAdjacentLocation}}
+\index{findAdjacentLocation@{findAdjacentLocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{findAdjacentLocation()}{findAdjacentLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{graph_8h_a3ace7255dd591d5262ef733e3cddc726}{Adjacent\+Location}} $\ast$ find\+Adjacent\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{from,  }\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{to }\end{DoxyParamCaption})}
+
+
+
+Finds the adjacent location between two locations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & Pointer to the \char`\"{}from\char`\"{} location.\\
+\hline
+{\em to} & Pointer to the \char`\"{}to\char`\"{} location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the adjacent location, or NULL if not found.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00642}{642}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_afff7fd8687094ebd158820f8351b0981}\label{graph_8c_afff7fd8687094ebd158820f8351b0981}} 
+\index{graph.c@{graph.c}!findLocationByGeolocation@{findLocationByGeolocation}}
+\index{findLocationByGeolocation@{findLocationByGeolocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{findLocationByGeolocation()}{findLocationByGeolocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$ find\+Location\+By\+Geolocation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph,  }\item[{const char $\ast$}]{geolocation }\end{DoxyParamCaption})}
+
+
+
+Finds a location in the graph by geolocation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph.\\
+\hline
+{\em geolocation} & Geolocation of the location to be found.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the found location, or NULL if not found.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00389}{389}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a17a6d6a2ca158a4064f023c8e3a53b51}\label{graph_8c_a17a6d6a2ca158a4064f023c8e3a53b51}} 
+\index{graph.c@{graph.c}!findLocationByVehicle@{findLocationByVehicle}}
+\index{findLocationByVehicle@{findLocationByVehicle}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{findLocationByVehicle()}{findLocationByVehicle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$ find\+Location\+By\+Vehicle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph,  }\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}}}]{vehicle }\end{DoxyParamCaption})}
+
+
+
+Finds a location in the graph by vehicle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph.\\
+\hline
+{\em vehicle} & Vehicle to be found.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the found location, or NULL if not found.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00404}{404}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_ae25b39da91d38d4d0b44f91ad502d8fc}\label{graph_8c_ae25b39da91d38d4d0b44f91ad502d8fc}} 
+\index{graph.c@{graph.c}!findMinDistanceLocation@{findMinDistanceLocation}}
+\index{findMinDistanceLocation@{findMinDistanceLocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{findMinDistanceLocation()}{findMinDistanceLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$ find\+Min\+Distance\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{unvisited\+Set }\end{DoxyParamCaption})}
+
+
+
+Finds the location with the minimum distance in the unvisited set of locations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unvisited\+Set} & Pointer to the head of the unvisited set.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the location with the minimum distance, or NULL if the set is empty.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00566}{566}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a4a4fc08679e632ce9c8a00a72ec1835e}\label{graph_8c_a4a4fc08679e632ce9c8a00a72ec1835e}} 
+\index{graph.c@{graph.c}!findVisitedLocationByLocation@{findVisitedLocationByLocation}}
+\index{findVisitedLocationByLocation@{findVisitedLocationByLocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{findVisitedLocationByLocation()}{findVisitedLocationByLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{Visited\+Location}} $\ast$ find\+Visited\+Location\+By\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{visited\+Set,  }\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{location }\end{DoxyParamCaption})}
+
+
+
+Finds a visited location in the visited set by location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visited\+Set} & Pointer to the head of the visited set.\\
+\hline
+{\em location} & Pointer to the location to be found.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the found visited location, or NULL if not found.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00627}{627}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_ac503172ac443dd77a4dfc694e3df85af}\label{graph_8c_ac503172ac443dd77a4dfc694e3df85af}} 
+\index{graph.c@{graph.c}!freeGraph@{freeGraph}}
+\index{freeGraph@{freeGraph}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{freeGraph()}{freeGraph()}}
+{\footnotesize\ttfamily void free\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph }\end{DoxyParamCaption})}
+
+
+
+Frees the memory allocated for the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00977}{977}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a67b9afe5857b097b99ba949e75f8246c}\label{graph_8c_a67b9afe5857b097b99ba949e75f8246c}} 
+\index{graph.c@{graph.c}!freePath@{freePath}}
+\index{freePath@{freePath}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{freePath()}{freePath()}}
+{\footnotesize\ttfamily void free\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{path }\end{DoxyParamCaption})}
+
+
+
+Frees the memory allocated for a path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Pointer to the head of the path.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00967}{967}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a92ceb27b870d734374cb9618b6d6a57a}\label{graph_8c_a92ceb27b870d734374cb9618b6d6a57a}} 
+\index{graph.c@{graph.c}!getRandomLocation@{getRandomLocation}}
+\index{getRandomLocation@{getRandomLocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{getRandomLocation()}{getRandomLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$ get\+Random\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph,  }\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{exclude\+Location }\end{DoxyParamCaption})}
+
+
+
+Gets a random location from the graph, excluding a specific location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph.\\
+\hline
+{\em exclude\+Location} & Pointer to the location to be excluded.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the random location, or NULL if not found.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00422}{422}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_aeb52e915d8905f5af470203fbafb3a77}\label{graph_8c_aeb52e915d8905f5af470203fbafb3a77}} 
+\index{graph.c@{graph.c}!getShortestPath@{getShortestPath}}
+\index{getShortestPath@{getShortestPath}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{getShortestPath()}{getShortestPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} get\+Shortest\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{Visited\+Location}} $\ast$}]{target }\end{DoxyParamCaption})}
+
+
+
+Gets the shortest path from the visited location to the target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Pointer to the target visited location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the head of the shortest path.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00655}{655}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a21d28660a4092c351b2148cf90c09c76}\label{graph_8c_a21d28660a4092c351b2148cf90c09c76}} 
+\index{graph.c@{graph.c}!hasIncomingAdjacency@{hasIncomingAdjacency}}
+\index{hasIncomingAdjacency@{hasIncomingAdjacency}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{hasIncomingAdjacency()}{hasIncomingAdjacency()}}
+{\footnotesize\ttfamily int has\+Incoming\+Adjacency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph,  }\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{location }\end{DoxyParamCaption})}
+
+
+
+Checks if location is an adjacent location of any other location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph.\\
+\hline
+{\em location} & Pointer to the location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if location is an adjacent location, 0 otherwise.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00476}{476}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a107777e2f3d5135fadcde34cafdb5d22}\label{graph_8c_a107777e2f3d5135fadcde34cafdb5d22}} 
+\index{graph.c@{graph.c}!hasVehicleToPickUp@{hasVehicleToPickUp}}
+\index{hasVehicleToPickUp@{hasVehicleToPickUp}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{hasVehicleToPickUp()}{hasVehicleToPickUp()}}
+{\footnotesize\ttfamily int has\+Vehicle\+To\+Pick\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{location }\end{DoxyParamCaption})}
+
+
+
+Checks if a location has vehicles to pick up. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & Pointer to the location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the location has vehicles to pick up, 0 otherwise.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00859}{859}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_af10d3314dd78168472132768563cdef2}\label{graph_8c_af10d3314dd78168472132768563cdef2}} 
+\index{graph.c@{graph.c}!loadDataGraph@{loadDataGraph}}
+\index{loadDataGraph@{loadDataGraph}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{loadDataGraph()}{loadDataGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$ load\+Data\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph,  }\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Clients,  }\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Vehicles }\end{DoxyParamCaption})}
+
+
+
+Loads the data into the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph to be loaded.\\
+\hline
+{\em list\+Clients} & Pointer to the head of the list of clients to be loaded.\\
+\hline
+{\em list\+Vehicles} & Pointer to the head of the list of vehicles to be loaded.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the loaded graph.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00087}{87}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a161044c3f91c6132f8239e63f9941880}\label{graph_8c_a161044c3f91c6132f8239e63f9941880}} 
+\index{graph.c@{graph.c}!locationHasAdjacency@{locationHasAdjacency}}
+\index{locationHasAdjacency@{locationHasAdjacency}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{locationHasAdjacency()}{locationHasAdjacency()}}
+{\footnotesize\ttfamily int location\+Has\+Adjacency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{location,  }\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{other\+Location }\end{DoxyParamCaption})}
+
+
+
+Checks if other\+Location is in the adjacency list of location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & Pointer to the location.\\
+\hline
+{\em other\+Location} & Pointer to the other location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the locations are adjacent, 0 otherwise.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00461}{461}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_adc1652ea4617cbe2fb6a4eb359928114}\label{graph_8c_adc1652ea4617cbe2fb6a4eb359928114}} 
+\index{graph.c@{graph.c}!maintainConnectivity@{maintainConnectivity}}
+\index{maintainConnectivity@{maintainConnectivity}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{maintainConnectivity()}{maintainConnectivity()}}
+{\footnotesize\ttfamily void maintain\+Connectivity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph }\end{DoxyParamCaption})}
+
+
+
+Checks that every location has at least an adjacency and is an adjacent location of at least another location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00495}{495}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_af1c9d966eabe0d69058a1f796e2f929d}\label{graph_8c_af1c9d966eabe0d69058a1f796e2f929d}} 
+\index{graph.c@{graph.c}!pickUpVehicles@{pickUpVehicles}}
+\index{pickUpVehicles@{pickUpVehicles}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{pickUpVehicles()}{pickUpVehicles()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pick_up_result}{Pick\+Up\+Result}} pick\+Up\+Vehicles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{location,  }\item[{float}]{max\+Weight }\end{DoxyParamCaption})}
+
+
+
+Picks up vehicles from the location up to the maximum weight. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & Pointer to the location.\\
+\hline
+{\em max\+Weight} & Maximum weight allowed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_pick_up_result}{Pick\+Up\+Result}} struct containing the picked up vehicles and vehicle\+Too\+Heavy flag.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00820}{820}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_abe97053c75f5d4ba089081b8ceb14076}\label{graph_8c_abe97053c75f5d4ba089081b8ceb14076}} 
+\index{graph.c@{graph.c}!printUnvisitedSet@{printUnvisitedSet}}
+\index{printUnvisitedSet@{printUnvisitedSet}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{printUnvisitedSet()}{printUnvisitedSet()}}
+{\footnotesize\ttfamily void print\+Unvisited\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{unvisited\+Set }\end{DoxyParamCaption})}
+
+
+
+Prints the unvisited set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unvisited\+Set} & Pointer to the head of the unvisited set.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00884}{884}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_ac1509116530104f670c64534714f928a}\label{graph_8c_ac1509116530104f670c64534714f928a}} 
+\index{graph.c@{graph.c}!printVisitedSet@{printVisitedSet}}
+\index{printVisitedSet@{printVisitedSet}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{printVisitedSet()}{printVisitedSet()}}
+{\footnotesize\ttfamily void print\+Visited\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{visited\+Set }\end{DoxyParamCaption})}
+
+
+
+Prints the visited set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visited\+Set} & Pointer to the head of the visited set.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00872}{872}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_ad1cfa14f0d85070bac3619eaec6e53cb}\label{graph_8c_ad1cfa14f0d85070bac3619eaec6e53cb}} 
+\index{graph.c@{graph.c}!pseudoStronglyConnectLocations@{pseudoStronglyConnectLocations}}
+\index{pseudoStronglyConnectLocations@{pseudoStronglyConnectLocations}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{pseudoStronglyConnectLocations()}{pseudoStronglyConnectLocations()}}
+{\footnotesize\ttfamily void pseudo\+Strongly\+Connect\+Locations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph }\end{DoxyParamCaption})}
+
+
+
+Creates outgoing and incoming adjacencies for every location in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00537}{537}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a913b92eec26620b4a496a5c89547e035}\label{graph_8c_a913b92eec26620b4a496a5c89547e035}} 
+\index{graph.c@{graph.c}!removeAdjacentLocation@{removeAdjacentLocation}}
+\index{removeAdjacentLocation@{removeAdjacentLocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{removeAdjacentLocation()}{removeAdjacentLocation()}}
+{\footnotesize\ttfamily void remove\+Adjacent\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{selected\+Location,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Removes an adjacent location from a location by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em selected\+Location} & Pointer to the selected location.\\
+\hline
+{\em index} & Index of the adjacent location to be removed.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l01042}{1042}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_ab92800fb716d4fefb089ed23955bae19}\label{graph_8c_ab92800fb716d4fefb089ed23955bae19}} 
+\index{graph.c@{graph.c}!removeClientFromLocation@{removeClientFromLocation}}
+\index{removeClientFromLocation@{removeClientFromLocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{removeClientFromLocation()}{removeClientFromLocation()}}
+{\footnotesize\ttfamily void remove\+Client\+From\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{location,  }\item[{const char $\ast$}]{username }\end{DoxyParamCaption})}
+
+
+
+Removes a client from a location by it\textquotesingle{}s username. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & Pointer to the location.\\
+\hline
+{\em username} & Username of the client to be removed.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00280}{280}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a199c07a893724bbb893e84f5dfab771a}\label{graph_8c_a199c07a893724bbb893e84f5dfab771a}} 
+\index{graph.c@{graph.c}!removeLocation@{removeLocation}}
+\index{removeLocation@{removeLocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{removeLocation()}{removeLocation()}}
+{\footnotesize\ttfamily void remove\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph,  }\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{selected\+Location }\end{DoxyParamCaption})}
+
+
+
+Removes a location from the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph.\\
+\hline
+{\em selected\+Location} & Pointer to the selected location.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l01047}{1047}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a45b65a28a97906db4575bd99a4d86538}\label{graph_8c_a45b65a28a97906db4575bd99a4d86538}} 
+\index{graph.c@{graph.c}!removeVehicleFromLocation@{removeVehicleFromLocation}}
+\index{removeVehicleFromLocation@{removeVehicleFromLocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{removeVehicleFromLocation()}{removeVehicleFromLocation()}}
+{\footnotesize\ttfamily void remove\+Vehicle\+From\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{location,  }\item[{int}]{code,  }\item[{const char $\ast$}]{type }\end{DoxyParamCaption})}
+
+
+
+Removes a vehicle from a location by it\textquotesingle{}s code and type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & Pointer to the location.\\
+\hline
+{\em code} & Code of the vehicle to be removed.\\
+\hline
+{\em type} & Type of the vehicle to be removed.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00314}{314}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a8c2bb898e712f9e8174b8b3771dd6b57}\label{graph_8c_a8c2bb898e712f9e8174b8b3771dd6b57}} 
+\index{graph.c@{graph.c}!removeVisitedLocationByLocation@{removeVisitedLocationByLocation}}
+\index{removeVisitedLocationByLocation@{removeVisitedLocationByLocation}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{removeVisitedLocationByLocation()}{removeVisitedLocationByLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} remove\+Visited\+Location\+By\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{head,  }\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{location }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00584}{584}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_ae0cf9ae693d85508070880a5c480c124}\label{graph_8c_ae0cf9ae693d85508070880a5c480c124}} 
+\index{graph.c@{graph.c}!showGraph@{showGraph}}
+\index{showGraph@{showGraph}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{showGraph()}{showGraph()}}
+{\footnotesize\ttfamily void show\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph }\end{DoxyParamCaption})}
+
+
+
+Prints the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00913}{913}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a9ea548c63ba0f4f64d57099bb3b72031}\label{graph_8c_a9ea548c63ba0f4f64d57099bb3b72031}} 
+\index{graph.c@{graph.c}!showPath@{showPath}}
+\index{showPath@{showPath}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{showPath()}{showPath()}}
+{\footnotesize\ttfamily void show\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{path }\end{DoxyParamCaption})}
+
+
+
+Prints the path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Pointer to the head of the path.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00896}{896}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_ad4ba81e18885ccc52496b4b9a7165806}\label{graph_8c_ad4ba81e18885ccc52496b4b9a7165806}} 
+\index{graph.c@{graph.c}!storeDataGraph@{storeDataGraph}}
+\index{storeDataGraph@{storeDataGraph}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{storeDataGraph()}{storeDataGraph()}}
+{\footnotesize\ttfamily void store\+Data\+Graph (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}} $\ast$}]{graph }\end{DoxyParamCaption})}
+
+
+
+Stores the data of the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Pointer to the graph to be stored.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00005}{5}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a84d2453592a7c123e4903b36672e7d9a}\label{graph_8c_a84d2453592a7c123e4903b36672e7d9a}} 
+\index{graph.c@{graph.c}!unloadVehicles@{unloadVehicles}}
+\index{unloadVehicles@{unloadVehicles}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{unloadVehicles()}{unloadVehicles()}}
+{\footnotesize\ttfamily void unload\+Vehicles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}} $\ast$}]{start,  }\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{vehicles }\end{DoxyParamCaption})}
+
+
+
+Unloads vehicles at the start location from the given list of vehicles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Pointer to the start location.\\
+\hline
+{\em vehicles} & Pointer to the head of the list of vehicles.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00808}{808}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a5670ffa099b12b4ee0201eb1b9fc3e37}\label{graph_8c_a5670ffa099b12b4ee0201eb1b9fc3e37}} 
+\index{graph.c@{graph.c}!updateVisitedLocationDistance@{updateVisitedLocationDistance}}
+\index{updateVisitedLocationDistance@{updateVisitedLocationDistance}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{updateVisitedLocationDistance()}{updateVisitedLocationDistance()}}
+{\footnotesize\ttfamily void update\+Visited\+Location\+Distance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{Visited\+Location}} $\ast$}]{visited\+Location,  }\item[{double}]{distance }\end{DoxyParamCaption})}
+
+
+
+Updates the distance of a visited location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visited\+Location} & Pointer to the visited location.\\
+\hline
+{\em distance} & New distance value.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00617}{617}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+\mbox{\Hypertarget{graph_8c_a67b7a7e265b07a8e88902d49b366609a}\label{graph_8c_a67b7a7e265b07a8e88902d49b366609a}} 
+\index{graph.c@{graph.c}!updateVisitedLocationPrevious@{updateVisitedLocationPrevious}}
+\index{updateVisitedLocationPrevious@{updateVisitedLocationPrevious}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{updateVisitedLocationPrevious()}{updateVisitedLocationPrevious()}}
+{\footnotesize\ttfamily void update\+Visited\+Location\+Previous (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{Visited\+Location}} $\ast$}]{visited\+Location,  }\item[{\mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{Visited\+Location}} $\ast$}]{previous }\end{DoxyParamCaption})}
+
+
+
+Updates the previous location of a visited location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visited\+Location} & Pointer to the visited location.\\
+\hline
+{\em previous} & Pointer to the new previous visited location.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00622}{622}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{graph_8c_a69f67f49d6589233e6806627a9f819ba}\label{graph_8c_a69f67f49d6589233e6806627a9f819ba}} 
+\index{graph.c@{graph.c}!garage@{garage}}
+\index{garage@{garage}!graph.c@{graph.c}}
+\doxysubsubsection{\texorpdfstring{garage}{garage}}
+{\footnotesize\ttfamily const char garage\mbox{[}$\,$\mbox{]} = \char`\"{}chart.\+maximum.\+ahead\char`\"{}}
+
+
+
+External declaration of the garage location. 
+
+
+
+Definition at line \mbox{\hyperlink{graph_8c_source_l00003}{3}} of file \mbox{\hyperlink{graph_8c_source}{graph.\+c}}.
+

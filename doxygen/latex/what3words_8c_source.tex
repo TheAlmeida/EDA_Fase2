@@ -1,0 +1,164 @@
+\hypertarget{what3words_8c_source}{}\doxysection{C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/what3words.c}
+\mbox{\hyperlink{what3words_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{what3words_8h}{what3words.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00003}\mbox{\hyperlink{what3words_8c_aacdf1719d113d68a71127426f7c730cd}{00003}}\ \textcolor{preprocessor}{\#define\ EARTH\_RADIUS\ 6371.0\ }\textcolor{comment}{//\ Earth\ radius\ in\ kilometers}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00005}00005\ \textcolor{comment}{//Valid\ set\ of\ coordinates/geolocations}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00006}00006\ \textcolor{comment}{//41.551544,\ -\/8.423533\ (Location:\ mammoth.risen.trial)}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00007}00007\ \textcolor{comment}{//41.550682,\ -\/8.426128\ (Location:\ selling.cheat.cherub)}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00008}00008\ \textcolor{comment}{//41.551114,\ -\/8.423893\ (Location:\ pursuing.sound.nets)}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00009}00009\ \textcolor{comment}{//41.548580,\ -\/8.428038\ (Location:\ servants.munched.polished)}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00010}00010\ \textcolor{comment}{//41.551733,\ -\/8.425119\ (Location:\ fairy.trim.crisp)}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00011}00011\ \textcolor{comment}{//41.551356,\ -\/8.424759\ (Location:\ tequila.jazzy.striving)}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00012}00012\ \textcolor{comment}{//41.551463,\ -\/8.425263\ (Location:\ glove.public.reinforce)}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00013}00013\ \textcolor{comment}{//41.549550,\ -\/8.428219\ (Location:\ snatched.adults.sand)}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00014}00014\ \textcolor{comment}{//41.549631,\ -\/8.428255\ (Location:\ chart.maximum.ahead)}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00015}00015\ \textcolor{comment}{//41.550951,\ -\/8.425443\ (Location:\ amends.flown.shifting)}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00017}\mbox{\hyperlink{what3words_8c_a8824538eb07749fa64fd2ef98e557be9}{00017}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{what3words_8c_a8824538eb07749fa64fd2ef98e557be9}{degreesToRadians}}(\textcolor{keywordtype}{double}\ degrees)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{return}\ degrees\ *\ \mbox{\hyperlink{what3words_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\_PI}}\ /\ 180.0;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00021}\mbox{\hyperlink{what3words_8c_a02434d9cbacdb757bbce7d8d872bc5d8}{00021}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{what3words_8c_a02434d9cbacdb757bbce7d8d872bc5d8}{calculateDistance}}(\textcolor{keywordtype}{double}\ lat1,\ \textcolor{keywordtype}{double}\ lon1,\ \textcolor{keywordtype}{double}\ lat2,\ \textcolor{keywordtype}{double}\ lon2)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{double}\ dLat\ =\ \mbox{\hyperlink{what3words_8c_a8824538eb07749fa64fd2ef98e557be9}{degreesToRadians}}(lat2\ -\/\ lat1);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{double}\ dLon\ =\ \mbox{\hyperlink{what3words_8c_a8824538eb07749fa64fd2ef98e557be9}{degreesToRadians}}(lon2\ -\/\ lon1);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{double}\ a\ =\ sin(dLat\ /\ 2)\ *\ sin(dLat\ /\ 2)\ +}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ cos(\mbox{\hyperlink{what3words_8c_a8824538eb07749fa64fd2ef98e557be9}{degreesToRadians}}(lat1))\ *\ cos(\mbox{\hyperlink{what3words_8c_a8824538eb07749fa64fd2ef98e557be9}{degreesToRadians}}(lat2))\ *}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ sin(dLon\ /\ 2)\ *\ sin(dLon\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{double}\ c\ =\ 2\ *\ atan2(sqrt(a),\ sqrt(1\ -\/\ a));}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{double}\ distance\ =\ \mbox{\hyperlink{what3words_8c_aacdf1719d113d68a71127426f7c730cd}{EARTH\_RADIUS}}\ *\ c;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{return}\ distance;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00034}\mbox{\hyperlink{what3words_8c_a2cbfce46bd5b5d2203073f2f8bc7acf4}{00034}}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{what3words_8c_a2cbfce46bd5b5d2203073f2f8bc7acf4}{writeCallback}}(\textcolor{keywordtype}{void}*\ contents,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ nmemb,\ \textcolor{keywordtype}{char}*\ buffer)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ realsize\ =\ size\ *\ nmemb;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00036}00036\ \ \ \ \ strcat(buffer,\ (\textcolor{keywordtype}{char}*)contents);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{return}\ realsize;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00040}\mbox{\hyperlink{what3words_8c_a41951b64e606da0ca182a39a7458f361}{00040}}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{what3words_8c_a41951b64e606da0ca182a39a7458f361}{coordinatesToGeolocation}}(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00041}00041\ \ \ \ \ CURL*\ curl;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00042}00042\ \ \ \ \ CURLcode\ res;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{char}\ url[512];}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{char}\ response[4096]\ =\ \{\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{char}*\ words\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00047}00047\ \ \ \ \ snprintf(url,\ \textcolor{keyword}{sizeof}(url),\ \textcolor{stringliteral}{"{}https://api.what3words.com/v3/convert-\/to-\/3wa?coordinates=\%.6f,\%.6f\&key=\%s"{}},\ latitude,\ longitude,\ \mbox{\hyperlink{what3words_8h_ae2688a4fe873d41c89cdbede8ba6f78b}{APIKEY}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00049}00049\ \ \ \ \ curl\ =\ curl\_easy\_init();}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (curl)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00051}00051\ \ \ \ \ \ \ \ \ curl\_easy\_setopt(curl,\ CURLOPT\_URL,\ url);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ curl\_easy\_setopt(curl,\ CURLOPT\_WRITEFUNCTION,\ \mbox{\hyperlink{what3words_8c_a2cbfce46bd5b5d2203073f2f8bc7acf4}{writeCallback}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00053}00053\ \ \ \ \ \ \ \ \ curl\_easy\_setopt(curl,\ CURLOPT\_WRITEDATA,\ response);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00054}00054\ \ \ \ \ \ \ \ \ res\ =\ curl\_easy\_perform(curl);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (res\ !=\ CURLE\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}curl\_easy\_perform()\ failed:\ \%s\(\backslash\)n"{}},\ curl\_easy\_strerror(res));}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}Response:\(\backslash\)n\%s\(\backslash\)n"{},\ response);}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Extract\ geolocation\ words\ from\ the\ response\ using\ strstr\ and\ sscanf}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ words\_start\ =\ strstr(response,\ \textcolor{stringliteral}{"{}\(\backslash\)"{}words\(\backslash\)"{}:\(\backslash\)"{}"{}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (words\_start)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ words\_start\ +=\ strlen(\textcolor{stringliteral}{"{}\(\backslash\)"{}words\(\backslash\)"{}:\(\backslash\)"{}"{}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ words\_end\ =\ strstr(words\_start,\ \textcolor{stringliteral}{"{}\(\backslash\)"{}"{}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (words\_end)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ words\_length\ =\ words\_end\ -\/\ words\_start;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ words\ =\ (\textcolor{keywordtype}{char}*)malloc((words\_length\ +\ 1)\ *\ \textcolor{keyword}{sizeof}(char));}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strncpy(words,\ words\_start,\ words\_length);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ words[words\_length]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}Geolocation\ for\ \%.6f,\ \%.6f:\ words\ =\ \%s\(\backslash\)n"{},\ latitude,\ longitude,\ words);}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Failed\ to\ extract\ geolocation\ words\ from\ the\ response.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Failed\ to\ extract\ geolocation\ information\ from\ the\ response.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00082}00082\ \ \ \ \ \ \ \ \ curl\_easy\_cleanup(curl);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{return}\ words;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00088}\mbox{\hyperlink{what3words_8c_a3149a0122833b28c4c4a7cd6306de7c7}{00088}}\ \mbox{\hyperlink{struct_coordinates}{Coordinates}}\ \mbox{\hyperlink{what3words_8c_a3149a0122833b28c4c4a7cd6306de7c7}{geolocationToCoordinates}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ location)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00089}00089\ \ \ \ \ CURL*\ curl;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00090}00090\ \ \ \ \ CURLcode\ res;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00091}00091\ \ \ \ \ \textcolor{keywordtype}{char}\ url[254];}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00092}00092\ \ \ \ \ \textcolor{keywordtype}{char}\ response[4096]\ =\ \{\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{struct_coordinates}{Coordinates}}\ coordinates;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00095}00095\ \ \ \ \ coordinates.\mbox{\hyperlink{struct_coordinates_a20ea6542be083155699517939b03f259}{latitude}}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00096}00096\ \ \ \ \ coordinates.\mbox{\hyperlink{struct_coordinates_a474951b7ec4e5f12e788abbf852cd88b}{longitude}}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00098}00098\ \ \ \ \ snprintf(url,\ \textcolor{keyword}{sizeof}(url),\ \textcolor{stringliteral}{"{}https://api.what3words.com/v3/convert-\/to-\/coordinates?words=\%s\&key=\%s"{}},\ location,\ \mbox{\hyperlink{what3words_8h_ae2688a4fe873d41c89cdbede8ba6f78b}{APIKEY}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00100}00100\ \ \ \ \ curl\ =\ curl\_easy\_init();}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{if}\ (curl)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00102}00102\ \ \ \ \ \ \ \ \ curl\_easy\_setopt(curl,\ CURLOPT\_URL,\ url);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00103}00103\ \ \ \ \ \ \ \ \ curl\_easy\_setopt(curl,\ CURLOPT\_WRITEFUNCTION,\ \mbox{\hyperlink{what3words_8c_a2cbfce46bd5b5d2203073f2f8bc7acf4}{writeCallback}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00104}00104\ \ \ \ \ \ \ \ \ curl\_easy\_setopt(curl,\ CURLOPT\_WRITEDATA,\ response);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00105}00105\ \ \ \ \ \ \ \ \ res\ =\ curl\_easy\_perform(curl);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (res\ !=\ CURLE\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}curl\_easy\_perform()\ failed:\ \%s\(\backslash\)n"{}},\ curl\_easy\_strerror(res));}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00108}00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}Response:\(\backslash\)n\%s\(\backslash\)n"{},\ response);}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Extract\ coordinates\ from\ the\ response\ using\ strstr\ and\ sscanf}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ coordinates\_start\ =\ strstr(response,\ \textcolor{stringliteral}{"{}\(\backslash\)"{}coordinates\(\backslash\)"{}:\{\(\backslash\)"{}lng\(\backslash\)"{}:"{}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (coordinates\_start)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ coordinates\_start\ +=\ strlen(\textcolor{stringliteral}{"{}\(\backslash\)"{}coordinates\(\backslash\)"{}:\{\(\backslash\)"{}lng\(\backslash\)"{}:"{}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ longitude\_end\ =\ strstr(coordinates\_start,\ \textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (longitude\_end)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ longitude\_str[32];}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strncpy(longitude\_str,\ coordinates\_start,\ longitude\_end\ -\/\ coordinates\_start);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ longitude\_str[longitude\_end\ -\/\ coordinates\_start]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sscanf(longitude\_str,\ \textcolor{stringliteral}{"{}\%lf"{}},\ \&coordinates.\mbox{\hyperlink{struct_coordinates_a474951b7ec4e5f12e788abbf852cd88b}{longitude}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ latitude\_start\ =\ strstr(longitude\_end,\ \textcolor{stringliteral}{"{}\(\backslash\)"{}lat\(\backslash\)"{}:"{}})\ +\ strlen(\textcolor{stringliteral}{"{}\(\backslash\)"{}lat\(\backslash\)"{}:"{}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ latitude\_end\ =\ strstr(latitude\_start,\ \textcolor{stringliteral}{"{}\}"{}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (latitude\_end)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ latitude\_str[32];}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strncpy(latitude\_str,\ latitude\_start,\ latitude\_end\ -\/\ latitude\_start);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ latitude\_str[latitude\_end\ -\/\ latitude\_start]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sscanf(latitude\_str,\ \textcolor{stringliteral}{"{}\%lf"{}},\ \&coordinates.\mbox{\hyperlink{struct_coordinates_a20ea6542be083155699517939b03f259}{latitude}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}Coordinates\ for\ \%s:\ latitude\ =\ \%.6f,\ longitude\ =\ \%.6f\(\backslash\)n"{},\ location,\ coordinates.latitude,\ coordinates.longitude);}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Failed\ to\ extract\ latitude\ from\ the\ response.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Failed\ to\ extract\ longitude\ from\ the\ response.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Failed\ to\ extract\ coordinates\ from\ the\ response.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00145}00145\ \ \ \ \ \ \ \ \ curl\_easy\_cleanup(curl);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00146}00146\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00148}00148\ \ \ \ \ \textcolor{keywordflow}{return}\ coordinates;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00149}00149\ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00151}\mbox{\hyperlink{what3words_8c_a186e1cc3b973a183c7e0935aa412195b}{00151}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{what3words_8c_a186e1cc3b973a183c7e0935aa412195b}{validGeolocation}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ geolocation)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00152}00152\ \ \ \ \ \mbox{\hyperlink{struct_coordinates}{Coordinates}}\ coordinates\ =\ \mbox{\hyperlink{what3words_8c_a3149a0122833b28c4c4a7cd6306de7c7}{geolocationToCoordinates}}(geolocation);}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00153}00153\ \ \ \ \ \textcolor{keywordflow}{if}\ (coordinates.\mbox{\hyperlink{struct_coordinates_a20ea6542be083155699517939b03f259}{latitude}}\ !=\ 0.0\ \&\&\ coordinates.\mbox{\hyperlink{struct_coordinates_a474951b7ec4e5f12e788abbf852cd88b}{longitude}}\ !=\ 0.0)\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00155}00155\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00158}00158\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{what3words_8c_source_l00159}00159\ \}}
+
+\end{DoxyCode}

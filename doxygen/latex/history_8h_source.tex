@@ -1,0 +1,45 @@
+\hypertarget{history_8h_source}{}\doxysection{C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/history.h}
+\mbox{\hyperlink{history_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ll_8h}{ll.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00010}\mbox{\hyperlink{structdatahistory}{00010}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdatahistory}{datahistory}}}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00012}\mbox{\hyperlink{structdatahistory_a0560138ac076b17d4cbd1127d306070f}{00012}}\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structdatahistory_a0560138ac076b17d4cbd1127d306070f}{user}}[50];\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00013}\mbox{\hyperlink{structdatahistory_aa7b791cac6b85f01c3f59cc9b0258259}{00013}}\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structdatahistory_aa7b791cac6b85f01c3f59cc9b0258259}{transport}}[50];\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00014}\mbox{\hyperlink{structdatahistory_a97f8eefd861bbd4d1df3750264f9d128}{00014}}\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structdatahistory_a97f8eefd861bbd4d1df3750264f9d128}{start}}[50];\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00015}\mbox{\hyperlink{structdatahistory_a4db2cd19685f4932d4367c3497ce9a06}{00015}}\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structdatahistory_a4db2cd19685f4932d4367c3497ce9a06}{finish}}[50];\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00016}\mbox{\hyperlink{structdatahistory_adf4a6cee5d3a2ea931646033217c437f}{00016}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structdatahistory_adf4a6cee5d3a2ea931646033217c437f}{distance}};\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00017}\mbox{\hyperlink{structdatahistory_ae2b721bceb9034d0b7fa3b9dfdcf6c63}{00017}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structdatahistory_ae2b721bceb9034d0b7fa3b9dfdcf6c63}{duration}};\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00018}\mbox{\hyperlink{structdatahistory_ae01baa341d9d5dc59ffa26171289f387}{00018}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structdatahistory_ae01baa341d9d5dc59ffa26171289f387}{cost}};\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00019}\mbox{\hyperlink{history_8h_ac5780cb1c7ceb753d051dae4c7f9798c}{00019}}\ \}\ *\mbox{\hyperlink{history_8h_ac5780cb1c7ceb753d051dae4c7f9798c}{History}};\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00025}00025\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{history_8h_a748f87cb0b3f8d3156a2a6fc72f42fee}{showHistory}}(\textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00032}00032\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{history_8h_a1f7df9b33039d218e0fc8870b7f6a15b}{loadDataHistory}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listHistory);}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00038}00038\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{history_8h_a53918f41fa1a64974ca97fca48bd5dd2}{storeDataHistory}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{_e_d_a___fase1_8c_ac6d4c5a58d7f64cd4dafb654b10d25e7}{listH}});}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00046}00046\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{history_8h_a1729cf4d0b3936a78cfbf14966d08352}{filterHistoryByUser}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ originalList,\ \textcolor{keywordtype}{char}*\ userToFilter);}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00054}00054\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{history_8h_a75b1be3768a435b7cc16d4cf2f0316b3}{filterHistoryByTransport}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ originalList,\ \textcolor{keywordtype}{char}*\ transportToFilter);}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00062}00062\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{history_8h_a1230a549f4aecb8125a13f33d9d25e74}{filterHistoryByType}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ originalList,\ \textcolor{keywordtype}{char}*\ typeToFilter);}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00070}00070\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{history_8h_af5ccd22b711f4f220c24583b96c58185}{filterHistory}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listHistory,\ \textcolor{keywordtype}{int}\ by);}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00077}00077\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{history_8h_a5261207803f0bcb19dfa5ec38e1d4769}{averageDistance}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listHistory);}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00084}00084\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{history_8h_a6504adf7dbe9aac19f742164a2f68f12}{averageDuration}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listHistory);}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00091}00091\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{history_8h_a7b29604394726306122fe1f4ea4c0b5f}{averageCost}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listHistory);}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00098}00098\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{history_8h_a6f1a9a18b3ee483251c59d3908cd5cb0}{mostCommonTransport}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ list);}
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{history_8h_source_l00105}00105\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{history_8h_a720524b9b493dce65822361e932bd439}{historyClientStats}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listHistory,\ \textcolor{keywordtype}{char}*\ username);}
+
+\end{DoxyCode}

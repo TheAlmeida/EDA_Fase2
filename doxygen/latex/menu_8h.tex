@@ -1,0 +1,611 @@
+\hypertarget{menu_8h}{}\doxysection{C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/menu.h File Reference}
+\label{menu_8h}\index{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/menu.h@{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/menu.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$locale.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8h_af3eac3ad203ab091baad010ef3f7ab0a}{clrscr}} ()
+\begin{DoxyCompactList}\small\item\em Clearscreen command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_aa3b21853f890838c88d047d6c2786917}{wait}} ()
+\begin{DoxyCompactList}\small\item\em Wait message and getch(). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a7e15c8e2885871839fc2b820dfbdb4ce}{error}} ()
+\begin{DoxyCompactList}\small\item\em Error message and getch(). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a0d70646ab374defadbdad4652bdcfcfe}{errornotvalid}} ()
+\begin{DoxyCompactList}\small\item\em Error message and getch(). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a370c4825028871767df8da47f36f5ac8}{errorusername}} ()
+\begin{DoxyCompactList}\small\item\em Error message and getch(). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a6164da4a844b99ad1d22fa392cc834ec}{errorpassword}} ()
+\begin{DoxyCompactList}\small\item\em Error message and getch(). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a3acaa41d1f1ac9448bc7ef6bee25f37a}{errorusernameexists}} ()
+\begin{DoxyCompactList}\small\item\em Error message and getch(). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a7c18a6bd043157a0afa4321a2dd16f83}{errornotvalidinfo}} ()
+\begin{DoxyCompactList}\small\item\em Error message and getch(). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a353638ecde5a9b18226ef6e747580637}{novehiclesavailable}} ()
+\begin{DoxyCompactList}\small\item\em Error message and getch(). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a9f809d3b08485e9e7fe169bff0a6fa25}{showtime}} ()
+\begin{DoxyCompactList}\small\item\em Prints time and date. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8h_a486bb30c5931dc2a5719fb89b40f89de}{is\+Int}} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Checks if passed string is an int. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8h_ab96924be11a25dc748563360c39becb0}{is\+Float}} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Checks if passed string is a float. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8h_ae504c7ad54270101004e65ebd78620ba}{string\+To\+Int}} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Converts input string into an int. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{menu_8h_a37e0276c190ac96aed8122851fd3275b}{string\+To\+Float}} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Converts input string into a float. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a2a0e843767aeea4f433a28b9c54f573a}{menu}} ()
+\begin{DoxyCompactList}\small\item\em Prints the greeting menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a920cd6e1098e5aa8049cd34249c43430}{signnewuser}} ()
+\begin{DoxyCompactList}\small\item\em Prints a sign new user header. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a98c3e0a1460df9c765832a93d64113b5}{signupok}} ()
+\begin{DoxyCompactList}\small\item\em Prints a confirmation of signup header. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a02c203b61f84e27e8242fbe36011d5d8}{signin}} ()
+\begin{DoxyCompactList}\small\item\em Prints login header. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_abd4fda464ef06f5d93c4d5e809f01906}{signinok}} (char name\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Prints a confirmation of login header. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a23f3e02c8be257c88ebbc3e60f4b2bd8}{clientmenu}} ()
+\begin{DoxyCompactList}\small\item\em Prints the client menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a90a4a8bd5c4579b17a148a9fc0bf6741}{availablevehicles}} ()
+\begin{DoxyCompactList}\small\item\em Prints a header for the available vehicles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a25b3fe47fe859f727010a04718bc9b69}{clientbalance}} ()
+\begin{DoxyCompactList}\small\item\em Prints a header for the balance operations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_ad0cb64ff5cb6b4cfef7a8c609b1f5efa}{averageclientstats}} ()
+\begin{DoxyCompactList}\small\item\em Prints a header for the average stats accessed by the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a116726a53fbbce50684e6a837027d8ed}{historyclientstats}} ()
+\begin{DoxyCompactList}\small\item\em Prints a header for the history accessed by the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a36390f9760fbc000045a182889ebb231}{simulatemenu}} ()
+\begin{DoxyCompactList}\small\item\em Prints a header for the simulation phase. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_aeb313e11ab653b1f189809e11ff14eb9}{signinokadmin}} ()
+\begin{DoxyCompactList}\small\item\em Prints a confirmation of log in header for admins. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_ab94906debe465784ce5a3d92390ed7a2}{adminmenu}} ()
+\begin{DoxyCompactList}\small\item\em Prints the admin menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a38a00cafd905f1280d4a19360a4c7aab}{admincstats}} ()
+\begin{DoxyCompactList}\small\item\em Prints a header for client stats. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a8b369a47f7adcf40d3d5e92b497f8785}{admincstatsbytrips}} ()
+\begin{DoxyCompactList}\small\item\em Prints a header for client stats. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_ac0e6b3c31342e4adc82ba4c4dbb152f7}{adminhistory}} ()
+\begin{DoxyCompactList}\small\item\em Prints a header for histories. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a67efd2040296d818486c4318c6aaccea}{adminvstats}} ()
+\begin{DoxyCompactList}\small\item\em Prints a header for vehicle stats. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a9332129c5d0d6452699786fc2db83e81}{adminvstatsbatteryunder50}} ()
+\begin{DoxyCompactList}\small\item\em Prints a header for vehicle stats. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_af3cf3b816cdc3a13d79f36df39b54986}{adminvstatstotalkms}} ()
+\begin{DoxyCompactList}\small\item\em Prints a header for vehicle stats. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a2211d135853b6f48b7522ebaaf370a94}{contactus}} ()
+\begin{DoxyCompactList}\small\item\em Prints the contactus menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a29d1b422e1d5b10987b567b8fa0ff41f}{endprogram}} ()
+\begin{DoxyCompactList}\small\item\em Prints an end program header and terminates the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{menu_8h_a38a00cafd905f1280d4a19360a4c7aab}\label{menu_8h_a38a00cafd905f1280d4a19360a4c7aab}} 
+\index{menu.h@{menu.h}!admincstats@{admincstats}}
+\index{admincstats@{admincstats}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{admincstats()}{admincstats()}}
+{\footnotesize\ttfamily void admincstats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a header for client stats. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00263}{263}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a8b369a47f7adcf40d3d5e92b497f8785}\label{menu_8h_a8b369a47f7adcf40d3d5e92b497f8785}} 
+\index{menu.h@{menu.h}!admincstatsbytrips@{admincstatsbytrips}}
+\index{admincstatsbytrips@{admincstatsbytrips}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{admincstatsbytrips()}{admincstatsbytrips()}}
+{\footnotesize\ttfamily void admincstatsbytrips (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a header for client stats. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00274}{274}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_ac0e6b3c31342e4adc82ba4c4dbb152f7}\label{menu_8h_ac0e6b3c31342e4adc82ba4c4dbb152f7}} 
+\index{menu.h@{menu.h}!adminhistory@{adminhistory}}
+\index{adminhistory@{adminhistory}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{adminhistory()}{adminhistory()}}
+{\footnotesize\ttfamily void adminhistory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a header for histories. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00282}{282}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_ab94906debe465784ce5a3d92390ed7a2}\label{menu_8h_ab94906debe465784ce5a3d92390ed7a2}} 
+\index{menu.h@{menu.h}!adminmenu@{adminmenu}}
+\index{adminmenu@{adminmenu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{adminmenu()}{adminmenu()}}
+{\footnotesize\ttfamily void adminmenu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the admin menu. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00238}{238}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a67efd2040296d818486c4318c6aaccea}\label{menu_8h_a67efd2040296d818486c4318c6aaccea}} 
+\index{menu.h@{menu.h}!adminvstats@{adminvstats}}
+\index{adminvstats@{adminvstats}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{adminvstats()}{adminvstats()}}
+{\footnotesize\ttfamily void adminvstats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a header for vehicle stats. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00293}{293}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a9332129c5d0d6452699786fc2db83e81}\label{menu_8h_a9332129c5d0d6452699786fc2db83e81}} 
+\index{menu.h@{menu.h}!adminvstatsbatteryunder50@{adminvstatsbatteryunder50}}
+\index{adminvstatsbatteryunder50@{adminvstatsbatteryunder50}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{adminvstatsbatteryunder50()}{adminvstatsbatteryunder50()}}
+{\footnotesize\ttfamily void adminvstatsbatteryunder50 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a header for vehicle stats. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00304}{304}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_af3cf3b816cdc3a13d79f36df39b54986}\label{menu_8h_af3cf3b816cdc3a13d79f36df39b54986}} 
+\index{menu.h@{menu.h}!adminvstatstotalkms@{adminvstatstotalkms}}
+\index{adminvstatstotalkms@{adminvstatstotalkms}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{adminvstatstotalkms()}{adminvstatstotalkms()}}
+{\footnotesize\ttfamily void adminvstatstotalkms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a header for vehicle stats. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00312}{312}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a90a4a8bd5c4579b17a148a9fc0bf6741}\label{menu_8h_a90a4a8bd5c4579b17a148a9fc0bf6741}} 
+\index{menu.h@{menu.h}!availablevehicles@{availablevehicles}}
+\index{availablevehicles@{availablevehicles}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{availablevehicles()}{availablevehicles()}}
+{\footnotesize\ttfamily void availablevehicles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a header for the available vehicles. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00179}{179}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_ad0cb64ff5cb6b4cfef7a8c609b1f5efa}\label{menu_8h_ad0cb64ff5cb6b4cfef7a8c609b1f5efa}} 
+\index{menu.h@{menu.h}!averageclientstats@{averageclientstats}}
+\index{averageclientstats@{averageclientstats}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{averageclientstats()}{averageclientstats()}}
+{\footnotesize\ttfamily void averageclientstats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a header for the average stats accessed by the user. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00200}{200}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a25b3fe47fe859f727010a04718bc9b69}\label{menu_8h_a25b3fe47fe859f727010a04718bc9b69}} 
+\index{menu.h@{menu.h}!clientbalance@{clientbalance}}
+\index{clientbalance@{clientbalance}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{clientbalance()}{clientbalance()}}
+{\footnotesize\ttfamily void clientbalance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a header for the balance operations. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00189}{189}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a23f3e02c8be257c88ebbc3e60f4b2bd8}\label{menu_8h_a23f3e02c8be257c88ebbc3e60f4b2bd8}} 
+\index{menu.h@{menu.h}!clientmenu@{clientmenu}}
+\index{clientmenu@{clientmenu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{clientmenu()}{clientmenu()}}
+{\footnotesize\ttfamily void clientmenu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the client menu. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00160}{160}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_af3eac3ad203ab091baad010ef3f7ab0a}\label{menu_8h_af3eac3ad203ab091baad010ef3f7ab0a}} 
+\index{menu.h@{menu.h}!clrscr@{clrscr}}
+\index{clrscr@{clrscr}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{clrscr()}{clrscr()}}
+{\footnotesize\ttfamily void clrscr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clearscreen command. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00003}{3}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a2211d135853b6f48b7522ebaaf370a94}\label{menu_8h_a2211d135853b6f48b7522ebaaf370a94}} 
+\index{menu.h@{menu.h}!contactus@{contactus}}
+\index{contactus@{contactus}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{contactus()}{contactus()}}
+{\footnotesize\ttfamily void contactus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the contactus menu. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00320}{320}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a29d1b422e1d5b10987b567b8fa0ff41f}\label{menu_8h_a29d1b422e1d5b10987b567b8fa0ff41f}} 
+\index{menu.h@{menu.h}!endprogram@{endprogram}}
+\index{endprogram@{endprogram}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{endprogram()}{endprogram()}}
+{\footnotesize\ttfamily void endprogram (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints an end program header and terminates the program. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00343}{343}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a7e15c8e2885871839fc2b820dfbdb4ce}\label{menu_8h_a7e15c8e2885871839fc2b820dfbdb4ce}} 
+\index{menu.h@{menu.h}!error@{error}}
+\index{error@{error}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily void error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Error message and getch(). 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00014}{14}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a0d70646ab374defadbdad4652bdcfcfe}\label{menu_8h_a0d70646ab374defadbdad4652bdcfcfe}} 
+\index{menu.h@{menu.h}!errornotvalid@{errornotvalid}}
+\index{errornotvalid@{errornotvalid}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{errornotvalid()}{errornotvalid()}}
+{\footnotesize\ttfamily void errornotvalid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Error message and getch(). 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00020}{20}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a7c18a6bd043157a0afa4321a2dd16f83}\label{menu_8h_a7c18a6bd043157a0afa4321a2dd16f83}} 
+\index{menu.h@{menu.h}!errornotvalidinfo@{errornotvalidinfo}}
+\index{errornotvalidinfo@{errornotvalidinfo}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{errornotvalidinfo()}{errornotvalidinfo()}}
+{\footnotesize\ttfamily void errornotvalidinfo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Error message and getch(). 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00044}{44}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a6164da4a844b99ad1d22fa392cc834ec}\label{menu_8h_a6164da4a844b99ad1d22fa392cc834ec}} 
+\index{menu.h@{menu.h}!errorpassword@{errorpassword}}
+\index{errorpassword@{errorpassword}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{errorpassword()}{errorpassword()}}
+{\footnotesize\ttfamily void errorpassword (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Error message and getch(). 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00032}{32}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a370c4825028871767df8da47f36f5ac8}\label{menu_8h_a370c4825028871767df8da47f36f5ac8}} 
+\index{menu.h@{menu.h}!errorusername@{errorusername}}
+\index{errorusername@{errorusername}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{errorusername()}{errorusername()}}
+{\footnotesize\ttfamily void errorusername (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Error message and getch(). 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00026}{26}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a3acaa41d1f1ac9448bc7ef6bee25f37a}\label{menu_8h_a3acaa41d1f1ac9448bc7ef6bee25f37a}} 
+\index{menu.h@{menu.h}!errorusernameexists@{errorusernameexists}}
+\index{errorusernameexists@{errorusernameexists}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{errorusernameexists()}{errorusernameexists()}}
+{\footnotesize\ttfamily void errorusernameexists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Error message and getch(). 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00038}{38}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a116726a53fbbce50684e6a837027d8ed}\label{menu_8h_a116726a53fbbce50684e6a837027d8ed}} 
+\index{menu.h@{menu.h}!historyclientstats@{historyclientstats}}
+\index{historyclientstats@{historyclientstats}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{historyclientstats()}{historyclientstats()}}
+{\footnotesize\ttfamily void historyclientstats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a header for the history accessed by the user. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00211}{211}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_ab96924be11a25dc748563360c39becb0}\label{menu_8h_ab96924be11a25dc748563360c39becb0}} 
+\index{menu.h@{menu.h}!isFloat@{isFloat}}
+\index{isFloat@{isFloat}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{isFloat()}{isFloat()}}
+{\footnotesize\ttfamily int is\+Float (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Checks if passed string is a float. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & string to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 is str is float, 0 otherwise.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00075}{75}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a486bb30c5931dc2a5719fb89b40f89de}\label{menu_8h_a486bb30c5931dc2a5719fb89b40f89de}} 
+\index{menu.h@{menu.h}!isInt@{isInt}}
+\index{isInt@{isInt}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{isInt()}{isInt()}}
+{\footnotesize\ttfamily int is\+Int (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Checks if passed string is an int. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & string to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 is str is int, 0 otherwise.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00065}{65}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a2a0e843767aeea4f433a28b9c54f573a}\label{menu_8h_a2a0e843767aeea4f433a28b9c54f573a}} 
+\index{menu.h@{menu.h}!menu@{menu}}
+\index{menu@{menu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily void menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the greeting menu. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00105}{105}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a353638ecde5a9b18226ef6e747580637}\label{menu_8h_a353638ecde5a9b18226ef6e747580637}} 
+\index{menu.h@{menu.h}!novehiclesavailable@{novehiclesavailable}}
+\index{novehiclesavailable@{novehiclesavailable}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{novehiclesavailable()}{novehiclesavailable()}}
+{\footnotesize\ttfamily void novehiclesavailable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Error message and getch(). 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00050}{50}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a9f809d3b08485e9e7fe169bff0a6fa25}\label{menu_8h_a9f809d3b08485e9e7fe169bff0a6fa25}} 
+\index{menu.h@{menu.h}!showtime@{showtime}}
+\index{showtime@{showtime}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{showtime()}{showtime()}}
+{\footnotesize\ttfamily void showtime (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints time and date. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00056}{56}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a02c203b61f84e27e8242fbe36011d5d8}\label{menu_8h_a02c203b61f84e27e8242fbe36011d5d8}} 
+\index{menu.h@{menu.h}!signin@{signin}}
+\index{signin@{signin}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{signin()}{signin()}}
+{\footnotesize\ttfamily void signin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints login header. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00138}{138}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_abd4fda464ef06f5d93c4d5e809f01906}\label{menu_8h_abd4fda464ef06f5d93c4d5e809f01906}} 
+\index{menu.h@{menu.h}!signinok@{signinok}}
+\index{signinok@{signinok}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{signinok()}{signinok()}}
+{\footnotesize\ttfamily void signinok (\begin{DoxyParamCaption}\item[{char}]{name\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Prints a confirmation of login header. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the client to print.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00148}{148}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_aeb313e11ab653b1f189809e11ff14eb9}\label{menu_8h_aeb313e11ab653b1f189809e11ff14eb9}} 
+\index{menu.h@{menu.h}!signinokadmin@{signinokadmin}}
+\index{signinokadmin@{signinokadmin}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{signinokadmin()}{signinokadmin()}}
+{\footnotesize\ttfamily void signinokadmin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a confirmation of log in header for admins. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00229}{229}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a920cd6e1098e5aa8049cd34249c43430}\label{menu_8h_a920cd6e1098e5aa8049cd34249c43430}} 
+\index{menu.h@{menu.h}!signnewuser@{signnewuser}}
+\index{signnewuser@{signnewuser}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{signnewuser()}{signnewuser()}}
+{\footnotesize\ttfamily void signnewuser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a sign new user header. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00120}{120}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a98c3e0a1460df9c765832a93d64113b5}\label{menu_8h_a98c3e0a1460df9c765832a93d64113b5}} 
+\index{menu.h@{menu.h}!signupok@{signupok}}
+\index{signupok@{signupok}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{signupok()}{signupok()}}
+{\footnotesize\ttfamily void signupok (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a confirmation of signup header. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00130}{130}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a36390f9760fbc000045a182889ebb231}\label{menu_8h_a36390f9760fbc000045a182889ebb231}} 
+\index{menu.h@{menu.h}!simulatemenu@{simulatemenu}}
+\index{simulatemenu@{simulatemenu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{simulatemenu()}{simulatemenu()}}
+{\footnotesize\ttfamily void simulatemenu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a header for the simulation phase. 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00219}{219}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_a37e0276c190ac96aed8122851fd3275b}\label{menu_8h_a37e0276c190ac96aed8122851fd3275b}} 
+\index{menu.h@{menu.h}!stringToFloat@{stringToFloat}}
+\index{stringToFloat@{stringToFloat}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{stringToFloat()}{stringToFloat()}}
+{\footnotesize\ttfamily float string\+To\+Float (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Converts input string into a float. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & String to convert.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Converted input.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00101}{101}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_ae504c7ad54270101004e65ebd78620ba}\label{menu_8h_ae504c7ad54270101004e65ebd78620ba}} 
+\index{menu.h@{menu.h}!stringToInt@{stringToInt}}
+\index{stringToInt@{stringToInt}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{stringToInt()}{stringToInt()}}
+{\footnotesize\ttfamily int string\+To\+Int (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Converts input string into an int. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & String to convert.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Converted input.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00092}{92}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+\mbox{\Hypertarget{menu_8h_aa3b21853f890838c88d047d6c2786917}\label{menu_8h_aa3b21853f890838c88d047d6c2786917}} 
+\index{menu.h@{menu.h}!wait@{wait}}
+\index{wait@{wait}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily void wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Wait message and getch(). 
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00008}{8}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+

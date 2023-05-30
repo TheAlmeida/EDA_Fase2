@@ -1,0 +1,43 @@
+\hypertarget{admin_8h_source}{}\doxysection{C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/admin.h}
+\mbox{\hyperlink{admin_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{menu_8h}{menu.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ll_8h}{ll.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client_8h}{client.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00012}\mbox{\hyperlink{structdataadmin}{00012}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdataadmin}{dataadmin}}}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00014}\mbox{\hyperlink{structdataadmin_a8463be5b88d03df1c4913fc9ba704f4a}{00014}}\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structdataadmin_a8463be5b88d03df1c4913fc9ba704f4a}{username}}[20];\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00015}\mbox{\hyperlink{structdataadmin_a9b1029e2376648f7d526394cba38c5ca}{00015}}\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structdataadmin_a9b1029e2376648f7d526394cba38c5ca}{password}}[50];\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00016}\mbox{\hyperlink{structdataadmin_ac18ce3e0ba3f0cde64231098951ff2ed}{00016}}\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structdataadmin_ac18ce3e0ba3f0cde64231098951ff2ed}{name}}[50];\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00017}\mbox{\hyperlink{structdataadmin_a50f660e3470a39349f7a5a5e3915869b}{00017}}\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structdataadmin_a50f660e3470a39349f7a5a5e3915869b}{email}}[50];\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00018}\mbox{\hyperlink{admin_8h_a5e06ff1ef42367c064e674abc1a29f77}{00018}}\ \}\ *\mbox{\hyperlink{admin_8h_a5e06ff1ef42367c064e674abc1a29f77}{Admin}};\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00024}00024\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{admin_8h_ad274e26a42c6c9215afb01bfd57f618a}{showAdmin}}(\textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00031}00031\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{admin_8h_ab3244935f8b7e828ec586d7f64694937}{loadDataAdmins}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listAdmins);}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00037}00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{admin_8h_ae6b215143203d96bbd5577272d5e725b}{storeDataAdmins}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{_e_d_a___fase1_8c_a27cc03dc4c2f19714cd8240127422e33}{listA}});}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00045}00045\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{admin_8h_af17ffc91371bcffca23812a19e465229}{compareNamesAdmins}}(\textcolor{keywordtype}{void}*\ data1,\ \textcolor{keywordtype}{void}*\ data2);}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00047}00047\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{admin_8h_a241b1a167216f0a741ae6899f3fd4178}{changeAUsername}}(\mbox{\hyperlink{structdataadmin}{Admin}}\ admin,\ \textcolor{keywordtype}{char}*\ newUsername);}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00049}00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{admin_8h_aa72d252f7f1ee6f7f7e2765cdf39242d}{changeAPassword}}(\mbox{\hyperlink{structdataadmin}{Admin}}\ admin,\ \textcolor{keywordtype}{char}*\ newPassword);}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00051}00051\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{admin_8h_a9cd0d8cf78eb3691a0ea15bf1935192e}{changeAName}}(\mbox{\hyperlink{structdataadmin}{Admin}}\ admin,\ \textcolor{keywordtype}{char}*\ newName);}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00053}00053\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{admin_8h_afa7333dd44a3092743ab27dee7059c79}{changeAEmail}}(\mbox{\hyperlink{structdataadmin}{Admin}}\ admin,\ \textcolor{keywordtype}{char}*\ newEmail);}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00061}00061\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{admin_8h_acf22ec1ebdde94097eeb33f7b864e71c}{removeAdmin}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listAdmin,\ \textcolor{keywordtype}{int}*\ modified);}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00069}00069\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{admin_8h_a03cd89ec0768356ec2343de9d59e2b07}{editAdmin}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listAdmin,\ \textcolor{keywordtype}{int}*\ modified);}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00078}00078\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{admin_8h_a02d9bbacf8df20f5ac59d7bc4654ad62}{registerAdmin}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ listAdmin,\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ listClient,\ \textcolor{keywordtype}{int}*\ modified);}
+\DoxyCodeLine{\Hypertarget{admin_8h_source_l00079}00079\ }
+
+\end{DoxyCode}

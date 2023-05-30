@@ -1,0 +1,132 @@
+\hypertarget{graph_8h_source}{}\doxysection{C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/graph.h}
+\mbox{\hyperlink{graph_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <float.h>}}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ll_8h}{ll.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client_8h}{client.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vehicle_8h}{vehicle.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{what3words_8h}{what3words.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00014}\mbox{\hyperlink{struct_pick_up_result}{00014}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00015}\mbox{\hyperlink{struct_pick_up_result_a44f4b8ec0b71e23c5cc993bbfc9d4e08}{00015}}\ \ \ \ \ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{struct_pick_up_result_a44f4b8ec0b71e23c5cc993bbfc9d4e08}{pickedUpVehicles}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00016}\mbox{\hyperlink{struct_pick_up_result_a81b33026474b75908d983d8b68669f46}{00016}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_pick_up_result_a81b33026474b75908d983d8b68669f46}{vehicleTooHeavy}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00017}00017\ \}\ \mbox{\hyperlink{struct_pick_up_result}{PickUpResult}};}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00022}\mbox{\hyperlink{structs_location}{00022}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs_location}{sLocation}}}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00024}\mbox{\hyperlink{structs_location_a463c46feab9e6c7656c29559945e57d8}{00024}}\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs_location_a463c46feab9e6c7656c29559945e57d8}{name}}[50];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00025}\mbox{\hyperlink{structs_location_a8f55ee4ac8f6823f3b4c747cad0627ae}{00025}}\ \ \ \ \ \mbox{\hyperlink{struct_coordinates}{Coordinates}}\ \mbox{\hyperlink{structs_location_a8f55ee4ac8f6823f3b4c747cad0627ae}{coordinates}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00026}\mbox{\hyperlink{structs_location_a831ee9949b0956dd348938e3c6ae6c27}{00026}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs_list_elem}{sListElem}}*\ \mbox{\hyperlink{structs_location_a831ee9949b0956dd348938e3c6ae6c27}{adjacentLocations}};\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00027}\mbox{\hyperlink{structs_location_a48f011a48b742e13c15512512eea403b}{00027}}\ \ \ \ \ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{structs_location_a48f011a48b742e13c15512512eea403b}{clientList}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00028}\mbox{\hyperlink{structs_location_a144042cb905298e9897b0589c79908a4}{00028}}\ \ \ \ \ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{structs_location_a144042cb905298e9897b0589c79908a4}{vehicleList}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00029}\mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{00029}}\ \}\ \mbox{\hyperlink{graph_8h_acdc49f7ae948d31dd3a623f8ebd4379d}{Location}};}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00034}\mbox{\hyperlink{structs_adjacent_location}{00034}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs_adjacent_location}{sAdjacentLocation}}}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00036}\mbox{\hyperlink{structs_adjacent_location_af3e1e06d9612e09b633094e6e7dc3780}{00036}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs_location}{sLocation}}*\ \mbox{\hyperlink{structs_adjacent_location_af3e1e06d9612e09b633094e6e7dc3780}{location}};\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00037}\mbox{\hyperlink{structs_adjacent_location_a9f58ad2b782cffb0a6461975ce4cb292}{00037}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structs_adjacent_location_a9f58ad2b782cffb0a6461975ce4cb292}{weight}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00038}\mbox{\hyperlink{graph_8h_a3ace7255dd591d5262ef733e3cddc726}{00038}}\ \}\ \mbox{\hyperlink{graph_8h_a3ace7255dd591d5262ef733e3cddc726}{AdjacentLocation}};}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00043}\mbox{\hyperlink{structs_visited_location}{00043}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs_visited_location}{sVisitedLocation}}\ \{}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00044}\mbox{\hyperlink{structs_visited_location_a7871232c76ee23796dff95fe9cf8e10b}{00044}}\ \ \ \ \ \mbox{\hyperlink{structs_location}{Location}}*\ \mbox{\hyperlink{structs_visited_location_a7871232c76ee23796dff95fe9cf8e10b}{location}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00045}\mbox{\hyperlink{structs_visited_location_a06e84520b09d23c1632f63c3aa9ca88c}{00045}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structs_visited_location_a06e84520b09d23c1632f63c3aa9ca88c}{distance}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00046}\mbox{\hyperlink{structs_visited_location_a7e280dcb3e8c2da7c06e608d627fee5d}{00046}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs_visited_location}{sVisitedLocation}}*\ \mbox{\hyperlink{structs_visited_location_a7e280dcb3e8c2da7c06e608d627fee5d}{previous}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00047}\mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{00047}}\ \}\ \mbox{\hyperlink{graph_8h_ac88f90bf20d42ccdf42131c519ce8dc6}{VisitedLocation}};}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00052}\mbox{\hyperlink{structs_graph}{00052}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs_graph}{sGraph}}}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00053}00053\ \{}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00054}\mbox{\hyperlink{structs_graph_ac156fddbbbe88933c5bf670836fd8d54}{00054}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs_list_elem}{sListElem}}*\ \mbox{\hyperlink{structs_graph_ac156fddbbbe88933c5bf670836fd8d54}{locations}};\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00055}\mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{00055}}\ \}\ \mbox{\hyperlink{graph_8h_a8589cac11de750cc41390ad4103bde42}{Graph}};}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00057}00057\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{graph_8h_a69f67f49d6589233e6806627a9f819ba}{garage}}[];\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00063}00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_ad4ba81e18885ccc52496b4b9a7165806}{storeDataGraph}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}});}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00072}00072\ \mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{graph_8h_af10d3314dd78168472132768563cdef2}{loadDataGraph}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}},\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ listClients,\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ listVehicles);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00078}00078\ \mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{graph_8h_a7665daed45cec3b84a6f34684e5d63d9}{createGraph}}();}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00087}00087\ \mbox{\hyperlink{structs_location}{Location}}*\ \mbox{\hyperlink{graph_8h_a99b745f3ecfa11f9f49f5b8657ac0767}{createLocation}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00094}00094\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_ad8330ccfc4b3741bbb8194b6937ecb6c}{addLocation}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}},\ \mbox{\hyperlink{structs_location}{Location}}*\ location);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00102}00102\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_a5714b0803d01782b52e372fedc2cd6e4}{addAdjacentLocation}}(\mbox{\hyperlink{structs_location}{Location}}*\ location,\ \mbox{\hyperlink{structs_location}{Location}}*\ adjacentLocation,\ \textcolor{keywordtype}{double}\ weight);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00109}00109\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_a2fce6be73c007af41293cca227cd084b}{addClientToLocation}}(\mbox{\hyperlink{structs_location}{Location}}*\ location,\ \mbox{\hyperlink{structdataclient}{Client}}\ client);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00116}00116\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_ab92800fb716d4fefb089ed23955bae19}{removeClientFromLocation}}(\mbox{\hyperlink{structs_location}{Location}}*\ location,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ username);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00123}00123\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_a1af7c9306502cdaa1af8d9644d7ec77a}{addVehicleToLocation}}(\mbox{\hyperlink{structs_location}{Location}}*\ location,\ \mbox{\hyperlink{structdatavehicle}{Vehicle}}\ vehicle);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00131}00131\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_a45b65a28a97906db4575bd99a4d86538}{removeVehicleFromLocation}}(\mbox{\hyperlink{structs_location}{Location}}*\ location,\ \textcolor{keywordtype}{int}\ code,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ type);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00138}00138\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_ab13733de13de62a4c3fd116aa0fba72c}{createLocationsFromClients}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}},\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{_e_d_a___fase1_8c_a5e21eee4b25172fcdd41a5b9fc5680c0}{listC}});}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00145}00145\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_a27fae164a724854773ab89b9787afe74}{createLocationsFromVehicles}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}},\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{_e_d_a___fase1_8c_a5208aaa5c10b1c45461a1dcb3827dc32}{listV}});}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00153}00153\ \mbox{\hyperlink{structs_location}{Location}}*\ \mbox{\hyperlink{graph_8h_afff7fd8687094ebd158820f8351b0981}{findLocationByGeolocation}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ geolocation);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00161}00161\ \mbox{\hyperlink{structs_location}{Location}}*\ \mbox{\hyperlink{graph_8h_a17a6d6a2ca158a4064f023c8e3a53b51}{findLocationByVehicle}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}},\ \mbox{\hyperlink{structdatavehicle}{Vehicle}}\ vehicle);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00169}00169\ \mbox{\hyperlink{structs_location}{Location}}*\ \mbox{\hyperlink{graph_8h_a92ceb27b870d734374cb9618b6d6a57a}{getRandomLocation}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}},\ \mbox{\hyperlink{structs_location}{Location}}*\ excludeLocation);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00177}00177\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{graph_8h_a161044c3f91c6132f8239e63f9941880}{locationHasAdjacency}}(\mbox{\hyperlink{structs_location}{Location}}*\ location,\ \mbox{\hyperlink{structs_location}{Location}}*\ otherLocation);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00185}00185\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{graph_8h_a21d28660a4092c351b2148cf90c09c76}{hasIncomingAdjacency}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}},\ \mbox{\hyperlink{structs_location}{Location}}*\ location);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00191}00191\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_adc1652ea4617cbe2fb6a4eb359928114}{maintainConnectivity}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}});}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00197}00197\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_ad1cfa14f0d85070bac3619eaec6e53cb}{pseudoStronglyConnectLocations}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}});}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00204}00204\ \mbox{\hyperlink{structs_location}{Location}}*\ \mbox{\hyperlink{graph_8h_ae25b39da91d38d4d0b44f91ad502d8fc}{findMinDistanceLocation}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ unvisitedSet);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00213}00213\ \mbox{\hyperlink{structs_visited_location}{VisitedLocation}}*\ \mbox{\hyperlink{graph_8h_a9e7dbaef7e82a2e48c2ba00974718b32}{createVisitedLocation}}(\mbox{\hyperlink{structs_location}{Location}}*\ location,\ \textcolor{keywordtype}{double}\ distance,\ \mbox{\hyperlink{structs_visited_location}{VisitedLocation}}*\ previous);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00220}00220\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_a5670ffa099b12b4ee0201eb1b9fc3e37}{updateVisitedLocationDistance}}(\mbox{\hyperlink{structs_visited_location}{VisitedLocation}}*\ visitedLocation,\ \textcolor{keywordtype}{double}\ distance);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00227}00227\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_a67b7a7e265b07a8e88902d49b366609a}{updateVisitedLocationPrevious}}(\mbox{\hyperlink{structs_visited_location}{VisitedLocation}}*\ visitedLocation,\ \mbox{\hyperlink{structs_visited_location}{VisitedLocation}}*\ previous);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00235}00235\ \mbox{\hyperlink{structs_visited_location}{VisitedLocation}}*\ \mbox{\hyperlink{graph_8h_a4a4fc08679e632ce9c8a00a72ec1835e}{findVisitedLocationByLocation}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ visitedSet,\ \mbox{\hyperlink{structs_location}{Location}}*\ location);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00243}00243\ \mbox{\hyperlink{structs_adjacent_location}{AdjacentLocation}}*\ \mbox{\hyperlink{graph_8h_a9577971b00adaf3b5cfffdf650a5edf9}{findAdjacentLocation}}(\mbox{\hyperlink{structs_location}{Location}}*\ from,\ \mbox{\hyperlink{structs_location}{Location}}*\ to);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00250}00250\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{graph_8h_aeb52e915d8905f5af470203fbafb3a77}{getShortestPath}}(\mbox{\hyperlink{structs_visited_location}{VisitedLocation}}*\ target);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00257}00257\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{graph_8h_af64f6a643bc3b8296a3c19323459ecf6}{calculatePathDistance}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ path);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00266}00266\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ \mbox{\hyperlink{graph_8h_a784e65738480be8e4926e679a477fe72}{calculateShortestPath}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}},\ \mbox{\hyperlink{structs_location}{Location}}*\ start,\ \mbox{\hyperlink{structs_location}{Location}}*\ target);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00274}00274\ \mbox{\hyperlink{structs_location}{Location}}*\ \mbox{\hyperlink{graph_8h_a20b50a1b2bc3333f015ea6cf14188021}{calculateShortestPathWithVehicle}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}},\ \mbox{\hyperlink{structs_location}{Location}}*\ start);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00281}00281\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_a7dfdd34a1502f79503127ad59837a13e}{unloadVehicles}}(\mbox{\hyperlink{structs_location}{Location}}*\ start,\ \mbox{\hyperlink{structs_list_elem}{ListElem}}\ vehicles);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00289}00289\ \mbox{\hyperlink{struct_pick_up_result}{PickUpResult}}\ \mbox{\hyperlink{graph_8h_af1c9d966eabe0d69058a1f796e2f929d}{pickUpVehicles}}(\mbox{\hyperlink{structs_location}{Location}}*\ location,\ \textcolor{keywordtype}{float}\ maxWeight);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00296}00296\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{graph_8h_a107777e2f3d5135fadcde34cafdb5d22}{hasVehicleToPickUp}}(\mbox{\hyperlink{structs_location}{Location}}*\ location);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00297}00297\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00302}00302\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_ac1509116530104f670c64534714f928a}{printVisitedSet}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ visitedSet);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00303}00303\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00308}00308\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_abe97053c75f5d4ba089081b8ceb14076}{printUnvisitedSet}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ unvisitedSet);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00309}00309\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00314}00314\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_a9ea548c63ba0f4f64d57099bb3b72031}{showPath}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ path);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00315}00315\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00320}00320\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_ae0cf9ae693d85508070880a5c480c124}{showGraph}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}});}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00326}00326\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_a67b9afe5857b097b99ba949e75f8246c}{freePath}}(\mbox{\hyperlink{structs_list_elem}{ListElem}}\ path);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00332}00332\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_ac503172ac443dd77a4dfc694e3df85af}{freeGraph}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}});}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00333}00333\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00340}00340\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{graph_8h_aecc730e54cf44c94e8ccd5417d32de0f}{compareAdjacentLocations}}(\textcolor{keywordtype}{void}*\ data1,\ \textcolor{keywordtype}{void}*\ data2);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00341}00341\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00348}00348\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{graph_8h_a0bc67f251187c11ff2e3df6a1089e089}{compareLocations}}(\textcolor{keywordtype}{void}*\ data1,\ \textcolor{keywordtype}{void}*\ data2);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00355}00355\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_a913b92eec26620b4a496a5c89547e035}{removeAdjacentLocation}}(\mbox{\hyperlink{structs_location}{Location}}*\ selectedLocation,\ \textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00361}00361\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{graph_8h_a199c07a893724bbb893e84f5dfab771a}{removeLocation}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}},\ \mbox{\hyperlink{structs_location}{Location}}*\ selectedLocation);}
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00362}00362\ }
+\DoxyCodeLine{\Hypertarget{graph_8h_source_l00369}00369\ \mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{graph_8h_a194f251bcb4e70673f0abcc5938ae40c}{editGraph}}(\mbox{\hyperlink{structs_graph}{Graph}}*\ \mbox{\hyperlink{_e_d_a___fase1_8c_a2360aba01fa93c8493ba96683c4fb89c}{graph}},\ \textcolor{keywordtype}{int}*\ modified);}
+
+\end{DoxyCode}

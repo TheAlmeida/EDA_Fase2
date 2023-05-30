@@ -1,0 +1,109 @@
+\hypertarget{structs_location}{}\doxysection{s\+Location Struct Reference}
+\label{structs_location}\index{sLocation@{sLocation}}
+
+
+Struct representing a location.  
+
+
+
+
+{\ttfamily \#include $<$graph.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{structs_location_a463c46feab9e6c7656c29559945e57d8}{name}} \mbox{[}50\mbox{]}
+\begin{DoxyCompactList}\small\item\em Name of the location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_coordinates}{Coordinates}} \mbox{\hyperlink{structs_location_a8f55ee4ac8f6823f3b4c747cad0627ae}{coordinates}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_coordinates}{Coordinates}} of the location. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structs_list_elem}{s\+List\+Elem}} $\ast$ \mbox{\hyperlink{structs_location_a831ee9949b0956dd348938e3c6ae6c27}{adjacent\+Locations}}
+\begin{DoxyCompactList}\small\item\em Pointer to the head of the list of adjacent locations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{structs_location_a48f011a48b742e13c15512512eea403b}{client\+List}}
+\begin{DoxyCompactList}\small\item\em Pointer to the head of the list of clients associated with the location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{structs_location_a144042cb905298e9897b0589c79908a4}{vehicle\+List}}
+\begin{DoxyCompactList}\small\item\em Pointer to the head of the list of vehicles associated with the location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct representing a location. 
+
+Definition at line \mbox{\hyperlink{graph_8h_source_l00022}{22}} of file \mbox{\hyperlink{graph_8h_source}{graph.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structs_location_a831ee9949b0956dd348938e3c6ae6c27}\label{structs_location_a831ee9949b0956dd348938e3c6ae6c27}} 
+\index{sLocation@{sLocation}!adjacentLocations@{adjacentLocations}}
+\index{adjacentLocations@{adjacentLocations}!sLocation@{sLocation}}
+\doxysubsubsection{\texorpdfstring{adjacentLocations}{adjacentLocations}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structs_list_elem}{s\+List\+Elem}}$\ast$ s\+Location\+::adjacent\+Locations}
+
+
+
+Pointer to the head of the list of adjacent locations. 
+
+
+
+Definition at line \mbox{\hyperlink{graph_8h_source_l00026}{26}} of file \mbox{\hyperlink{graph_8h_source}{graph.\+h}}.
+
+\mbox{\Hypertarget{structs_location_a48f011a48b742e13c15512512eea403b}\label{structs_location_a48f011a48b742e13c15512512eea403b}} 
+\index{sLocation@{sLocation}!clientList@{clientList}}
+\index{clientList@{clientList}!sLocation@{sLocation}}
+\doxysubsubsection{\texorpdfstring{clientList}{clientList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} s\+Location\+::client\+List}
+
+
+
+Pointer to the head of the list of clients associated with the location. 
+
+
+
+Definition at line \mbox{\hyperlink{graph_8h_source_l00027}{27}} of file \mbox{\hyperlink{graph_8h_source}{graph.\+h}}.
+
+\mbox{\Hypertarget{structs_location_a8f55ee4ac8f6823f3b4c747cad0627ae}\label{structs_location_a8f55ee4ac8f6823f3b4c747cad0627ae}} 
+\index{sLocation@{sLocation}!coordinates@{coordinates}}
+\index{coordinates@{coordinates}!sLocation@{sLocation}}
+\doxysubsubsection{\texorpdfstring{coordinates}{coordinates}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_coordinates}{Coordinates}} s\+Location\+::coordinates}
+
+
+
+\mbox{\hyperlink{struct_coordinates}{Coordinates}} of the location. 
+
+
+
+Definition at line \mbox{\hyperlink{graph_8h_source_l00025}{25}} of file \mbox{\hyperlink{graph_8h_source}{graph.\+h}}.
+
+\mbox{\Hypertarget{structs_location_a463c46feab9e6c7656c29559945e57d8}\label{structs_location_a463c46feab9e6c7656c29559945e57d8}} 
+\index{sLocation@{sLocation}!name@{name}}
+\index{name@{name}!sLocation@{sLocation}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily char s\+Location\+::name\mbox{[}50\mbox{]}}
+
+
+
+Name of the location. 
+
+
+
+Definition at line \mbox{\hyperlink{graph_8h_source_l00024}{24}} of file \mbox{\hyperlink{graph_8h_source}{graph.\+h}}.
+
+\mbox{\Hypertarget{structs_location_a144042cb905298e9897b0589c79908a4}\label{structs_location_a144042cb905298e9897b0589c79908a4}} 
+\index{sLocation@{sLocation}!vehicleList@{vehicleList}}
+\index{vehicleList@{vehicleList}!sLocation@{sLocation}}
+\doxysubsubsection{\texorpdfstring{vehicleList}{vehicleList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} s\+Location\+::vehicle\+List}
+
+
+
+Pointer to the head of the list of vehicles associated with the location. 
+
+
+
+Definition at line \mbox{\hyperlink{graph_8h_source_l00028}{28}} of file \mbox{\hyperlink{graph_8h_source}{graph.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/\mbox{\hyperlink{graph_8h}{graph.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,647 @@
+\hypertarget{vehicle_8c}{}\doxysection{C\+:/\+Users/\+Filip/\+One\+Drive/\+Ambiente de Trabalho/\+EDA/\+EDA\+\_\+\+Fase2/vehicle.c File Reference}
+\label{vehicle_8c}\index{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/vehicle.c@{C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA\_Fase2/vehicle.c}}
+{\ttfamily \#include \char`\"{}vehicle.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{vehicle_8c_a4af9ab728b6057dab0f8da96b4652c40}{show\+Vehicle}} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Shows vehicle data on the console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vehicle_8c_a2a873e45e1882604f536e900c223b26f}{show\+Vehicle\+Rent}} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Shows vehicle data on the console to the client (reduced info). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{vehicle_8c_ad7bea33050959de0f9e989b791cef9f4}{load\+Data\+Vehicles}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Vehicles)
+\begin{DoxyCompactList}\small\item\em Loads vehicle data from a file into a linked list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vehicle_8c_ad743472bd3b1659d5574fcd8dbd44b36}{store\+Data\+Vehicles}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{_e_d_a___fase1_8c_a5208aaa5c10b1c45461a1dcb3827dc32}{listV}})
+\begin{DoxyCompactList}\small\item\em Stores vehicle data from a linked list into a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{vehicle_8c_abb1b6d240123b281a4faae0808b648f0}{compare}} (void $\ast$data1, void $\ast$data2)
+\begin{DoxyCompactList}\small\item\em Compares two vehicle data pointers by their codes. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{vehicle_8c_ae6ff76cb6a61d7fe6e44603562fd0812}{compare\+Autonomy}} (void $\ast$data1, void $\ast$data2)
+\begin{DoxyCompactList}\small\item\em Compares two vehicle data pointers by their autonomy in descending order. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{vehicle_8c_a2d70ab762f3dba194761a8405643f0b4}{compare\+Names\+Vehicles}} (void $\ast$data1, void $\ast$data2)
+\begin{DoxyCompactList}\small\item\em Compares two vehicle data pointers by their type and then by their code. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{vehicle_8c_ac451666b3c1ca407ec68da66dee5651b}{compare\+Total\+Kms}} (void $\ast$data1, void $\ast$data2)
+\begin{DoxyCompactList}\small\item\em Compares two vehicle data pointers by their total kilometers driven in descending order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vehicle_8c_ae575c2adeeb42fc8685dd06e576e1737}{change\+VType}} (\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} vehicle, const char $\ast$new\+Type)
+\item 
+void \mbox{\hyperlink{vehicle_8c_a89b6f6c38de5f1bda6aaa72c49520c65}{change\+VCode}} (\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} vehicle, int code)
+\item 
+void \mbox{\hyperlink{vehicle_8c_a27918ac2f8788a9f7b74dd4fce4e0838}{change\+VGeolocation}} (\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} vehicle, const char $\ast$new\+Geolocation)
+\item 
+void \mbox{\hyperlink{vehicle_8c_abd4728c41e9cee439f731974dc45d665}{change\+VWeight}} (\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} vehicle, float new\+Weight)
+\item 
+void \mbox{\hyperlink{vehicle_8c_a932af4ba8876299bb7b6a53fbdf1bb0e}{change\+VBattery}} (\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} vehicle, float new\+Battery)
+\item 
+void \mbox{\hyperlink{vehicle_8c_a6211a8837c2ff75e17489889dcb7bdc5}{change\+VAutonomy}} (\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} vehicle, float new\+Autonomy)
+\item 
+void \mbox{\hyperlink{vehicle_8c_ac64e7c9ec4a9eba2c6c025a33db790aa}{change\+VCosthour}} (\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} vehicle, float new\+Costhour)
+\item 
+void \mbox{\hyperlink{vehicle_8c_a808d6375edd83fb76653c2dcc6a8635c}{change\+VCostkm}} (\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} vehicle, float new\+Costkm)
+\item 
+void \mbox{\hyperlink{vehicle_8c_a17d585631d761572439949d9b8fb2fc6}{change\+Vstate}} (\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} vehicle, int in\+Use)
+\item 
+void \mbox{\hyperlink{vehicle_8c_a2156847197b05c63566f8acf9444ea98}{change\+Vkms}} (\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} vehicle, float new\+Totalkms)
+\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{vehicle_8c_a1584cd071bd44aad09850f27cd066af7}{remove\+Vehicle}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Vehicle, int $\ast$modified, \mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} $\ast$v)
+\begin{DoxyCompactList}\small\item\em Removes a vehicle from the list of vehicles and returns the new list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{vehicle_8c_a64ff67ac07db84233fca8d5602dfae30}{sort\+By\+Total\+Kms}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Vehicle)
+\begin{DoxyCompactList}\small\item\em Sorts the list of vehicles by the total kilometers driven by each vehicle, in descending order. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{vehicle_8c_a6e07971749db187d06882118b818f991}{percentage\+In\+Use}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Vehicle)
+\begin{DoxyCompactList}\small\item\em Returns the percentage of vehicles that are currently in use. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{vehicle_8c_ae408f6f90b25b9fd8fcab4930c5ddfc8}{average\+Autonomy}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Vehicle)
+\begin{DoxyCompactList}\small\item\em Returns the average autonomy of the vehicles in the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vehicle_8c_ae0b4d6d4900654651ecbff37a1bc34c1}{refill\+Battery\+And\+Autonomy}} (\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} vehicle)
+\begin{DoxyCompactList}\small\item\em Refill the battery level and autonomy of a vehicle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{vehicle_8c_a6830e498aa8b4c39dab316d3c477e9b4}{filter\+Vehicle\+By\+Battery}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Vehicle)
+\begin{DoxyCompactList}\small\item\em Returns a new list of vehicles that have a battery percentage lesser than 50\%. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{vehicle_8c_a12a8653b0eb837f52a1875ff315cbf48}{filter\+Vehicle\+By\+Geo}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Vehicle, char $\ast$geolocation)
+\begin{DoxyCompactList}\small\item\em Returns a new list of vehicles that are located in the specified geolocation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{vehicle_8c_a8bf970c8d5145f944366ad75febbdc4c}{filter\+Vehicle\+By\+In\+Use}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Vehicle)
+\begin{DoxyCompactList}\small\item\em Returns a new list of vehicles that are currently not in use. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} \mbox{\hyperlink{vehicle_8c_ae78b91559e7e896926c1480175f53ef8}{get\+Vehicle\+By\+Type\+And\+Code}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Vehicle, char $\ast$type, int code)
+\begin{DoxyCompactList}\small\item\em Returns the vehicle of the linked list with the specified type and code. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} \mbox{\hyperlink{vehicle_8c_a8a71c1e78031d3ae79e68cc6bb536136}{get\+Vehicle\+By\+Type}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Vehicle, char $\ast$type)
+\begin{DoxyCompactList}\small\item\em Retrieves a vehicle from the vehicle list based on its type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{vehicle_8c_a0141381c4ef53de6c2ab831daa13b364}{edit\+Vehicle}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Vehicle, int $\ast$modified, \mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} $\ast$v, char $\ast$old\+Geolocation)
+\begin{DoxyCompactList}\small\item\em Edits the data of a vehicle in the list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{vehicle_8c_aa10e6b92f11d52cbce445b7231abb6fa}{vehicle\+Exists}} (int code, char $\ast$type, \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Vehicles)
+\begin{DoxyCompactList}\small\item\em Checks if a vehicle with the given code and type already exists in the list of vehicles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} \mbox{\hyperlink{vehicle_8c_a2dbd9d5ff3df9ebf4c58548ea9c7bfe4}{register\+Vehicle}} (\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} list\+Vehicle, int $\ast$modified, \mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} v)
+\begin{DoxyCompactList}\small\item\em Registers a new vehicle in the list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vehicle_8c_ae408f6f90b25b9fd8fcab4930c5ddfc8}\label{vehicle_8c_ae408f6f90b25b9fd8fcab4930c5ddfc8}} 
+\index{vehicle.c@{vehicle.c}!averageAutonomy@{averageAutonomy}}
+\index{averageAutonomy@{averageAutonomy}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{averageAutonomy()}{averageAutonomy()}}
+{\footnotesize\ttfamily float average\+Autonomy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Vehicle }\end{DoxyParamCaption})}
+
+
+
+Returns the average autonomy of the vehicles in the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Vehicle} & A pointer to the head of the linked list of vehicles.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The average autonomy of the vehicles.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00266}{266}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a6211a8837c2ff75e17489889dcb7bdc5}\label{vehicle_8c_a6211a8837c2ff75e17489889dcb7bdc5}} 
+\index{vehicle.c@{vehicle.c}!changeVAutonomy@{changeVAutonomy}}
+\index{changeVAutonomy@{changeVAutonomy}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{changeVAutonomy()}{changeVAutonomy()}}
+{\footnotesize\ttfamily void change\+VAutonomy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}}}]{vehicle,  }\item[{float}]{new\+Autonomy }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00168}{168}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a932af4ba8876299bb7b6a53fbdf1bb0e}\label{vehicle_8c_a932af4ba8876299bb7b6a53fbdf1bb0e}} 
+\index{vehicle.c@{vehicle.c}!changeVBattery@{changeVBattery}}
+\index{changeVBattery@{changeVBattery}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{changeVBattery()}{changeVBattery()}}
+{\footnotesize\ttfamily void change\+VBattery (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}}}]{vehicle,  }\item[{float}]{new\+Battery }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00163}{163}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a89b6f6c38de5f1bda6aaa72c49520c65}\label{vehicle_8c_a89b6f6c38de5f1bda6aaa72c49520c65}} 
+\index{vehicle.c@{vehicle.c}!changeVCode@{changeVCode}}
+\index{changeVCode@{changeVCode}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{changeVCode()}{changeVCode()}}
+{\footnotesize\ttfamily void change\+VCode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}}}]{vehicle,  }\item[{int}]{code }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00148}{148}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_ac64e7c9ec4a9eba2c6c025a33db790aa}\label{vehicle_8c_ac64e7c9ec4a9eba2c6c025a33db790aa}} 
+\index{vehicle.c@{vehicle.c}!changeVCosthour@{changeVCosthour}}
+\index{changeVCosthour@{changeVCosthour}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{changeVCosthour()}{changeVCosthour()}}
+{\footnotesize\ttfamily void change\+VCosthour (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}}}]{vehicle,  }\item[{float}]{new\+Costhour }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00173}{173}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a808d6375edd83fb76653c2dcc6a8635c}\label{vehicle_8c_a808d6375edd83fb76653c2dcc6a8635c}} 
+\index{vehicle.c@{vehicle.c}!changeVCostkm@{changeVCostkm}}
+\index{changeVCostkm@{changeVCostkm}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{changeVCostkm()}{changeVCostkm()}}
+{\footnotesize\ttfamily void change\+VCostkm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}}}]{vehicle,  }\item[{float}]{new\+Costkm }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00178}{178}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a27918ac2f8788a9f7b74dd4fce4e0838}\label{vehicle_8c_a27918ac2f8788a9f7b74dd4fce4e0838}} 
+\index{vehicle.c@{vehicle.c}!changeVGeolocation@{changeVGeolocation}}
+\index{changeVGeolocation@{changeVGeolocation}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{changeVGeolocation()}{changeVGeolocation()}}
+{\footnotesize\ttfamily void change\+VGeolocation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}}}]{vehicle,  }\item[{const char $\ast$}]{new\+Geolocation }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00153}{153}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a2156847197b05c63566f8acf9444ea98}\label{vehicle_8c_a2156847197b05c63566f8acf9444ea98}} 
+\index{vehicle.c@{vehicle.c}!changeVkms@{changeVkms}}
+\index{changeVkms@{changeVkms}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{changeVkms()}{changeVkms()}}
+{\footnotesize\ttfamily void change\+Vkms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}}}]{vehicle,  }\item[{float}]{new\+Totalkms }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00188}{188}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a17d585631d761572439949d9b8fb2fc6}\label{vehicle_8c_a17d585631d761572439949d9b8fb2fc6}} 
+\index{vehicle.c@{vehicle.c}!changeVstate@{changeVstate}}
+\index{changeVstate@{changeVstate}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{changeVstate()}{changeVstate()}}
+{\footnotesize\ttfamily void change\+Vstate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}}}]{vehicle,  }\item[{int}]{in\+Use }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00183}{183}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_ae575c2adeeb42fc8685dd06e576e1737}\label{vehicle_8c_ae575c2adeeb42fc8685dd06e576e1737}} 
+\index{vehicle.c@{vehicle.c}!changeVType@{changeVType}}
+\index{changeVType@{changeVType}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{changeVType()}{changeVType()}}
+{\footnotesize\ttfamily void change\+VType (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}}}]{vehicle,  }\item[{const char $\ast$}]{new\+Type }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00143}{143}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_abd4728c41e9cee439f731974dc45d665}\label{vehicle_8c_abd4728c41e9cee439f731974dc45d665}} 
+\index{vehicle.c@{vehicle.c}!changeVWeight@{changeVWeight}}
+\index{changeVWeight@{changeVWeight}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{changeVWeight()}{changeVWeight()}}
+{\footnotesize\ttfamily void change\+VWeight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}}}]{vehicle,  }\item[{float}]{new\+Weight }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00158}{158}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_abb1b6d240123b281a4faae0808b648f0}\label{vehicle_8c_abb1b6d240123b281a4faae0808b648f0}} 
+\index{vehicle.c@{vehicle.c}!compare@{compare}}
+\index{compare@{compare}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int compare (\begin{DoxyParamCaption}\item[{void $\ast$}]{data1,  }\item[{void $\ast$}]{data2 }\end{DoxyParamCaption})}
+
+
+
+Compares two vehicle data pointers by their codes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data1} & A pointer to the first vehicle data.\\
+\hline
+{\em data2} & A pointer to the second vehicle data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer value indicating the result of the comparison (1 if data1 is smaller, 0 if they are equal, -\/1 if data1 is greater).
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00099}{99}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_ae6ff76cb6a61d7fe6e44603562fd0812}\label{vehicle_8c_ae6ff76cb6a61d7fe6e44603562fd0812}} 
+\index{vehicle.c@{vehicle.c}!compareAutonomy@{compareAutonomy}}
+\index{compareAutonomy@{compareAutonomy}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{compareAutonomy()}{compareAutonomy()}}
+{\footnotesize\ttfamily int compare\+Autonomy (\begin{DoxyParamCaption}\item[{void $\ast$}]{data1,  }\item[{void $\ast$}]{data2 }\end{DoxyParamCaption})}
+
+
+
+Compares two vehicle data pointers by their autonomy in descending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data1} & A pointer to the first vehicle data.\\
+\hline
+{\em data2} & A pointer to the second vehicle data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer value indicating the result of the comparison (1 if data1 is greater, 0 if they are equal, -\/1 if data1 is smaller).
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00111}{111}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a2d70ab762f3dba194761a8405643f0b4}\label{vehicle_8c_a2d70ab762f3dba194761a8405643f0b4}} 
+\index{vehicle.c@{vehicle.c}!compareNamesVehicles@{compareNamesVehicles}}
+\index{compareNamesVehicles@{compareNamesVehicles}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{compareNamesVehicles()}{compareNamesVehicles()}}
+{\footnotesize\ttfamily int compare\+Names\+Vehicles (\begin{DoxyParamCaption}\item[{void $\ast$}]{data1,  }\item[{void $\ast$}]{data2 }\end{DoxyParamCaption})}
+
+
+
+Compares two vehicle data pointers by their type and then by their code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data1} & A pointer to the first vehicle data.\\
+\hline
+{\em data2} & A pointer to the second vehicle data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer value indicating the result of the comparison (-\/1 if data1 is lexically smaller, 0 if they are equal, 1 if data1 is lexically greater).
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00123}{123}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_ac451666b3c1ca407ec68da66dee5651b}\label{vehicle_8c_ac451666b3c1ca407ec68da66dee5651b}} 
+\index{vehicle.c@{vehicle.c}!compareTotalKms@{compareTotalKms}}
+\index{compareTotalKms@{compareTotalKms}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{compareTotalKms()}{compareTotalKms()}}
+{\footnotesize\ttfamily int compare\+Total\+Kms (\begin{DoxyParamCaption}\item[{void $\ast$}]{data1,  }\item[{void $\ast$}]{data2 }\end{DoxyParamCaption})}
+
+
+
+Compares two vehicle data pointers by their total kilometers driven in descending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data1} & A pointer to the first vehicle data.\\
+\hline
+{\em data2} & A pointer to the second vehicle data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer value indicating the result of the comparison (1 if data1 is greater, 0 if they are equal, -\/1 if data1 is smaller).
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00130}{130}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a0141381c4ef53de6c2ab831daa13b364}\label{vehicle_8c_a0141381c4ef53de6c2ab831daa13b364}} 
+\index{vehicle.c@{vehicle.c}!editVehicle@{editVehicle}}
+\index{editVehicle@{editVehicle}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{editVehicle()}{editVehicle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} edit\+Vehicle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Vehicle,  }\item[{int $\ast$}]{modified,  }\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} $\ast$}]{v,  }\item[{char $\ast$}]{old\+Geolocation }\end{DoxyParamCaption})}
+
+
+
+Edits the data of a vehicle in the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Vehicle} & A pointer to the head of the linked list of vehicles.\\
+\hline
+{\em modified} & Pointer to an integer that will be set to 1 if a modification is made, 0 otherwise.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The modified list of vehicles.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00361}{361}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a6830e498aa8b4c39dab316d3c477e9b4}\label{vehicle_8c_a6830e498aa8b4c39dab316d3c477e9b4}} 
+\index{vehicle.c@{vehicle.c}!filterVehicleByBattery@{filterVehicleByBattery}}
+\index{filterVehicleByBattery@{filterVehicleByBattery}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{filterVehicleByBattery()}{filterVehicleByBattery()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} filter\+Vehicle\+By\+Battery (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Vehicle }\end{DoxyParamCaption})}
+
+
+
+Returns a new list of vehicles that have a battery percentage lesser than 50\%. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Vehicle} & A pointer to the head of the linked list of vehicles.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new list of vehicles.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00291}{291}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a12a8653b0eb837f52a1875ff315cbf48}\label{vehicle_8c_a12a8653b0eb837f52a1875ff315cbf48}} 
+\index{vehicle.c@{vehicle.c}!filterVehicleByGeo@{filterVehicleByGeo}}
+\index{filterVehicleByGeo@{filterVehicleByGeo}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{filterVehicleByGeo()}{filterVehicleByGeo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} filter\+Vehicle\+By\+Geo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{listV,  }\item[{char $\ast$}]{geolocation }\end{DoxyParamCaption})}
+
+
+
+Returns a new list of vehicles that are located in the specified geolocation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em listV} & A pointer to the head of the linked list of vehicles.\\
+\hline
+{\em geolocation} & The geolocation to filter by.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new list of vehicles.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00307}{307}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a8bf970c8d5145f944366ad75febbdc4c}\label{vehicle_8c_a8bf970c8d5145f944366ad75febbdc4c}} 
+\index{vehicle.c@{vehicle.c}!filterVehicleByInUse@{filterVehicleByInUse}}
+\index{filterVehicleByInUse@{filterVehicleByInUse}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{filterVehicleByInUse()}{filterVehicleByInUse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} filter\+Vehicle\+By\+In\+Use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{listV }\end{DoxyParamCaption})}
+
+
+
+Returns a new list of vehicles that are currently not in use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em listV} & A pointer to the head of the linked list of vehicles.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new list of vehicles.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00322}{322}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a8a71c1e78031d3ae79e68cc6bb536136}\label{vehicle_8c_a8a71c1e78031d3ae79e68cc6bb536136}} 
+\index{vehicle.c@{vehicle.c}!getVehicleByType@{getVehicleByType}}
+\index{getVehicleByType@{getVehicleByType}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{getVehicleByType()}{getVehicleByType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} get\+Vehicle\+By\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Vehicle,  }\item[{char $\ast$}]{type }\end{DoxyParamCaption})}
+
+
+
+Retrieves a vehicle from the vehicle list based on its type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Vehicle} & Head pointer to the head of the vehicle list.\\
+\hline
+{\em type} & Type of the vehicle to retrieve.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vehicle with the specified type, or NULL if not found.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00349}{349}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_ae78b91559e7e896926c1480175f53ef8}\label{vehicle_8c_ae78b91559e7e896926c1480175f53ef8}} 
+\index{vehicle.c@{vehicle.c}!getVehicleByTypeAndCode@{getVehicleByTypeAndCode}}
+\index{getVehicleByTypeAndCode@{getVehicleByTypeAndCode}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{getVehicleByTypeAndCode()}{getVehicleByTypeAndCode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} get\+Vehicle\+By\+Type\+And\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Vehicle,  }\item[{char $\ast$}]{type,  }\item[{int}]{code }\end{DoxyParamCaption})}
+
+
+
+Returns the vehicle of the linked list with the specified type and code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Vehicle} & A pointer to the head of the linked list of vehicles.\\
+\hline
+{\em type} & The type of the vehicle.\\
+\hline
+{\em code} & The code of the vehicle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer of the vehicle with the specified type and code, or NULL if it does not exist in the list.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00337}{337}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_ad7bea33050959de0f9e989b791cef9f4}\label{vehicle_8c_ad7bea33050959de0f9e989b791cef9f4}} 
+\index{vehicle.c@{vehicle.c}!loadDataVehicles@{loadDataVehicles}}
+\index{loadDataVehicles@{loadDataVehicles}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{loadDataVehicles()}{loadDataVehicles()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} load\+Data\+Vehicles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Vehicles }\end{DoxyParamCaption})}
+
+
+
+Loads vehicle data from a file into a linked list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Vehicles} & A pointer to the head of the linked list of vehicles.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the linked list of vehicles with the loaded data.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00036}{36}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a6e07971749db187d06882118b818f991}\label{vehicle_8c_a6e07971749db187d06882118b818f991}} 
+\index{vehicle.c@{vehicle.c}!percentageInUse@{percentageInUse}}
+\index{percentageInUse@{percentageInUse}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{percentageInUse()}{percentageInUse()}}
+{\footnotesize\ttfamily float percentage\+In\+Use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Vehicle }\end{DoxyParamCaption})}
+
+
+
+Returns the percentage of vehicles that are currently in use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Vehicle} & A pointer to the head of the linked list of vehicles.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The percentage of vehicles in use.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00245}{245}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_ae0b4d6d4900654651ecbff37a1bc34c1}\label{vehicle_8c_ae0b4d6d4900654651ecbff37a1bc34c1}} 
+\index{vehicle.c@{vehicle.c}!refillBatteryAndAutonomy@{refillBatteryAndAutonomy}}
+\index{refillBatteryAndAutonomy@{refillBatteryAndAutonomy}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{refillBatteryAndAutonomy()}{refillBatteryAndAutonomy()}}
+{\footnotesize\ttfamily void refill\+Battery\+And\+Autonomy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}}}]{vehicle }\end{DoxyParamCaption})}
+
+
+
+Refill the battery level and autonomy of a vehicle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vehicle} & Vehicle whose battery level and autonomy are to be updated.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00286}{286}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a2dbd9d5ff3df9ebf4c58548ea9c7bfe4}\label{vehicle_8c_a2dbd9d5ff3df9ebf4c58548ea9c7bfe4}} 
+\index{vehicle.c@{vehicle.c}!registerVehicle@{registerVehicle}}
+\index{registerVehicle@{registerVehicle}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{registerVehicle()}{registerVehicle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} register\+Vehicle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Vehicle,  }\item[{int $\ast$}]{modified,  }\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}}}]{v }\end{DoxyParamCaption})}
+
+
+
+Registers a new vehicle in the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Vehicle} & A pointer to the head of the linked list of vehicles.\\
+\hline
+{\em modified} & Pointer to an integer that will be set to 1 if a new vehicle is added, 0 otherwise.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The modified list of vehicles.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00552}{552}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a1584cd071bd44aad09850f27cd066af7}\label{vehicle_8c_a1584cd071bd44aad09850f27cd066af7}} 
+\index{vehicle.c@{vehicle.c}!removeVehicle@{removeVehicle}}
+\index{removeVehicle@{removeVehicle}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{removeVehicle()}{removeVehicle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} remove\+Vehicle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Vehicle,  }\item[{int $\ast$}]{modified,  }\item[{\mbox{\hyperlink{vehicle_8h_a113a9e077a63af4238116c0969974847}{Vehicle}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+Removes a vehicle from the list of vehicles and returns the new list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Vehicle} & A pointer to the head of the linked list of vehicles.\\
+\hline
+{\em modified} & A pointer to a variable that will be set to 1 if the list is modified, 0 otherwise\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new list of vehicles.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00193}{193}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a4af9ab728b6057dab0f8da96b4652c40}\label{vehicle_8c_a4af9ab728b6057dab0f8da96b4652c40}} 
+\index{vehicle.c@{vehicle.c}!showVehicle@{showVehicle}}
+\index{showVehicle@{showVehicle}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{showVehicle()}{showVehicle()}}
+{\footnotesize\ttfamily void show\+Vehicle (\begin{DoxyParamCaption}\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Shows vehicle data on the console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A pointer to the vehicle data.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00003}{3}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a2a873e45e1882604f536e900c223b26f}\label{vehicle_8c_a2a873e45e1882604f536e900c223b26f}} 
+\index{vehicle.c@{vehicle.c}!showVehicleRent@{showVehicleRent}}
+\index{showVehicleRent@{showVehicleRent}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{showVehicleRent()}{showVehicleRent()}}
+{\footnotesize\ttfamily void show\+Vehicle\+Rent (\begin{DoxyParamCaption}\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Shows vehicle data on the console to the client (reduced info). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A pointer to the vehicle data.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00021}{21}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_a64ff67ac07db84233fca8d5602dfae30}\label{vehicle_8c_a64ff67ac07db84233fca8d5602dfae30}} 
+\index{vehicle.c@{vehicle.c}!sortByTotalKms@{sortByTotalKms}}
+\index{sortByTotalKms@{sortByTotalKms}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{sortByTotalKms()}{sortByTotalKms()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}} sort\+By\+Total\+Kms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Vehicle }\end{DoxyParamCaption})}
+
+
+
+Sorts the list of vehicles by the total kilometers driven by each vehicle, in descending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Vehicle} & A pointer to the head of the linked list of vehicles.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sorted list of vehicles
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00231}{231}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_ad743472bd3b1659d5574fcd8dbd44b36}\label{vehicle_8c_ad743472bd3b1659d5574fcd8dbd44b36}} 
+\index{vehicle.c@{vehicle.c}!storeDataVehicles@{storeDataVehicles}}
+\index{storeDataVehicles@{storeDataVehicles}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{storeDataVehicles()}{storeDataVehicles()}}
+{\footnotesize\ttfamily void store\+Data\+Vehicles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{listV }\end{DoxyParamCaption})}
+
+
+
+Stores vehicle data from a linked list into a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em listV} & A pointer to the head of the linked list of vehicles.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00069}{69}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
+\mbox{\Hypertarget{vehicle_8c_aa10e6b92f11d52cbce445b7231abb6fa}\label{vehicle_8c_aa10e6b92f11d52cbce445b7231abb6fa}} 
+\index{vehicle.c@{vehicle.c}!vehicleExists@{vehicleExists}}
+\index{vehicleExists@{vehicleExists}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{vehicleExists()}{vehicleExists()}}
+{\footnotesize\ttfamily int vehicle\+Exists (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{char $\ast$}]{type,  }\item[{\mbox{\hyperlink{ll_8h_a25b14e02bc51e5c731755db32d6eb059}{List\+Elem}}}]{list\+Vehicles }\end{DoxyParamCaption})}
+
+
+
+Checks if a vehicle with the given code and type already exists in the list of vehicles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & The code of the vehicle.\\
+\hline
+{\em type} & The type of the vehicle.\\
+\hline
+{\em list\+Vehicles} & A pointer to the head of the linked list of vehicles.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the vehicle exists, 0 otherwise.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{vehicle_8c_source_l00541}{541}} of file \mbox{\hyperlink{vehicle_8c_source}{vehicle.\+c}}.
+
