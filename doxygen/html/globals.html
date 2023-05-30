@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EDA_Fase1: Globals</title>
+<title>EDA_Fase2: Globals</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -21,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">EDA_Fase1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">EDA_Fase2<span id="projectnumber">&#160;1.1</span>
    </div>
    <div id="projectbrief">Micromobility App</div>
   </td>
@@ -48,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('globals.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,10 +93,15 @@ $(function() {
 <div class="textblock">Here is a list of all functions, variables, defines, enums, and typedefs with links to the files they belong to:</div>
 
 <h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>addAdjacentLocation()&#160;:&#160;<a class="el" href="graph_8c.html#a5714b0803d01782b52e372fedc2cd6e4">graph.c</a>, <a class="el" href="graph_8h.html#a5714b0803d01782b52e372fedc2cd6e4">graph.h</a></li>
 <li>addBalance()&#160;:&#160;<a class="el" href="client_8c.html#aad7e7bea217d312eca175980a44c1bcc">client.c</a>, <a class="el" href="client_8h.html#aad7e7bea217d312eca175980a44c1bcc">client.h</a></li>
+<li>addClientToLocation()&#160;:&#160;<a class="el" href="graph_8c.html#a2fce6be73c007af41293cca227cd084b">graph.c</a>, <a class="el" href="graph_8h.html#a2fce6be73c007af41293cca227cd084b">graph.h</a></li>
 <li>addItemHead()&#160;:&#160;<a class="el" href="ll_8c.html#a77f1517e35c70b302e7135debc4ee61c">ll.c</a>, <a class="el" href="ll_8h.html#a77f1517e35c70b302e7135debc4ee61c">ll.h</a></li>
 <li>addItemLastIterative()&#160;:&#160;<a class="el" href="ll_8c.html#a1fa6dd9a03210aa0112ec79d6086ef05">ll.c</a>, <a class="el" href="ll_8h.html#a1fa6dd9a03210aa0112ec79d6086ef05">ll.h</a></li>
 <li>addItemOrderedIterative()&#160;:&#160;<a class="el" href="ll_8c.html#ab40afed773ca2c01c5c21d1705e45883">ll.c</a>, <a class="el" href="ll_8h.html#ab40afed773ca2c01c5c21d1705e45883">ll.h</a></li>
+<li>addLocation()&#160;:&#160;<a class="el" href="graph_8c.html#ad8330ccfc4b3741bbb8194b6937ecb6c">graph.c</a>, <a class="el" href="graph_8h.html#ad8330ccfc4b3741bbb8194b6937ecb6c">graph.h</a></li>
+<li>addVehicleToLocation()&#160;:&#160;<a class="el" href="graph_8c.html#a1af7c9306502cdaa1af8d9644d7ec77a">graph.c</a>, <a class="el" href="graph_8h.html#a1af7c9306502cdaa1af8d9644d7ec77a">graph.h</a></li>
+<li>AdjacentLocation&#160;:&#160;<a class="el" href="graph_8h.html#a3ace7255dd591d5262ef733e3cddc726">graph.h</a></li>
 <li>Admin&#160;:&#160;<a class="el" href="admin_8h.html#a5e06ff1ef42367c064e674abc1a29f77">admin.h</a></li>
 <li>admincstats()&#160;:&#160;<a class="el" href="menu_8c.html#a38a00cafd905f1280d4a19360a4c7aab">menu.c</a>, <a class="el" href="menu_8h.html#a38a00cafd905f1280d4a19360a4c7aab">menu.h</a></li>
 <li>admincstatsbytrips()&#160;:&#160;<a class="el" href="menu_8c.html#a8b369a47f7adcf40d3d5e92b497f8785">menu.c</a>, <a class="el" href="menu_8h.html#a8b369a47f7adcf40d3d5e92b497f8785">menu.h</a></li>
@@ -85,6 +110,8 @@ $(function() {
 <li>adminvstats()&#160;:&#160;<a class="el" href="menu_8c.html#a67efd2040296d818486c4318c6aaccea">menu.c</a>, <a class="el" href="menu_8h.html#a67efd2040296d818486c4318c6aaccea">menu.h</a></li>
 <li>adminvstatsbatteryunder50()&#160;:&#160;<a class="el" href="menu_8c.html#a9332129c5d0d6452699786fc2db83e81">menu.c</a>, <a class="el" href="menu_8h.html#a9332129c5d0d6452699786fc2db83e81">menu.h</a></li>
 <li>adminvstatstotalkms()&#160;:&#160;<a class="el" href="menu_8c.html#af3cf3b816cdc3a13d79f36df39b54986">menu.c</a>, <a class="el" href="menu_8h.html#af3cf3b816cdc3a13d79f36df39b54986">menu.h</a></li>
+<li>APIKEY&#160;:&#160;<a class="el" href="what3words_8h.html#ae2688a4fe873d41c89cdbede8ba6f78b">what3words.h</a></li>
+<li>appendList()&#160;:&#160;<a class="el" href="ll_8c.html#a94e75225c2c9eca248e9b3290f5b1a5b">ll.c</a>, <a class="el" href="ll_8h.html#a894b112d2ecc204119fc720cdbc65409">ll.h</a></li>
 <li>availablevehicles()&#160;:&#160;<a class="el" href="menu_8c.html#a90a4a8bd5c4579b17a148a9fc0bf6741">menu.c</a>, <a class="el" href="menu_8h.html#a90a4a8bd5c4579b17a148a9fc0bf6741">menu.h</a></li>
 <li>averageAutonomy()&#160;:&#160;<a class="el" href="vehicle_8c.html#ae408f6f90b25b9fd8fcab4930c5ddfc8">vehicle.c</a>, <a class="el" href="vehicle_8h.html#ae408f6f90b25b9fd8fcab4930c5ddfc8">vehicle.h</a></li>
 <li>averageclientstats()&#160;:&#160;<a class="el" href="menu_8c.html#ad0cb64ff5cb6b4cfef7a8c609b1f5efa">menu.c</a>, <a class="el" href="menu_8h.html#ad0cb64ff5cb6b4cfef7a8c609b1f5efa">menu.h</a></li>
@@ -93,9 +120,12 @@ $(function() {
 <li>averageDuration()&#160;:&#160;<a class="el" href="history_8c.html#a6504adf7dbe9aac19f742164a2f68f12">history.c</a>, <a class="el" href="history_8h.html#a6504adf7dbe9aac19f742164a2f68f12">history.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

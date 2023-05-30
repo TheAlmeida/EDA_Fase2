@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EDA_Fase1: dataclient Struct Reference</title>
+<title>EDA_Fase2: dataclient Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -21,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">EDA_Fase1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">EDA_Fase2<span id="projectnumber">&#160;1.1</span>
    </div>
    <div id="projectbrief">Micromobility App</div>
   </td>
@@ -47,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structdataclient.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,7 +89,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
@@ -93,11 +113,11 @@ Data Fields</h2></td></tr>
 <tr class="memdesc:ae5cb967283dbbdf75cb2032c1fa08fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the client.  <br /></td></tr>
 <tr class="separator:ae5cb967283dbbdf75cb2032c1fa08fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc7965ca6d364e411c18b73e63a780ab"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdataclient.html#acc7965ca6d364e411c18b73e63a780ab">email</a> [50]</td></tr>
-<tr class="memdesc:acc7965ca6d364e411c18b73e63a780ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Email address of the client.  <br /></td></tr>
+<tr class="memdesc:acc7965ca6d364e411c18b73e63a780ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Email geolocation of the client.  <br /></td></tr>
 <tr class="separator:acc7965ca6d364e411c18b73e63a780ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0901e096b9f3bd4aec771a7cfe5c06a"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdataclient.html#ad0901e096b9f3bd4aec771a7cfe5c06a">address</a> [50]</td></tr>
-<tr class="memdesc:ad0901e096b9f3bd4aec771a7cfe5c06a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Address of the client.  <br /></td></tr>
-<tr class="separator:ad0901e096b9f3bd4aec771a7cfe5c06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ec22531817bb25a7bfd6c4366de54b3"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdataclient.html#a8ec22531817bb25a7bfd6c4366de54b3">geolocation</a> [50]</td></tr>
+<tr class="memdesc:a8ec22531817bb25a7bfd6c4366de54b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geolocation of the client.  <br /></td></tr>
+<tr class="separator:a8ec22531817bb25a7bfd6c4366de54b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad68c6985dce5a3d709f854778dedee19"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdataclient.html#ad68c6985dce5a3d709f854778dedee19">nif</a></td></tr>
 <tr class="memdesc:ad68c6985dce5a3d709f854778dedee19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tax identification number of the client.  <br /></td></tr>
 <tr class="separator:ad68c6985dce5a3d709f854778dedee19"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,27 +139,7 @@ Data Fields</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Struct for the client data. </p>
-
-<p class="definition">Definition at line <a class="el" href="client_8h_source.html#l00013">13</a> of file <a class="el" href="client_8h_source.html">client.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="ad0901e096b9f3bd4aec771a7cfe5c06a" name="ad0901e096b9f3bd4aec771a7cfe5c06a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0901e096b9f3bd4aec771a7cfe5c06a">&#9670;&#160;</a></span>address</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char address[50]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Address of the client. </p>
-
-<p class="definition">Definition at line <a class="el" href="client_8h_source.html#l00019">19</a> of file <a class="el" href="client_8h_source.html">client.h</a>.</p>
-
-</div>
-</div>
 <a id="a91d98a856bbd96810b40af3ca5cc901a" name="a91d98a856bbd96810b40af3ca5cc901a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a91d98a856bbd96810b40af3ca5cc901a">&#9670;&#160;</a></span>age</h2>
 
@@ -153,8 +153,6 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Age of the client. </p>
-
-<p class="definition">Definition at line <a class="el" href="client_8h_source.html#l00022">22</a> of file <a class="el" href="client_8h_source.html">client.h</a>.</p>
 
 </div>
 </div>
@@ -172,8 +170,6 @@ Data Fields</h2></td></tr>
 
 <p>Balance of the client. </p>
 
-<p class="definition">Definition at line <a class="el" href="client_8h_source.html#l00025">25</a> of file <a class="el" href="client_8h_source.html">client.h</a>.</p>
-
 </div>
 </div>
 <a id="aee12f0e1e603f61edf1a43b9a4c1cd91" name="aee12f0e1e603f61edf1a43b9a4c1cd91"></a>
@@ -190,8 +186,6 @@ Data Fields</h2></td></tr>
 
 <p>Cellphone number of the client. </p>
 
-<p class="definition">Definition at line <a class="el" href="client_8h_source.html#l00021">21</a> of file <a class="el" href="client_8h_source.html">client.h</a>.</p>
-
 </div>
 </div>
 <a id="acc7965ca6d364e411c18b73e63a780ab" name="acc7965ca6d364e411c18b73e63a780ab"></a>
@@ -206,9 +200,23 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Email address of the client. </p>
+<p>Email geolocation of the client. </p>
 
-<p class="definition">Definition at line <a class="el" href="client_8h_source.html#l00018">18</a> of file <a class="el" href="client_8h_source.html">client.h</a>.</p>
+</div>
+</div>
+<a id="a8ec22531817bb25a7bfd6c4366de54b3" name="a8ec22531817bb25a7bfd6c4366de54b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ec22531817bb25a7bfd6c4366de54b3">&#9670;&#160;</a></span>geolocation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char geolocation[50]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Geolocation of the client. </p>
 
 </div>
 </div>
@@ -226,8 +234,6 @@ Data Fields</h2></td></tr>
 
 <p>Name of the client. </p>
 
-<p class="definition">Definition at line <a class="el" href="client_8h_source.html#l00017">17</a> of file <a class="el" href="client_8h_source.html">client.h</a>.</p>
-
 </div>
 </div>
 <a id="ad68c6985dce5a3d709f854778dedee19" name="ad68c6985dce5a3d709f854778dedee19"></a>
@@ -243,8 +249,6 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Tax identification number of the client. </p>
-
-<p class="definition">Definition at line <a class="el" href="client_8h_source.html#l00020">20</a> of file <a class="el" href="client_8h_source.html">client.h</a>.</p>
 
 </div>
 </div>
@@ -262,8 +266,6 @@ Data Fields</h2></td></tr>
 
 <p>Password of the client. </p>
 
-<p class="definition">Definition at line <a class="el" href="client_8h_source.html#l00016">16</a> of file <a class="el" href="client_8h_source.html">client.h</a>.</p>
-
 </div>
 </div>
 <a id="abe6c718ce5656ac06882b8032e6219b1" name="abe6c718ce5656ac06882b8032e6219b1"></a>
@@ -279,8 +281,6 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Total distance traveled by the client in kilometers. </p>
-
-<p class="definition">Definition at line <a class="el" href="client_8h_source.html#l00024">24</a> of file <a class="el" href="client_8h_source.html">client.h</a>.</p>
 
 </div>
 </div>
@@ -298,8 +298,6 @@ Data Fields</h2></td></tr>
 
 <p>Total number of trips made by the client. </p>
 
-<p class="definition">Definition at line <a class="el" href="client_8h_source.html#l00023">23</a> of file <a class="el" href="client_8h_source.html">client.h</a>.</p>
-
 </div>
 </div>
 <a id="a7a68cd785bc98f72af294ed9d9f02c63" name="a7a68cd785bc98f72af294ed9d9f02c63"></a>
@@ -316,17 +314,19 @@ Data Fields</h2></td></tr>
 
 <p>Username of the client. </p>
 
-<p class="definition">Definition at line <a class="el" href="client_8h_source.html#l00015">15</a> of file <a class="el" href="client_8h_source.html">client.h</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="client_8h_source.html">client.h</a></li>
+<li>C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA_Fase2/<a class="el" href="client_8h_source.html">client.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structdataclient.html">dataclient</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

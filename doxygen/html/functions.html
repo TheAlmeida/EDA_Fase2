@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EDA_Fase1: Data Fields</title>
+<title>EDA_Fase2: Data Fields</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -21,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">EDA_Fase1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">EDA_Fase2<span id="projectnumber">&#160;1.1</span>
    </div>
    <div id="projectbrief">Micromobility App</div>
   </td>
@@ -48,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('functions.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,7 +93,7 @@ $(function() {
 <div class="textblock">Here is a list of all struct and union fields with links to the structures/unions they belong to:</div>
 
 <h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
-<li>address&#160;:&#160;<a class="el" href="structdataclient.html#ad0901e096b9f3bd4aec771a7cfe5c06a">dataclient</a></li>
+<li>adjacentLocations&#160;:&#160;<a class="el" href="structs_location.html#aa173ca61ebd4b7bb25083735e1045aae">sLocation</a></li>
 <li>age&#160;:&#160;<a class="el" href="structdataclient.html#a91d98a856bbd96810b40af3ca5cc901a">dataclient</a></li>
 <li>autonomy&#160;:&#160;<a class="el" href="structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8">datavehicle</a></li>
 </ul>
@@ -87,7 +107,9 @@ $(function() {
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>cellphone&#160;:&#160;<a class="el" href="structdataclient.html#aee12f0e1e603f61edf1a43b9a4c1cd91">dataclient</a></li>
+<li>clientList&#160;:&#160;<a class="el" href="structs_location.html#afb06f2998bff6d64fd2fe9771a2783e3">sLocation</a></li>
 <li>code&#160;:&#160;<a class="el" href="structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9">datavehicle</a></li>
+<li>coordinates&#160;:&#160;<a class="el" href="structs_location.html#aa2fed69003caa634b4a9058cd9f9a040">sLocation</a></li>
 <li>cost&#160;:&#160;<a class="el" href="structdatahistory.html#a8f9450ec0a591829b05b6a04e2d19614">datahistory</a></li>
 <li>costhour&#160;:&#160;<a class="el" href="structdatavehicle.html#af098be7d698ae45ee6ef1f2fed01a25b">datavehicle</a></li>
 <li>costkm&#160;:&#160;<a class="el" href="structdatavehicle.html#a40c56f500e49fad57b2f7cae41462082">datavehicle</a></li>
@@ -96,7 +118,7 @@ $(function() {
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
 <li>data&#160;:&#160;<a class="el" href="structs_list_elem.html#a735984d41155bc1032e09bece8f8d66d">sListElem</a></li>
-<li>distance&#160;:&#160;<a class="el" href="structdatahistory.html#a06f14a9abd47b91465f895d5259cdc1b">datahistory</a></li>
+<li>distance&#160;:&#160;<a class="el" href="structdatahistory.html#a06f14a9abd47b91465f895d5259cdc1b">datahistory</a>, <a class="el" href="structs_visited_location.html#a79b8e036dca6911e3295a47d99f21f43">sVisitedLocation</a></li>
 <li>duration&#160;:&#160;<a class="el" href="structdatahistory.html#a66625d8d6c0894b4828b43f826a09b8f">datahistory</a></li>
 </ul>
 
@@ -112,7 +134,7 @@ $(function() {
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
-<li>geolocation&#160;:&#160;<a class="el" href="structdatavehicle.html#a8ec22531817bb25a7bfd6c4366de54b3">datavehicle</a></li>
+<li>geolocation&#160;:&#160;<a class="el" href="structdataclient.html#a8ec22531817bb25a7bfd6c4366de54b3">dataclient</a>, <a class="el" href="structdatavehicle.html#a8ec22531817bb25a7bfd6c4366de54b3">datavehicle</a></li>
 </ul>
 
 
@@ -121,8 +143,16 @@ $(function() {
 </ul>
 
 
+<h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
+<li>latitude&#160;:&#160;<a class="el" href="struct_coordinates.html#a76714bdbc5c536fa77dfb14533ff82a9">Coordinates</a></li>
+<li>location&#160;:&#160;<a class="el" href="structs_adjacent_location.html#a31701d7a0aa33f12a4289fffe61bec03">sAdjacentLocation</a>, <a class="el" href="structs_visited_location.html#a2ce537cb27c85ee3048653eb5dd73424">sVisitedLocation</a></li>
+<li>locations&#160;:&#160;<a class="el" href="structs_graph.html#a6477431f259b880cc2bc5cd7549b56ba">sGraph</a></li>
+<li>longitude&#160;:&#160;<a class="el" href="struct_coordinates.html#ac155e35fdeebafc89723a51520fb9fe6">Coordinates</a></li>
+</ul>
+
+
 <h3><a id="index_n" name="index_n"></a>- n -</h3><ul>
-<li>name&#160;:&#160;<a class="el" href="structdataadmin.html#ae5cb967283dbbdf75cb2032c1fa08fee">dataadmin</a>, <a class="el" href="structdataclient.html#ae5cb967283dbbdf75cb2032c1fa08fee">dataclient</a></li>
+<li>name&#160;:&#160;<a class="el" href="structdataadmin.html#ae5cb967283dbbdf75cb2032c1fa08fee">dataadmin</a>, <a class="el" href="structdataclient.html#ae5cb967283dbbdf75cb2032c1fa08fee">dataclient</a>, <a class="el" href="structs_location.html#ae5cb967283dbbdf75cb2032c1fa08fee">sLocation</a></li>
 <li>next&#160;:&#160;<a class="el" href="structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e">sListElem</a></li>
 <li>nif&#160;:&#160;<a class="el" href="structdataclient.html#ad68c6985dce5a3d709f854778dedee19">dataclient</a></li>
 </ul>
@@ -130,6 +160,8 @@ $(function() {
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
 <li>password&#160;:&#160;<a class="el" href="structdataadmin.html#a66860a4081ffdd725177cc1293ac23c7">dataadmin</a>, <a class="el" href="structdataclient.html#a66860a4081ffdd725177cc1293ac23c7">dataclient</a></li>
+<li>pickedUpVehicles&#160;:&#160;<a class="el" href="struct_pick_up_result.html#a1e75b2a91f9b74da9cab1378d312bdfa">PickUpResult</a></li>
+<li>previous&#160;:&#160;<a class="el" href="structs_visited_location.html#a0f10aa6d887438d7e493c2b2ae220015">sVisitedLocation</a></li>
 </ul>
 
 
@@ -150,10 +182,24 @@ $(function() {
 <li>user&#160;:&#160;<a class="el" href="structdatahistory.html#a617556946df723fa5f0bfe128ec5c17d">datahistory</a></li>
 <li>username&#160;:&#160;<a class="el" href="structdataadmin.html#a7a68cd785bc98f72af294ed9d9f02c63">dataadmin</a>, <a class="el" href="structdataclient.html#a7a68cd785bc98f72af294ed9d9f02c63">dataclient</a></li>
 </ul>
+
+
+<h3><a id="index_v" name="index_v"></a>- v -</h3><ul>
+<li>vehicleList&#160;:&#160;<a class="el" href="structs_location.html#a9f5cdadce2c2e2c1610f8d35e38dfdd8">sLocation</a></li>
+<li>vehicleTooHeavy&#160;:&#160;<a class="el" href="struct_pick_up_result.html#a360ad68be9a4dd792717d70f22340496">PickUpResult</a></li>
+</ul>
+
+
+<h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
+<li>weight&#160;:&#160;<a class="el" href="structdatavehicle.html#a8128625c9e3fd04c27b82957732d8781">datavehicle</a>, <a class="el" href="structs_adjacent_location.html#a99108733d00274978a4979dc072bd513">sAdjacentLocation</a></li>
+</ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

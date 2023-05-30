@@ -825,10 +825,6 @@ int login() {
 	return 0;
 }
 
-// TODO: em choosingVehicles não considerar orientacao do grafo para calcular o percurso cliente->veiculo??
-// TODO: doxy
-// TODO: possível falha, veiculo muito pesado para pegar e remainingKgs acimado valor estipulado??
-
 int main()
 {
 	listA = NULL;
@@ -842,8 +838,6 @@ int main()
 	listV = loadDataVehicles(listV);
 	listH = loadDataHistory(listH);
 	graph = loadDataGraph(graph, listC, listV);
-	showGraph(graph);
-	maintainConnectivity(graph);
 
 	// Code that generates a graph without a binary file. COMMENT-OUT OR DELETE THE ABOVE LINE TO USE THIS FEATURE (graph = loadDataGraph(graph, listC, listV);)
 	/*

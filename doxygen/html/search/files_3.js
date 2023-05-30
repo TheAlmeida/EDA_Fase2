@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['history_2ec_0',['history.c',['../history_8c.html',1,'']]],
-  ['history_2eh_1',['history.h',['../history_8h.html',1,'']]]
+  ['graph_2ec_0',['graph.c',['../graph_8c.html',1,'']]],
+  ['graph_2eh_1',['graph.h',['../graph_8h.html',1,'']]]
 ];
