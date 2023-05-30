@@ -1,10 +1,10 @@
 var structdatahistory =
 [
-    [ "cost", "structdatahistory.html#a8f9450ec0a591829b05b6a04e2d19614", null ],
-    [ "distance", "structdatahistory.html#a06f14a9abd47b91465f895d5259cdc1b", null ],
-    [ "duration", "structdatahistory.html#a66625d8d6c0894b4828b43f826a09b8f", null ],
-    [ "finish", "structdatahistory.html#a6fd12e5c5a92266345ebf7537d150fe1", null ],
-    [ "start", "structdatahistory.html#a64dc73f950c959160565085d2d1e977b", null ],
-    [ "transport", "structdatahistory.html#a9bb940a133957c9ee74fcf2faec88540", null ],
-    [ "user", "structdatahistory.html#a617556946df723fa5f0bfe128ec5c17d", null ]
+    [ "cost", "structdatahistory.html#ae01baa341d9d5dc59ffa26171289f387", null ],
+    [ "distance", "structdatahistory.html#adf4a6cee5d3a2ea931646033217c437f", null ],
+    [ "duration", "structdatahistory.html#ae2b721bceb9034d0b7fa3b9dfdcf6c63", null ],
+    [ "finish", "structdatahistory.html#a4db2cd19685f4932d4367c3497ce9a06", null ],
+    [ "start", "structdatahistory.html#a97f8eefd861bbd4d1df3750264f9d128", null ],
+    [ "transport", "structdatahistory.html#aa7b791cac6b85f01c3f59cc9b0258259", null ],
+    [ "user", "structdatahistory.html#a0560138ac076b17d4cbd1127d306070f", null ]
 ];

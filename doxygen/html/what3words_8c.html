@@ -17,6 +17,8 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -25,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">EDA_Fase2<span id="projectnumber">&#160;1.1</span>
+   <div id="projectname">EDA_Fase2
    </div>
    <div id="projectbrief">Micromobility App</div>
   </td>
@@ -93,11 +95,13 @@ $(document).ready(function(){initNavTree('what3words_8c.html',''); initResizable
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">what3words.c File Reference</div></div>
+  <div class="headertitle"><div class="title">C:/Users/Filip/OneDrive/Ambiente de Trabalho/EDA/EDA_Fase2/what3words.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="what3words_8h_source.html">what3words.h</a>&quot;</code><br />
-</div><table class="memberdecls">
+</div>
+<p><a href="what3words_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:aacdf1719d113d68a71127426f7c730cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="what3words_8c.html#aacdf1719d113d68a71127426f7c730cd">EARTH_RADIUS</a>&#160;&#160;&#160;6371.0</td></tr>
@@ -135,6 +139,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="what3words_8c_source.html#l00003">3</a> of file <a class="el" href="what3words_8c_source.html">what3words.c</a>.</p>
 
 </div>
 </div>
@@ -188,21 +194,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Distance between the two points.</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>                                                                             {</div>
-<div class="line"><span class="lineno">   22</span>    <span class="keywordtype">double</span> dLat = <a class="code hl_function" href="what3words_8c.html#a8824538eb07749fa64fd2ef98e557be9">degreesToRadians</a>(lat2 - lat1);</div>
-<div class="line"><span class="lineno">   23</span>    <span class="keywordtype">double</span> dLon = <a class="code hl_function" href="what3words_8c.html#a8824538eb07749fa64fd2ef98e557be9">degreesToRadians</a>(lon2 - lon1);</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordtype">double</span> a = sin(dLat / 2) * sin(dLat / 2) +</div>
-<div class="line"><span class="lineno">   26</span>        cos(<a class="code hl_function" href="what3words_8c.html#a8824538eb07749fa64fd2ef98e557be9">degreesToRadians</a>(lat1)) * cos(<a class="code hl_function" href="what3words_8c.html#a8824538eb07749fa64fd2ef98e557be9">degreesToRadians</a>(lat2)) *</div>
-<div class="line"><span class="lineno">   27</span>        sin(dLon / 2) * sin(dLon / 2);</div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordtype">double</span> c = 2 * atan2(sqrt(a), sqrt(1 - a));</div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordtype">double</span> distance = <a class="code hl_define" href="what3words_8c.html#aacdf1719d113d68a71127426f7c730cd">EARTH_RADIUS</a> * c;</div>
-<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">return</span> distance;</div>
-<div class="line"><span class="lineno">   32</span>}</div>
-<div class="ttc" id="awhat3words_8c_html_a8824538eb07749fa64fd2ef98e557be9"><div class="ttname"><a href="what3words_8c.html#a8824538eb07749fa64fd2ef98e557be9">degreesToRadians</a></div><div class="ttdeci">double degreesToRadians(double degrees)</div><div class="ttdoc">Converts degrees to radians.</div><div class="ttdef"><b>Definition:</b> what3words.c:17</div></div>
-<div class="ttc" id="awhat3words_8c_html_aacdf1719d113d68a71127426f7c730cd"><div class="ttname"><a href="what3words_8c.html#aacdf1719d113d68a71127426f7c730cd">EARTH_RADIUS</a></div><div class="ttdeci">#define EARTH_RADIUS</div><div class="ttdef"><b>Definition:</b> what3words.c:3</div></div>
-</div><!-- fragment -->
+
+<p class="definition">Definition at line <a class="el" href="what3words_8c_source.html#l00021">21</a> of file <a class="el" href="what3words_8c_source.html">what3words.c</a>.</p>
+
 </div>
 </div>
 <a id="a41951b64e606da0ca182a39a7458f361" name="a41951b64e606da0ca182a39a7458f361"></a>
@@ -240,56 +234,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Geolocation string, or NULL if conversion fails or an error occurs.</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                                  {</div>
-<div class="line"><span class="lineno">   41</span>    CURL* curl;</div>
-<div class="line"><span class="lineno">   42</span>    CURLcode res;</div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordtype">char</span> url[512];</div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordtype">char</span> response[4096] = { 0 };</div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordtype">char</span>* words = NULL;</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>    snprintf(url, <span class="keyword">sizeof</span>(url), <span class="stringliteral">&quot;https://api.what3words.com/v3/convert-to-3wa?coordinates=%.6f,%.6f&amp;key=%s&quot;</span>, latitude, longitude, <a class="code hl_define" href="what3words_8h.html#ae2688a4fe873d41c89cdbede8ba6f78b">APIKEY</a>);</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>    curl = curl_easy_init();</div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (curl) {</div>
-<div class="line"><span class="lineno">   51</span>        curl_easy_setopt(curl, CURLOPT_URL, url);</div>
-<div class="line"><span class="lineno">   52</span>        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, <a class="code hl_function" href="what3words_8c.html#a2cbfce46bd5b5d2203073f2f8bc7acf4">writeCallback</a>);</div>
-<div class="line"><span class="lineno">   53</span>        curl_easy_setopt(curl, CURLOPT_WRITEDATA, response);</div>
-<div class="line"><span class="lineno">   54</span>        res = curl_easy_perform(curl);</div>
-<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">if</span> (res != CURLE_OK) {</div>
-<div class="line"><span class="lineno">   56</span>            fprintf(stderr, <span class="stringliteral">&quot;curl_easy_perform() failed: %s\n&quot;</span>, curl_easy_strerror(res));</div>
-<div class="line"><span class="lineno">   57</span>        }</div>
-<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   59</span>            <span class="comment">//printf(&quot;Response:\n%s\n&quot;, response);</span></div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>            <span class="comment">// Extract geolocation words from the response using strstr and sscanf</span></div>
-<div class="line"><span class="lineno">   62</span>            <span class="keywordtype">char</span>* words_start = strstr(response, <span class="stringliteral">&quot;\&quot;words\&quot;:\&quot;&quot;</span>);</div>
-<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">if</span> (words_start) {</div>
-<div class="line"><span class="lineno">   64</span>                words_start += strlen(<span class="stringliteral">&quot;\&quot;words\&quot;:\&quot;&quot;</span>);</div>
-<div class="line"><span class="lineno">   65</span>                <span class="keywordtype">char</span>* words_end = strstr(words_start, <span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
-<div class="line"><span class="lineno">   66</span>                <span class="keywordflow">if</span> (words_end) {</div>
-<div class="line"><span class="lineno">   67</span>                    <span class="keywordtype">size_t</span> words_length = words_end - words_start;</div>
-<div class="line"><span class="lineno">   68</span>                    words = (<span class="keywordtype">char</span>*)malloc((words_length + 1) * <span class="keyword">sizeof</span>(char));</div>
-<div class="line"><span class="lineno">   69</span>                    strncpy(words, words_start, words_length);</div>
-<div class="line"><span class="lineno">   70</span>                    words[words_length] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   72</span>                    <span class="comment">//printf(&quot;Geolocation for %.6f, %.6f: words = %s\n&quot;, latitude, longitude, words);</span></div>
-<div class="line"><span class="lineno">   73</span>                }</div>
-<div class="line"><span class="lineno">   74</span>                <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   75</span>                    fprintf(stderr, <span class="stringliteral">&quot;Failed to extract geolocation words from the response.\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   76</span>                }</div>
-<div class="line"><span class="lineno">   77</span>            }</div>
-<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   79</span>                fprintf(stderr, <span class="stringliteral">&quot;Failed to extract geolocation information from the response.\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   80</span>            }</div>
-<div class="line"><span class="lineno">   81</span>        }</div>
-<div class="line"><span class="lineno">   82</span>        curl_easy_cleanup(curl);</div>
-<div class="line"><span class="lineno">   83</span>    }</div>
-<div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">return</span> words;</div>
-<div class="line"><span class="lineno">   86</span>}</div>
-<div class="ttc" id="awhat3words_8c_html_a2cbfce46bd5b5d2203073f2f8bc7acf4"><div class="ttname"><a href="what3words_8c.html#a2cbfce46bd5b5d2203073f2f8bc7acf4">writeCallback</a></div><div class="ttdeci">size_t writeCallback(void *contents, size_t size, size_t nmemb, char *buffer)</div><div class="ttdoc">Callback function to handle the response from a curl request and write the contents to a buffer.</div><div class="ttdef"><b>Definition:</b> what3words.c:34</div></div>
-<div class="ttc" id="awhat3words_8h_html_ae2688a4fe873d41c89cdbede8ba6f78b"><div class="ttname"><a href="what3words_8h.html#ae2688a4fe873d41c89cdbede8ba6f78b">APIKEY</a></div><div class="ttdeci">#define APIKEY</div><div class="ttdef"><b>Definition:</b> what3words.h:14</div></div>
-</div><!-- fragment -->
+
+<p class="definition">Definition at line <a class="el" href="what3words_8c_source.html#l00040">40</a> of file <a class="el" href="what3words_8c_source.html">what3words.c</a>.</p>
+
 </div>
 </div>
 <a id="a8824538eb07749fa64fd2ef98e557be9" name="a8824538eb07749fa64fd2ef98e557be9"></a>
@@ -316,11 +263,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Radians value.</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>                                        {</div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">return</span> degrees * <a class="code hl_define" href="what3words_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> / 180.0;</div>
-<div class="line"><span class="lineno">   19</span>}</div>
-<div class="ttc" id="awhat3words_8h_html_ae71449b1cc6e6250b91f539153a7a0d3"><div class="ttname"><a href="what3words_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a></div><div class="ttdeci">#define M_PI</div><div class="ttdef"><b>Definition:</b> what3words.h:16</div></div>
-</div><!-- fragment -->
+
+<p class="definition">Definition at line <a class="el" href="what3words_8c_source.html#l00017">17</a> of file <a class="el" href="what3words_8c_source.html">what3words.c</a>.</p>
+
 </div>
 </div>
 <a id="a3149a0122833b28c4c4a7cd6306de7c7" name="a3149a0122833b28c4c4a7cd6306de7c7"></a>
@@ -347,72 +292,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_coordinates.html" title="Struct representing coordinates.">Coordinates</a> of the location, or {0.0, 0.0} if conversion fails or an error occurs.</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   88</span>                                                           {</div>
-<div class="line"><span class="lineno">   89</span>    CURL* curl;</div>
-<div class="line"><span class="lineno">   90</span>    CURLcode res;</div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordtype">char</span> url[254];</div>
-<div class="line"><span class="lineno">   92</span>    <span class="keywordtype">char</span> response[4096] = { 0 };</div>
-<div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>    <a class="code hl_struct" href="struct_coordinates.html">Coordinates</a> coordinates;</div>
-<div class="line"><span class="lineno">   95</span>    coordinates.<a class="code hl_variable" href="struct_coordinates.html#a76714bdbc5c536fa77dfb14533ff82a9">latitude</a> = 0.0;</div>
-<div class="line"><span class="lineno">   96</span>    coordinates.<a class="code hl_variable" href="struct_coordinates.html#ac155e35fdeebafc89723a51520fb9fe6">longitude</a> = 0.0;</div>
-<div class="line"><span class="lineno">   97</span> </div>
-<div class="line"><span class="lineno">   98</span>    snprintf(url, <span class="keyword">sizeof</span>(url), <span class="stringliteral">&quot;https://api.what3words.com/v3/convert-to-coordinates?words=%s&amp;key=%s&quot;</span>, location, <a class="code hl_define" href="what3words_8h.html#ae2688a4fe873d41c89cdbede8ba6f78b">APIKEY</a>);</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>    curl = curl_easy_init();</div>
-<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">if</span> (curl) {</div>
-<div class="line"><span class="lineno">  102</span>        curl_easy_setopt(curl, CURLOPT_URL, url);</div>
-<div class="line"><span class="lineno">  103</span>        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, <a class="code hl_function" href="what3words_8c.html#a2cbfce46bd5b5d2203073f2f8bc7acf4">writeCallback</a>);</div>
-<div class="line"><span class="lineno">  104</span>        curl_easy_setopt(curl, CURLOPT_WRITEDATA, response);</div>
-<div class="line"><span class="lineno">  105</span>        res = curl_easy_perform(curl);</div>
-<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">if</span> (res != CURLE_OK) {</div>
-<div class="line"><span class="lineno">  107</span>            fprintf(stderr, <span class="stringliteral">&quot;curl_easy_perform() failed: %s\n&quot;</span>, curl_easy_strerror(res));</div>
-<div class="line"><span class="lineno">  108</span>        }</div>
-<div class="line"><span class="lineno">  109</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  110</span>            <span class="comment">//printf(&quot;Response:\n%s\n&quot;, response);</span></div>
-<div class="line"><span class="lineno">  111</span> </div>
-<div class="line"><span class="lineno">  112</span>            <span class="comment">// Extract coordinates from the response using strstr and sscanf</span></div>
-<div class="line"><span class="lineno">  113</span>            <span class="keywordtype">char</span>* coordinates_start = strstr(response, <span class="stringliteral">&quot;\&quot;coordinates\&quot;:{\&quot;lng\&quot;:&quot;</span>);</div>
-<div class="line"><span class="lineno">  114</span>            <span class="keywordflow">if</span> (coordinates_start) {</div>
-<div class="line"><span class="lineno">  115</span>                coordinates_start += strlen(<span class="stringliteral">&quot;\&quot;coordinates\&quot;:{\&quot;lng\&quot;:&quot;</span>);</div>
-<div class="line"><span class="lineno">  116</span>                <span class="keywordtype">char</span>* longitude_end = strstr(coordinates_start, <span class="stringliteral">&quot;,&quot;</span>);</div>
-<div class="line"><span class="lineno">  117</span>                <span class="keywordflow">if</span> (longitude_end) {</div>
-<div class="line"><span class="lineno">  118</span>                    <span class="keywordtype">char</span> longitude_str[32];</div>
-<div class="line"><span class="lineno">  119</span>                    strncpy(longitude_str, coordinates_start, longitude_end - coordinates_start);</div>
-<div class="line"><span class="lineno">  120</span>                    longitude_str[longitude_end - coordinates_start] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">  121</span>                    sscanf(longitude_str, <span class="stringliteral">&quot;%lf&quot;</span>, &amp;coordinates.<a class="code hl_variable" href="struct_coordinates.html#ac155e35fdeebafc89723a51520fb9fe6">longitude</a>);</div>
-<div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>                    <span class="keywordtype">char</span>* latitude_start = strstr(longitude_end, <span class="stringliteral">&quot;\&quot;lat\&quot;:&quot;</span>) + strlen(<span class="stringliteral">&quot;\&quot;lat\&quot;:&quot;</span>);</div>
-<div class="line"><span class="lineno">  124</span>                    <span class="keywordtype">char</span>* latitude_end = strstr(latitude_start, <span class="stringliteral">&quot;}&quot;</span>);</div>
-<div class="line"><span class="lineno">  125</span>                    <span class="keywordflow">if</span> (latitude_end) {</div>
-<div class="line"><span class="lineno">  126</span>                        <span class="keywordtype">char</span> latitude_str[32];</div>
-<div class="line"><span class="lineno">  127</span>                        strncpy(latitude_str, latitude_start, latitude_end - latitude_start);</div>
-<div class="line"><span class="lineno">  128</span>                        latitude_str[latitude_end - latitude_start] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">  129</span>                        sscanf(latitude_str, <span class="stringliteral">&quot;%lf&quot;</span>, &amp;coordinates.<a class="code hl_variable" href="struct_coordinates.html#a76714bdbc5c536fa77dfb14533ff82a9">latitude</a>);</div>
-<div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span>                        <span class="comment">//printf(&quot;Coordinates for %s: latitude = %.6f, longitude = %.6f\n&quot;, location, coordinates.latitude, coordinates.longitude);</span></div>
-<div class="line"><span class="lineno">  132</span>                    }</div>
-<div class="line"><span class="lineno">  133</span>                    <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  134</span>                        fprintf(stderr, <span class="stringliteral">&quot;Failed to extract latitude from the response.\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  135</span>                    }</div>
-<div class="line"><span class="lineno">  136</span>                }</div>
-<div class="line"><span class="lineno">  137</span>                <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  138</span>                    fprintf(stderr, <span class="stringliteral">&quot;Failed to extract longitude from the response.\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  139</span>                }</div>
-<div class="line"><span class="lineno">  140</span>            }</div>
-<div class="line"><span class="lineno">  141</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  142</span>                fprintf(stderr, <span class="stringliteral">&quot;Failed to extract coordinates from the response.\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  143</span>            }</div>
-<div class="line"><span class="lineno">  144</span>        }</div>
-<div class="line"><span class="lineno">  145</span>        curl_easy_cleanup(curl);</div>
-<div class="line"><span class="lineno">  146</span>    }</div>
-<div class="line"><span class="lineno">  147</span> </div>
-<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">return</span> coordinates;</div>
-<div class="line"><span class="lineno">  149</span>}</div>
-<div class="ttc" id="astruct_coordinates_html"><div class="ttname"><a href="struct_coordinates.html">Coordinates</a></div><div class="ttdoc">Struct representing coordinates.</div><div class="ttdef"><b>Definition:</b> what3words.h:22</div></div>
-<div class="ttc" id="astruct_coordinates_html_a76714bdbc5c536fa77dfb14533ff82a9"><div class="ttname"><a href="struct_coordinates.html#a76714bdbc5c536fa77dfb14533ff82a9">Coordinates::latitude</a></div><div class="ttdeci">double latitude</div><div class="ttdoc">Latitude value.</div><div class="ttdef"><b>Definition:</b> what3words.h:23</div></div>
-<div class="ttc" id="astruct_coordinates_html_ac155e35fdeebafc89723a51520fb9fe6"><div class="ttname"><a href="struct_coordinates.html#ac155e35fdeebafc89723a51520fb9fe6">Coordinates::longitude</a></div><div class="ttdeci">double longitude</div><div class="ttdoc">Longitude value.</div><div class="ttdef"><b>Definition:</b> what3words.h:24</div></div>
-</div><!-- fragment -->
+
+<p class="definition">Definition at line <a class="el" href="what3words_8c_source.html#l00088">88</a> of file <a class="el" href="what3words_8c_source.html">what3words.c</a>.</p>
+
 </div>
 </div>
 <a id="a186e1cc3b973a183c7e0935aa412195b" name="a186e1cc3b973a183c7e0935aa412195b"></a>
@@ -430,17 +312,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  151</span>                                              {</div>
-<div class="line"><span class="lineno">  152</span>    <a class="code hl_struct" href="struct_coordinates.html">Coordinates</a> coordinates = <a class="code hl_function" href="what3words_8c.html#a3149a0122833b28c4c4a7cd6306de7c7">geolocationToCoordinates</a>(geolocation);</div>
-<div class="line"><span class="lineno">  153</span>    <span class="keywordflow">if</span> (coordinates.<a class="code hl_variable" href="struct_coordinates.html#a76714bdbc5c536fa77dfb14533ff82a9">latitude</a> != 0.0 &amp;&amp; coordinates.<a class="code hl_variable" href="struct_coordinates.html#ac155e35fdeebafc89723a51520fb9fe6">longitude</a> != 0.0) {</div>
-<div class="line"><span class="lineno">  154</span>        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  155</span>    }</div>
-<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  157</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  158</span>    }</div>
-<div class="line"><span class="lineno">  159</span>}</div>
-<div class="ttc" id="awhat3words_8c_html_a3149a0122833b28c4c4a7cd6306de7c7"><div class="ttname"><a href="what3words_8c.html#a3149a0122833b28c4c4a7cd6306de7c7">geolocationToCoordinates</a></div><div class="ttdeci">Coordinates geolocationToCoordinates(const char *location)</div><div class="ttdoc">Converts a geolocation to coordinates using an API.</div><div class="ttdef"><b>Definition:</b> what3words.c:88</div></div>
-</div><!-- fragment -->
+
+<p class="definition">Definition at line <a class="el" href="what3words_8c_source.html#l00151">151</a> of file <a class="el" href="what3words_8c_source.html">what3words.c</a>.</p>
+
 </div>
 </div>
 <a id="a2cbfce46bd5b5d2203073f2f8bc7acf4" name="a2cbfce46bd5b5d2203073f2f8bc7acf4"></a>
@@ -492,12 +366,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The total size of the response contents.</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>                                                                              {</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordtype">size_t</span> realsize = size * nmemb;</div>
-<div class="line"><span class="lineno">   36</span>    strcat(buffer, (<span class="keywordtype">char</span>*)contents);</div>
-<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span> realsize;</div>
-<div class="line"><span class="lineno">   38</span>}</div>
-</div><!-- fragment -->
+
+<p class="definition">Definition at line <a class="el" href="what3words_8c_source.html#l00034">34</a> of file <a class="el" href="what3words_8c_source.html">what3words.c</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -505,7 +376,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c228d0cf5205a1c56e24b361f60c9428.html">EDA</a></li><li class="navelem"><a class="el" href="dir_5cefab3663befb8eadc77def4db9c931.html">EDA_Fase2</a></li><li class="navelem"><a class="el" href="what3words_8c.html">what3words.c</a></li>
+    <li class="navelem"><a class="el" href="what3words_8c.html">what3words.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>

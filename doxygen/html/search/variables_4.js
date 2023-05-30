@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['email_0',['email',['../structdataadmin.html#acc7965ca6d364e411c18b73e63a780ab',1,'dataadmin::email()'],['../structdataclient.html#acc7965ca6d364e411c18b73e63a780ab',1,'dataclient::email()']]]
+  ['email_0',['email',['../structdataadmin.html#a50f660e3470a39349f7a5a5e3915869b',1,'dataadmin::email()'],['../structdataclient.html#a492666ec37627e470afff8cc0775a65c',1,'dataclient::email()']]]
 ];

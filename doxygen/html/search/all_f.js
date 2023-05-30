@@ -23,7 +23,7 @@ var searchData=
   ['slocation_20',['sLocation',['../structs_location.html',1,'']]],
   ['sortbytotalkms_21',['sortByTotalKms',['../vehicle_8c.html#a64ff67ac07db84233fca8d5602dfae30',1,'sortByTotalKms(ListElem listVehicle):&#160;vehicle.c'],['../vehicle_8h.html#a64ff67ac07db84233fca8d5602dfae30',1,'sortByTotalKms(ListElem listVehicle):&#160;vehicle.c']]],
   ['sortbytrips_22',['sortByTrips',['../client_8c.html#a307be53b1125733fdb14c702e7253119',1,'sortByTrips(ListElem listClient):&#160;client.c'],['../client_8h.html#a307be53b1125733fdb14c702e7253119',1,'sortByTrips(ListElem listClient):&#160;client.c']]],
-  ['start_23',['start',['../structdatahistory.html#a64dc73f950c959160565085d2d1e977b',1,'datahistory']]],
+  ['start_23',['start',['../structdatahistory.html#a97f8eefd861bbd4d1df3750264f9d128',1,'datahistory']]],
   ['storedataadmins_24',['storeDataAdmins',['../admin_8c.html#ae6b215143203d96bbd5577272d5e725b',1,'storeDataAdmins(ListElem listA):&#160;admin.c'],['../admin_8h.html#ae6b215143203d96bbd5577272d5e725b',1,'storeDataAdmins(ListElem listA):&#160;admin.c']]],
   ['storedataclients_25',['storeDataClients',['../client_8c.html#aafa93fb8008da6d2e42d7b940b8ff023',1,'storeDataClients(ListElem listC):&#160;client.c'],['../client_8h.html#aafa93fb8008da6d2e42d7b940b8ff023',1,'storeDataClients(ListElem listC):&#160;client.c']]],
   ['storedatagraph_26',['storeDataGraph',['../graph_8c.html#ad4ba81e18885ccc52496b4b9a7165806',1,'storeDataGraph(const Graph *graph):&#160;graph.c'],['../graph_8h.html#ad4ba81e18885ccc52496b4b9a7165806',1,'storeDataGraph(const Graph *graph):&#160;graph.c']]],

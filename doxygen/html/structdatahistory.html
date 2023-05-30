@@ -17,6 +17,8 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -25,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">EDA_Fase2<span id="projectnumber">&#160;1.1</span>
+   <div id="projectname">EDA_Fase2
    </div>
    <div id="projectbrief">Micromobility App</div>
   </td>
@@ -91,7 +93,8 @@ $(document).ready(function(){initNavTree('structdatahistory.html',''); initResiz
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="structdatahistory-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">datahistory Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -102,141 +105,157 @@ $(document).ready(function(){initNavTree('structdatahistory.html',''); initResiz
 <p><code>#include &lt;<a class="el" href="history_8h_source.html">history.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:a617556946df723fa5f0bfe128ec5c17d"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatahistory.html#a617556946df723fa5f0bfe128ec5c17d">user</a> [50]</td></tr>
-<tr class="memdesc:a617556946df723fa5f0bfe128ec5c17d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Username of the client that made the trip.  <br /></td></tr>
-<tr class="separator:a617556946df723fa5f0bfe128ec5c17d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bb940a133957c9ee74fcf2faec88540"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatahistory.html#a9bb940a133957c9ee74fcf2faec88540">transport</a> [50]</td></tr>
-<tr class="memdesc:a9bb940a133957c9ee74fcf2faec88540"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the electric mobility transport used for the trip.  <br /></td></tr>
-<tr class="separator:a9bb940a133957c9ee74fcf2faec88540"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64dc73f950c959160565085d2d1e977b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatahistory.html#a64dc73f950c959160565085d2d1e977b">start</a> [50]</td></tr>
-<tr class="memdesc:a64dc73f950c959160565085d2d1e977b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starting geolocation of the trip.  <br /></td></tr>
-<tr class="separator:a64dc73f950c959160565085d2d1e977b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fd12e5c5a92266345ebf7537d150fe1"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatahistory.html#a6fd12e5c5a92266345ebf7537d150fe1">finish</a> [50]</td></tr>
-<tr class="memdesc:a6fd12e5c5a92266345ebf7537d150fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finishing geolocation of the trip.  <br /></td></tr>
-<tr class="separator:a6fd12e5c5a92266345ebf7537d150fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06f14a9abd47b91465f895d5259cdc1b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatahistory.html#a06f14a9abd47b91465f895d5259cdc1b">distance</a></td></tr>
-<tr class="memdesc:a06f14a9abd47b91465f895d5259cdc1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance of the trip in kilometers.  <br /></td></tr>
-<tr class="separator:a06f14a9abd47b91465f895d5259cdc1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66625d8d6c0894b4828b43f826a09b8f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatahistory.html#a66625d8d6c0894b4828b43f826a09b8f">duration</a></td></tr>
-<tr class="memdesc:a66625d8d6c0894b4828b43f826a09b8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration of the trip in minutes.  <br /></td></tr>
-<tr class="separator:a66625d8d6c0894b4828b43f826a09b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f9450ec0a591829b05b6a04e2d19614"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatahistory.html#a8f9450ec0a591829b05b6a04e2d19614">cost</a></td></tr>
-<tr class="memdesc:a8f9450ec0a591829b05b6a04e2d19614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cost of the trip.  <br /></td></tr>
-<tr class="separator:a8f9450ec0a591829b05b6a04e2d19614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a0560138ac076b17d4cbd1127d306070f"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatahistory.html#a0560138ac076b17d4cbd1127d306070f">user</a> [50]</td></tr>
+<tr class="memdesc:a0560138ac076b17d4cbd1127d306070f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Username of the client that made the trip.  <br /></td></tr>
+<tr class="separator:a0560138ac076b17d4cbd1127d306070f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7b791cac6b85f01c3f59cc9b0258259"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatahistory.html#aa7b791cac6b85f01c3f59cc9b0258259">transport</a> [50]</td></tr>
+<tr class="memdesc:aa7b791cac6b85f01c3f59cc9b0258259"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the electric mobility transport used for the trip.  <br /></td></tr>
+<tr class="separator:aa7b791cac6b85f01c3f59cc9b0258259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97f8eefd861bbd4d1df3750264f9d128"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatahistory.html#a97f8eefd861bbd4d1df3750264f9d128">start</a> [50]</td></tr>
+<tr class="memdesc:a97f8eefd861bbd4d1df3750264f9d128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starting geolocation of the trip.  <br /></td></tr>
+<tr class="separator:a97f8eefd861bbd4d1df3750264f9d128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db2cd19685f4932d4367c3497ce9a06"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatahistory.html#a4db2cd19685f4932d4367c3497ce9a06">finish</a> [50]</td></tr>
+<tr class="memdesc:a4db2cd19685f4932d4367c3497ce9a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finishing geolocation of the trip.  <br /></td></tr>
+<tr class="separator:a4db2cd19685f4932d4367c3497ce9a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf4a6cee5d3a2ea931646033217c437f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatahistory.html#adf4a6cee5d3a2ea931646033217c437f">distance</a></td></tr>
+<tr class="memdesc:adf4a6cee5d3a2ea931646033217c437f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance of the trip in kilometers.  <br /></td></tr>
+<tr class="separator:adf4a6cee5d3a2ea931646033217c437f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2b721bceb9034d0b7fa3b9dfdcf6c63"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatahistory.html#ae2b721bceb9034d0b7fa3b9dfdcf6c63">duration</a></td></tr>
+<tr class="memdesc:ae2b721bceb9034d0b7fa3b9dfdcf6c63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration of the trip in minutes.  <br /></td></tr>
+<tr class="separator:ae2b721bceb9034d0b7fa3b9dfdcf6c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae01baa341d9d5dc59ffa26171289f387"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatahistory.html#ae01baa341d9d5dc59ffa26171289f387">cost</a></td></tr>
+<tr class="memdesc:ae01baa341d9d5dc59ffa26171289f387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cost of the trip.  <br /></td></tr>
+<tr class="separator:ae01baa341d9d5dc59ffa26171289f387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Struct for the history (of trips) data. </p>
-</div><h2 class="groupheader">Field Documentation</h2>
-<a id="a8f9450ec0a591829b05b6a04e2d19614" name="a8f9450ec0a591829b05b6a04e2d19614"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f9450ec0a591829b05b6a04e2d19614">&#9670;&#160;</a></span>cost</h2>
+
+<p class="definition">Definition at line <a class="el" href="history_8h_source.html#l00010">10</a> of file <a class="el" href="history_8h_source.html">history.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae01baa341d9d5dc59ffa26171289f387" name="ae01baa341d9d5dc59ffa26171289f387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae01baa341d9d5dc59ffa26171289f387">&#9670;&#160;</a></span>cost</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float cost</td>
+          <td class="memname">float datahistory::cost</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Cost of the trip. </p>
 
+<p class="definition">Definition at line <a class="el" href="history_8h_source.html#l00018">18</a> of file <a class="el" href="history_8h_source.html">history.h</a>.</p>
+
 </div>
 </div>
-<a id="a06f14a9abd47b91465f895d5259cdc1b" name="a06f14a9abd47b91465f895d5259cdc1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06f14a9abd47b91465f895d5259cdc1b">&#9670;&#160;</a></span>distance</h2>
+<a id="adf4a6cee5d3a2ea931646033217c437f" name="adf4a6cee5d3a2ea931646033217c437f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf4a6cee5d3a2ea931646033217c437f">&#9670;&#160;</a></span>distance</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float distance</td>
+          <td class="memname">float datahistory::distance</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Distance of the trip in kilometers. </p>
 
+<p class="definition">Definition at line <a class="el" href="history_8h_source.html#l00016">16</a> of file <a class="el" href="history_8h_source.html">history.h</a>.</p>
+
 </div>
 </div>
-<a id="a66625d8d6c0894b4828b43f826a09b8f" name="a66625d8d6c0894b4828b43f826a09b8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66625d8d6c0894b4828b43f826a09b8f">&#9670;&#160;</a></span>duration</h2>
+<a id="ae2b721bceb9034d0b7fa3b9dfdcf6c63" name="ae2b721bceb9034d0b7fa3b9dfdcf6c63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2b721bceb9034d0b7fa3b9dfdcf6c63">&#9670;&#160;</a></span>duration</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float duration</td>
+          <td class="memname">float datahistory::duration</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Duration of the trip in minutes. </p>
 
+<p class="definition">Definition at line <a class="el" href="history_8h_source.html#l00017">17</a> of file <a class="el" href="history_8h_source.html">history.h</a>.</p>
+
 </div>
 </div>
-<a id="a6fd12e5c5a92266345ebf7537d150fe1" name="a6fd12e5c5a92266345ebf7537d150fe1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fd12e5c5a92266345ebf7537d150fe1">&#9670;&#160;</a></span>finish</h2>
+<a id="a4db2cd19685f4932d4367c3497ce9a06" name="a4db2cd19685f4932d4367c3497ce9a06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db2cd19685f4932d4367c3497ce9a06">&#9670;&#160;</a></span>finish</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char finish[50]</td>
+          <td class="memname">char datahistory::finish[50]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Finishing geolocation of the trip. </p>
 
+<p class="definition">Definition at line <a class="el" href="history_8h_source.html#l00015">15</a> of file <a class="el" href="history_8h_source.html">history.h</a>.</p>
+
 </div>
 </div>
-<a id="a64dc73f950c959160565085d2d1e977b" name="a64dc73f950c959160565085d2d1e977b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64dc73f950c959160565085d2d1e977b">&#9670;&#160;</a></span>start</h2>
+<a id="a97f8eefd861bbd4d1df3750264f9d128" name="a97f8eefd861bbd4d1df3750264f9d128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97f8eefd861bbd4d1df3750264f9d128">&#9670;&#160;</a></span>start</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char start[50]</td>
+          <td class="memname">char datahistory::start[50]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Starting geolocation of the trip. </p>
 
+<p class="definition">Definition at line <a class="el" href="history_8h_source.html#l00014">14</a> of file <a class="el" href="history_8h_source.html">history.h</a>.</p>
+
 </div>
 </div>
-<a id="a9bb940a133957c9ee74fcf2faec88540" name="a9bb940a133957c9ee74fcf2faec88540"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bb940a133957c9ee74fcf2faec88540">&#9670;&#160;</a></span>transport</h2>
+<a id="aa7b791cac6b85f01c3f59cc9b0258259" name="aa7b791cac6b85f01c3f59cc9b0258259"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b791cac6b85f01c3f59cc9b0258259">&#9670;&#160;</a></span>transport</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char transport[50]</td>
+          <td class="memname">char datahistory::transport[50]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Type of the electric mobility transport used for the trip. </p>
 
+<p class="definition">Definition at line <a class="el" href="history_8h_source.html#l00013">13</a> of file <a class="el" href="history_8h_source.html">history.h</a>.</p>
+
 </div>
 </div>
-<a id="a617556946df723fa5f0bfe128ec5c17d" name="a617556946df723fa5f0bfe128ec5c17d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a617556946df723fa5f0bfe128ec5c17d">&#9670;&#160;</a></span>user</h2>
+<a id="a0560138ac076b17d4cbd1127d306070f" name="a0560138ac076b17d4cbd1127d306070f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0560138ac076b17d4cbd1127d306070f">&#9670;&#160;</a></span>user</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char user[50]</td>
+          <td class="memname">char datahistory::user[50]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Username of the client that made the trip. </p>
+
+<p class="definition">Definition at line <a class="el" href="history_8h_source.html#l00012">12</a> of file <a class="el" href="history_8h_source.html">history.h</a>.</p>
 
 </div>
 </div>

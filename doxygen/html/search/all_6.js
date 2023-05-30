@@ -1,7 +1,7 @@
 var searchData=
 [
   ['garage_0',['garage',['../graph_8c.html#a69f67f49d6589233e6806627a9f819ba',1,'garage():&#160;graph.c'],['../graph_8h.html#a69f67f49d6589233e6806627a9f819ba',1,'garage():&#160;graph.c']]],
-  ['geolocation_1',['geolocation',['../structdataclient.html#a8ec22531817bb25a7bfd6c4366de54b3',1,'dataclient::geolocation()'],['../structdatavehicle.html#a8ec22531817bb25a7bfd6c4366de54b3',1,'datavehicle::geolocation()']]],
+  ['geolocation_1',['geolocation',['../structdataclient.html#ac5bfa24a6b8bc06bd39000f4db1e9ae0',1,'dataclient::geolocation()'],['../structdatavehicle.html#ab31685e75111a85103e6359952e22144',1,'datavehicle::geolocation()']]],
   ['geolocationtocoordinates_2',['geolocationToCoordinates',['../what3words_8c.html#a3149a0122833b28c4c4a7cd6306de7c7',1,'geolocationToCoordinates(const char *location):&#160;what3words.c'],['../what3words_8h.html#a3149a0122833b28c4c4a7cd6306de7c7',1,'geolocationToCoordinates(const char *location):&#160;what3words.c']]],
   ['getclientbyusername_3',['getClientByUsername',['../client_8c.html#ae7b858345ad41e0ce774c5619adf09c4',1,'getClientByUsername(ListElem listClient, char *username):&#160;client.c'],['../client_8h.html#ae7b858345ad41e0ce774c5619adf09c4',1,'getClientByUsername(ListElem listClient, char *username):&#160;client.c']]],
   ['getrandomlocation_4',['getRandomLocation',['../graph_8c.html#a92ceb27b870d734374cb9618b6d6a57a',1,'getRandomLocation(Graph *graph, Location *excludeLocation):&#160;graph.c'],['../graph_8h.html#a92ceb27b870d734374cb9618b6d6a57a',1,'getRandomLocation(Graph *graph, Location *excludeLocation):&#160;graph.c']]],

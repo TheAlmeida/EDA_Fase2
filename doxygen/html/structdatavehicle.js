@@ -1,13 +1,13 @@
 var structdatavehicle =
 [
-    [ "autonomy", "structdatavehicle.html#a83cda76233a2b02dcc2b3707fa58e4e8", null ],
-    [ "battery", "structdatavehicle.html#abe893e21455b5e3ba30d98b78a5f4479", null ],
-    [ "code", "structdatavehicle.html#a45a5b7c00a796a23f01673cef1dbe0a9", null ],
-    [ "costhour", "structdatavehicle.html#af098be7d698ae45ee6ef1f2fed01a25b", null ],
-    [ "costkm", "structdatavehicle.html#a40c56f500e49fad57b2f7cae41462082", null ],
-    [ "geolocation", "structdatavehicle.html#a8ec22531817bb25a7bfd6c4366de54b3", null ],
-    [ "inUse", "structdatavehicle.html#adc4747e59356ef81f6e5df973870970b", null ],
-    [ "totalkms", "structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1", null ],
-    [ "type", "structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2", null ],
-    [ "weight", "structdatavehicle.html#a8128625c9e3fd04c27b82957732d8781", null ]
+    [ "autonomy", "structdatavehicle.html#a01d5e025f03795df18b1bb99a59251c1", null ],
+    [ "battery", "structdatavehicle.html#a3f8dedce17f2c20499bed3f4e95d5eec", null ],
+    [ "code", "structdatavehicle.html#a80d1265871edd87d2b8f87072a1ef690", null ],
+    [ "costhour", "structdatavehicle.html#ae0327011ee061b2ab411a9181d9d31fb", null ],
+    [ "costkm", "structdatavehicle.html#af84e018de0492f5d5c91214f014da58c", null ],
+    [ "geolocation", "structdatavehicle.html#ab31685e75111a85103e6359952e22144", null ],
+    [ "inUse", "structdatavehicle.html#af91bfce865ad46376a5964013590f20f", null ],
+    [ "totalkms", "structdatavehicle.html#a41c0d8866166c6ff7ced1252e351b95e", null ],
+    [ "type", "structdatavehicle.html#ab5cb89e952df9a69dd2b24f0aa02d860", null ],
+    [ "weight", "structdatavehicle.html#aa83dc12d6236620f3ad3125b1fe4d56d", null ]
 ];

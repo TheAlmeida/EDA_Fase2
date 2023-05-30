@@ -17,6 +17,8 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -25,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">EDA_Fase2<span id="projectnumber">&#160;1.1</span>
+   <div id="projectname">EDA_Fase2
    </div>
    <div id="projectbrief">Micromobility App</div>
   </td>
@@ -91,7 +93,8 @@ $(document).ready(function(){initNavTree('structs_location.html',''); initResiza
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="structs_location-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">sLocation Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -102,103 +105,115 @@ $(document).ready(function(){initNavTree('structs_location.html',''); initResiza
 <p><code>#include &lt;<a class="el" href="graph_8h_source.html">graph.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:ae5cb967283dbbdf75cb2032c1fa08fee"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs_location.html#ae5cb967283dbbdf75cb2032c1fa08fee">name</a> [50]</td></tr>
-<tr class="memdesc:ae5cb967283dbbdf75cb2032c1fa08fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the location.  <br /></td></tr>
-<tr class="separator:ae5cb967283dbbdf75cb2032c1fa08fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2fed69003caa634b4a9058cd9f9a040"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_coordinates.html">Coordinates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs_location.html#aa2fed69003caa634b4a9058cd9f9a040">coordinates</a></td></tr>
-<tr class="memdesc:aa2fed69003caa634b4a9058cd9f9a040"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_coordinates.html" title="Struct representing coordinates.">Coordinates</a> of the location.  <br /></td></tr>
-<tr class="separator:aa2fed69003caa634b4a9058cd9f9a040"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa173ca61ebd4b7bb25083735e1045aae"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structs_list_elem.html">sListElem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs_location.html#aa173ca61ebd4b7bb25083735e1045aae">adjacentLocations</a></td></tr>
-<tr class="memdesc:aa173ca61ebd4b7bb25083735e1045aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the head of the list of adjacent locations.  <br /></td></tr>
-<tr class="separator:aa173ca61ebd4b7bb25083735e1045aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb06f2998bff6d64fd2fe9771a2783e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ll_8h.html#a25b14e02bc51e5c731755db32d6eb059">ListElem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs_location.html#afb06f2998bff6d64fd2fe9771a2783e3">clientList</a></td></tr>
-<tr class="memdesc:afb06f2998bff6d64fd2fe9771a2783e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the head of the list of clients associated with the location.  <br /></td></tr>
-<tr class="separator:afb06f2998bff6d64fd2fe9771a2783e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f5cdadce2c2e2c1610f8d35e38dfdd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ll_8h.html#a25b14e02bc51e5c731755db32d6eb059">ListElem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs_location.html#a9f5cdadce2c2e2c1610f8d35e38dfdd8">vehicleList</a></td></tr>
-<tr class="memdesc:a9f5cdadce2c2e2c1610f8d35e38dfdd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the head of the list of vehicles associated with the location.  <br /></td></tr>
-<tr class="separator:a9f5cdadce2c2e2c1610f8d35e38dfdd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a463c46feab9e6c7656c29559945e57d8"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs_location.html#a463c46feab9e6c7656c29559945e57d8">name</a> [50]</td></tr>
+<tr class="memdesc:a463c46feab9e6c7656c29559945e57d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the location.  <br /></td></tr>
+<tr class="separator:a463c46feab9e6c7656c29559945e57d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f55ee4ac8f6823f3b4c747cad0627ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_coordinates.html">Coordinates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs_location.html#a8f55ee4ac8f6823f3b4c747cad0627ae">coordinates</a></td></tr>
+<tr class="memdesc:a8f55ee4ac8f6823f3b4c747cad0627ae"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_coordinates.html" title="Struct representing coordinates.">Coordinates</a> of the location.  <br /></td></tr>
+<tr class="separator:a8f55ee4ac8f6823f3b4c747cad0627ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a831ee9949b0956dd348938e3c6ae6c27"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structs_list_elem.html">sListElem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs_location.html#a831ee9949b0956dd348938e3c6ae6c27">adjacentLocations</a></td></tr>
+<tr class="memdesc:a831ee9949b0956dd348938e3c6ae6c27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the head of the list of adjacent locations.  <br /></td></tr>
+<tr class="separator:a831ee9949b0956dd348938e3c6ae6c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48f011a48b742e13c15512512eea403b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ll_8h.html#a25b14e02bc51e5c731755db32d6eb059">ListElem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs_location.html#a48f011a48b742e13c15512512eea403b">clientList</a></td></tr>
+<tr class="memdesc:a48f011a48b742e13c15512512eea403b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the head of the list of clients associated with the location.  <br /></td></tr>
+<tr class="separator:a48f011a48b742e13c15512512eea403b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a144042cb905298e9897b0589c79908a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ll_8h.html#a25b14e02bc51e5c731755db32d6eb059">ListElem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs_location.html#a144042cb905298e9897b0589c79908a4">vehicleList</a></td></tr>
+<tr class="memdesc:a144042cb905298e9897b0589c79908a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the head of the list of vehicles associated with the location.  <br /></td></tr>
+<tr class="separator:a144042cb905298e9897b0589c79908a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Struct representing a location. </p>
-</div><h2 class="groupheader">Field Documentation</h2>
-<a id="aa173ca61ebd4b7bb25083735e1045aae" name="aa173ca61ebd4b7bb25083735e1045aae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa173ca61ebd4b7bb25083735e1045aae">&#9670;&#160;</a></span>adjacentLocations</h2>
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00022">22</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a831ee9949b0956dd348938e3c6ae6c27" name="a831ee9949b0956dd348938e3c6ae6c27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a831ee9949b0956dd348938e3c6ae6c27">&#9670;&#160;</a></span>adjacentLocations</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structs_list_elem.html">sListElem</a>* adjacentLocations</td>
+          <td class="memname">struct <a class="el" href="structs_list_elem.html">sListElem</a>* sLocation::adjacentLocations</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Pointer to the head of the list of adjacent locations. </p>
 
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00026">26</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
 </div>
 </div>
-<a id="afb06f2998bff6d64fd2fe9771a2783e3" name="afb06f2998bff6d64fd2fe9771a2783e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb06f2998bff6d64fd2fe9771a2783e3">&#9670;&#160;</a></span>clientList</h2>
+<a id="a48f011a48b742e13c15512512eea403b" name="a48f011a48b742e13c15512512eea403b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48f011a48b742e13c15512512eea403b">&#9670;&#160;</a></span>clientList</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ll_8h.html#a25b14e02bc51e5c731755db32d6eb059">ListElem</a> clientList</td>
+          <td class="memname"><a class="el" href="ll_8h.html#a25b14e02bc51e5c731755db32d6eb059">ListElem</a> sLocation::clientList</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Pointer to the head of the list of clients associated with the location. </p>
 
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00027">27</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
 </div>
 </div>
-<a id="aa2fed69003caa634b4a9058cd9f9a040" name="aa2fed69003caa634b4a9058cd9f9a040"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2fed69003caa634b4a9058cd9f9a040">&#9670;&#160;</a></span>coordinates</h2>
+<a id="a8f55ee4ac8f6823f3b4c747cad0627ae" name="a8f55ee4ac8f6823f3b4c747cad0627ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f55ee4ac8f6823f3b4c747cad0627ae">&#9670;&#160;</a></span>coordinates</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_coordinates.html">Coordinates</a> coordinates</td>
+          <td class="memname"><a class="el" href="struct_coordinates.html">Coordinates</a> sLocation::coordinates</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p><a class="el" href="struct_coordinates.html" title="Struct representing coordinates.">Coordinates</a> of the location. </p>
 
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00025">25</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
 </div>
 </div>
-<a id="ae5cb967283dbbdf75cb2032c1fa08fee" name="ae5cb967283dbbdf75cb2032c1fa08fee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5cb967283dbbdf75cb2032c1fa08fee">&#9670;&#160;</a></span>name</h2>
+<a id="a463c46feab9e6c7656c29559945e57d8" name="a463c46feab9e6c7656c29559945e57d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a463c46feab9e6c7656c29559945e57d8">&#9670;&#160;</a></span>name</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char name[50]</td>
+          <td class="memname">char sLocation::name[50]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Name of the location. </p>
 
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00024">24</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
 </div>
 </div>
-<a id="a9f5cdadce2c2e2c1610f8d35e38dfdd8" name="a9f5cdadce2c2e2c1610f8d35e38dfdd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f5cdadce2c2e2c1610f8d35e38dfdd8">&#9670;&#160;</a></span>vehicleList</h2>
+<a id="a144042cb905298e9897b0589c79908a4" name="a144042cb905298e9897b0589c79908a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a144042cb905298e9897b0589c79908a4">&#9670;&#160;</a></span>vehicleList</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ll_8h.html#a25b14e02bc51e5c731755db32d6eb059">ListElem</a> vehicleList</td>
+          <td class="memname"><a class="el" href="ll_8h.html#a25b14e02bc51e5c731755db32d6eb059">ListElem</a> sLocation::vehicleList</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Pointer to the head of the list of vehicles associated with the location. </p>
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00028">28</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>

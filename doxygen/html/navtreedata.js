@@ -25,17 +25,17 @@
 var NAVTREE =
 [
   [ "EDA_Fase2", "index.html", [
-    [ "Data Structures", "annotated.html", [
-      [ "Data Structures", "annotated.html", "annotated_dup" ],
-      [ "Data Structure Index", "classes.html", null ],
-      [ "Data Fields", "functions.html", [
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ],
+      [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
-      [ "Globals", "globals.html", [
+      [ "File Members", "globals.html", [
         [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", "globals_func" ],
         [ "Variables", "globals_vars.html", null ],
@@ -49,8 +49,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_e_d_a___fase1_8c.html",
-"history_8c.html#a75b1be3768a435b7cc16d4cf2f0316b3",
-"what3words_8c.html#a02434d9cbacdb757bbce7d8d872bc5d8"
+"history_8c.html#a720524b9b493dce65822361e932bd439",
+"vehicle_8h.html#ae408f6f90b25b9fd8fcab4930c5ddfc8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

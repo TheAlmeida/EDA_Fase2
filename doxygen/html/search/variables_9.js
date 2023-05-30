@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['name_0',['name',['../structdataadmin.html#ae5cb967283dbbdf75cb2032c1fa08fee',1,'dataadmin::name()'],['../structdataclient.html#ae5cb967283dbbdf75cb2032c1fa08fee',1,'dataclient::name()'],['../structs_location.html#ae5cb967283dbbdf75cb2032c1fa08fee',1,'sLocation::name()']]],
-  ['next_1',['next',['../structs_list_elem.html#ae7673952061d6c7932daecafcc56d74e',1,'sListElem']]],
-  ['nif_2',['nif',['../structdataclient.html#ad68c6985dce5a3d709f854778dedee19',1,'dataclient']]]
+  ['name_0',['name',['../structdataadmin.html#ac18ce3e0ba3f0cde64231098951ff2ed',1,'dataadmin::name()'],['../structdataclient.html#a7517e30a82dc25037c1440dd802cd1b1',1,'dataclient::name()'],['../structs_location.html#a463c46feab9e6c7656c29559945e57d8',1,'sLocation::name()']]],
+  ['next_1',['next',['../structs_list_elem.html#aa492ed50b3d7269ab790f7f6324b6e51',1,'sListElem']]],
+  ['nif_2',['nif',['../structdataclient.html#a5fdcb52b233897b68a8bd2db318c8e9f',1,'dataclient']]]
 ];

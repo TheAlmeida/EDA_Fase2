@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['totalkms_0',['totalkms',['../structdataclient.html#abe6c718ce5656ac06882b8032e6219b1',1,'dataclient::totalkms()'],['../structdatavehicle.html#abe6c718ce5656ac06882b8032e6219b1',1,'datavehicle::totalkms()']]],
-  ['totaltrips_1',['totaltrips',['../structdataclient.html#a49f1d0e542d50cf80022ae73e9a8dd56',1,'dataclient']]],
-  ['transport_2',['transport',['../structdatahistory.html#a9bb940a133957c9ee74fcf2faec88540',1,'datahistory']]],
-  ['type_3',['type',['../structdatavehicle.html#aab10593edc73627b19ef9de53fd331d2',1,'datavehicle']]]
+  ['totalkms_0',['totalkms',['../structdataclient.html#ad764a0835ac7d62b9b8de576bddf52da',1,'dataclient::totalkms()'],['../structdatavehicle.html#a41c0d8866166c6ff7ced1252e351b95e',1,'datavehicle::totalkms()']]],
+  ['totaltrips_1',['totaltrips',['../structdataclient.html#a145f3ac8df1b3871c5c92b12853dfc85',1,'dataclient']]],
+  ['transport_2',['transport',['../structdatahistory.html#aa7b791cac6b85f01c3f59cc9b0258259',1,'datahistory']]],
+  ['type_3',['type',['../structdatavehicle.html#ab5cb89e952df9a69dd2b24f0aa02d860',1,'datavehicle']]]
 ];

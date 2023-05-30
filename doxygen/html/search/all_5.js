@@ -13,7 +13,7 @@ var searchData=
   ['findlocationbyvehicle_10',['findLocationByVehicle',['../graph_8c.html#a17a6d6a2ca158a4064f023c8e3a53b51',1,'findLocationByVehicle(Graph *graph, Vehicle vehicle):&#160;graph.c'],['../graph_8h.html#a17a6d6a2ca158a4064f023c8e3a53b51',1,'findLocationByVehicle(Graph *graph, Vehicle vehicle):&#160;graph.c']]],
   ['findmindistancelocation_11',['findMinDistanceLocation',['../graph_8c.html#ae25b39da91d38d4d0b44f91ad502d8fc',1,'findMinDistanceLocation(ListElem unvisitedSet):&#160;graph.c'],['../graph_8h.html#ae25b39da91d38d4d0b44f91ad502d8fc',1,'findMinDistanceLocation(ListElem unvisitedSet):&#160;graph.c']]],
   ['findvisitedlocationbylocation_12',['findVisitedLocationByLocation',['../graph_8c.html#a4a4fc08679e632ce9c8a00a72ec1835e',1,'findVisitedLocationByLocation(ListElem visitedSet, Location *location):&#160;graph.c'],['../graph_8h.html#a4a4fc08679e632ce9c8a00a72ec1835e',1,'findVisitedLocationByLocation(ListElem visitedSet, Location *location):&#160;graph.c']]],
-  ['finish_13',['finish',['../structdatahistory.html#a6fd12e5c5a92266345ebf7537d150fe1',1,'datahistory']]],
+  ['finish_13',['finish',['../structdatahistory.html#a4db2cd19685f4932d4367c3497ce9a06',1,'datahistory']]],
   ['freegraph_14',['freeGraph',['../graph_8c.html#ac503172ac443dd77a4dfc694e3df85af',1,'freeGraph(Graph *graph):&#160;graph.c'],['../graph_8h.html#ac503172ac443dd77a4dfc694e3df85af',1,'freeGraph(Graph *graph):&#160;graph.c']]],
   ['freepath_15',['freePath',['../graph_8c.html#a67b9afe5857b097b99ba949e75f8246c',1,'freePath(ListElem path):&#160;graph.c'],['../graph_8h.html#a67b9afe5857b097b99ba949e75f8246c',1,'freePath(ListElem path):&#160;graph.c']]]
 ];

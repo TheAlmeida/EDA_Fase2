@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['latitude_0',['latitude',['../struct_coordinates.html#a76714bdbc5c536fa77dfb14533ff82a9',1,'Coordinates']]],
+  ['latitude_0',['latitude',['../struct_coordinates.html#a20ea6542be083155699517939b03f259',1,'Coordinates']]],
   ['lista_1',['listA',['../_e_d_a___fase1_8c.html#a27cc03dc4c2f19714cd8240127422e33',1,'EDA_Fase1.c']]],
   ['listc_2',['listC',['../_e_d_a___fase1_8c.html#a5e21eee4b25172fcdd41a5b9fc5680c0',1,'EDA_Fase1.c']]],
   ['listelem_3',['ListElem',['../ll_8h.html#a25b14e02bc51e5c731755db32d6eb059',1,'ll.h']]],
@@ -14,10 +14,10 @@ var searchData=
   ['loaddatagraph_11',['loadDataGraph',['../graph_8c.html#af10d3314dd78168472132768563cdef2',1,'loadDataGraph(Graph *graph, ListElem listClients, ListElem listVehicles):&#160;graph.c'],['../graph_8h.html#af10d3314dd78168472132768563cdef2',1,'loadDataGraph(Graph *graph, ListElem listClients, ListElem listVehicles):&#160;graph.c']]],
   ['loaddatahistory_12',['loadDataHistory',['../history_8c.html#a1f7df9b33039d218e0fc8870b7f6a15b',1,'loadDataHistory(ListElem listHistory):&#160;history.c'],['../history_8h.html#a1f7df9b33039d218e0fc8870b7f6a15b',1,'loadDataHistory(ListElem listHistory):&#160;history.c']]],
   ['loaddatavehicles_13',['loadDataVehicles',['../vehicle_8c.html#ad7bea33050959de0f9e989b791cef9f4',1,'loadDataVehicles(ListElem listVehicles):&#160;vehicle.c'],['../vehicle_8h.html#ad7bea33050959de0f9e989b791cef9f4',1,'loadDataVehicles(ListElem listVehicles):&#160;vehicle.c']]],
-  ['location_14',['location',['../structs_adjacent_location.html#a31701d7a0aa33f12a4289fffe61bec03',1,'sAdjacentLocation::location()'],['../structs_visited_location.html#a2ce537cb27c85ee3048653eb5dd73424',1,'sVisitedLocation::location()']]],
+  ['location_14',['location',['../structs_adjacent_location.html#af3e1e06d9612e09b633094e6e7dc3780',1,'sAdjacentLocation::location()'],['../structs_visited_location.html#a7871232c76ee23796dff95fe9cf8e10b',1,'sVisitedLocation::location()']]],
   ['location_15',['Location',['../graph_8h.html#acdc49f7ae948d31dd3a623f8ebd4379d',1,'graph.h']]],
   ['locationhasadjacency_16',['locationHasAdjacency',['../graph_8c.html#a161044c3f91c6132f8239e63f9941880',1,'locationHasAdjacency(Location *location, Location *otherLocation):&#160;graph.c'],['../graph_8h.html#a161044c3f91c6132f8239e63f9941880',1,'locationHasAdjacency(Location *location, Location *otherLocation):&#160;graph.c']]],
-  ['locations_17',['locations',['../structs_graph.html#a6477431f259b880cc2bc5cd7549b56ba',1,'sGraph']]],
+  ['locations_17',['locations',['../structs_graph.html#ac156fddbbbe88933c5bf670836fd8d54',1,'sGraph']]],
   ['login_18',['login',['../_e_d_a___fase1_8c.html#a59938e85b7f60cfb477647ed21b8a982',1,'EDA_Fase1.c']]],
-  ['longitude_19',['longitude',['../struct_coordinates.html#ac155e35fdeebafc89723a51520fb9fe6',1,'Coordinates']]]
+  ['longitude_19',['longitude',['../struct_coordinates.html#a474951b7ec4e5f12e788abbf852cd88b',1,'Coordinates']]]
 ];
