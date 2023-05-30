@@ -65,3 +65,10 @@ Coordinates geolocationToCoordinates(const char* location);
 /// <param name="longitude">Longitude value.</param>
 /// <returns>Geolocation string, or NULL if conversion fails or an error occurs.</returns>
 char* coordinatesToGeolocation(double latitude, double longitude);
+
+/// <summary>
+/// Checks if the given geolocation is valid (three words separated by two dots, e.g. just.like.this).
+/// </summary>
+/// <param name="geolocation">The geolocation string to validate.</param>
+/// <returns>1 if the geolocation is valid, 0 otherwise.</returns>
+int validGeolocation(char* geolocation);

@@ -460,8 +460,6 @@ void modeAdmin()
 
 int simulateTrip(Client c, Vehicle v, Graph* graph) {
 
-	simulatemenu();
-
 	History h = (History)malloc(sizeof(struct datahistory));
 
 	strcpy(h->user, c->username);
@@ -472,8 +470,13 @@ int simulateTrip(Client c, Vehicle v, Graph* graph) {
 
 	strcpy(h->start, v->geolocation);
 
-	printf("\n Insira o geocodigo do local de chegada: "); //NOME
-	scanf(" %[^\n]%*c", h->finish);
+	do
+	{
+		simulatemenu();
+		printf("\n Insira o geocodigo do local de chegada: ");
+		scanf(" %[^\n]%*c", h->finish);
+	} while (!validGeolocation(h->finish));
+	
 
 	// Check if the finish geolocation is already added as a location in the graph
 	Location* finishLocation = findLocationByGeolocation(graph, h->finish);
@@ -701,6 +704,12 @@ void modeClient()
 				char geolocation[50];
 				scanf(" %[^\n]", geolocation);
 
+				if (!validGeolocation(geolocation))
+				{
+					errornotvalidinfo();
+					break;
+				}
+					
 				listAvailableV = filterVehicleByInUse(listV);
 				listAvailableGeoV = filterVehicleByGeo(listAvailableV, geolocation);
 

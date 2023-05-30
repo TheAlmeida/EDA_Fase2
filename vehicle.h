@@ -191,13 +191,6 @@ ListElem editVehicle(ListElem listVehicle, int* modified, Vehicle* v, char* oldG
 int vehicleExists(int code, char* type, ListElem listVehicles);
 
 /// <summary>
-/// Checks if the given geolocation is valid (three words separated by two dots, e.g. just.like.this).
-/// </summary>
-/// <param name="geolocation">The geolocation string to validate.</param>
-/// <returns>1 if the geolocation is valid, 0 otherwise.</returns>
-int validGeolocation(char* geolocation);
-
-/// <summary>
 /// Registers a new vehicle in the list.
 /// </summary>
 /// <param name="listVehicle">A pointer to the head of the linked list of vehicles.</param>

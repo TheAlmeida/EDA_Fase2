@@ -147,3 +147,13 @@ Coordinates geolocationToCoordinates(const char* location) {
 
     return coordinates;
 }
+
+int validGeolocation(const char* geolocation) {
+    Coordinates coordinates = geolocationToCoordinates(geolocation);
+    if (coordinates.latitude != 0.0 && coordinates.longitude != 0.0) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}

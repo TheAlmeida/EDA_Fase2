@@ -549,26 +549,6 @@ int vehicleExists(int code, char* type, ListElem listVehicles) {
     return 0;
 }
 
-int validGeolocation(char* geolocation)
-{
-    char geo_aux[50];
-    strcpy(geo_aux, geolocation);
-
-    int words = 0;
-    char* tokens = strtok(geo_aux, ".");
-    while (tokens != NULL) {
-        words++;
-        tokens = strtok(NULL, ".");
-    }
-
-    if (words == 3) {
-        return 1;
-    }
-    else {
-        return 0;
-    }
-}
-
 ListElem registerVehicle(ListElem listVehicle, int* modified, Vehicle v) {
 
     clrscr();

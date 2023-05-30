@@ -369,8 +369,11 @@ ListElem editClient(ListElem listClient, int* modified, Client* c, char* oldGeol
         case 8:
             printf(" Insira uma nova geolocalizacao: ");
             scanf(" %[^\n]%*c", edit);
-            changeCGeolocation(*c, edit);
-            *modified = 1;
+            if (validGeolocation(edit))
+            {
+                changeCGeolocation(*c, edit);
+                *modified = 1;
+            }
             break;
         case 9:
             printf(" Insira um novo total de viagens: ");
@@ -489,6 +492,12 @@ ListElem registerClient(ListElem listClient, ListElem listAdmin, int* modified, 
 
     printf("\n Insira a sua geolocalizacao: ");
     scanf(" %[^\n]%*c", c->geolocation);
+
+    if (!validGeolocation(c->geolocation))
+    {
+        free(c);
+        return listClient;
+    }
 
     char auxAge[5];
     printf("\n Insira a sua idade: "); 
