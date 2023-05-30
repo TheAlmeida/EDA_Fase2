@@ -197,7 +197,7 @@ int returnVehicles(Graph* graph, Location* start, float totalWeight) {
 		}
 
 		// After the truck can't pick up more vehicles, or encounters a vehicle too heavy to lift, it returns to the start location
-		if (remainingWeight <= totalWeight * 0.25 || result.vehicleTooHeavy) {
+		if (remainingWeight <= totalWeight * 0.25 || result.vehicleTooHeavy || calculateShortestPathWithVehicle(graph, start) == NULL) {
 			// Calculate the shortest path from current location to the start location
 			ListElem returnPath = calculateShortestPath(graph, currentLocation, start);
 			printf("Shortest path from %s to %s:\n", currentLocation->name, start->name);
@@ -425,7 +425,7 @@ void modeAdmin()
 				clientStats(listC);
 				break;
 			case 16:
-				if (returnVehicles(graph, base, 100))
+				if (returnVehicles(graph, base, 2000))
 				{
 					showListIterative(listV, &showVehicle);
 					storeDataVehicles(listV);

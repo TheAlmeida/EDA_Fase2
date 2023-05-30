@@ -439,7 +439,7 @@ ListElem editVehicle(ListElem listVehicle, int* modified, Vehicle* v, char* oldG
             if (isInt(auxWeight) || isFloat(auxWeight))
                 editFloat = stringToFloat(auxWeight);
 
-            if ((editFloat >= 0) && (editFloat <= 100))
+            if ((editFloat >= 0) && (editFloat <= 9999))
             {
                 changeVWeight(*v, editFloat);
                 *modified = 1;

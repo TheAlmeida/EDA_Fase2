@@ -726,6 +726,8 @@ ListElem calculateShortestPath(Graph* graph, Location* start, Location* target)
 			Location* adjacentLocation = adjLocation->location;
 			double weight = adjLocation->weight;
 
+			printf("Adjacent Loc: %s\n", adjacentLocation->name);
+
 			if (adjacentLocation != NULL) {
 				VisitedLocation* visitedLocation = findVisitedLocationByLocation(unvisitedSet, adjacentLocation);
 
@@ -753,7 +755,7 @@ ListElem calculateShortestPath(Graph* graph, Location* start, Location* target)
 			showPath(path);
 
 			// Print the distance
-			printf("Distance: %.3f\n", currentVisitedLocation->distance);
+			printf("Distance: %.3f\n\n", currentVisitedLocation->distance);
 
 			return path;
 		}
