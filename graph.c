@@ -473,7 +473,68 @@ int locationHasAdjacency(Location* location, Location* otherLocation)
 	return 0;
 }
 
-void connectAdjacentLocations(Graph* graph)
+int hasIncomingAdjacency(Graph* graph, Location* location)
+{
+	ListElem currLocation = graph->locations;
+
+	while (currLocation != NULL)
+	{
+		Location* otherLocation = (Location*)currLocation->data;
+
+		if (otherLocation != location && locationHasAdjacency(otherLocation, location))
+		{
+			return 1; // Found an incoming adjacency
+		}
+
+		currLocation = currLocation->next;
+	}
+
+	return 0; // No incoming adjacency found
+}
+
+void maintainConnectivity(Graph* graph)
+{
+	ListElem currLocation = graph->locations;
+
+	while (currLocation != NULL)
+	{
+		Location* location = (Location*)currLocation->data;
+
+		if (location->adjacentLocations == NULL)
+		{
+			Location* outgoingAdjacentLocation = getRandomLocation(graph, location);
+
+			if (outgoingAdjacentLocation != NULL)
+			{
+				double outgoingWeight = calculateDistance(location->coordinates.latitude,
+					location->coordinates.longitude,
+					outgoingAdjacentLocation->coordinates.latitude,
+					outgoingAdjacentLocation->coordinates.longitude);
+
+				addAdjacentLocation(location, outgoingAdjacentLocation, outgoingWeight);
+			}
+		}
+
+		if (!hasIncomingAdjacency(graph, location))
+		{
+			Location* incomingAdjacentLocation = getRandomLocation(graph, location);
+
+			if (incomingAdjacentLocation != NULL)
+			{
+				double incomingWeight = calculateDistance(incomingAdjacentLocation->coordinates.latitude,
+					incomingAdjacentLocation->coordinates.longitude,
+					location->coordinates.latitude,
+					location->coordinates.longitude);
+
+				addAdjacentLocation(incomingAdjacentLocation, location, incomingWeight);
+			}
+		}
+
+		currLocation = currLocation->next;
+	}
+}
+
+void pseudoStronglyConnectLocations(Graph* graph)
 {
 	ListElem currLocation = graph->locations;
 
@@ -500,6 +561,7 @@ void connectAdjacentLocations(Graph* graph)
 		currLocation = currLocation->next;
 	}
 }
+
 
 Location* findMinDistanceLocation(ListElem unvisitedSet)
 {

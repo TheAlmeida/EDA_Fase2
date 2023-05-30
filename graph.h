@@ -169,7 +169,7 @@ Location* findLocationByVehicle(Graph* graph, Vehicle vehicle);
 Location* getRandomLocation(Graph* graph, Location* excludeLocation);
 
 /// <summary>
-/// Checks if a location has adjacency with another location.
+/// Checks if otherLocation is in the adjacency list of location.
 /// </summary>
 /// <param name="location">Pointer to the location.</param>
 /// <param name="otherLocation">Pointer to the other location.</param>
@@ -177,10 +177,24 @@ Location* getRandomLocation(Graph* graph, Location* excludeLocation);
 int locationHasAdjacency(Location* location, Location* otherLocation);
 
 /// <summary>
-/// Connects the adjacent locations in the graph.
+/// Checks if location is an adjacent location of any other location.
 /// </summary>
 /// <param name="graph">Pointer to the graph.</param>
-void connectAdjacentLocations(Graph* graph);
+/// <param name="location">Pointer to the location.</param>
+/// <returns>1 if location is an adjacent location, 0 otherwise.</returns>
+int hasIncomingAdjacency(Graph* graph, Location* location);
+
+/// <summary>
+/// Checks that every location has at least an adjacency and is an adjacent location of at least another location.
+/// </summary>
+/// <param name="graph">Pointer to the graph.</param>
+void maintainConnectivity(Graph* graph);
+
+/// <summary>
+/// Creates outgoing and incoming adjacencies for every location in the graph.
+/// </summary>
+/// <param name="graph">Pointer to the graph.</param>
+void pseudoStronglyConnectLocations(Graph* graph);
 
 /// <summary>
 /// Finds the location with the minimum distance in the unvisited set of locations.

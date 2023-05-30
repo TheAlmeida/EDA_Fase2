@@ -263,7 +263,7 @@ void modeAdmin()
 					{
 						location = createLocation(v->geolocation, 0.0, 0.0);
 						addLocation(graph, location);
-						connectAdjacentLocations(graph);
+						maintainConnectivity(graph);
 					}
 					addVehicleToLocation(location, v);
 
@@ -286,7 +286,7 @@ void modeAdmin()
 						{
 							newLocation = createLocation(v->geolocation, 0.0, 0.0);
 							addLocation(graph, newLocation);
-							connectAdjacentLocations(graph);
+							maintainConnectivity(graph);
 						}
 						addVehicleToLocation(newLocation, v);
 					}
@@ -318,7 +318,7 @@ void modeAdmin()
 					{
 						location = createLocation(c->geolocation, 0.0, 0.0);
 						addLocation(graph, location);
-						connectAdjacentLocations(graph);
+						maintainConnectivity(graph);
 					}
 					addClientToLocation(location, c);
 					storeDataGraph(graph);
@@ -340,7 +340,7 @@ void modeAdmin()
 						{
 							newLocation = createLocation(c->geolocation, 0.0, 0.0);
 							addLocation(graph, newLocation);
-							connectAdjacentLocations(graph);
+							maintainConnectivity(graph);
 						}
 						addClientToLocation(newLocation, c);
 					}
@@ -484,7 +484,7 @@ int simulateTrip(Client c, Vehicle v, Graph* graph) {
 		// Geolocation not found, create a new location and add it to the graph
 		finishLocation = createLocation(h->finish, 0.0, 0.0);
 		addLocation(graph, finishLocation);
-		connectAdjacentLocations(graph);
+		maintainConnectivity(graph);
 	}
 
 	Location* startLocation = findLocationByGeolocation(graph, h->start);
@@ -827,7 +827,6 @@ int login() {
 
 // TODO: em choosingVehicles não considerar orientacao do grafo para calcular o percurso cliente->veiculo??
 // TODO: doxy
-// TODO: TROCAR CONNECT ADJACENT (exceto primeiro ao gerar grafo sem ficheiro) por uma adj random à entrada e uma adj random à saida?
 // TODO: possível falha, veiculo muito pesado para pegar e remainingKgs acimado valor estipulado??
 
 int main()
@@ -843,12 +842,14 @@ int main()
 	listV = loadDataVehicles(listV);
 	listH = loadDataHistory(listH);
 	graph = loadDataGraph(graph, listC, listV);
+	showGraph(graph);
+	maintainConnectivity(graph);
 
 	// Code that generates a graph without a binary file. COMMENT-OUT OR DELETE THE ABOVE LINE TO USE THIS FEATURE (graph = loadDataGraph(graph, listC, listV);)
 	/*
 	createLocationsFromVehicles(graph, listV);
 	createLocationsFromClients(graph, listC);
-	connectAdjacentLocations(graph);
+	pseudoStronglyConnectLocations(graph);
 	storeDataGraph(graph);
 	*/
 	
@@ -885,7 +886,7 @@ int main()
 					{
 						location = createLocation(c->geolocation, 0.0, 0.0);
 						addLocation(graph, location);
-						connectAdjacentLocations(graph);
+						maintainConnectivity(graph);
 					}
 					addClientToLocation(location, c);
 					storeDataGraph(graph);
