@@ -1062,6 +1062,7 @@ Graph* editGraph(Graph* graph, int* modified) {
 
 		printf(" 1. Remover localizacao selecionada.\n");
 		printf(" 2. Remover uma adjacencia da localizacao selecionada.\n");
+		printf(" 3. Alterar o peso de uma adjacencia da localizacao selecionada.\n");
 		printf(" Escolha o modo de edicao: ");
 		char auxChoice[10];
 		scanf(" %[^\n]%*c", auxChoice);
@@ -1105,7 +1106,58 @@ Graph* editGraph(Graph* graph, int* modified) {
 			*modified = 1;
 			printf(" Adjacencia removida com sucesso.\n");
 			break;
+		case 3:
+			// Print adjacent locations with index
+			iterator = selectedLocation->adjacentLocations;
+			counter = 1;
+			while (iterator != NULL) {
+				adjLocation = (AdjacentLocation*)iterator->data;
+				printf(" %d. %s %.3f kms\n", counter++, adjLocation->location->name, adjLocation->weight);
+				iterator = iterator->next;
+			}
 
+			printf(" Insira o indice do peso da adjacencia a editar: ");
+			char auxIndexEdit[10]; // Updated variable name
+			scanf(" %[^\n]%*c", auxIndexEdit);
+
+			index = 0;
+			if (isInt(auxIndexEdit))
+				index = stringToInt(auxIndexEdit);
+
+			if (index < 1 || index >= counter) {
+				return graph;
+			}
+
+			// Get the selected adjacent location
+			iterator = selectedLocation->adjacentLocations;
+			counter = 1;
+			while (counter < index) {
+				iterator = iterator->next;
+				counter++;
+			}
+			adjLocation = (AdjacentLocation*)iterator->data;
+
+			printf(" Insira o novo peso da adjacencia: ");
+			char auxWeight[10];
+			scanf(" %[^\n]%*c", auxWeight);
+
+			double weight = 0.0;
+			if (!isFloat(auxWeight) && !isInt(auxWeight))
+				break;
+
+			// Update the weight for the selected adjacent location
+			weight = (double)stringToFloat(auxWeight);
+			adjLocation->weight = weight;
+
+			// Check if there is also an adjacency from adjLocation to selectedLocation
+			AdjacentLocation* reverseAdjLocation = findAdjacentLocation(adjLocation->location, selectedLocation);
+			if (reverseAdjLocation != NULL) {
+				reverseAdjLocation->weight = weight;
+			}
+
+			*modified = 1;
+			printf(" Peso da adjacencia alterado com sucesso.\n");
+			break;
 		default:
 			break;
 		}

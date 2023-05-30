@@ -825,10 +825,9 @@ int login() {
 	return 0;
 }
 
-// TODO: em choosingVehicles não considerar orientacao do grafo para calcular o percurso
-// TODO: função de edit: ALTERAR PESO (da adjacencia selecionada a-b e da adjacencia b-a se existir)
+// TODO: em choosingVehicles não considerar orientacao do grafo para calcular o percurso cliente->veiculo??
 // TODO: doxy
-// TODO: VALIDAR GEOLOCALS? TROCAR CONNECT ADJACENT (exceto primeiro ao gerar grafo sem ficheiro) por uma adj random à entrada e uma adj random à saida?
+// TODO: TROCAR CONNECT ADJACENT (exceto primeiro ao gerar grafo sem ficheiro) por uma adj random à entrada e uma adj random à saida?
 // TODO: possível falha, veiculo muito pesado para pegar e remainingKgs acimado valor estipulado??
 
 int main()
